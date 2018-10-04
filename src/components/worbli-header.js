@@ -15,7 +15,7 @@ class WorbliHeader extends PolymerElement {
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
-          line-height: 80px;
+          line-height: 60px;
           border-bottom: 1px solid var(--grey-keyline);
           margin-bottom: 40px;
       }
@@ -39,6 +39,8 @@ class WorbliHeader extends PolymerElement {
         font-weight: 600;
         width: 130px;
         height: 50px;
+        cursor: pointer;
+        border-radius: 3px;
       }
       .buttons {
         text-align: right;
@@ -46,15 +48,32 @@ class WorbliHeader extends PolymerElement {
       .selected {
         color: white;
         background-color: var(--blue-button);
-        border-radius: 3px;
+        
       }
       img{
         vertical-align: middle;
       }
+      @media only screen and (max-width: 600px) {
+        .navigation {
+              display: none;
+          }
+          .logo {
+            text-align: center;
+          }
+          .container {
+            line-height: 50px;
+            padding-bottom: 10px;
+          }
+          .buttons {
+            display: none;
+          }
+      }
       </style>
       <div class="container">
-        <div><img src="./images/logo-blue.png"></div>
-        <div>
+        <div class="logo">
+          <a href="https://www.worbli.io/"><img src="./images/logo-blue.png"></a>
+        </div>
+        <div class="navigation">
           <ul>
             <li><a href="main">MAIN</a></li>
             <li><a href="about">ABOUT US</a></li>
