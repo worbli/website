@@ -14,7 +14,11 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       }
       :host {
         display: block;
-        min-height: 100vh;
+      }
+      :host {
+        --grey-keyline: rgba(220, 226, 239, 1);
+        --grey-text: rgba(120, 131, 145, 1);
+        --blue-navigation: rgba(38, 40, 88, 1)
       }
     </style>
   </template>
