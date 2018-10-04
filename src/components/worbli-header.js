@@ -6,6 +6,7 @@ class WorbliHeader extends PolymerElement {
     return html`
       <style include="shared-styles">
       div {
+          display: inline-block;
           flex-grow: 1;
           color: var(--grey-text);
           font-size: 12px;
@@ -14,12 +15,13 @@ class WorbliHeader extends PolymerElement {
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
-          padding: 40px 0 40px 0;
+          line-height: 80px;
           border-bottom: 1px solid var(--grey-keyline);
           margin-bottom: 40px;
       }
       ul {
         list-style: none;
+        text-align: center;
       }
       li {
         display: inline;
@@ -28,12 +30,30 @@ class WorbliHeader extends PolymerElement {
         color: var(--blue-navigation);
         font-size: 16px;
         text-decoration: none;
-        margin-right:20px;
+        margin-right:30px;
         font-weight: 600;
+      }
+      button {
+        color: var(--blue-navigation);
+        font-size: 14px;
+        font-weight: 600;
+        width: 130px;
+        height: 50px;
+      }
+      .buttons {
+        text-align: right;
+      }
+      .selected {
+        color: white;
+        background-color: var(--blue-button);
+        border-radius: 3px;
+      }
+      img{
+        vertical-align: middle;
       }
       </style>
       <div class="container">
-        <div>WORBLI</div>
+        <div><img src="./images/logo-blue.png"></div>
         <div>
           <ul>
             <li><a href="main">MAIN</a></li>
@@ -42,9 +62,9 @@ class WorbliHeader extends PolymerElement {
             <li><a href="roadmap">ROADMAP</a></li>
           </ul>
         </div>
-        <div>
+        <div class="buttons">
           <button type="button">SIGN IN</button>
-          <button type="button">JOIN NOW</button>
+          <button type="button" class="selected">JOIN NOW</button>
         </div>
       </div>
 
