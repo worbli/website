@@ -1,6 +1,8 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
+import '../components/worbli-rpc.js';
+
 
 class MainRoute extends PolymerElement {
   static get template() {
@@ -10,7 +12,7 @@ class MainRoute extends PolymerElement {
           display: block;
         }
       </style>
-      
+      <worbli-rpc connect endpoint="https://api.eosnewyork.io" jsonrpc="{{jsonrpc}}"></worbli-rpc>
       <div class="card">
         <h1>Main Route</h1>
         <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>

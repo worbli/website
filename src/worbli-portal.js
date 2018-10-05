@@ -4,8 +4,9 @@ import { setPassiveTouchGestures, setRootPath } from '@polymer/polymer/lib/utils
 import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
-
 import './components/worbli-header.js';
+
+
 
 setPassiveTouchGestures(true);
 setRootPath(WorbliPortalGlobals.rootPath);
@@ -23,6 +24,7 @@ class WorbliPortal extends PolymerElement {
           margin: 0 auto;
         }
       </style>
+
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
@@ -47,7 +49,8 @@ class WorbliPortal extends PolymerElement {
         observer: '_pageChanged'
       },
       routeData: Object,
-      subroute: Object
+      subroute: Object,
+      jsonrpc: Object,
     };
   }
 
