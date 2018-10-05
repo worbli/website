@@ -75,11 +75,11 @@ class BlockProducers extends PolymerElement {
                 width: 250px;
             }
             .red {
-                background-color: red;
+                background-color: #f5f5f5;;
             }
         </style>
         <div class="container">
-            <div class="title">Worbli Block Producers {{producer}}</div>
+            <div class="title">Worbli Block Producers</div>
             <ul>
                 <li class="owner">Name:</li>
                 <li class="location">Location:</li>
@@ -87,12 +87,12 @@ class BlockProducers extends PolymerElement {
                 <li>Active:</li>
             </ul>
             <dom-repeat items="{{producers}}">
-                <template class="[[item.selected]]">
-                    <ul class="[[item.selected]]">
+                <template>
+                    <ul class$="[[item.selected]]">
                         <li class="owner"><a href="[[item.url]]" target=”_blank”>[[item.owner]]</a></li>
                         <li class="location">[[item.location]]</li>
                         <li class="totalvotes">[[item.total_votes]]</li>
-                        <li>[[item.is_active]] - [[item.selected]]</li>
+                        <li>[[item.is_active]]</li>
                     </ul>
                 </template>
             </dom-repeat>
