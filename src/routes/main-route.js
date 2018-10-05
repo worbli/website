@@ -3,6 +3,7 @@ import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
 import '../components/worbli-rpc.js';
 import '../components/network-monitor/block-info.js';
+import '../components/network-monitor/block-producers.js';
 
 
 class MainRoute extends PolymerElement {
@@ -21,13 +22,15 @@ class MainRoute extends PolymerElement {
           width: 280px;
         }
         .main {
-          flex-grow: 1
+          flex-grow: 1;
+          padding-left: 30px;
         }
+  
       </style>
       <worbli-rpc connect endpoint="https://api.eosnewyork.io" jsonrpc="{{jsonrpc}}"></worbli-rpc>
       <div class="split">
-        <block-info class="side" jsonrpc="{{jsonrpc}}" interval="1000"></block-info>
-        <div class="main">Block Producers</div>
+        <block-info class="side" jsonrpc="[[jsonrpc]]" interval="2000"></block-info>
+        <block-producers class="main" jsonrpc="[[jsonrpc]]" interval="2000"></block-producers>
       </div>
       <worbli-footer name="footer"></worbli-footer>
     `;

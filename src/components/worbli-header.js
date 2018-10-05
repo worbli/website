@@ -27,6 +27,7 @@ class WorbliHeader extends PolymerElement {
         display: inline;
       }
       li a {
+        text-transform: uppercase;
         color: var(--blue-navigation);
         font-size: 16px;
         text-decoration: none;
