@@ -41,9 +41,9 @@ class BlockInfo extends PolymerElement {
                 color: #3a3e46;
                 font-size: 12px;
                 font-weight: 300;
-                text-transform: uppercase;
                 line-height: 16px;
                 padding: 1px 12px 12px;
+                text-transform: uppercase;
                 letter-spacing: 1px;
             }
         </style>
@@ -67,6 +67,11 @@ class BlockInfo extends PolymerElement {
         },
         info: {
             type: Object,
+        },
+        producer: {
+            type: Object,
+            notify: true,
+            reflectToAttribute: true,
         }
     };
   }
@@ -77,6 +82,7 @@ class BlockInfo extends PolymerElement {
             this.jsonrpc.get_info()
             .then((info) => {
                 this.info = info;
+                this.producer = info.head_block_producer;
             })
         }, this.interval);
     }

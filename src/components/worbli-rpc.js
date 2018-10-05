@@ -32,11 +32,6 @@ class WorbliRpc extends PolymerElement {
     if(this.endpoint){
         const eosrpc = jsonrpc_connect();
         this.jsonrpc = new eosrpc.JsonRpc(this.endpoint);
-    }
-
-    // this.jsonrpc.get_info().then((info) => {
-    //     console.log(info)
-    // })
-    
+    }    
   }
 } window.customElements.define('worbli-rpc', WorbliRpc);
