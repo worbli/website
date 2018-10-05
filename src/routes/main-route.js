@@ -2,6 +2,7 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
 import '../components/worbli-rpc.js';
+import '../components/network-monitor/block-info.js';
 
 
 class MainRoute extends PolymerElement {
@@ -11,12 +12,22 @@ class MainRoute extends PolymerElement {
         :host {
           display: block;
         }
+        .split {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        .side {
+          width: 280px;
+        }
+        .main {
+          flex-grow: 1
+        }
       </style>
       <worbli-rpc connect endpoint="https://api.eosnewyork.io" jsonrpc="{{jsonrpc}}"></worbli-rpc>
-      <div class="card">
-        <h1>Main Route</h1>
-        <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
+      <div class="split">
+        <block-info class="side" jsonrpc="{{jsonrpc}}" interval="1000"></block-info>
+        <div class="main">Block Producers</div>
       </div>
       <worbli-footer name="footer"></worbli-footer>
     `;

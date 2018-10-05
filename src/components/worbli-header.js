@@ -75,8 +75,8 @@ class WorbliHeader extends PolymerElement {
         </div>
         <div class="navigation">
           <ul>
-            <li><a href="main/">MAIN</a></li>
-            <li><a href="about/">ABOUT US</a></li>
+            <li><a href="main/">NETWORK</a></li>
+            <li><a href="about/">Live TX</a></li>
             <li><a href="team/">TEAM</a></li>
             <li><a href="roadmap/">ROADMAP</a></li>
           </ul>
