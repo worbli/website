@@ -7,7 +7,10 @@
   "repository": "worbli/accountCreation",
   "scripts": {
     "start": "polymer serve",
-    "build": "polymer build",
+    "build": "npm run deldocs && polymer build && npm run move",
+    "move": "mv ./build/es6-bundled/* ./docs/ && npm run delbuild",
+    "deldocs": "rm -Rf docs/ && mkdir docs/",
+    "delbuild": "if [ -d 'build/' ]; then rm -Rf build/; fi",
     "lint": "polymer lint",
     "test": "polymer test",
     "test:integration": "polymer build"
