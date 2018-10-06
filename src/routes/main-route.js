@@ -27,7 +27,7 @@ class MainRoute extends PolymerElement {
         }
   
       </style>
-      <worbli-rpc connect endpoint="http://18.191.86.34:8888" jsonrpc="{{jsonrpc}}"></worbli-rpc>
+      <worbli-rpc connect endpoint="https://api.eosnewyork.io" jsonrpc="{{jsonrpc}}"></worbli-rpc>
       <div class="split">
         <block-info class="side" jsonrpc="[[jsonrpc]]" producer="{{producer}}" interval="500"></block-info>
         <block-producers class="main" jsonrpc="[[jsonrpc]]" producer="[[producer]]" interval="500"></block-producers>

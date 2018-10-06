@@ -81,6 +81,10 @@ class BlockInfo extends PolymerElement {
         setInterval(()=>{
             this.jsonrpc.get_info()
             .then((info) => {
+                info.head_block_num = info.head_block_num.toLocaleString()
+                let formatted_block_time = info.head_block_time.split('T');
+                let no_seconds = formatted_block_time[1].split('.');
+                info.head_block_time = `${formatted_block_time[0]} ${no_seconds[0]}`;
                 this.info = info;
                 this.producer = info.head_block_producer;
             })

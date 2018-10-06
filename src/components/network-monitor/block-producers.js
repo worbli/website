@@ -50,14 +50,31 @@ class BlockProducers extends PolymerElement {
             ul {
                 font-size: 12px;
                 list-style: none;
-                padding: 12px;
+                padding: 6px 0 6px 12px;
                 }
             li {
                 display: inline;
             }
+            .number{
+                display: inline-block;
+                width: 20px;
+                height:30px;
+            }
+            .logo{
+                display: inline-block;
+                width: 35px; 
+                height:30px;
+            }
+            .logo img{
+                width: 30px; 
+                height: 30px; 
+                position: relative;
+                top: 10px;
+            }
             .owner {
                 display: inline-block;
                 width: 170px;
+                height:30px;
             }
             .owner a {
                 text-transform: uppercase;
@@ -69,18 +86,32 @@ class BlockProducers extends PolymerElement {
             .location{
                 display: inline-block;
                 width: 200px;
+                height:30px;
             }
             .totalvotes{
                 display: inline-block;
                 width: 250px;
+                height:30px;
             }
             .red {
                 background-color: #f5f5f5;;
+            }
+            .circle {
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: red;
+            }
+            .active {
+                background-color: #16a085;
             }
         </style>
         <div class="container">
             <div class="title">Worbli Block Producers</div>
             <ul>
+                <li class="number"></li>
+                <li class="logo"></li>
                 <li class="owner">Name:</li>
                 <li class="location">Location:</li>
                 <li class="totalvotes">Votes:</li>
@@ -89,10 +120,12 @@ class BlockProducers extends PolymerElement {
             <dom-repeat items="{{producers}}">
                 <template>
                     <ul class$="[[item.selected]]">
+                        <li class="number">[[item.number]]. </li>
+                        <li class="logo"><img src$="./images/bp-logos/[[item.owner]]_100x100.png"></li>
                         <li class="owner"><a href="[[item.url]]" target=”_blank”>[[item.owner]]</a></li>
                         <li class="location">[[item.location]]</li>
                         <li class="totalvotes">[[item.total_votes]]</li>
-                        <li>[[item.is_active]]</li>
+                        <li><div class$="[[item.is_active]] circle"></div></li>
                     </ul>
                 </template>
             </dom-repeat>
@@ -160,16 +193,22 @@ class BlockProducers extends PolymerElement {
     };
   }
 
+
   _getBlockProducers(){
     if(this.jsonrpc){
         this.jsonrpc.get_producers()
         .then((producers) => {
+            console.log(producers);
+            let iterator = 1;
             this.producers = producers.rows;
             this.producers = this.producers.map((x) => {
                 x.total_votes = parseInt(x.total_votes);
                 x.location = this._getCountryName(x.location);
                 x.total_votes = x.total_votes.toLocaleString();
                 x.selected = (x.owner == this.producer) ? "red" : "blue";
+                x.is_active = (x.is_active == 1) ? "active" : "deactive";
+                x.number = iterator;
+                iterator ++;
                 return x
             });
         })
