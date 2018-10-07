@@ -10,6 +10,7 @@
   "extraDependencies": [
     "bower_components/webcomponentsjs/*.js",
     "manifest.json",
+    "images/*",
     "node_modules/@webcomponents/webcomponentsjs/*.js",
     "!node_modules/@webcomponents/webcomponentsjs/gulpfile.js",
     "node_modules/@webcomponents/webcomponentsjs/bundles/*.js"
@@ -31,7 +32,8 @@
         "minify": true
       },
       "bundle": true,
-      "addServiceWorker": true
+      "addServiceWorker": true,
+      "basePath": true
     },
     {
       "name": "es6-bundled",
@@ -49,7 +51,8 @@
         "minify": true
       },
       "bundle": true,
-      "addServiceWorker": true
+      "addServiceWorker": true,
+      "basePath": true
     },
     {
       "name": "es5-bundled",
@@ -65,9 +68,11 @@
         "minify": true
       },
       "bundle": true,
-      "addServiceWorker": true
+      "addServiceWorker": true,
+      "basePath": true
     }
   ],
+  "autoBasePath": true,
   "lint": {
     "rules": [
       "polymer-3"

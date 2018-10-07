@@ -1,7 +1,7 @@
 {
-  "name": "Worbli",
-  "short_name": "Worbli",
-  "description": "Worbli Portal",
+  "name": "My App",
+  "short_name": "My App",
+  "description": "My App description",
   "icons": [
     {
       "src": "images/manifest/icon-192x192.png",

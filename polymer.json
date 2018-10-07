@@ -1,11 +1,13 @@
 {
   "entrypoint": "index.html",
   "shell": "src/worbli-portal.js",
+  "autoBasePath": true,
   "sources": [
     "images/**/*"
   ],
   "extraDependencies": [
     "manifest.json",
+    "images/*",
     "node_modules/@webcomponents/webcomponentsjs/*.js",
     "!node_modules/@webcomponents/webcomponentsjs/gulpfile.js",
     "node_modules/@webcomponents/webcomponentsjs/bundles/*.js"

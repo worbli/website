@@ -1,28 +1,29 @@
 {
-  "name": "worbli-portal",
-  "version": "0.0.1",
-  "description": "worbli-portal",
-  "author": "Worbli Dev Team",
-  "license": "MIT",
-  "repository": "worbli/accountCreation",
+  "name": "polymer-starter-kit",
+  "version": "4.0.0",
+  "description": "A starting point for Polymer apps",
+  "author": "The Polymer Authors",
+  "license": "BSD-3-Clause",
+  "repository": "Polymer/polymer-starter-kit",
   "scripts": {
+    "prpl": "cd build && prpl-server --root . --config polymer.json && cd ../",
     "start": "polymer serve",
-    "build": "npm run deldocs && polymer build && npm run move",
-    "move": "mv ./build/es6-bundled/* ./docs/ && npm run delbuild",
-    "deldocs": "rm -Rf docs/ && mkdir docs/",
-    "delbuild": "if [ -d 'build/' ]; then rm -Rf build/; fi",
+    "build": "polymer build",
     "lint": "polymer lint",
     "test": "polymer test",
-    "test:integration": "polymer build"
+    "test:integration": "polymer build # test that psk builds without error with the CLI"
   },
   "dependencies": {
+    "@polymer/app-layout": "^3.0.0-pre.15",
     "@polymer/app-route": "^3.0.0-pre.15",
+    "@polymer/iron-flex-layout": "^3.0.0-pre.15",
+    "@polymer/iron-iconset-svg": "^3.0.0-pre.15",
+    "@polymer/iron-media-query": "^3.0.0-pre.15",
     "@polymer/iron-pages": "^3.0.0-pre.15",
+    "@polymer/iron-selector": "^3.0.0-pre.15",
+    "@polymer/paper-icon-button": "^3.0.0-pre.15",
     "@polymer/polymer": "^3.0.0",
-    "@webcomponents/webcomponentsjs": "^2.0.0",
-    "express": "^4.16.3",
-    "helmet": "^3.13.0",
-    "prpl-server": "^1.2.0"
+    "@webcomponents/webcomponentsjs": "^2.0.0"
   },
   "devDependencies": {
     "polymer-cli": "^1.7.1",

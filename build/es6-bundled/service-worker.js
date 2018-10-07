@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["index.html","3427dc7615dfafbf213e1ac965af84bb"],["manifest.json","67bb252c1ea9ccb414b6835bd6c21f50"],["src/routes/about-route.js","b693702b70f8b3c8c90deb9dc6643502"],["src/routes/error-route.js","37159b59afa98025b34316b9ab1bc782"],["src/routes/main-route.js","84c4d05067b54603eada1618767a9f9c"],["src/routes/roadmap-route.js","b79fcbeb7d41857abc3042a512351211"],["src/routes/team-route.js","1ed9bb241df7879eb0ae7871fee81849"],["src/worbli-portal.js","759161b30b33c87c3fa06bc11f4ed85c"]];
+var precacheConfig = [["index.html","bd4532cc6f0256bebdf28270e05f8969"],["manifest.json","1845171d3c4fe9ebe6a48852f4347b34"],["src/routes/about-route.js","b693702b70f8b3c8c90deb9dc6643502"],["src/routes/error-route.js","37159b59afa98025b34316b9ab1bc782"],["src/routes/main-route.js","84c4d05067b54603eada1618767a9f9c"],["src/routes/roadmap-route.js","b79fcbeb7d41857abc3042a512351211"],["src/routes/team-route.js","1ed9bb241df7879eb0ae7871fee81849"],["src/worbli-portal.js","641958b743c1f4683aae1685677db1ac"]];
 var cacheName = 'sw-precache-v3--' + (self.registration ? self.registration.scope : '');
 
 
