@@ -6,9 +6,9 @@ const server = require('http').createServer(app);
 app.use(helmet());
 app.get('/*', prpl.makeHandler('./build/', {
   builds: [
-    {name: 'es5-bundled', browserCapabilities: ['es2015']},
     {name: 'es6-bundled', browserCapabilities: ['es2015']},
-    {name: 'esm-bundled', browserCapabilities: ['es2015']},
+    {name: 'es5-bundled', browserCapabilities: []},
+
   ],
 }));
-server.listen(8088, '0.0.0.0');
+server.listen(3000, '0.0.0.0');
