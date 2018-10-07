@@ -72,7 +72,7 @@ class WorbliHeader extends PolymerElement {
       </style>
       <div class="container">
         <div class="logo">
-          <a href="https://www.worbli.io/"><img src="./images/logo-blue.png"></a>
+          <a href="https://www.worbli.io/"><img src="./images/logo-blue.png" alt="Worbli"></a>
         </div>
         <div class="navigation">
           <ul>

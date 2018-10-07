@@ -128,7 +128,7 @@ class BlockProducers extends PolymerElement {
                 <template>
                     <ul class$="[[item.selected]]">
                         <li class="number">[[item.number]]. </li>
-                        <li class="logo"><img src$="./images/bp-logos/[[item.owner]]_100x100.png"></li>
+                        <li class="logo"><img src$="./images/bp-logos/[[item.owner]]_100x100.png" alt="[[item.owner]" width="30" height="30"></li>
                         <li class="owner"><a href="[[item.url]]" target=”_blank”>[[item.owner]]</a></li>
                         <li class="location">[[item.location]]</li>
                         <li class="totalvotes">[[item.total_votes]]</li>
