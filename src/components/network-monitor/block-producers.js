@@ -57,7 +57,7 @@ class BlockProducers extends PolymerElement {
             }
             .number{
                 display: inline-block;
-                width: 20px;
+                width: 30px;
                 height:30px;
             }
             .logo{
@@ -94,7 +94,8 @@ class BlockProducers extends PolymerElement {
                 height:30px;
             }
             .red {
-                background-color: #f5f5f5;;
+                background-color: #f5f5f5;
+                border-bottom: 1px solid #f5f5f5;
             }
             .circle {
                 display: inline-block;
@@ -106,11 +107,17 @@ class BlockProducers extends PolymerElement {
             .active {
                 background-color: #16a085;
             }
+            .blue {
+                border-bottom: 1px solid #f5f5f5;
+            }
+            ul.blue:hover {
+                background-color: #f5f5f5;
+            }
         </style>
         <div class="container">
             <div class="title">Worbli Block Producers</div>
             <ul>
-                <li class="number"></li>
+                <li class="number">Rank</li>
                 <li class="logo"></li>
                 <li class="owner">Name:</li>
                 <li class="location">Location:</li>
@@ -198,7 +205,6 @@ class BlockProducers extends PolymerElement {
     if(this.jsonrpc){
         this.jsonrpc.get_producers()
         .then((producers) => {
-            console.log(producers);
             let iterator = 1;
             this.producers = producers.rows;
             this.producers = this.producers.map((x) => {
