@@ -88,11 +88,6 @@ class BlockProducers extends PolymerElement {
                 width: 200px;
                 height:30px;
             }
-            .totalvotes{
-                display: inline-block;
-                width: 250px;
-                height:30px;
-            }
             .red {
                 background-color: #f5f5f5;
                 border-bottom: 1px solid #f5f5f5;
@@ -121,7 +116,6 @@ class BlockProducers extends PolymerElement {
                 <li class="logo"></li>
                 <li class="owner">Name:</li>
                 <li class="location">Location:</li>
-                <li class="totalvotes">Votes:</li>
                 <li>Active:</li>
             </ul>
             <dom-repeat items="{{producers}}">
@@ -131,7 +125,6 @@ class BlockProducers extends PolymerElement {
                         <li class="logo"><img src$="./images/bp-logos/[[item.owner]]_100x100.png" alt="[[item.owner]" width="30" height="30"></li>
                         <li class="owner"><a href="[[item.url]]" target=”_blank”>[[item.owner]]</a></li>
                         <li class="location">[[item.location]]</li>
-                        <li class="totalvotes">[[item.total_votes]]</li>
                         <li><div class$="[[item.is_active]] circle"></div></li>
                     </ul>
                 </template>
