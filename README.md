@@ -27,7 +27,7 @@ Install [PM2](http://pm2.keymetrics.io/)
 
     npm run build
 
-##### Run Serice with PM2
+##### Start service with PM2
 
     pm2 start npm -- start
 
