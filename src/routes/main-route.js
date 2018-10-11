@@ -26,25 +26,28 @@ class MainRoute extends PolymerElement {
           flex-grow: 1;
         }
         .container {
-                position: relative;
-                background: #FFF;
-                border-radius: 3px;
-                box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-                -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-                -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-                margin-bottom: 18px;
+          position: relative;
+          background: #FFF;
+          border-radius: 3px;
+          box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+          -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+          -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+          margin-bottom: 18px;
             }
-            .title {
-                color: #3a3e46;
-                font-size: 11px;
-                font-weight: 600;
-                text-transform: uppercase;
-                line-height: 16px;
-                padding: 13px 12px;
-                border-bottom: 1px solid #f5f5f5;
-                background: none;
-                text-shadow: none;
-            }
+        .title {
+          color: #3a3e46;
+          font-size: 11px;
+          font-weight: 600;
+          text-transform: uppercase;
+          line-height: 16px;
+          padding: 13px 12px;
+          border-bottom: 1px solid #f5f5f5;
+          background: none;
+          text-shadow: none;
+        }
+        h1 {
+          color: var(--blue-text);
+        }
   
       </style>
 
