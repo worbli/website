@@ -20,19 +20,48 @@ class MainRoute extends PolymerElement {
         }
         .side {
           width: 280px;
+          padding-left: 30px;
         }
         .main {
           flex-grow: 1;
-          padding-left: 30px;
         }
+        .container {
+                position: relative;
+                background: #FFF;
+                border-radius: 3px;
+                box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+                -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+                -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+                margin-bottom: 18px;
+            }
+            .title {
+                color: #3a3e46;
+                font-size: 11px;
+                font-weight: 600;
+                text-transform: uppercase;
+                line-height: 16px;
+                padding: 13px 12px;
+                border-bottom: 1px solid #f5f5f5;
+                background: none;
+                text-shadow: none;
+            }
   
       </style>
-      <worbli-rpc connect endpoint="http://18.191.86.34:8888" jsonrpc="{{jsonrpc}}"></worbli-rpc>
-      <!-- <worbli-rpc connect endpoint="https://api.eosnewyork.io" jsonrpc="{{jsonrpc}}"></worbli-rpc> -->
+
 
       <div class="split">
-        <block-info class="side" jsonrpc="[[jsonrpc]]" producer="{{producer}}" interval="500"></block-info>
-        <block-producers class="main" jsonrpc="[[jsonrpc]]" producer="[[producer]]" interval="500"></block-producers>
+        <div class="main">
+          <h1>An Enterprise Blockchain Ecosystem.</h1>
+          <p>The future is near and we’re ready to take you there.</p>
+        </div>
+        <div class="side">
+        <div class="container">
+            <div class="title">White Paper</div>
+        </div>
+        <div class="container">
+            <div class="title">Our Partners</div>
+        </div>
+        </div>
       </div>
       <worbli-footer name="footer"></worbli-footer>
     `;

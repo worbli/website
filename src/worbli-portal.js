@@ -32,6 +32,7 @@ class WorbliPortal extends PolymerElement {
       <worbli-header name="header" class="center"></worbli-header>
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main" class="center">
         <main-route name="main"></main-route>
+        <network-route name="network"></network-route>
         <about-route name="about"></about-route>
         <team-route name="team"></team-route>
         <roadmap-route name="roadmap"></roadmap-route>
@@ -64,7 +65,7 @@ class WorbliPortal extends PolymerElement {
   _routePageChanged(page) {
     if (!page) {
       this.page = 'main';
-    } else if (['main', 'about', 'team', 'roadmap'].indexOf(page) !== -1) {
+    } else if (['main', 'network', 'about', 'team', 'roadmap'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -75,6 +76,9 @@ class WorbliPortal extends PolymerElement {
     switch (page) {
       case 'main':
         import('./routes/main-route.js');
+        break;
+      case 'network':
+        import('./routes/network-route.js');
         break;
       case 'about':
         import('./routes/about-route.js');
