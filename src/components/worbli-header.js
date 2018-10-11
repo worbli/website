@@ -83,8 +83,8 @@ class WorbliHeader extends PolymerElement {
           </ul>
         </div>
         <div class="buttons">
-          <button type="button">SIGN IN</button>
-          <button type="button" class="selected">JOIN NOW</button>
+          <button type="button" on-click="_signIn">SIGN IN</button>
+          <button type="button" class="selected" on-click="_join">JOIN NOW</button>
         </div>
       </div>
 
@@ -99,6 +99,13 @@ class WorbliHeader extends PolymerElement {
       },
     };
   }
-}
 
-window.customElements.define('worbli-header', WorbliHeader);
+  _signIn() {
+    this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'signin'}}));
+  }
+
+  _join() {
+    this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'join'}}));
+  }
+
+} window.customElements.define('worbli-header', WorbliHeader);

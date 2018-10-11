@@ -5,7 +5,7 @@ import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
 import './components/worbli-header.js';
-
+import './components/worbli-overlay.js';
 
 
 setPassiveTouchGestures(true);
@@ -28,6 +28,7 @@ class WorbliPortal extends PolymerElement {
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
+      <worbli-overlay></worbli-overlay>
       <worbli-header name="header" class="center"></worbli-header>
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main" class="center">
         <main-route name="main"></main-route>
