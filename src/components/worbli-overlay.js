@@ -162,7 +162,7 @@ class WorbliOverlay extends PolymerElement {
       <template is="dom-if" if="{{join}}">
         <div class="card" on-click="_clickCard">
             <h2>Join Worbli</h2>
-            <p>Worbli is the place to.....</p>
+            <p>Worbli is the place to access smarter financial services</p>
             <input type="text" class="text" placeholder="Email Address" id="email">
             <button class="btn-critical" on-click="_sendEmail">Join</button>
             <div class="center">Already on Warbli? <span on-click="_signIn">Log In</span></div>
