@@ -52,7 +52,7 @@ class WorbliOverlay extends PolymerElement {
         .center span {
             color: #4079B0;
             cursor: pointer;
-            font-weight: 700;
+            font-weight: 600;
         }
         h2 {
             font-size: 22px;
@@ -163,7 +163,7 @@ class WorbliOverlay extends PolymerElement {
         <div class="card" on-click="_clickCard">
             <h2>Join Worbli</h2>
             <p>Worbli is the place to.....</p>
-            <input type="text" class="text" placeholder="Email Address" id="email" value="{{email}}">
+            <input type="text" class="text" placeholder="Email Address" id="email">
             <button class="btn-critical" on-click="_sendEmail">Join</button>
             <div class="center">Already on Warbli? <span on-click="_signIn">Log In</span></div>
         </div>
@@ -229,6 +229,16 @@ _join(){
 
 _signIn(){
     this.join = false;
+}
+_sendEmail(){
+    const email = this.shadowRoot.querySelector('#email').value;
+    fetch(`http://testnetapi.worbli.io/api/v1/send-mail/${email}`)
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((error) => {
+        console.log(response);
+    })
 }
 
 
