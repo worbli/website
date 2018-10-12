@@ -51,4 +51,10 @@ server {
 }
 ```
 
+##### Change Endpoint
 
+in this file `/src/routes/network-route.js` loicate the web component called `worbli-rpc ` and change the endpoint atribute.
+
+#### Change or add logo's 
+
+Change the images to match the bp name as found in get info and append _100x100,png (not jpg) `/images/bp-logos`
