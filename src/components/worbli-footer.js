@@ -9,7 +9,6 @@ class WorbliFooter extends PolymerElement {
             flex-grow: 1;
             color: var(--grey-text);
             font-size: 12px;
-            margin: 12px;
         }
         .container{
             display: flex;
