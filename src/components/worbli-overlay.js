@@ -194,9 +194,7 @@ class WorbliOverlay extends PolymerElement {
 
     ready() {
         super.ready();
-        console.log('fired1');
         window.addEventListener('overlay', (event) => {
-            console.log('fired2');
             this._show(event.detail.action);
         });
     }
