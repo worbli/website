@@ -237,7 +237,7 @@ class WorbliOverlay extends PolymerElement {
             console.log(response);
         })
         .catch((error) => {
-            console.log(response);
+            console.log(error);
         })
     }
     _checkPassword(){
@@ -256,7 +256,7 @@ class WorbliOverlay extends PolymerElement {
             console.log(response);
         })
         .catch((error) => {
-            console.log(response);
+            console.log(error);
         })
     }
 
