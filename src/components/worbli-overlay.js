@@ -173,9 +173,9 @@ class WorbliOverlay extends PolymerElement {
         <div class="card" on-click="_clickCard">
             <h2>Sign In</h2>
             <p>Welcome back to Worbli.....</p>
-            <input type="text" class="text" name="email" placeholder="Email">
-            <input type="text" class="text" name="password" placeholder="Password">
-            <button class="btn-critical">Sign In</button>
+            <input type="text" class="text" name="email" placeholder="Email" id="loginEmail">
+            <input type="text" class="text" name="password" placeholder="Password" id="password">
+            <button class="btn-critical" on-click="_checkPassword">Sign In</button>
             <div class="center">New to Worbli? <span on-click="_join">Join Worbli</span></div>
         </div>
     </template>
@@ -183,63 +183,82 @@ class WorbliOverlay extends PolymerElement {
 
     `;
   }
-  static get properties() {
-    return {
-      prop1: {
-        type: String,
-        value: 'worbli-overlay',
-      },
-    };
-  }
-
-ready() {
-    super.ready();
-    console.log('fired1');
-    window.addEventListener('overlay', (event) => {
-        console.log('fired2');
-        this._show(event.detail.action);
-    });
-}
-
-_show(event) {
-    this.updateStyles({'--display-none-block': 'block'});
-    setTimeout(()=>{
-        this.updateStyles({'--opacity': 1});
-    }, 1);
-    if (event === 'join') {
-        this._join();
-    } else {
-        this._signIn();
+    static get properties() {
+        return {
+        prop1: {
+            type: String,
+            value: 'worbli-overlay',
+        },
+        };
     }
-}
 
-_hide() {
-    this.updateStyles({'--opacity': 0});
-    setTimeout(()=>{
-        this.updateStyles({'--display-none-block': 'none'});
-    }, 200);
-}
-_clickCard(event) {
-    event.stopPropagation();
-}
+    ready() {
+        super.ready();
+        console.log('fired1');
+        window.addEventListener('overlay', (event) => {
+            console.log('fired2');
+            this._show(event.detail.action);
+        });
+    }
 
-_join(){
-    this.join = true;
-}
+    _show(event) {
+        this.updateStyles({'--display-none-block': 'block'});
+        setTimeout(()=>{
+            this.updateStyles({'--opacity': 1});
+        }, 1);
+        if (event === 'join') {
+            this._join();
+        } else {
+            this._signIn();
+        }
+    }
 
-_signIn(){
-    this.join = false;
-}
-_sendEmail(){
-    const email = this.shadowRoot.querySelector('#email').value;
-    fetch(`http://testnetapi.worbli.io/api/v1/send-mail/${email}`)
-    .then((response) => {
-        console.log(response);
-    })
-    .catch((error) => {
-        console.log(response);
-    })
-}
+    _hide() {
+        this.updateStyles({'--opacity': 0});
+        setTimeout(()=>{
+            this.updateStyles({'--display-none-block': 'none'});
+        }, 200);
+    }
+    _clickCard(event) {
+        event.stopPropagation();
+    }
+
+    _join(){
+        this.join = true;
+    }
+
+    _signIn(){
+        this.join = false;
+    }
+    _sendEmail(){
+        const email = this.shadowRoot.querySelector('#email').value;
+        fetch(`http://testnetapi.worbli.io/api/v1/send-mail/${email}`)
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            console.log(response);
+        })
+    }
+    _checkPassword(){
+        const email = this.shadowRoot.querySelector('#loginEmail').value;
+        const password = this.shadowRoot.querySelector('#password').value;
+        const params = {
+            headers: {"content-type":"application/json; charset=UTF-8"},
+            body: {
+                email: email, 
+                password: password
+            },
+            method: "POST"
+        }
+        fetch('http://testnetapi.worbli.io/api/v1/sign-in/', params)
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            console.log(response);
+        })
+    }
 
 
 } window.customElements.define('worbli-overlay', WorbliOverlay);
