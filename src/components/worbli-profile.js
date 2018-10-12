@@ -8,7 +8,7 @@ class WorbliProfile extends PolymerElement {
   }
   static get properties() {
     return {
-        teamName: {
+        name: {
             type: Text,
         },
         title: {
