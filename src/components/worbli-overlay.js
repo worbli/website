@@ -38,8 +38,8 @@ class WorbliOverlay extends PolymerElement {
             justify-content: center;
         }
         .card {
-            width: 322px;
-            padding: 45px;
+            width: 500px;
+            padding: 40px;
             cursor: default;
         }
         .center {
@@ -75,7 +75,7 @@ class WorbliOverlay extends PolymerElement {
         }
         .card {
             margin: 24px;
-            padding: 16px;
+            padding: 40px;
             color: #757575;
             border-radius: 5px;
             background-color: #fff;
