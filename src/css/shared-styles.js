@@ -24,8 +24,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       }
       p {
         line-hright: 3em;
-      }
-      
+      }      
     </style>
   </template>
 </dom-module>`;
