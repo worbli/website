@@ -50,8 +50,6 @@ class MainRoute extends PolymerElement {
         }
   
       </style>
-
-
       <div class="split">
         <div class="main">
           <h1>An Enterprise Blockchain Ecosystem.</h1>
