@@ -175,7 +175,7 @@ class WorbliOverlay extends PolymerElement {
             <p>Welcome back to Worbli.....</p>
             <input type="text" class="text" name="email" placeholder="Email">
             <input type="text" class="text" name="password" placeholder="Password">
-            <button class="btn-critical">Login</button>
+            <button class="btn-critical">Sign In</button>
             <div class="center">New to Worbli? <span on-click="_join">Join Worbli</span></div>
         </div>
     </template>
