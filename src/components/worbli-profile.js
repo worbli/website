@@ -11,6 +11,10 @@ class WorbliProfile extends PolymerElement {
         -webkit-box-shadow: inset 0 0 10px #000000;
         box-shadow: inset 0 0 10px #000000;
         border-radius: 50%;
+        opacity: 0.5;
+    }
+    img:hover {
+        opacity: 1;
     }
     </style>
     <img src="./images/team-photos/[[name]].png" width="120px" height="120px" alt="[[name]]">
