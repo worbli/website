@@ -51,7 +51,7 @@ class MainRoute extends PolymerElement {
         .white-paper {
           margin-left: 25px;
           margin-top: 30px;
-          margin-bottom: 25px;
+          margin-bottom: 12px;
         }
         .bottom a:hover {
           display: block;
@@ -95,7 +95,7 @@ class MainRoute extends PolymerElement {
             <div class="title">White Paper</div>
             <img src="./images/white-paper.png" alt="white paper" class="white-paper">
             <a href="./images/white-papers/worbli-whitepaper.pdf" class="button">Download Whitepaper</a>
-            <a href="./images/white-papers/worbli-short-paper.pdf" class="bottom">Download Short Paper (3min Read)</a>
+            <a href="./images/white-papers/worbli-short-paper.pdf" class="bottom">Or download our Short Paper</a>
         </div>
         <div class="container">
             <div class="title">Our Partners</div>
