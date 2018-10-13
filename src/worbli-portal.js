@@ -37,6 +37,8 @@ class WorbliPortal extends PolymerElement {
         <team-route name="team"></team-route>
         <roadmap-route name="roadmap"></roadmap-route>
         <error-route name="error"></error-route>
+        <dashboard-route name="dashboard"></dashboard-route>
+        <register-route name="register"></register-route>
       </iron-pages>
 
 
@@ -65,7 +67,7 @@ class WorbliPortal extends PolymerElement {
   _routePageChanged(page) {
     if (!page) {
       this.page = 'main';
-    } else if (['main', 'network', 'about', 'team', 'roadmap'].indexOf(page) !== -1) {
+    } else if (['main', 'network', 'about', 'team', 'roadmap', 'dashboard', 'register'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -88,6 +90,12 @@ class WorbliPortal extends PolymerElement {
         break;
       case 'roadmap':
         import('./routes/roadmap-route.js');
+        break;
+      case 'dashboard':
+        import('./routes/dashboard-route.js');
+        break;
+      case 'register':
+        import('./routes/register-route.js');
         break;
       case 'error':
         import('./routes/error-route.js');
