@@ -48,6 +48,41 @@ class MainRoute extends PolymerElement {
         h1 {
           color: var(--blue-text);
         }
+        .white-paper {
+          margin-left: 25px;
+          margin-top: 30px;
+          margin-bottom: 25px;
+        }
+        .bottom a:hover {
+          display: block;
+          color: var(--green-text);
+          text-decoration: underline;
+        }
+        .bottom {
+          color: var(--blue-text);
+          display: block;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          font-size: 11px;
+          margin-left: 25px;
+          text-decoration: none;
+          font-style: italic;
+        }
+        .button{
+          display: block;
+          box-shadow: inset 0 0 0 1px #c8d6e8;
+          padding: 6px;
+          max-width: 210px;
+          border-radius: 3px;
+          text-align: center;
+          padding-top:12px;
+          height: 25px;
+          margin-left: 25px;
+          text-decoration: none;
+          color: #4978b3;
+          font-size: 12px;
+          font-weight: 600;
+        }
   
       </style>
       <div class="split">
@@ -58,6 +93,9 @@ class MainRoute extends PolymerElement {
         <div class="side">
         <div class="container">
             <div class="title">White Paper</div>
+            <img src="../images/white-paper.png" alt="white paper" class="white-paper">
+            <a href="../images/white-papers/worbli-whitepaper.pdf" class="button">Download Whitepaper</a>
+            <a href="../images/white-papers/worbli-short-paper.pdf" class="bottom">Download Short Paper (3min Read)</a>
         </div>
         <div class="container">
             <div class="title">Our Partners</div>

@@ -1,6 +1,7 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
+import '../components/worbli-profile.js';
 
 class DashboardRoute extends PolymerElement {
   static get template() {
@@ -24,6 +25,7 @@ class DashboardRoute extends PolymerElement {
         }
         .main {
           flex-grow: 1;
+          width: 100%;
           max-width: 770px;
         }
         .container {
@@ -57,15 +59,11 @@ class DashboardRoute extends PolymerElement {
           font-weight: 600;
           margin-bottom: 12px;
         }
-
       </style>
+
       <div class="split">
         <div class="main">
-          <h1>Dashboard</h1>
-          <p>WORBLI is a financial services network (FSN) where enterprises and individuals can access a broad range of services.</p>
-          <iframe width="770" height="433" src="https://www.youtube.com/embed/ideiyhAlvOQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          <h2>Our Vision</h2>
-          <p>We believe blockchain technology is going to considerably improve financial services, cloud computing, data analysis, security and storage, supply chain logistics, social networks, voting, healthcare, income inequality, accounting, contractual arrangements and so much more, and WORBLI will be at the forefront of product innovation.</p>
+          <h1>Dasboard</h1>
         </div>
         <div class="side">
         <div class="container">

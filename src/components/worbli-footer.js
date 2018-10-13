@@ -22,12 +22,9 @@ class WorbliFooter extends PolymerElement {
             color: var(--grey-text);
             text-decoration: none;
         }
-        .social-links {
-            text-align: right;
-        }
         ul {
             list-style: none;
-            text-align: center;
+            text-align: right;
         }
         ul li {
             display: inline;

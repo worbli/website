@@ -25,7 +25,6 @@ class WorbliPortal extends PolymerElement {
         }
       </style>
 
-
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
       <worbli-overlay></worbli-overlay>
@@ -40,8 +39,7 @@ class WorbliPortal extends PolymerElement {
         <dashboard-route name="dashboard"></dashboard-route>
         <register-route name="register"></register-route>
       </iron-pages>
-
-
+      
     `;
   }
 

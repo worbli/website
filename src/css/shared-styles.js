@@ -21,6 +21,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         --blue-navigation: rgba(38, 40, 88, 1);
         --blue-button: rgba(13, 28, 114, 1);
         --blue-text: rgba(13, 28, 114, 1);
+        --green-text: rgba(158, 208, 174, 1);
       }
       p {
         line-hright: 3em;
