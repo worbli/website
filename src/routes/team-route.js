@@ -58,6 +58,9 @@ class TeamRoute extends PolymerElement {
           font-weight: 600;
           margin-bottom: 12px;
         }
+        worbli-profile {
+          display: inline-block;
+        }
       </style>
 
       <div class="split">
