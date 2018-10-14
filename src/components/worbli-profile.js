@@ -11,18 +11,64 @@ class WorbliProfile extends PolymerElement {
         -webkit-box-shadow: inset 0 0 10px #000000;
         box-shadow: inset 0 0 10px #000000;
         border-radius: 50%;
-        opacity: 0.5;
+        opacity: 0.85;
     }
     img:hover {
         opacity: 1;
     }
+    .container {
+        position: relative;
+        background: #FFF;
+        border-radius: 3px;
+        box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+        -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+        -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+        margin-bottom: 18px;
+        min-width: 190px;
+        margin-left: 12px;
+        text-align: center;
+        padding-top: 30px;
+    }
+    h4 {
+        font-size: 14px;
+        color: var(--blue-text);
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+    p {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+    .footer{
+        border-top: 1px solid #f5f5f5;
+        text-align: right; 
+    }
+    .linked-in{
+        background: url('./images/sprite.png') -81px -82px;
+        background-size: 200px;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        margin: 12px 10px 6px 6px;
+    }
     </style>
-    <img src="./images/team-photos/[[name]].png" width="120px" height="120px" alt="[[name]]">
+    <div class="container">
+        <img src="./images/team-photos/[[name]].png" width="120px" height="120px" alt="[[formattedName]]">
+        <h4>[[formattedName]]</h4>
+        <p>[[title]]</p>
+        <div class="footer">
+            <div class="linked-in"></div>
+        <div>
+    </div>
     `;
   }
   static get properties() {
     return {
         name: {
+            type: Text,
+            observer: '_format'
+        },
+        formattedName: {
             type: Text,
         },
         title: {
@@ -32,6 +78,9 @@ class WorbliProfile extends PolymerElement {
             type: Text,
         },
     };
+  }
+  _format(){
+    this.formattedName = this.name.replace(new RegExp('-', 'g'), ' ');
   }
 
 } window.customElements.define('worbli-profile', WorbliProfile);
