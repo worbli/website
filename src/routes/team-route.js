@@ -87,7 +87,7 @@ class TeamRoute extends PolymerElement {
           <worbli-profile name="ramoncito-abella" title="Marketing & Design" linkedin="ramoncito-abella-37424ba4"></worbli-profile>
           <worbli-profile name="martin-quiambao" title="Graphic Designer" linkedin="martin-quiambao-404588153"></worbli-profile>
           <h1 class="advisors">Advisors</h1>
-          <worbli-profile name="fuzzy" title="Strategic" linkedin=""></worbli-profile>
+          <worbli-profile name="fuzzy" title="Strategic Advisor" linkedin=""></worbli-profile>
           <worbli-profile name="timothy-brown" title="Blockchain Applications" linkedin="timothy-brown-41875013"></worbli-profile>
           <worbli-profile name="david-packham" title="EOS and Board" linkedin="davidpackham"></worbli-profile>
           <worbli-profile name="gideon-hornung" title="Marketing & Product" linkedin="gideon-hornung"></worbli-profile>

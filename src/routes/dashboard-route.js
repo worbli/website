@@ -2,6 +2,7 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
 import '../components/worbli-profile.js';
+import '../components/worbli-onfido.js';
 
 class DashboardRoute extends PolymerElement {
   static get template() {
@@ -64,6 +65,7 @@ class DashboardRoute extends PolymerElement {
       <div class="split">
         <div class="main">
           <h1>Dasboard</h1>
+          <worbli-onfido></worbli-onfido>
         </div>
         <div class="side">
         <div class="container">

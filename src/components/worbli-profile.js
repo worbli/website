@@ -24,8 +24,8 @@ class WorbliProfile extends PolymerElement {
         -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
         -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
         margin-bottom: 18px;
-        min-width: 190px;
-        margin-left: 12px;
+        min-width: 192px;
+        margin-right: 12px;
         text-align: center;
         padding-top: 30px;
     }
