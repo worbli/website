@@ -223,7 +223,7 @@ class MainRoute extends PolymerElement {
         <div class="container">
             <div class="title">FAQ & Support</div>
             <p class="faq-text">Find out the answers to all of your questions here...</p>
-            <img src="./images/home-page/support-icon.png" width="110px" class="support-icon">
+            <img src="./images/home-page/support-icon.png" width="97px" class="support-icon">
             <a href="./support/" class="button">Take me there...</a>
             <p class="bottom-space"></p>
         </div>
@@ -232,7 +232,14 @@ class MainRoute extends PolymerElement {
             <div class="title">White Paper</div>
             <img src="./images/white-paper.png" alt="white paper" class="white-paper">
             <a href="./images/white-papers/worbli-short-paper.pdf" class="button">Download Short Paper</a>
-            <a href="./images/white-papers/worbli-whitepaper.pdf" class="bottom">Or download our Wgite Paper</a>
+            <a href="./images/white-papers/worbli-whitepaper.pdf" class="bottom">Or download our full White Paper</a>
+        </div>
+
+        <div class="container">
+            <div class="title">Telegram</div>
+            <p class="faq-text">Chat live with the WORBLI team</p>
+            <a href="https://t.me/worblicommunity" class="button" target="_blank">Open Telegram</a>
+            <p class="bottom-space"></p>
         </div>
 
         </div>
