@@ -63,12 +63,34 @@ class RoadmapRoute extends PolymerElement {
       <div class="split">
         <div class="main">
           <h1>Roadmap</h1>
-          <p>Help launch EOS main net in preparation for starting WORBLI’s Network 
-• Seek additional funding through private investment sources 
-• Finalize strategic, marketing and operational plans • Complete White Paper & Business Plan
-• Recruit and hire additional technical, business and administrative team members • Commence Network Launch and AirDrop marketing and content campaigns • Launch WORBLI, the EOS Friendly (soft) Fork • Conduct WORBLI Network AirDrop • List WORBLI’s (WBI) Token on multiple digital asset exchanges • Seek additional funding to support WORBLI’s Network and the development of the Gamma Bank MVP • Confirm Block Producers & Block Producer Back Ups
-• Add additional Block Producers to Worbli Network • Add AML/KYC verification to WORBLI user accounts. • Publish WORBLI Network governance processes and engage WORBLI community in ongoing governance efforts • Pursue additional strategic partnerships with digital currency exchanges • Facilitate the launch of dApps on WORBLI • Build Gamma Bank MVP • Incorporate WORBLI Foundation in a favourable regulatory environment (Switzerland, Bermuda, Malta, Panama, Singapore) • Commence lobbying efforts and developing relationships with US governance bodies (SEC, IRS, Federal Reserve, OCC)
-• Test Gamma Bank MVP • Continue recruiting and hiring for WORBLI team • Hire world class executive team to develop and launch Gamma Bank • Secure global correspondent banking relationships • Begin development and support of additional applications to be developed and deployed on WORBLI • Develop long-term strategic, financial and marketing plans • Launch Gamma Bank in global markets (Africa, Latin America, Australia and Europe) • Ramp up global marketing efforts • Develop correspondent banking relationships in the US • Alternative Product Development on WORBLI. Insurance, DEX’s and more are in the pipeline to be developed. 
+          <p>Help launch EOS main net in preparation for starting WORBLI’s Network </br>
+• Seek additional funding through private investment sources </br>
+• Finalize strategic, marketing and operational plans </br>
+• Complete White Paper & Business Plan</br>
+• Recruit and hire additional technical, business and administrative team members </br>
+• Commence Network Launch and AirDrop marketing and content campaigns </br>
+• Launch WORBLI, the EOS Friendly (soft) Fork • Conduct WORBLI Network AirDrop </br>
+• List WORBLI’s (WBI) Token on multiple digital asset exchanges </br>
+• Seek additional funding to support WORBLI’s Network and the development of the Gamma Bank MVP</br> 
+• Confirm Block Producers & Block Producer Back Ups</br>
+• Add additional Block Producers to Worbli Network </br>
+• Add AML/KYC verification to WORBLI user accounts. </br>
+• Publish WORBLI Network governance processes and engage WORBLI community in ongoing governance efforts </br>
+• Pursue additional strategic partnerships with digital currency exchanges </br>
+• Facilitate the launch of dApps on WORBLI</br>
+• Build Gamma Bank MVP </br>
+• Incorporate WORBLI Foundation in a favourable regulatory environment (Switzerland, Bermuda, Malta, Panama, Singapore)</br>
+• Commence lobbying efforts and developing relationships with US governance bodies (SEC, IRS, Federal Reserve, OCC)</br>
+• Test Gamma Bank MVP </br>
+• Continue recruiting and hiring for WORBLI team</br>
+• Hire world class executive team to develop and launch Gamma Bank</br>
+• Secure global correspondent banking relationships</br>
+• Begin development and support of additional applications to be developed and deployed on WORBLI</br>
+• Develop long-term strategic, financial and marketing plans</br>
+• Launch Gamma Bank in global markets (Africa, Latin America, Australia and Europe)</br>
+• Ramp up global marketing efforts</br>
+• Develop correspondent banking relationships in the US</br>
+• Alternative Product Development on WORBLI. Insurance, DEX’s and more are in the pipeline to be developed. </br>
 </p>
         </div>
         <div class="side">
