@@ -29,7 +29,7 @@ class WorbliHeader extends PolymerElement {
       li a {
         text-transform: uppercase;
         color: var(--blue-navigation);
-        font-size: 16px;
+        font-size: 14px;
         text-decoration: none;
         margin-right:30px;
         font-weight: 600;
@@ -80,6 +80,7 @@ class WorbliHeader extends PolymerElement {
             <li><a href="/team/">TEAM</a></li>
             <li><a href="/roadmap/">ROADMAP</a></li>
             <li><a href="/network/">NETWORK</a></li>
+            <li><a href="/support/">SUPPORT</a></li>
           </ul>
         </div>
         <div class="buttons">

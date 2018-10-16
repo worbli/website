@@ -38,6 +38,10 @@ class WorbliPortal extends PolymerElement {
         <error-route name="error"></error-route>
         <dashboard-route name="dashboard"></dashboard-route>
         <register-route name="register"></register-route>
+        <sharedrop-route name="sharedrop"></sharedrop-route>
+        <support-route name="support"></support-route>
+        <terms-route name="terms"></terms-route>
+        <privacy-route name="privacy"></privacy-route>
       </iron-pages>
       
     `;
@@ -65,7 +69,7 @@ class WorbliPortal extends PolymerElement {
   _routePageChanged(page) {
     if (!page) {
       this.page = 'main';
-    } else if (['main', 'network', 'about', 'team', 'roadmap', 'dashboard', 'register'].indexOf(page) !== -1) {
+    } else if (['main', 'network', 'about', 'team', 'roadmap', 'dashboard', 'register', 'sharedrop', 'support', 'terms', 'privacy'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -94,6 +98,18 @@ class WorbliPortal extends PolymerElement {
         break;
       case 'register':
         import('./routes/register-route.js');
+        break;
+      case 'sharedrop':
+        import('./routes/sharedrop-route.js');
+        break;
+      case 'support':
+        import('./routes/support-route.js');
+        break;
+      case 'terms':
+        import('./routes/terms-route.js');
+        break;
+      case 'privacy':
+        import('./routes/privacy-route.js');
         break;
       case 'error':
         import('./routes/error-route.js');

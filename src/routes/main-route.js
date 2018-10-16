@@ -106,7 +106,7 @@ class MainRoute extends PolymerElement {
           font-weight: 200;
         }
         .pic {
-          height: 320px;
+          height: 333px;
         }
         h4 {
           font-size: 13px;
@@ -164,6 +164,12 @@ class MainRoute extends PolymerElement {
           line-height: 16px;
           padding: 12px;
         }
+        .support-icon{
+          padding-left: 75px;
+        }
+        .bottom-space {
+          padding-bottom: 20px;
+        }
   
       </style>
       <div class="split">
@@ -172,6 +178,7 @@ class MainRoute extends PolymerElement {
           <p>The future is near and we’re ready to take you there.</p>
           <div class="holder">
 
+        <a href="/sharedrop/" class="box-link">
           <div class="container square">
               <div class="pic pic2"></div>
               <div class="footer">
@@ -179,6 +186,7 @@ class MainRoute extends PolymerElement {
                 <div class="description">If you held EOS on 7th September, 1159PM UTC...</div>
               </div>
             </div>
+          </a>
 
           <a href="/about/" class="box-link">
             <div class="container square">
@@ -215,8 +223,9 @@ class MainRoute extends PolymerElement {
         <div class="container">
             <div class="title">FAQ & Support</div>
             <p class="faq-text">Find out the answers to all of your questions here...</p>
-            <p>INSERT ICON</p>
-            <a href="./images/white-papers/worbli-short-paper.pdf" class="button">Take me there...</a>
+            <img src="./images/home-page/support-icon.png" width="110px" class="support-icon">
+            <a href="./support/" class="button">Take me there...</a>
+            <p class="bottom-space"></p>
         </div>
 
         <div class="container">

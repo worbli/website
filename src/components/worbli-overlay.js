@@ -166,6 +166,7 @@ class WorbliOverlay extends PolymerElement {
             <input type="text" class="text" placeholder="Email Address" id="email">
             <button class="btn-critical" on-click="_sendEmail">Join</button>
             <div class="center">Already on Warbli? <span on-click="_signIn">Log In</span></div>
+            <div class="center">By clicking 'Join' you aree to our <span><a href="/terms/">Terms</a></span> and <span><a href="/privacy/">Privacy Policy</a></span> </div>
         </div>
     </template>
 

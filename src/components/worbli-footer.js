@@ -53,7 +53,10 @@ class WorbliFooter extends PolymerElement {
         li:nth-child(8) a:hover {background: url('./images/sprite.png') -250px -80px;}
       </style>
       <div class="container">
-        <div>&copy; 2018 Worbli Pty Ltd. All rights reserved.</div>
+        <div>&copy; 2018 Worbli Pty Ltd. All rights reserved.<br>
+        View our <a href="/terms/">Terms & Conditions<a> or <a href="/privacy/">Privacy Policy</a>
+        
+        </div>
         <div><a href="mailto:hello@worbli.io">hello@worbli.io</a></div>
         <div>5865 Neal Ave N Ste 175</br> Stillwater, MN 55082</div>
         <div class="social-links">
