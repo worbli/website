@@ -162,15 +162,15 @@ class MainRoute extends PolymerElement {
       </style>
       <div class="split">
         <div class="main">
-          <h1>Claim your Share Drop</h1>
-          <p>If you held EOS on 7th September, 1159PM UTC, find out how many WBI tokens you’ll be getting...</p>
+          <h1>An Enterprise Blockchain Ecosystem.</h1>
+          <p>The future is near and we’re ready to take you there.</p>
           <div class="holder">
 
           <div class="container square">
               <div class="pic pic2"></div>
               <div class="footer">
                 <h4>Claim your Sharedrop</h4>
-                <div class="description">If you had coins on the main net when we took a snap shot you can claim them today as WBI</div>
+                <div class="description">If you held EOS on 7th September, 1159PM UTC, find out how many WBI tokens you’ll be getting...</div>
               </div>
             </div>
 
