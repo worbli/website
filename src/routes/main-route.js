@@ -224,7 +224,7 @@ class MainRoute extends PolymerElement {
             <div class="title">FAQ & Support</div>
             <p class="faq-text">Find out the answers to all of your questions here...</p>
             <img src="./images/home-page/support-icon.png" width="97px" class="support-icon">
-            <a href="./support/" class="button">Take me there...</a>
+            <a href="https://worbli.zendesk.com" class="button" target="_blank">Take me there...</a>
             <p class="bottom-space"></p>
         </div>
 
