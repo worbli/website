@@ -158,6 +158,12 @@ class MainRoute extends PolymerElement {
         .box-link {
           text-decoration: none;
         }
+        .faq-text {
+          font-size: 13px;
+          font-weight: 200;
+          line-height: 16px;
+          padding: 12px;
+        }
   
       </style>
       <div class="split">
@@ -207,14 +213,19 @@ class MainRoute extends PolymerElement {
         </div>
         <div class="side">
         <div class="container">
+            <div class="title">FAQ & Support</div>
+            <p class="faq-text">Find out the answers to all of your questions here...</p>
+            <p>INSERT ICON</p>
+            <a href="./images/white-papers/worbli-short-paper.pdf" class="button">Take me there...</a>
+        </div>
+
+        <div class="container">
             <div class="title">White Paper</div>
             <img src="./images/white-paper.png" alt="white paper" class="white-paper">
-            <a href="./images/white-papers/worbli-whitepaper.pdf" class="button">Download Whitepaper</a>
-            <a href="./images/white-papers/worbli-short-paper.pdf" class="bottom">Or download our Short Paper</a>
+            <a href="./images/white-papers/worbli-short-paper.pdf" class="button">Download Short Paper</a>
+            <a href="./images/white-papers/worbli-whitepaper.pdf" class="bottom">Or download our Wgite Paper</a>
         </div>
-        <div class="container">
-            <div class="title">FAQ</div>
-        </div>
+
         </div>
       </div>
       <worbli-footer name="footer"></worbli-footer>
