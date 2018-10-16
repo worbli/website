@@ -155,12 +155,15 @@ class MainRoute extends PolymerElement {
           border-top-right-radius: 4px;
 
         }
+        .box-link {
+          text-decoration: none;
+        }
   
       </style>
       <div class="split">
         <div class="main">
-          <h1>An Enterprise Blockchain Ecosystem.</h1>
-          <p>The future is near and we’re ready to take you there.</p>
+          <h1>Claim your Share Drop</h1>
+          <p>If you held EOS on 7th September, 1159PM UTC, find out how many WBI tokens you’ll be getting...</p>
           <div class="holder">
 
           <div class="container square">
@@ -171,29 +174,36 @@ class MainRoute extends PolymerElement {
               </div>
             </div>
 
+          <a href="/about/" class="box-link">
             <div class="container square">
               <div class="pic pic1"></div>
               <div class="footer">
-                <h4>Discover the Worbli world </h4>
-                <div class="description">So your new to worbli and what to know what all the fuss is about, watch our intro video to get up to speed</div>
+                <h4>WORBLI Financial District</h4>
+                <div class="description">Learn about the next generation of financial services</div>
               </div>
             </div>
+          </a>
 
+          <a href="/team/" class="box-link">
             <div class="container square">
               <div class="pic pic3"></div>
               <div class="footer">
-                <h4>Discover partners and dapp developers</h4>
-                <div class="description">take a look at our partners and find a developer to produce you next dapp</div>
+                <h4>WORBLI Team & Partners</h4>
+                <div class="description">Discover who’s building the WORBLI ecosystem</div>
               </div>
             </div>
+          </a>
+
+          <a href="/network/" class="box-link">
             <div class="container square">
               <div class="pic pic4"></div>
               <div class="footer">
                 <h4>Developer Resources</h4>
-                <div class="description">Developers looking to get started on Worbli can find a wealth of resources here</div>
+                <div class="description">Check out which BP produced the last block</div>
               </div>
             </div>
           </div>
+          </a>
         </div>
         <div class="side">
         <div class="container">
