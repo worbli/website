@@ -170,7 +170,7 @@ class MainRoute extends PolymerElement {
               <div class="pic pic2"></div>
               <div class="footer">
                 <h4>Claim your Sharedrop</h4>
-                <div class="description">If you held EOS on 7th September, 1159PM UTC, find out how many WBI tokens you’ll be getting...</div>
+                <div class="description">If you held EOS on 7th September, 1159PM UTC...</div>
               </div>
             </div>
 
@@ -179,7 +179,7 @@ class MainRoute extends PolymerElement {
               <div class="pic pic1"></div>
               <div class="footer">
                 <h4>WORBLI Financial District</h4>
-                <div class="description">Learn about the next generation of financial services</div>
+                <div class="description">Learn about the next generation of financial services...</div>
               </div>
             </div>
           </a>
@@ -189,7 +189,7 @@ class MainRoute extends PolymerElement {
               <div class="pic pic3"></div>
               <div class="footer">
                 <h4>WORBLI Team & Partners</h4>
-                <div class="description">Discover who’s building the WORBLI ecosystem</div>
+                <div class="description">Discover who’s building the WORBLI ecosystem...</div>
               </div>
             </div>
           </a>
@@ -199,7 +199,7 @@ class MainRoute extends PolymerElement {
               <div class="pic pic4"></div>
               <div class="footer">
                 <h4>Developer Resources</h4>
-                <div class="description">Check out which BP produced the last block</div>
+                <div class="description">Check out which BP produced the last block...</div>
               </div>
             </div>
           </div>
