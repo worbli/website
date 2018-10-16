@@ -83,12 +83,113 @@ class MainRoute extends PolymerElement {
           font-size: 12px;
           font-weight: 600;
         }
+        .holder{
+          margin-top: 24px;
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 840px
+        }
+        .square {
+          width: 390px;
+          min-height: 400px;
+          margin-right: 24px;
+          margin-bottom: 24px;
+        }
+        .footer{
+          border-top: 1px solid #f5f5f5;
+          padding: 12px;
+        }
+        .footer span{
+          margin-top: 12px;
+          font-size: 12px;
+          font-weight: 200;
+        }
+        .pic {
+          height: 320px;
+        }
+        h4 {
+          font-size: 13px;
+          font-weight: 600;
+          line-height: 16px;
+          margin-bottom: 6px;
+        }
+        .description {
+          font-size: 13px;
+          font-weight: 200;
+          line-height: 18px;
+        }
+        .pic4 {
+          background-image: url("./images/home-page/devs.jpg");
+          background-position: center; 
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+
+        }
+        .pic3 {
+          background-image: url("./images/home-page/daps.jpg");
+          background-position: center; 
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+
+        }
+        .pic2 {
+          background-image: url("./images/home-page/crypto.jpg");
+          background-position: center; 
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+
+        }
+        .pic1 {
+          background-image: url("./images/home-page/worbli.jpg");
+          background-position: center; 
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+
+        }
   
       </style>
       <div class="split">
         <div class="main">
           <h1>An Enterprise Blockchain Ecosystem.</h1>
           <p>The future is near and we’re ready to take you there.</p>
+          <div class="holder">
+            <div class="container square">
+              <div class="pic pic1"></div>
+              <div class="footer">
+                <h4>Discover the Worbli world </h4>
+                <div class="description">So your new to worbli and what to know what all the fuss is about, watch our intro video to get up to speed</div>
+              </div>
+            </div>
+            <div class="container square">
+              <div class="pic pic2"></div>
+              <div class="footer">
+                <h4>Claim your airdrop</h4>
+                <div class="description">If you had coins on the main net when we took a snap shot you can claim them today</div>
+              </div>
+            </div>
+            <div class="container square">
+              <div class="pic pic3"></div>
+              <div class="footer">
+                <h4>Discover partners and dapp developers</h4>
+                <div class="description">take a look at our partners and find a developer to produce you next dapp</div>
+              </div>
+            </div>
+            <div class="container square">
+              <div class="pic pic4"></div>
+              <div class="footer">
+                <h4>Developer Resources</h4>
+                <div class="description">Developers looking to get started on Worbli can find a wealth of resources here</div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="side">
         <div class="container">
@@ -98,7 +199,7 @@ class MainRoute extends PolymerElement {
             <a href="./images/white-papers/worbli-short-paper.pdf" class="bottom">Or download our Short Paper</a>
         </div>
         <div class="container">
-            <div class="title">Our Partners</div>
+            <div class="title">FAQ</div>
         </div>
         </div>
       </div>
