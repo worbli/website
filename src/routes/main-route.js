@@ -162,6 +162,15 @@ class MainRoute extends PolymerElement {
           <h1>An Enterprise Blockchain Ecosystem.</h1>
           <p>The future is near and we’re ready to take you there.</p>
           <div class="holder">
+
+          <div class="container square">
+              <div class="pic pic2"></div>
+              <div class="footer">
+                <h4>Claim your Sharedrop</h4>
+                <div class="description">If you had coins on the main net when we took a snap shot you can claim them today as WBI</div>
+              </div>
+            </div>
+
             <div class="container square">
               <div class="pic pic1"></div>
               <div class="footer">
@@ -169,13 +178,7 @@ class MainRoute extends PolymerElement {
                 <div class="description">So your new to worbli and what to know what all the fuss is about, watch our intro video to get up to speed</div>
               </div>
             </div>
-            <div class="container square">
-              <div class="pic pic2"></div>
-              <div class="footer">
-                <h4>Claim your airdrop</h4>
-                <div class="description">If you had coins on the main net when we took a snap shot you can claim them today</div>
-              </div>
-            </div>
+
             <div class="container square">
               <div class="pic pic3"></div>
               <div class="footer">
