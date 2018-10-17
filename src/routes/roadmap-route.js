@@ -79,9 +79,38 @@ class RoadmapRoute extends PolymerElement {
         <div class="main">
           <h1>Roadmap</h1>
           <p>Help launch EOS main net in preparation for starting WORBLI’s Network</p>
+          <h2>dApps</h2>
+          <worbli-roadmap title="AML/KYC verification to WORBLI user accounts" status="complete"></worbli-roadmap>
+          <worbli-roadmap title="Facilitate the launch of dApps on WORBLI" status="inprogress"></worbli-roadmap>
+          <worbli-roadmap title="Gamma Bank MVP" status="testing"></worbli-roadmap>
+          <worbli-roadmap title="Test Gamma Bank MVP" status="testing"></worbli-roadmap>
+          <worbli-roadmap title="Alternative Product Development on WORBLI. Insurance, DEX’s and more are in the pipeline to be developed." status="inprogress"></worbli-roadmap>
+          <worbli-roadmap title="Hire world class executive team to develop and launch Gamma Bank" status="inprogress"></worbli-roadmap>
+          <worbli-roadmap title="Launch Gamma Bank in global markets (Africa, Latin America, Australia and Europe)" status="inprogress"></worbli-roadmap>
+          <h2>Network</h2>
+          <worbli-roadmap title="Help launch EOS main net in preparation for starting WORBLI’s Network" status="complete"></worbli-roadmap>
+          <worbli-roadmap title="Confirm Block Producers & Block Producer Back Ups" status="complete"></worbli-roadmap>
+          <worbli-roadmap title="Conduct WORBLI Network AirGrab" status="inprogress"></worbli-roadmap>
+          <worbli-roadmap title="Launch WORBLI, the EOS Friendly (soft) Fork" status="complete"></worbli-roadmap>
+          <worbli-roadmap title="List WORBLI’s (WBI) Token on multiple digital asset exchanges" status="inprogress"></worbli-roadmap>
+          <worbli-roadmap title="Begin development and support of additional applications to be developed and deployed on WORBLI" status="inprogress"></worbli-roadmap>
+          <worbli-roadmap title="Develop long-term strategic, financial and marketing plans" status="inprogress"></worbli-roadmap>
+          <worbli-roadmap title="Commence Network Launch and AirGrab marketing and content campaigns" status="testing"></worbli-roadmap>
+          <worbli-roadmap title="Develop correspondent banking relationships in the US" status="inprogress"></worbli-roadmap>
+          <worbli-roadmap title="Ramp up global marketing efforts" status="inprogress"></worbli-roadmap>
+          <worbli-roadmap title="Pursue additional strategic partnerships with digital currency exchanges " status="testing"></worbli-roadmap>
+          <worbli-roadmap title="Add additional Block Producers to Worbli Network" status="inprogress"></worbli-roadmap>          
+          <h2>Governance</h2>
+          <worbli-roadmap title="Publish WORBLI Network governance processes and engage WORBLI community in ongoing governance efforts" status="testing"></worbli-roadmap>
+          <worbli-roadmap title="Complete White Paper & Business Plan" status="complete"></worbli-roadmap>
+          <worbli-roadmap title="Commence lobbying efforts and developing relationships with US governance bodies (SEC, IRS, Federal Reserve, OCC)" status="inprogress"></worbli-roadmap>
+          <worbli-roadmap title="Recruit and hire additional technical, business and administrative team members" status="complete"></worbli-roadmap>
+          <worbli-roadmap title="Develop correspondent banking relationships in the US" status="inprogress"></worbli-roadmap>
+          <worbli-roadmap title="Secure global correspondent banking relationships" status="testing"></worbli-roadmap>
+          <worbli-roadmap title="Incorporate WORBLI Foundation in a favourable regulatory environment (Switzerland, Bermuda, Malta, Panama, Singapore)" status="complete"></worbli-roadmap>
           <worbli-roadmap title="Seek additional funding through private investment sources" status="inprogress"></worbli-roadmap>
           <worbli-roadmap title="Finalize strategic, marketing and operational plans" status="testing"></worbli-roadmap>
-          <worbli-roadmap title="Seek additional funding through private investment sources" status="complete"></worbli-roadmap>
+          <worbli-roadmap title="Continue recruiting and hiring for WORBLI team" status="inprogress"></worbli-roadmap>
         </div>
         <div class="side">
         <div class="container">
