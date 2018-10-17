@@ -73,6 +73,8 @@ class AboutRoute extends PolymerElement {
         b {
           padding-top: 24px;
           display: block;
+          font-size: 20px;
+          font-weight: 600;
         }
         .features p {
           padding-right: 24px;
@@ -104,7 +106,7 @@ class AboutRoute extends PolymerElement {
           <h2>WORBLI’s Vision</h2>
           <p>We believe blockchain technology will considerably improve financial services, cloud computing, data analysis, security and storage, supply chain logistics, social networks, voting, healthcare, income inequality, accounting, contractual arrangements and so much more, and WORBLI will be at the forefront of this technological revolution.</p></br>
           <p>Imagine many of the current obstacles between blockchain technology and real-world application removed. Developers will be able to design and build applications for users knowing the associated financial/ transactional services are preconfigured and free, and merchant processing is available for businesses to instantly convert digital and fiat currencies into any payment form they desire (GBP, USD or BTC, EOS, WBI).</p></br>
-          <p>… think about that for a second. The customer (i.e. you) can pay for a product or service with whatever currency they want, and the business (i.e. Adidas) can choose to receive that payment in any currency they want!</p></br></br>
+          <p>… think about that for a second. The customer (i.e. you) can pay for a product or service with whatever currency they want, and the business (i.e. Adidas) can choose to receive that payment in any currency they want!</p></br>
           <p>Developers can launch new applications knowing anyone on the WORBLI Network can access and use their product and/or service. WORBLI provides the network that makes all this possible, leaving developers free to innovate and produce the most powerful and cost-effective applications in the world.</p></br></br>
            <h2>Key Features</h2>
           <div class="features">

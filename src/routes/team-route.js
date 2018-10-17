@@ -104,7 +104,7 @@ class TeamRoute extends PolymerElement {
             <worbli-profile name="sam-russell" title="Co-Founder + EVP Marketing & Product" linkedin="samueljamesrussell"></worbli-profile>
             <worbli-profile name="john-steuart" title="CFO" linkedin="johnsteuart"></worbli-profile>
             <worbli-profile name="tom-bicknell" title="Legal Counsel" linkedin="tom-bicknell-25629b47"></worbli-profile>
-            <worbli-profile name="sean-anderson" title="VP Commercial Relations" linkedin="tbc"></worbli-profile>
+            <worbli-profile name="sean-anderson" title="VP Commercial Relations" linkedin="seanxanderson/"></worbli-profile>
             <worbli-profile name="todor-karaivanov" title="Director of Blockchain Governance" linkedin="todor-karaivanov-325468"></worbli-profile>
             <worbli-profile name="laura-magnano" title="Head of Marketing" linkedin="lauramagnano"></worbli-profile>
             <worbli-profile name="mitchell-mahaffey" title="Commercial Partnerships & BP Relations" linkedin="mitchell-mahaffey"></worbli-profile>
