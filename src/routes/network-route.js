@@ -27,7 +27,7 @@ class NetworkRoute extends PolymerElement {
         }
   
       </style>
-      <worbli-rpc connect endpoint="https://18.191.86.34:8888" jsonrpc="{{jsonrpc}}"></worbli-rpc>
+      <worbli-rpc connect endpoint="https://testnet-api.worbli.io" jsonrpc="{{jsonrpc}}"></worbli-rpc>
       <!-- <worbli-rpc connect endpoint="https://api.eosnewyork.io" jsonrpc="{{jsonrpc}}"></worbli-rpc> -->
 
       <div class="split">
