@@ -133,19 +133,19 @@ class TeamRoute extends PolymerElement {
         <div class="side">
         <div class="container">
             <div class="title">Strategic Partners</div>
-            <ul>
-              <li>0rigin</li>
-              <li>Pinsent Masons</li>
-              <li>Holland & Knight</li>
-              <li>Onfido</li>
-              <li>Interblockchain</li>
-              <li>Web Profits</li>
-              <li>Trybe.One</li>
-              <li>EOS Detroit</li>
-              <li>EOS Germany</li>
-              <li>GenerEOS</li>
-              <li>Chintai</li>
-            </ul>
+            <div class="bps">
+              <div class="bp"><img width="60px" src="./images/strategic-partners/chintai.png"></div>
+              <div class="bp"><img width="60px" src="./images/strategic-partners/pinsent-masons.png"></div>
+              <div class="bp"><img width="60px" src="./images/strategic-partners/holland-knight.png"></div>
+              <div class="bp"><img width="60px" src="./images/strategic-partners/on-fido.png"></div>
+              <div class="bp"><img width="60px" src="./images/strategic-partners/interblockchain-io.png"></div>
+              <div class="bp"><img width="60px" src="./images/strategic-partners/webprofits.png"></div>
+              <div class="bp"><img width="60px" src="./images/strategic-partners/trybe.png"></div>
+              <div class="bp"><img width="60px" src="./images/strategic-partners/eos-detroit.png"></div>
+              <div class="bp"><img width="60px" src="./images/strategic-partners/eos-germany.png"></div>
+              <div class="bp"><img width="60px" src="./images/strategic-partners/genereos.png"></div>
+              <div class="bp"><img width="60px" src="./images/strategic-partners/chintai.png"></div>
+            </div>
         </div>
         <div class="container">
             <div class="title">Block Producers</div>
