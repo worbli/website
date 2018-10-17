@@ -1,5 +1,4 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import {jsonrpc_connect} from '../libraries/eosjs-jsonrpc.js';
 import '../css/shared-styles.js';
 
 class WorbliProfile extends PolymerElement {
@@ -51,13 +50,26 @@ class WorbliProfile extends PolymerElement {
         display: inline-block;
         margin: 12px 10px 6px 6px;
     }
+    .linked-in-none{
+        background-size: 200px;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        margin: 12px 10px 6px 6px;
+    }
     </style>
     <div class="container">
         <img src="./images/team-photos/[[name]].png" width="120px" height="120px" alt="[[formattedName]]">
         <h4>[[formattedName]]</h4>
         <p>[[title]]</p>
         <div class="footer">
-            <div class="linked-in"></div>
+        <template is="dom-if" if="{{linkedin}}">
+            <a href="https://www.linkedin.com/in/[[name]]/"><div class="linked-in"></div><a>
+        </template>
+        <template is="dom-if" if="{{!linkedin}}">
+            <div class="linked-in-none"></div>
+        </template>
+            
         <div>
     </div>
     `;
