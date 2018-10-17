@@ -15,9 +15,15 @@ class WorbliRoadmap extends PolymerElement {
             font-style: italic;
             font-size: 11px;
         }
+        img {
+            position: relative;
+            top: 5px;
+            margin-left:24px;
+            margin-right:12px;
+        }
     </style>
     <div class="container">
-        <div><img src="./images/road-map/[[status]].png" ></div>
+        <div><img src="./images/[[status]].png" width="20px" height="20px"></div>
         <div class$="[[status]]">[[title]]</div>
     </div>
     `;
