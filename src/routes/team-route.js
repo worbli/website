@@ -104,7 +104,7 @@ class TeamRoute extends PolymerElement {
             <worbli-profile name="gideon-hornung" title="Marketing & Product Advisor" linkedin="gideon-hornung"></worbli-profile>
             <worbli-profile name="fuzzy" title="Strategic Advisor" linkedin=""></worbli-profile>
             <worbli-profile name="naeem-al-obaidi" title="Marketing Advisor" linkedin="naeem-al-obaidi"></worbli-profile>
-            <worbli-profile name="william-hill" title="Lead Software Engineer" github=“https://github.com/bkawk”></worbli-profile>
+            <worbli-profile name="william-hill" title="Lead Software Engineer" linkedin=“https://github.com/bkawk”></worbli-profile>
             <worbli-profile name="peregrine-buckler" title="Product Manager" linkedin="peregrine-buckler"></worbli-profile>
             <worbli-profile name="chethan-rangaswamy" title="Product Marketing Manager" linkedin="chethanrangaswamy"></worbli-profile>
             <worbli-profile name="enrique-murua" title="Community Operations Manager" linkedin="enrique-m"></worbli-profile>
@@ -112,13 +112,15 @@ class TeamRoute extends PolymerElement {
             <worbli-profile name="daqian-jiang" title="Operations Executive" linkedin="daqian"></worbli-profile>
             <worbli-profile name="nathan-hollis" title="Solutions Architect & Supply Chain Advisor" linkedin="nathanhollis"></worbli-profile>
             <worbli-profile name="charlie-wapshott" title="Commercial Relations" linkedin="charlie-wapshott-65a7a737"></worbli-profile>
-            <worbli-profile name="mark-paterson" title="Fintech & Banking Advisor” linkedin="mark-paterson-aaab3841"></worbli-profile>
+            <worbli-profile name="mark-paterson" title="Fintech & Banking Advisor" linkedin="mark-paterson-aaab3841"></worbli-profile>
             <worbli-profile name="timothy-brown" title="Strategic Advisor" linkedin="timothy-brown-41875013"></worbli-profile>
             <worbli-profile name="david-packham" title="Strategic Advisor & BP" linkedin="davidpackham"></worbli-profile>
             <worbli-profile name="michael-cowan" title="Strategic Advisor" linkedin="michaelcowan88"></worbli-profile>
             <worbli-profile name="jeff-anderson" title="Strategic Advisor" linkedin="jeff-anderson-3777aa13"></worbli-profile>
-            
-            <h1>Strategic Partners</h1>
+        </div>
+        <div class="side">
+        <div class="container">
+            <div class="title">Strategic Partners</div>
             <ul>
               <li>0rigin</li>
               <li>Pinsent Masons</li>
@@ -132,16 +134,10 @@ class TeamRoute extends PolymerElement {
               <li>GenerEOS</li>
               <li>Chintai</li>
             </ul>
-            <h1>Block Producers</h1>
-              <p>@MITCHELL to provide list, including: website, logo, and 1 sentence write up.</p>
-
-        </div>
-        <div class="side">
-        <div class="container">
-            <div class="title">White Paper</div>
         </div>
         <div class="container">
-            <div class="title">Our Partners</div>
+            <div class="title">Block Producers</div>
+            <p>@MITCHELL to provide list, including: website, logo, and 1 sentence write up.</p>
         </div>
         </div>
       </div>
