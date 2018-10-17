@@ -64,7 +64,7 @@ class WorbliProfile extends PolymerElement {
         <p>[[title]]</p>
         <div class="footer">
         <template is="dom-if" if="{{linkedin}}">
-            <a href="https://www.linkedin.com/in/[[name]]/"><div class="linked-in"></div><a>
+            <a href="https://www.linkedin.com/in/[[linkedin]]/"><div class="linked-in"></div><a>
         </template>
         <template is="dom-if" if="{{!linkedin}}">
             <div class="linked-in-none"></div>
