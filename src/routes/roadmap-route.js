@@ -57,6 +57,7 @@ class RoadmapRoute extends PolymerElement {
           color: var(--blue-text);
           font-size: 21px;
           font-weight: 600;
+          margin-top: 12px;
           margin-bottom: 12px;
         }
       </style>
@@ -90,7 +91,7 @@ class RoadmapRoute extends PolymerElement {
           <h2>Network</h2>
           <worbli-roadmap title="Help launch EOS main net in preparation for starting WORBLI’s Network" status="complete"></worbli-roadmap>
           <worbli-roadmap title="Confirm Block Producers & Block Producer Back Ups" status="complete"></worbli-roadmap>
-          <worbli-roadmap title="Conduct WORBLI Network AirGrab" status="inprogress"></worbli-roadmap>
+          <worbli-roadmap title="Conduct WORBLI Network AirGrab" status="complete"></worbli-roadmap>
           <worbli-roadmap title="Launch WORBLI, the EOS Friendly (soft) Fork" status="complete"></worbli-roadmap>
           <worbli-roadmap title="List WORBLI’s (WBI) Token on multiple digital asset exchanges" status="inprogress"></worbli-roadmap>
           <worbli-roadmap title="Begin development and support of additional applications to be developed and deployed on WORBLI" status="inprogress"></worbli-roadmap>
@@ -101,13 +102,13 @@ class RoadmapRoute extends PolymerElement {
           <worbli-roadmap title="Pursue additional strategic partnerships with digital currency exchanges " status="testing"></worbli-roadmap>
           <worbli-roadmap title="Add additional Block Producers to Worbli Network" status="inprogress"></worbli-roadmap>          
           <h2>Governance</h2>
-          <worbli-roadmap title="Publish WORBLI Network governance processes and engage WORBLI community in ongoing governance efforts" status="testing"></worbli-roadmap>
+          <worbli-roadmap title="Publish WORBLI Network governance processes and engage WORBLI community in ongoing governance efforts" status="complete"></worbli-roadmap>
           <worbli-roadmap title="Complete White Paper & Business Plan" status="complete"></worbli-roadmap>
           <worbli-roadmap title="Commence lobbying efforts and developing relationships with US governance bodies (SEC, IRS, Federal Reserve, OCC)" status="inprogress"></worbli-roadmap>
+          <worbli-roadmap title="Incorporate WORBLI Foundation in a favourable regulatory environment (Switzerland, Bermuda, Malta, Panama, Singapore)" status="complete"></worbli-roadmap>
           <worbli-roadmap title="Recruit and hire additional technical, business and administrative team members" status="complete"></worbli-roadmap>
           <worbli-roadmap title="Develop correspondent banking relationships in the US" status="inprogress"></worbli-roadmap>
           <worbli-roadmap title="Secure global correspondent banking relationships" status="testing"></worbli-roadmap>
-          <worbli-roadmap title="Incorporate WORBLI Foundation in a favourable regulatory environment (Switzerland, Bermuda, Malta, Panama, Singapore)" status="complete"></worbli-roadmap>
           <worbli-roadmap title="Seek additional funding through private investment sources" status="inprogress"></worbli-roadmap>
           <worbli-roadmap title="Finalize strategic, marketing and operational plans" status="testing"></worbli-roadmap>
           <worbli-roadmap title="Continue recruiting and hiring for WORBLI team" status="inprogress"></worbli-roadmap>
