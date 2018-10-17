@@ -59,12 +59,14 @@ class WorbliProfile extends PolymerElement {
     }
     </style>
     <div class="container">
-        <img src="./images/team-photos/[[name]].png" width="120px" height="120px" alt="[[formattedName]]">
+        <a href="https://www.linkedin.com/in/[[linkedin]]/" target="_blaank">
+            <img src="./images/team-photos/[[name]].png" width="120px" height="120px" alt="[[formattedName]]">
+        <a>
         <h4>[[formattedName]]</h4>
         <p>[[title]]</p>
         <div class="footer">
         <template is="dom-if" if="{{linkedin}}">
-            <a href="https://www.linkedin.com/in/[[linkedin]]/"><div class="linked-in"></div><a>
+            <a href="https://www.linkedin.com/in/[[linkedin]]/" target="_blaank"><div class="linked-in"></div><a>
         </template>
         <template is="dom-if" if="{{!linkedin}}">
             <div class="linked-in-none"></div>

@@ -79,6 +79,10 @@ class AboutRoute extends PolymerElement {
         .features p {
           padding-right: 24px;
         }
+        .features b {
+          font-size: 16px;
+          font-weight: 600;
+        }
 
       </style>
       <!-- Google Tag Manager (noscript) -->
@@ -100,7 +104,7 @@ class AboutRoute extends PolymerElement {
           <h1>About</h1>
           <b>WORBLI is a user friendly financial services ecosystem where users, developers and businesses can access a huge range of powerful and cost-effective applications in the world.</b></br></br>
           <p>WORBLI is a secure platform where users from every continent in the world can access their favourite and most used applications from anywhere, anytime.<p></br>
-          <p>Our platform is powered by EOSIO, which allows us to deliver best in class speed, transparency, and free transactions for users in a fully compliant environment.</p>
+          <p>Our platform is powered by EOSIO, which allows us to deliver best in class speed, transparency, and free transactions for users in a fully compliant environment.</p></br>
           <p>Remember the days where you had to pay bank and third party fees? WORBLI is going to make this a thing of the past.</p>
           <iframe width="840" height="472" src="https://www.youtube.com/embed/3tcVg279HLg?start=788" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           <h2>WORBLI’s Vision</h2>
