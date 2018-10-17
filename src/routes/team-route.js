@@ -67,6 +67,18 @@ class TeamRoute extends PolymerElement {
           padding-top: 40px;
           display:block;
         }
+        .bp {
+          width: 60px;
+          height: 60px;
+          padding: 16px;
+          opacity: 0.5;
+          -webkit-filter: grayscale(0.5);
+          filter: grayscale(0.5);
+        }
+        .bps{
+          display: flex;
+          flex-wrap: wrap
+        }
       </style>
 
       <!-- Google Tag Manager (noscript) -->
@@ -104,7 +116,7 @@ class TeamRoute extends PolymerElement {
             <worbli-profile name="gideon-hornung" title="Marketing & Product Advisor" linkedin="gideon-hornung"></worbli-profile>
             <worbli-profile name="fuzzy" title="Strategic Advisor" linkedin=""></worbli-profile>
             <worbli-profile name="naeem-al-obaidi" title="Marketing Advisor" linkedin="naeem-al-obaidi"></worbli-profile>
-            <worbli-profile name="william-hill" title="Lead Software Engineer" linkedin=“https://github.com/bkawk”></worbli-profile>
+            <worbli-profile name="william-hill" title="Technical Lead" linkedin=""></worbli-profile>
             <worbli-profile name="peregrine-buckler" title="Product Manager" linkedin="peregrine-buckler"></worbli-profile>
             <worbli-profile name="chethan-rangaswamy" title="Product Marketing Manager" linkedin="chethanrangaswamy"></worbli-profile>
             <worbli-profile name="enrique-murua" title="Community Operations Manager" linkedin="enrique-m"></worbli-profile>
@@ -137,7 +149,32 @@ class TeamRoute extends PolymerElement {
         </div>
         <div class="container">
             <div class="title">Block Producers</div>
-            <p>@MITCHELL to provide list, including: website, logo, and 1 sentence write up.</p>
+            <div class="bps">
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/dune.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-blocksmith.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-cafe-block.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-cannon.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-costa-rica.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-dac.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-detroit.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-dublin.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-fish.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-germany.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-nairobi.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-new-york.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-real.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-rio.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-sg.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-sphere.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-titan.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-tribe.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eosys.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/genereos.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/gravity-pool.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/hkeos.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/infinity-bloc.png"></div>
+              <div class="bp"><img width="60px" src="./images/bp-logos/blue/saltblock.png"></div>
+            </div>
         </div>
         </div>
       </div>

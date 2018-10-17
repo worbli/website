@@ -77,6 +77,7 @@ class AboutRoute extends PolymerElement {
         <div class="main">
           <h1>About</h1>
           <p>WORBLI is a financial services network (FSN) where enterprises and individuals can access a broad range of services.</p>
+          <iframe width="840" height="472" src="https://www.youtube.com/embed/3tcVg279HLg?start=788" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           <iframe width="840" height="472" src="https://www.youtube.com/embed/ideiyhAlvOQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           <h2>Our Vision</h2>
           <p>We believe blockchain technology is going to considerably improve financial services, cloud computing, data analysis, security and storage, supply chain logistics, social networks, voting, healthcare, income inequality, accounting, contractual arrangements and so much more, and WORBLI will be at the forefront of product innovation.</p>
