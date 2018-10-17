@@ -82,34 +82,60 @@ class TeamRoute extends PolymerElement {
         gtag('js', new Date());
         gtag('config', 'UA-117118714-1');
       </script>
-      
+
       <div class="split">
         <div class="main">
-          <h1>Team</h1>
-          <worbli-profile name="domenic-thomas" title="CEO" linkedin="domenic-thomas-5403676"></worbli-profile>
-          <worbli-profile name="craig-kellogg" title="COO" linkedin="ckellogg"></worbli-profile>
-          <worbli-profile name="robert-dewilder" title="CTO" linkedin="robert-dewilder-6b83311/"></worbli-profile>
-          <worbli-profile name="sam-russell" title="EVP Marketing & Innovation" linkedin="samueljamesrussell"></worbli-profile>
-          <worbli-profile name="laura-magnano" title="Head of Marketing" linkedin="lauramagnano"></worbli-profile>
-          <worbli-profile name="charlie-wapshott" title="VP Investor Relations" linkedin="charlie-wapshott-65a7a737"></worbli-profile>
-          <worbli-profile name="brooke-munson" title="Partnerships & Commercial" linkedin="brooke-munson"></worbli-profile>
-          <worbli-profile name="andrew-woodman" title="PR & Communications" linkedin="adwoodman"></worbli-profile>
-          <worbli-profile name="peregrine-buckler" title="UI/UX Manager" linkedin="peregrine-buckler"></worbli-profile>
-          <worbli-profile name="chethan-rangaswamy" title="Product Marketing" linkedin="chethanrangaswamy"></worbli-profile>
-          <worbli-profile name="enrique-murua" title="CS & Community Manager" linkedin="enrique-m"></worbli-profile>
-          <worbli-profile name="mitchell-mahaffey" title="Partnerships" linkedin="mitchell-mahaffey"></worbli-profile>
-          <worbli-profile name="ramoncito-abella" title="Marketing & Design" linkedin="ramoncito-abella-37424ba4"></worbli-profile>
-          <worbli-profile name="martin-quiambao" title="Graphic Designer" linkedin="martin-quiambao-404588153"></worbli-profile>
-          <h1 class="advisors">Advisors</h1>
-          <worbli-profile name="fuzzy" title="Strategic Advisor" linkedin=""></worbli-profile>
-          <worbli-profile name="timothy-brown" title="Blockchain Applications" linkedin="timothy-brown-41875013"></worbli-profile>
-          <worbli-profile name="david-packham" title="EOS and Board" linkedin="davidpackham"></worbli-profile>
-          <worbli-profile name="gideon-hornung" title="Marketing & Product" linkedin="gideon-hornung"></worbli-profile>
-          <worbli-profile name="naeem-al-obaidi" title="Marketing" linkedin="naeem-al-obaidi"></worbli-profile>
-          <worbli-profile name="tom-bicknell" title="Fintech Legal" linkedin="tom-bicknell-25629b47"></worbli-profile>
-          <worbli-profile name="michael-cowan" title="Analytics & Commercial" linkedin="michaelcowan88"></worbli-profile>
- 	        <worbli-profile name="joshua-earp" title="Marketing" linkedin=""></worbli-profile>
- 	        <worbli-profile name="jeff-anderson" title="Operations" linkedin="jeff-anderson-3777aa13"></worbli-profile>
+          <h1>WORBLI’s Team</h1>
+            <worbli-profile name="domenic-thomas" title="Co-Founder + CEO" linkedin="domenic-thomas-5403676"></worbli-profile>
+            <worbli-profile name="craig-kellogg" title="Co-Founder + COO" linkedin="ckellogg"></worbli-profile>
+            <worbli-profile name="robert-dewilder" title="Co-Founder + CTO" linkedin="robert-dewilder-6b83311/"></worbli-profile>
+            <worbli-profile name="sam-russell" title="Co-Founder + EVP Marketing & Product" linkedin="samueljamesrussell"></worbli-profile>
+            <worbli-profile name="john-steuart" title="CFO" linkedin="johnsteuart"></worbli-profile>
+            <worbli-profile name="tom-bicknell" title="Legal Counsel" linkedin="tom-bicknell-25629b47"></worbli-profile>
+            <worbli-profile name="sean-anderson" title="VP Commercial Relations" linkedin="tbc"></worbli-profile>
+            <worbli-profile name="todor-karaivanov" title="Director of Blockchain Governance" linkedin="todor-karaivanov-325468"></worbli-profile>
+            <worbli-profile name="laura-magnano" title="Head of Marketing" linkedin="lauramagnano"></worbli-profile>
+            <worbli-profile name="mitchell-mahaffey" title="Commercial Partnerships & BP Relations" linkedin="mitchell-mahaffey"></worbli-profile>
+            <worbli-profile name="brooke-munson" title="Marketing Operations Manager" linkedin="brooke-munson"></worbli-profile>
+            <worbli-profile name="andrew-woodman" title="PR & Communications Manager" linkedin="adwoodman"></worbli-profile>
+            <worbli-profile name="ramoncito-abella" title="Creative Design" linkedin="ramoncito-abella-37424ba4"></worbli-profile>
+            <worbli-profile name="martin-quiambao" title="Creative Design" linkedin="martin-quiambao-404588153"></worbli-profile>
+            <worbli-profile name="soyoung-kim" title="Community Manager - Korea" linkedin="koyoungk"></worbli-profile>
+            <worbli-profile name="gideon-hornung" title="Marketing & Product Advisor" linkedin="gideon-hornung"></worbli-profile>
+            <worbli-profile name="fuzzy" title="Strategic Advisor" linkedin=""></worbli-profile>
+            <worbli-profile name="naeem-al-obaidi" title="Marketing Advisor" linkedin="naeem-al-obaidi"></worbli-profile>
+            <worbli-profile name="william-hill" title="Lead Software Engineer" github=“https://github.com/bkawk”></worbli-profile>
+            <worbli-profile name="peregrine-buckler" title="Product Manager" linkedin="peregrine-buckler"></worbli-profile>
+            <worbli-profile name="chethan-rangaswamy" title="Product Marketing Manager" linkedin="chethanrangaswamy"></worbli-profile>
+            <worbli-profile name="enrique-murua" title="Community Operations Manager" linkedin="enrique-m"></worbli-profile>
+            <worbli-profile name="sofiya-slyshkova" title="HR Operations & Project Manager" linkedin="sofiya-s-1b95b14b"></worbli-profile>
+            <worbli-profile name="daqian-jiang" title="Operations Executive" linkedin="daqian"></worbli-profile>
+            <worbli-profile name="nathan-hollis" title="Solutions Architect & Supply Chain Advisor" linkedin="nathanhollis"></worbli-profile>
+            <worbli-profile name="charlie-wapshott" title="Commercial Relations" linkedin="charlie-wapshott-65a7a737"></worbli-profile>
+            <worbli-profile name="mark-paterson" title="Fintech & Banking Advisor” linkedin="mark-paterson-aaab3841"></worbli-profile>
+            <worbli-profile name="timothy-brown" title="Strategic Advisor" linkedin="timothy-brown-41875013"></worbli-profile>
+            <worbli-profile name="david-packham" title="Strategic Advisor & BP" linkedin="davidpackham"></worbli-profile>
+            <worbli-profile name="justin-buck" title="Strategic Advisor" linkedin="justin-buck-473042139"></worbli-profile>
+            <worbli-profile name="michael-cowan" title="Strategic Advisor" linkedin="michaelcowan88"></worbli-profile>
+            <worbli-profile name="jeff-anderson" title="Strategic Advisor" linkedin="jeff-anderson-3777aa13"></worbli-profile>
+            
+            <h1>Strategic Partners</h1>
+            <ul>
+              <li>0rigin</li>
+              <li>Pinsent Masons</li>
+              <li>Holland & Knight</li>
+              <li>Onfido</li>
+              <li>Interblockchain</li>
+              <li>Web Profits</li>
+              <li>Trybe.One</li>
+              <li>EOS Detroit</li>
+              <li>EOS Germany</li>
+              <li>GenerEOS</li>
+              <li>Chintai</li>
+            </ul>
+            <h1>Block Producers</h1>
+              <p>@MITCHELL to provide list, including: website, logo, and 1 sentence write up.</p>
+
         </div>
         <div class="side">
         <div class="container">

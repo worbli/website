@@ -85,7 +85,7 @@ class BlockProducers extends PolymerElement {
             }
             .location{
                 display: inline-block;
-                width: 200px;
+                width: 250px;
                 height:30px;
             }
             .red {
@@ -112,10 +112,11 @@ class BlockProducers extends PolymerElement {
         <div class="container">
             <div class="title">Worbli Block Producers</div>
             <ul>
-                <li class="number">Rank</li>
+                <li class="number"></li>
                 <li class="logo"></li>
                 <li class="owner">Name:</li>
                 <li class="location">Location:</li>
+                <li class="location">Website:</li>
                 <li>Active:</li>
             </ul>
             <dom-repeat items="{{producers}}">
@@ -125,6 +126,7 @@ class BlockProducers extends PolymerElement {
                         <li class="logo"><img src$="./images/bp-logos/[[item.owner]]_100x100.png" alt="[[item.owner]" width="30" height="30"></li>
                         <li class="owner"><a href="[[item.url]]" target=”_blank”>[[item.owner]]</a></li>
                         <li class="location">[[item.location]]</li>
+                        <li class="location">[[item.url]]</li>
                         <li><div class$="[[item.is_active]] circle"></div></li>
                     </ul>
                 </template>

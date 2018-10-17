@@ -157,6 +157,7 @@ class MainRoute extends PolymerElement {
         }
         .box-link {
           text-decoration: none;
+          color: #393E46;
         }
         .faq-text {
           font-size: 13px;
