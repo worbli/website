@@ -115,7 +115,6 @@ class TeamRoute extends PolymerElement {
             <worbli-profile name="mark-paterson" title="Fintech & Banking Advisor” linkedin="mark-paterson-aaab3841"></worbli-profile>
             <worbli-profile name="timothy-brown" title="Strategic Advisor" linkedin="timothy-brown-41875013"></worbli-profile>
             <worbli-profile name="david-packham" title="Strategic Advisor & BP" linkedin="davidpackham"></worbli-profile>
-            <worbli-profile name="justin-buck" title="Strategic Advisor" linkedin="justin-buck-473042139"></worbli-profile>
             <worbli-profile name="michael-cowan" title="Strategic Advisor" linkedin="michaelcowan88"></worbli-profile>
             <worbli-profile name="jeff-anderson" title="Strategic Advisor" linkedin="jeff-anderson-3777aa13"></worbli-profile>
             
