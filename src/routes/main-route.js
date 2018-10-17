@@ -195,15 +195,15 @@ class MainRoute extends PolymerElement {
           <p>The future is near and we’re ready to take you there.</p>
           <div class="holder">
 
-        <a href="/sharedrop/" class="box-link">
-          <div class="container square">
+     
+          <div class="container square" on-click="_join">
               <div class="pic pic2"></div>
               <div class="footer">
                 <h4>Claim your Sharedrop</h4>
                 <div class="description">If you held EOS on 7th September, 1159PM UTC...</div>
               </div>
             </div>
-          </a>
+       
 
           <a href="/about/" class="box-link">
             <div class="container square">
@@ -264,4 +264,9 @@ class MainRoute extends PolymerElement {
       <worbli-footer name="footer"></worbli-footer>
     `;
   }
+
+  _join() {
+    this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'join'}}));
+  }
+
 } window.customElements.define('main-route', MainRoute);

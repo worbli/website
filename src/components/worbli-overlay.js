@@ -157,6 +157,9 @@ class WorbliOverlay extends PolymerElement {
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', 
             endColorstr='#f9fafa',GradientType=0 );
         }
+        label{
+            font-size: 11px;
+        }
       </style>
       <div class="overlay" on-click="_hide">
       <template is="dom-if" if="{{join}}">
@@ -164,9 +167,10 @@ class WorbliOverlay extends PolymerElement {
             <h2>Join Worbli</h2>
             <p>Worbli is the place to access smarter financial services</p>
             <input type="text" class="text" placeholder="Email Address" id="email">
+            <label><input type="checkbox" name="checkbox" value="value"> I agree to the <span><a href="/terms/">Terms</a></span> and <span><a href="/privacy/">Privacy Policy</a></span></label></br>
+            <label><input type="checkbox" name="checkbox" value="value"> I'm Happy to recieve marketing comminications from WORBLI</label></br></br>
             <button class="btn-critical" on-click="_sendEmail">Join</button>
             <div class="center">Already on Warbli? <span on-click="_signIn">Log In</span></div>
-            <div class="center">By clicking 'Join' you aree to our <span><a href="/terms/">Terms</a></span> and <span><a href="/privacy/">Privacy Policy</a></span> </div>
         </div>
     </template>
 
