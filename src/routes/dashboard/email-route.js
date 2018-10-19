@@ -29,9 +29,9 @@ class EmailRoute extends PolymerElement {
         </br></br>
           Welcome to WORBLI!</br></br></br>
           Click the button below to confirm your email.</br></br>
-          <a href="./dashboard/profile/8983473475398745987/"><button type="button" style="cursor: pointer; outline: none; font-weight: 600; border-radius:3px; background-color: #37527A; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 15px; width:250px">Verify Email</button></a></br></br>
+          <a href="/dashboard/profile/8983473475398745987/"><button type="button" style="cursor: pointer; outline: none; font-weight: 600; border-radius:3px; background-color: #37527A; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 15px; width:250px">Verify Email</button></a></br></br>
           If you can't confirm by clicking the button above, please copy the address below to the browser address bar to confirm. </br></br>
-          <a href="./dashboard/profile/8983473475398745987/">https://portal-test.worbli.io/dashboard/profile/8983473475398745987/</a></br></br></br>
+          <a href="/dashboard/profile/8983473475398745987/">https://portal-test.worbli.io/dashboard/profile/8983473475398745987/</a></br></br></br>
           If this activity is not your own operation, please contact us immediatly via support@worbli.io
         </td>
         </tr>
