@@ -58,7 +58,7 @@ class DasboardRoute extends PolymerElement {
     console.log(page);
     if (!page) {
       this.page = 'email';
-    } else if (['claim', 'complete', 'email', 'profile', 'verify'].indexOf(page) !== -1) {
+    } else if (['claim', 'email', 'profile', 'verify'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -69,10 +69,7 @@ class DasboardRoute extends PolymerElement {
     switch (page) {
         case 'claim':
             import('./dashboard/claim-route.js');
-            break;
-        case 'complete':
-            import('./dashboard/complete-route.js');
-            break;      
+            break;  
         case 'email':
             import('./dashboard/email-route.js');
             break;
