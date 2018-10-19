@@ -196,7 +196,7 @@ class ProfileRoute extends PolymerElement {
             <div class="form-inputs">
               <label>Password</label>
               <input id="password" name="password" type="password" class="text">
-              <label>Confirm Passwird</label>
+              <label>Confirm Password</label>
               <input id="confirm-password" name="confirm-password" type="password" class="text">
             </div>
           </div>
