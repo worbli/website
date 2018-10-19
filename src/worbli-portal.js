@@ -5,6 +5,7 @@ import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
 import './components/worbli-header.js';
+import './components/worbli-dashboard.js';
 import './components/worbli-overlay.js';
 
 
@@ -28,7 +29,15 @@ class WorbliPortal extends PolymerElement {
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
       <worbli-overlay></worbli-overlay>
-      <worbli-header name="header" class="center"></worbli-header>
+
+      <template is="dom-if" if="{{!dashboard}}">
+        <worbli-header name="header" class="center"></worbli-header>
+      </template>
+
+      <template is="dom-if" if="{{dashboard}}">
+        <worbli-dashboard name="dashboard" class="center"></worbli-dashboard>
+      </template>
+
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main" class="center">
         <main-route name="main"></main-route>
         <network-route name="network"></network-route>
@@ -36,12 +45,12 @@ class WorbliPortal extends PolymerElement {
         <team-route name="team"></team-route>
         <roadmap-route name="roadmap"></roadmap-route>
         <error-route name="error"></error-route>
-        <dashboard-route name="dashboard"></dashboard-route>
         <register-route name="register"></register-route>
         <sharedrop-route name="sharedrop"></sharedrop-route>
         <support-route name="support"></support-route>
         <terms-route name="terms"></terms-route>
         <privacy-route name="privacy"></privacy-route>
+        <dashboard-route name="dashboard"></dashboard-route>
       </iron-pages>
       
     `;
@@ -53,6 +62,10 @@ class WorbliPortal extends PolymerElement {
         type: String,
         reflectToAttribute: true,
         observer: '_pageChanged'
+      },
+      dashboard: {
+        type: Boolean,
+        value: false,
       },
       routeData: Object,
       subroute: Object,
@@ -69,7 +82,7 @@ class WorbliPortal extends PolymerElement {
   _routePageChanged(page) {
     if (!page) {
       this.page = 'main';
-    } else if (['main', 'network', 'about', 'team', 'roadmap', 'dashboard', 'register', 'sharedrop', 'support', 'terms', 'privacy'].indexOf(page) !== -1) {
+    } else if (['main', 'network', 'about', 'team', 'roadmap', 'register', 'sharedrop', 'support', 'terms', 'privacy', 'dashboard'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -77,6 +90,7 @@ class WorbliPortal extends PolymerElement {
   }
 
   _pageChanged(page) {
+    this.dashboard = false;
     switch (page) {
       case 'main':
         import('./routes/main-route.js');
@@ -93,9 +107,6 @@ class WorbliPortal extends PolymerElement {
       case 'roadmap':
         import('./routes/roadmap-route.js');
         break;
-      case 'dashboard':
-        import('./routes/dashboard-route.js');
-        break;
       case 'register':
         import('./routes/register-route.js');
         break;
@@ -110,6 +121,10 @@ class WorbliPortal extends PolymerElement {
         break;
       case 'privacy':
         import('./routes/privacy-route.js');
+        break;
+      case 'dashboard':
+        this.dashboard = true;
+        import('./routes/dashboard-route.js');
         break;
       case 'error':
         import('./routes/error-route.js');

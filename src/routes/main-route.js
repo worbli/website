@@ -48,6 +48,7 @@ class MainRoute extends PolymerElement {
         }
         h1 {
           color: var(--blue-text);
+          font-size: 50px;
         }
         .white-paper {
           margin-left: 25px;
@@ -120,7 +121,7 @@ class MainRoute extends PolymerElement {
           line-height: 18px;
         }
         .pic4 {
-          background-image: url("./images/home-page/devs.jpg");
+          background-image: url("./images/home-page/bottom-right.png");
           background-position: center; 
           background-repeat: no-repeat;
           background-size: cover;
@@ -129,7 +130,7 @@ class MainRoute extends PolymerElement {
 
         }
         .pic3 {
-          background-image: url("./images/home-page/daps.jpg");
+          background-image: url("./images/home-page/bottom-left.png");
           background-position: center; 
           background-repeat: no-repeat;
           background-size: cover;
@@ -138,7 +139,7 @@ class MainRoute extends PolymerElement {
 
         }
         .pic2 {
-          background-image: url("./images/home-page/crypto.jpg");
+          background-image: url("./images/home-page/top-right.png");
           background-position: center; 
           background-repeat: no-repeat;
           background-size: cover;
@@ -147,7 +148,7 @@ class MainRoute extends PolymerElement {
 
         }
         .pic1 {
-          background-image: url("./images/home-page/worbli.jpg");
+          background-image: url("./images/home-page/top-left.png");
           background-position: center; 
           background-repeat: no-repeat;
           background-size: cover;
@@ -166,7 +167,7 @@ class MainRoute extends PolymerElement {
           padding: 12px;
         }
         .support-icon{
-          padding-left: 75px;
+          padding-left: 20px;
         }
         .bottom-space {
           padding-bottom: 20px;
@@ -191,13 +192,13 @@ class MainRoute extends PolymerElement {
 
       <div class="split">
         <div class="main">
-          <h1>An Enterprise Blockchain Ecosystem.</h1>
+          <h1>Making blockchain legit.</h1>
           <p>The future is near and we’re ready to take you there.</p>
           <div class="holder">
 
      
           <div class="container square" on-click="_join">
-              <div class="pic pic2"></div>
+              <div class="pic pic1"></div>
               <div class="footer">
                 <h4>Claim your Sharedrop</h4>
                 <div class="description">If you held EOS on 7th September, 1159PM UTC...</div>
@@ -207,7 +208,7 @@ class MainRoute extends PolymerElement {
 
           <a href="/about/" class="box-link">
             <div class="container square">
-              <div class="pic pic1"></div>
+              <div class="pic pic2"></div>
               <div class="footer">
                 <h4>WORBLI Financial District</h4>
                 <div class="description">Learn about the next generation of financial services...</div>
@@ -240,7 +241,7 @@ class MainRoute extends PolymerElement {
         <div class="container">
             <div class="title">FAQ & Support</div>
             <p class="faq-text">Find out the answers to all of your questions here...</p>
-            <img src="./images/home-page/support-icon.png" width="97px" class="support-icon">
+            <img src="./images/home-page/support-icon.png" width="230px" class="support-icon">
             <a href="https://worbli.zendesk.com" class="button" target="_blank">Take me there...</a>
             <p class="bottom-space"></p>
         </div>
