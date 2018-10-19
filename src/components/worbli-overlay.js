@@ -162,26 +162,28 @@ class WorbliOverlay extends PolymerElement {
         }
       </style>
       <div class="overlay" on-click="_hide">
+      <a href="/dashboard/email/" id="goEmail"></a>
       <template is="dom-if" if="{{join}}">
         <div class="card" on-click="_clickCard">
-            <h2>Join Worbli</h2>
-            <p>Worbli is the place to access smarter financial services</p>
+            <h2>Join WORBLI</h2>
+            <p>WORBLI is the place to access smarter financial services</p>
             <input type="text" class="text" placeholder="Email Address" id="email">
             <label><input type="checkbox" name="checkbox" value="value"> I agree to the <span><a href="/terms/">Terms</a></span> and <span><a href="/privacy/">Privacy Policy</a></span></label></br>
-            <label><input type="checkbox" name="checkbox" value="value"> I'm Happy to recieve marketing comminications from WORBLI</label></br></br>
+            <label><input type="checkbox" name="checkbox" value="value"> I'm happy to recieve marketing comminications from WORBLI</label></br></br>
             <button class="btn-critical" on-click="_sendEmail">Join</button>
-            <div class="center">Already on Warbli? <span on-click="_signIn">Log In</span></div>
+            <div class="center">Already on WORBLI? <span on-click="_signIn">Log In</span></div>
         </div>
     </template>
 
     <template is="dom-if" if="{{!join}}">
         <div class="card" on-click="_clickCard">
             <h2>Sign In</h2>
-            <p>Welcome back to Worbli.....</p>
+            <p>Welcome back to WORBLI.....</p>
             <input type="text" class="text" name="email" placeholder="Email" id="loginEmail">
             <input type="text" class="text" name="password" placeholder="Password" id="password">
             <button class="btn-critical" on-click="_checkPassword">Sign In</button>
-            <div class="center">New to Worbli? <span on-click="_join">Join Worbli</span></div>
+            <div class="center">New to Worbli? <span on-click="_join">Join WORBLI</span></div>
+            
         </div>
     </template>
       </div>
@@ -234,14 +236,16 @@ class WorbliOverlay extends PolymerElement {
         this.join = false;
     }
     _sendEmail(){
-        const email = this.shadowRoot.querySelector('#email').value;
-        fetch(`http://testnetapi.worbli.io/api/v1/send-mail/${email}`)
-        .then((response) => {
-            console.log(response);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+        console.log('eee')
+        this.$.goEmail.click();
+        // const email = this.shadowRoot.querySelector('#email').value;
+        // fetch(`http://testnetapi.worbli.io/api/v1/send-mail/${email}`)
+        // .then((response) => {
+        //     console.log(response);
+        // })
+        // .catch((error) => {
+        //     console.log(error);
+        // })
     }
     _checkPassword(){
         const email = this.shadowRoot.querySelector('#loginEmail').value;
