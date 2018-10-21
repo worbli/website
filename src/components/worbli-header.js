@@ -12,6 +12,7 @@ class WorbliHeader extends PolymerElement {
           font-size: 12px;
       }
       .container{
+		  position:relative;
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
@@ -53,11 +54,32 @@ class WorbliHeader extends PolymerElement {
       }
       img{
         vertical-align: middle;
-      }
+	  }
+	  .menu-toggle{
+		  background:url('./images/noun_hamburger_menu.png');
+		  background-size:contain;
+		  background-repeat:no-repeat;
+		  width:50px;
+		  display:none;
+	  }
+	  .navigation.open{
+		  display:block;
+		  position:absolute;
+		  top:100%;
+		  width:100%;
+		  background-color:#fff;
+		  z-index:100;
+	  }
+	  .navigation.open li{
+		display:block;
+	  }
       @media only screen and (max-width: 600px) {
         .navigation {
               display: none;
-          }
+		  }
+		.menu-toggle{
+			display:block;
+		}
           .logo {
             text-align: center;
           }
@@ -73,8 +95,9 @@ class WorbliHeader extends PolymerElement {
       <div class="container">
         <div class="logo">
           <a href="/"><img src="./images/logo-blue.png" alt="Worbli"></a>
-        </div>
-        <div class="navigation">
+		</div>
+		<button class="menu-toggle" on-click="_toggleMenu"></button>
+		<div class="navigation">
           <ul>
             <li><a href="/about/">ABOUT</a></li>
             <li><a href="/team/">TEAM</a></li>
@@ -86,9 +109,7 @@ class WorbliHeader extends PolymerElement {
           <button type="button" on-click="_signIn">SIGN IN</button>
           <button type="button" class="selected" on-click="_join">JOIN NOW</button>
         </div>
-      </div>
-
-  
+	  </div>
     `;
   }
   static get properties() {
@@ -106,6 +127,11 @@ class WorbliHeader extends PolymerElement {
 
   _join() {
     this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'join'}}));
+  }
+
+  _toggleMenu(){
+	  	var menuEl = this.shadowRoot.querySelector('.navigation');
+	  	menuEl.classList.toggle('open');
   }
 
 } window.customElements.define('worbli-header', WorbliHeader);
