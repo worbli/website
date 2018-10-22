@@ -25,7 +25,44 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       }
       p {
         line-hright: 3em;
-      }      
+      }
+      .container {
+        position: relative;
+        background: #FFF;
+        border-radius: 3px;
+        box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+        -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+        -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+        margin-bottom: 18px;
+        cursor: pointer;
+      }  
+      .title {
+        color: #3a3e46;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 16px;
+        padding: 13px 12px;
+        border-bottom: 1px solid #f5f5f5;
+        background: none;
+        text-shadow: none;
+      }  
+      .button{
+        display: block;
+        box-shadow: inset 0 0 0 1px #c8d6e8;
+        padding: 6px;
+        max-width: 210px;
+        border-radius: 3px;
+        text-align: center;
+        padding-top:12px;
+        height: 25px;
+        margin-left: 25px;
+        text-decoration: none;
+        color: #4978b3;
+        font-size: 12px;
+        font-weight: 600;
+        width: 100%;
+      }
     </style>
   </template>
 </dom-module>`;

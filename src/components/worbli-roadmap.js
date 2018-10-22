@@ -22,7 +22,7 @@ class WorbliRoadmap extends PolymerElement {
             margin-right:12px;
         }
     </style>
-    <div class="container">
+    <div>
         <div><img src="./images/[[status]].png" width="20px" height="20px"></div>
         <div class$="[[status]]">[[title]]</div>
     </div>

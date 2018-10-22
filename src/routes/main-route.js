@@ -24,63 +24,11 @@ class MainRoute extends PolymerElement {
         .main {
           flex-grow: 1;
         }
-        .container {
-          position: relative;
-          background: #FFF;
-          border-radius: 3px;
-          box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          margin-bottom: 18px;
-          cursor: pointer;
-        }
-        .title {
-          color: #3a3e46;
-          font-size: 11px;
-          font-weight: 600;
-          text-transform: uppercase;
-          line-height: 16px;
-          padding: 13px 12px;
-          border-bottom: 1px solid #f5f5f5;
-          background: none;
-          text-shadow: none;
-        }
         h1 {
           color: var(--blue-text);
           font-size: 50px;
         }
-
-        .bottom a:hover {
-          display: block;
-          color: var(--green-text);
-          text-decoration: underline;
-        }
-        .bottom {
-          color: var(--blue-text);
-          display: block;
-          padding-top: 20px;
-          padding-bottom: 20px;
-          font-size: 11px;
-          margin-left: 25px;
-          text-decoration: none;
-          font-style: italic;
-        }
-        .button{
-          display: block;
-          box-shadow: inset 0 0 0 1px #c8d6e8;
-          padding: 6px;
-          max-width: 210px;
-          border-radius: 3px;
-          text-align: center;
-          padding-top:12px;
-          height: 25px;
-          margin-left: 25px;
-          text-decoration: none;
-          color: #4978b3;
-          font-size: 12px;
-          font-weight: 600;
-        }
-        .holder{
+        .tile-holder {
           margin-top: 24px;
           display: flex;
           flex-wrap: wrap;
@@ -154,20 +102,7 @@ class MainRoute extends PolymerElement {
         .box-link {
           text-decoration: none;
           color: #393E46;
-        }
-        .faq-text {
-          font-size: 13px;
-          font-weight: 200;
-          line-height: 16px;
-          padding: 12px;
-        }
-        .support-icon{
-          padding-left: 20px;
-        }
-        .bottom-space {
-          padding-bottom: 20px;
-        }
-  
+        }  
       </style>
 
       <!-- Google Tag Manager (noscript) -->
@@ -189,49 +124,47 @@ class MainRoute extends PolymerElement {
         <div class="main">
           <h1>Making blockchain legit.</h1>
           <p>The future is near and we’re ready to take you there.</p>
-          <div class="holder">
+          
+          <div class="tile-holder">
 
-     
-          <div class="container square" on-click="_join">
+            <div class="container square" on-click="_join">
               <div class="pic pic1"></div>
               <div class="footer">
+              <h4>WORBLI Financial District</h4>
+              <div class="description">Learn about the next generation of financial services...</div>   
+              </div>
+            </div>
+        
+            <a href="/about/" class="box-link">
+              <div class="container square">
+                <div class="pic pic2"></div>
+                <div class="footer">
                 <h4>Claim your Sharedrop</h4>
                 <div class="description">If you held EOS on 7th September, 1159PM UTC...</div>
+                </div>
               </div>
-            </div>
-       
+            </a>
 
-          <a href="/about/" class="box-link">
-            <div class="container square">
-              <div class="pic pic2"></div>
-              <div class="footer">
-                <h4>WORBLI Financial District</h4>
-                <div class="description">Learn about the next generation of financial services...</div>
+            <a href="/team/" class="box-link">
+              <div class="container square">
+                <div class="pic pic3"></div>
+                <div class="footer">
+                  <h4>WORBLI Team & Partners</h4>
+                  <div class="description">Discover who’s building the WORBLI ecosystem...</div>
+                </div>
               </div>
-            </div>
-          </a>
+            </a>
 
-          <a href="/team/" class="box-link">
-            <div class="container square">
-              <div class="pic pic3"></div>
-              <div class="footer">
-                <h4>WORBLI Team & Partners</h4>
-                <div class="description">Discover who’s building the WORBLI ecosystem...</div>
+            <a href="/network/" class="box-link">
+              <div class="container square">
+                <div class="pic pic4"></div>
+                  <div class="footer">
+                    <h4>Developer Resources</h4>
+                    <div class="description">Check out which BP produced the last block...</div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </a>
-
-          <a href="/network/" class="box-link">
-            <div class="container square">
-              <div class="pic pic4"></div>
-              <div class="footer">
-                <h4>Developer Resources</h4>
-                <div class="description">Check out which BP produced the last block...</div>
-              </div>
-            </div>
-          </div>
-          </a>
-
+            </a>
 
         </div>
         

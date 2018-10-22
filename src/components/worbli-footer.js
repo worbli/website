@@ -10,7 +10,7 @@ class WorbliFooter extends PolymerElement {
             color: var(--grey-text);
             font-size: 12px;
         }
-        .container{
+        .container-footer{
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -52,7 +52,7 @@ class WorbliFooter extends PolymerElement {
         li:nth-child(7) a:hover {background: url('./images/sprite.png') -218px -80px;}
         li:nth-child(8) a:hover {background: url('./images/sprite.png') -250px -80px;}
       </style>
-      <div class="container">
+      <div class="container-footer">
         <div>&copy; 2018 Worbli Pty Ltd. All rights reserved.<br>
         View our <a href="/terms/">Terms & Conditions<a> or <a href="/privacy/">Privacy Policy</a>
         

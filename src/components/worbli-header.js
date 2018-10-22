@@ -11,7 +11,7 @@ class WorbliHeader extends PolymerElement {
           color: var(--grey-text);
           font-size: 12px;
       }
-      .container{
+      .container-header{
 		  position:relative;
           display: flex;
           flex-direction: row;
@@ -83,7 +83,7 @@ class WorbliHeader extends PolymerElement {
           .logo {
             text-align: center;
           }
-          .container {
+          .container-header {
             line-height: 50px;
             padding-bottom: 10px;
           }
@@ -92,7 +92,7 @@ class WorbliHeader extends PolymerElement {
           }
       }
       </style>
-      <div class="container">
+      <div class="container-header">
         <div class="logo">
           <a href="/"><img src="./images/logo-blue.png" alt="Worbli"></a>
 		</div>
