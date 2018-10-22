@@ -8,8 +8,9 @@ class WorbliFooter extends PolymerElement {
         div {
             flex-grow: 1;
             color: var(--grey-text);
-            font-size: 12px;
-        }
+			font-size: 12px;
+			width:auto;
+		}
         .container-footer{
             display: flex;
             flex-direction: row;
@@ -50,7 +51,20 @@ class WorbliFooter extends PolymerElement {
         li:nth-child(5) a:hover {background: url('./images/sprite.png') -149px -80px;}
         li:nth-child(6) a:hover {background: url('./images/sprite.png') -184px -80px;}
         li:nth-child(7) a:hover {background: url('./images/sprite.png') -218px -80px;}
-        li:nth-child(8) a:hover {background: url('./images/sprite.png') -250px -80px;}
+		li:nth-child(8) a:hover {background: url('./images/sprite.png') -250px -80px;}
+		@media only screen and (max-width: 600px){
+			div{
+				flex-direction:column;
+				width:100%;
+				margin:10px 0;
+			}
+			ul {
+				display:flex;
+			}
+			ul li {
+				display: inline-flex;
+			}
+		}
       </style>
       <div class="container-footer">
         <div>&copy; 2018 Worbli Pty Ltd. All rights reserved.<br>

@@ -111,7 +111,16 @@ class MainRoute extends PolymerElement {
         .btn-join {
           display: block;
           text-align: center;
-        } 
+		}
+		
+		.mobile-signup-buttons{
+			display:none;
+		}
+		@media only screen and (max-width: 600px){
+			.mobile-signup-buttons{
+				display:block;
+			}
+		}
       </style>
 
       <!-- Google Tag Manager (noscript) -->
@@ -135,8 +144,10 @@ class MainRoute extends PolymerElement {
           <p>The future is near and we’re ready to take you there.</p>
 
 <!-- TODO Only show these on mobile -->
-          <button class="btn-critical" on-click="_signIn">Sign In</button>
-          <button class="btn-critical" on-click="_joinNow">Join Now</button>
+			<div class="mobile-signup-buttons">
+			<button class="btn-critical" on-click="_signIn">Sign In</button>
+			<button class="btn-critical" on-click="_joinNow">Join Now</button>
+			</div>
           
           <div class="tile-holder">
 
