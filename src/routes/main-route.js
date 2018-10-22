@@ -1,4 +1,5 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@polymer/app-route/app-location.js';
 import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
@@ -102,7 +103,15 @@ class MainRoute extends PolymerElement {
         .box-link {
           text-decoration: none;
           color: #393E46;
-        }  
+        } 
+        .btn-signin {
+          display: block;
+          text-align: center;
+        } 
+        .btn-join {
+          display: block;
+          text-align: center;
+        } 
       </style>
 
       <!-- Google Tag Manager (noscript) -->
@@ -119,11 +128,15 @@ class MainRoute extends PolymerElement {
         gtag('config', 'UA-117118714-1');
       </script>
 
-
+      <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <div class="split">
         <div class="main">
           <h1>Making blockchain legit.</h1>
           <p>The future is near and we’re ready to take you there.</p>
+
+<!-- TODO Only show these on mobile -->
+          <button class="btn-critical" on-click="_signIn">Sign In</button>
+          <button class="btn-critical" on-click="_joinNow">Join Now</button>
           
           <div class="tile-holder">
 
@@ -179,6 +192,12 @@ class MainRoute extends PolymerElement {
     `;
   }
 
+  _joinNow(){
+    this.set('route.path', '/join');
+  }
+  _signIn(){
+    this.set('route.path', '/signin');
+  }
   _join() {
     this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'join'}}));
   }
