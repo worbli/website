@@ -231,8 +231,14 @@ class ClaimRoute extends PolymerElement {
             <div class="form-inputs">
               <small class="comment">We are now verifying your main net account</small>
             </div>
-        </div>
-
+          </div>
+          <hr>
+          <div class="input-area">
+            <div class="section-name">You are a whale!</div>
+            <div class="form-inputs">
+              <small class="comment">Dear Worbli User. Because you're receiving a large amount of WBI from our Sharedrop, we want to invite you to attend an exclusive seminar and AMA with me and our team. We also want to invite you to learn more about what were building, and what you would like to see built on WORBLI that will benefit you. please email whale@worbli.io</small>
+            </div>
+          </div>
 
 
 
