@@ -4,7 +4,7 @@ import '../css/shared-styles.js';
 class WorbliHeader extends PolymerElement {
   static get template() {
     return html`
-      <style include="shared-styles">
+    <style include="shared-styles">
       div {
           display: inline-block;
           flex-grow: 1;
@@ -12,13 +12,13 @@ class WorbliHeader extends PolymerElement {
           font-size: 12px;
       }
       .container-header{
-		  position:relative;
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          line-height: 60px;
-          border-bottom: 1px solid var(--grey-keyline);
-          margin-bottom: 40px;
+		    position:relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        line-height: 60px;
+        border-bottom: 1px solid var(--grey-keyline);
+        margin-bottom: 40px;
       }
       ul {
         list-style: none;
@@ -50,54 +50,51 @@ class WorbliHeader extends PolymerElement {
       .selected {
         color: white;
         background-color: var(--blue-button);
-        
       }
-      img{
+      img {
         vertical-align: middle;
-	  }
-	  .menu-toggle{
-		  background:url('./images/noun_hamburger_menu.png');
-		  background-size:contain;
-		  background-repeat:no-repeat;
-		  width:50px;
-		  display:none;
-	  }
-	  .navigation.open{
-		  display:block;
-		  position:absolute;
-		  top:100%;
-		  width:100%;
-		  background-color:#fff;
-		  z-index:100;
-	  }
-	  .navigation.open li{
-		display:block;
-	  }
+	    }
+      .menu-toggle{
+        background:url('./images/noun_hamburger_menu.png');
+        background-size:contain;
+        background-repeat:no-repeat;
+        width:50px;
+        display:none;
+      }
+      .navigation.open{
+        display:block;
+        position:absolute;
+        top:100%;
+        width:100%;
+        background-color:#fff;
+        z-index:100;
+      }
+      .navigation.open li{
+        display:block;
+      }
       @media only screen and (max-width: 600px) {
         .navigation {
-              display: none;
-		  }
-		.menu-toggle{
-			display:block;
-		}
-          .logo {
-            text-align: center;
-          }
-          .container-header {
-            line-height: 50px;
-            padding-bottom: 10px;
-          }
-          .buttons {
-            display: none;
-          }
+          display: none;
+        }
+        .menu-toggle{
+          display:block;
+        }
+        .logo {
+          text-align: center;
+        }
+        .container-header {
+          line-height: 50px;
+          padding-bottom: 10px;
+        }
+        .buttons {
+          display: none;
+        }
       }
-      </style>
+    </style>
       <div class="container-header">
-        <div class="logo">
-          <a href="/" tabindex="0"><img src="./images/logo-blue.png" alt="Worbli"></a>
-		</div>
-		<button class="menu-toggle" on-click="_toggleMenu"></button>
-		<div class="navigation">
+      <div class="logo"><a href="/" tabindex="0"><img src="./images/logo-blue.png" alt="Worbli"></a></div>
+		  <button class="menu-toggle" on-click="_toggleMenu"></button>
+      <div class="navigation">
           <ul>
             <li><a href="/about/" tabindex="1">ABOUT</a></li>
             <li><a href="/team/" tabindex="2">TEAM</a></li>
@@ -109,7 +106,7 @@ class WorbliHeader extends PolymerElement {
           <button type="button" on-click="_signIn" tabindex="5">SIGN IN</button>
           <button type="button" class="selected" on-click="_join" tabindex="6">JOIN NOW</button>
         </div>
-	  </div>
+	    </div>
     `;
   }
   static get properties() {
