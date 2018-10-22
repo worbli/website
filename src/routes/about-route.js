@@ -33,7 +33,8 @@ class AboutRoute extends PolymerElement {
         }
         iframe {
           margin-top: 50px;
-          margin-bottom: 50px;
+		  margin-bottom: 50px;
+		  width:100%;
         }
         .side {
           width: 280px;
