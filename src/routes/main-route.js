@@ -249,8 +249,8 @@ class MainRoute extends PolymerElement {
         <div class="container">
             <div class="title">White Paper</div>
             <img src="./images/white-paper.png" alt="white paper" class="white-paper">
-            <a href="https://portal-test.worbli.io/esm-bundled/images/white-papers/worbli-short-paper.pdf" class="button">Download Short Paper</a>
-            <a href="https://portal-test.worbli.io/esm-bundled/images/white-papers/worbli-whitepaper.pdf" class="bottom">Or download our full White Paper</a>
+            <a href="https://drive.google.com/file/d/1YTFLUf1h_XsjTHCDdiClBYS74STt_n5J/view?usp=sharing" class="button">Download Short Paper</a>
+            <a href="https://drive.google.com/file/d/1a0Ec-2glbFXTgvr-7PnAdye0aPcHhmGd/view?usp=sharing" class="bottom">Or download our full White Paper</a>
         </div>
 
         <div class="container">
