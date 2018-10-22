@@ -1,4 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import '@polymer/app-route/app-location.js';
 import '../css/shared-styles.js';
 
 class WorbliJoin extends PolymerElement {
@@ -71,7 +72,7 @@ class WorbliJoin extends PolymerElement {
         }
 
       </style>
-
+            <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
             <h2>Join WORBLI</h2>
             <p>WORBLI is the place to access smarter financial services</p>
             <input type="text" class="text" placeholder="Email Address" id="email">
@@ -83,11 +84,19 @@ class WorbliJoin extends PolymerElement {
   }
   static get properties() {
     return {
-      init: {
-        type: String,
-        observer: '_doOnfido',
-      },
+        join: {
+            type: Boolean,
+            reflectToAttribute: true,
+            notify: true,
+        },
     };
   }
+
+_sendEmail(){
+    this.set('route.path', '/dashboard/email');
+}
+_signIn(){
+    this.join = false;
+}
 
 } window.customElements.define('worbli-join', WorbliJoin);

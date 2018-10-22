@@ -83,11 +83,16 @@ class WorbliSignin extends PolymerElement {
   }
   static get properties() {
     return {
-      init: {
-        type: String,
-        observer: '_doOnfido',
+      join: {
+        type: Boolean,
+        reflectToAttribute: true,
+        notify: true,
       },
     };
   }
+
+_join(){
+    this.join = true;
+}
 
 } window.customElements.define('worbli-signin', WorbliSignin);

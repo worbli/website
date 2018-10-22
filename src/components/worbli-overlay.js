@@ -56,16 +56,15 @@ class WorbliOverlay extends PolymerElement {
       </style>
       
     <div class="overlay" on-click="_hide">
-        <a href="/dashboard/email/" id="goEmail"></a>
         <template is="dom-if" if="{{join}}">
             <div class="card" on-click="_clickCard">
-                <worbli-join></worbli-join>
+                <worbli-join join="{{join}}"></worbli-join>
             </div>
         </template>
 
         <template is="dom-if" if="{{!join}}">
             <div class="card" on-click="_clickCard">
-                <worbli-signin></worbli-signin>   
+                <worbli-signin join="{{join}}"></worbli-signin>   
             </div>
         </template>
     </div>
@@ -109,17 +108,13 @@ class WorbliOverlay extends PolymerElement {
     _clickCard(event) {
         event.stopPropagation();
     }
-
     _join(){
         this.join = true;
     }
-
     _signIn(){
         this.join = false;
     }
     _sendEmail(){
-        console.log('eee')
-        this.$.goEmail.click();
         // const email = this.shadowRoot.querySelector('#email').value;
         // fetch(`http://testnetapi.worbli.io/api/v1/send-mail/${email}`)
         // .then((response) => {
