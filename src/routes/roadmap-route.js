@@ -2,7 +2,9 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
 import '../components/worbli-roadmap.js';
-
+import '../components/side-bar/worbli-whitepaper.js';
+import '../components/side-bar/worbli-partners.js';
+import '../components/side-bar/worbli-telegram.js';
 
 class RoadmapRoute extends PolymerElement {
   static get template() {
@@ -114,12 +116,9 @@ class RoadmapRoute extends PolymerElement {
           <worbli-roadmap title="Continue recruiting and hiring for WORBLI team" status="inprogress"></worbli-roadmap>
         </div>
         <div class="side">
-        <div class="container">
-            <div class="title">White Paper</div>
-        </div>
-        <div class="container">
-            <div class="title">Our Partners</div>
-        </div>
+          <worbli-whitepaper></worbli-whitepaper>
+          <worbli-partners></worbli-partners>
+          <worbli-telegram></worbli-telegram>
         </div>
       </div>
       <worbli-footer name="footer"></worbli-footer>

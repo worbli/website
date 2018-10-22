@@ -2,6 +2,9 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
 import '../components/worbli-profile.js';
+import '../components/side-bar/worbli-partners.js';
+import '../components/side-bar/worbli-producers.js';
+import '../components/side-bar/worbli-telegram.js';
 
 class TeamRoute extends PolymerElement {
   static get template() {
@@ -131,51 +134,9 @@ class TeamRoute extends PolymerElement {
             <worbli-profile name="jeff-anderson" title="Strategic Advisor" linkedin="jeff-anderson-3777aa13"></worbli-profile>
         </div>
         <div class="side">
-        <div class="container">
-            <div class="title">Strategic Partners</div>
-            <div class="bps">
-              <div class="bp"><a href="http://www.pinsentmasons.com"><img width="60px" src="./images/strategic-partners/pinsent-masons.png"></a></div>
-              <div class="bp"><a href="http://hklaw.com/"><img width="60px" src="./images/strategic-partners/holland-knight.png"></a></div>
-              <div class="bp"><a href="http://onfido.com/"><img width="60px" src="./images/strategic-partners/on-fido.png"></a></div>
-              <div class="bp"><a href="http://interblockchain.io/"><img width="60px" src="./images/strategic-partners/interblockchain-io.png"></a></div>
-              <div class="bp"><a href="http://webprofits.com.au/"><img width="60px" src="./images/strategic-partners/webprofits.png"></a></div>
-              <div class="bp"><a href="http://www.trybe.one"><img width="60px" src="./images/strategic-partners/trybe.png"></a></div>
-              <div class="bp"><a href="http://eosdetroit.io/"><img width="60px" src="./images/strategic-partners/eos-detroit.png"></a></div>
-              <div class="bp"><a href="http://www.eosgermany.one"><img width="60px" src="./images/strategic-partners/eos-germany.png"></a></div>
-              <div class="bp"><a href="http://genereos.io/"><img width="60px" src="./images/strategic-partners/genereos.png"></a></div>
-              <div class="bp"><a href="https://www.chintai.io/"><img width="60px" src="./images/strategic-partners/chintai.png"></a></div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="title">Block Producers</div>
-            <div class="bps">
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/dune.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-blocksmith.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-cafe-block.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-cannon.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-costa-rica.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-dac.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-detroit.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-dublin.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-fish.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-germany.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-nairobi.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-new-york.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-real.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-rio.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-sg.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-sphere.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-titan.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-tribe.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/eosys.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/genereos.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/gravity-pool.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/hkeos.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/infinity-bloc.png"></div>
-              <div class="bp"><img width="60px" src="./images/bp-logos/blue/saltblock.png"></div>
-            </div>
-        </div>
-        </div>
+          <worbli-partners></worbli-partners>
+          <worbli-producers></worbli-producers>
+          <worbli-telegram></worbli-telegram>
       </div>
       <worbli-footer name="footer"></worbli-footer>
     `;

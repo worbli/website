@@ -1,10 +1,9 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
-import '../components/worbli-rpc.js';
-import '../components/network-monitor/block-info.js';
-import '../components/network-monitor/block-producers.js';
-
+import '../components/side-bar/worbli-telegram.js';
+import '../components/side-bar/worbli-whitepaper.js';
+import '../components/side-bar/worbli-support.js';
 
 class MainRoute extends PolymerElement {
   static get template() {
@@ -34,7 +33,7 @@ class MainRoute extends PolymerElement {
           -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
           margin-bottom: 18px;
           cursor: pointer;
-            }
+        }
         .title {
           color: #3a3e46;
           font-size: 11px;
@@ -50,11 +49,7 @@ class MainRoute extends PolymerElement {
           color: var(--blue-text);
           font-size: 50px;
         }
-        .white-paper {
-          margin-left: 25px;
-          margin-top: 30px;
-          margin-bottom: 12px;
-        }
+
         .bottom a:hover {
           display: block;
           color: var(--green-text);
@@ -236,31 +231,16 @@ class MainRoute extends PolymerElement {
             </div>
           </div>
           </a>
-        </div>
-        <div class="side">
-        <div class="container">
-            <div class="title">FAQ & Support</div>
-            <p class="faq-text">Find out the answers to all of your questions here...</p>
-            <img src="./images/home-page/support-icon.png" width="230px" class="support-icon">
-            <a href="https://worbli.zendesk.com" class="button" target="_blank">Take me there...</a>
-            <p class="bottom-space"></p>
-        </div>
 
-        <div class="container">
-            <div class="title">White Paper</div>
-            <img src="./images/white-paper.png" alt="white paper" class="white-paper">
-            <a href="https://drive.google.com/a/worbli.io/uc?authuser=1&id=1YTFLUf1h_XsjTHCDdiClBYS74STt_n5J&export=download" class="button">Download Short Paper</a>
-            <a href="https://drive.google.com/a/worbli.io/uc?authuser=1&id=1a0Ec-2glbFXTgvr-7PnAdye0aPcHhmGd&export=download" class="bottom">Or download our full White Paper</a>
+
         </div>
         
-        <div class="container">
-            <div class="title">Telegram</div>
-            <p class="faq-text">Chat live with the WORBLI team</p>
-            <a href="https://t.me/worblicommunity" class="button" target="_blank">Open Telegram</a>
-            <p class="bottom-space"></p>
+        <div class="side">
+          <worbli-support></worbli-support>
+          <worbli-whitepaper></worbli-whitepaper>
+          <worbli-telegram></worbli-telegram>
         </div>
 
-        </div>
       </div>
       <worbli-footer name="footer"></worbli-footer>
     `;
