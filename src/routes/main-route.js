@@ -127,7 +127,7 @@ class MainRoute extends PolymerElement {
           
           <div class="tile-holder">
 
-            <div class="container square" on-click="_join">
+            <div class="container square" on-click="_join" tabindex="7">
               <div class="pic pic1"></div>
               <div class="footer">
               <h4>WORBLI Financial District</h4>
@@ -135,7 +135,7 @@ class MainRoute extends PolymerElement {
               </div>
             </div>
         
-            <a href="/about/" class="box-link">
+            <a href="/about/" class="box-link" tabindex="8">
               <div class="container square">
                 <div class="pic pic2"></div>
                 <div class="footer">
@@ -145,7 +145,7 @@ class MainRoute extends PolymerElement {
               </div>
             </a>
 
-            <a href="/team/" class="box-link">
+            <a href="/team/" class="box-link" tabindex="9">
               <div class="container square">
                 <div class="pic pic3"></div>
                 <div class="footer">
@@ -155,7 +155,7 @@ class MainRoute extends PolymerElement {
               </div>
             </a>
 
-            <a href="/network/" class="box-link">
+            <a href="/network/" class="box-link" tabindex="10">
               <div class="container square">
                 <div class="pic pic4"></div>
                   <div class="footer">

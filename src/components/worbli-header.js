@@ -94,20 +94,20 @@ class WorbliHeader extends PolymerElement {
       </style>
       <div class="container-header">
         <div class="logo">
-          <a href="/"><img src="./images/logo-blue.png" alt="Worbli"></a>
+          <a href="/" tabindex="0"><img src="./images/logo-blue.png" alt="Worbli"></a>
 		</div>
 		<button class="menu-toggle" on-click="_toggleMenu"></button>
 		<div class="navigation">
           <ul>
-            <li><a href="/about/">ABOUT</a></li>
-            <li><a href="/team/">TEAM</a></li>
-            <li><a href="/roadmap/">ROADMAP</a></li>
-            <li><a href="/network/">NETWORK</a></li>
+            <li><a href="/about/" tabindex="1">ABOUT</a></li>
+            <li><a href="/team/" tabindex="2">TEAM</a></li>
+            <li><a href="/roadmap/" tabindex="3">ROADMAP</a></li>
+            <li><a href="/network/" tabindex="4">NETWORK</a></li>
           </ul>
         </div>
         <div class="buttons">
-          <button type="button" on-click="_signIn">SIGN IN</button>
-          <button type="button" class="selected" on-click="_join">JOIN NOW</button>
+          <button type="button" on-click="_signIn" tabindex="5">SIGN IN</button>
+          <button type="button" class="selected" on-click="_join" tabindex="6">JOIN NOW</button>
         </div>
 	  </div>
     `;
