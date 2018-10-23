@@ -100,7 +100,7 @@ class TeamRoute extends PolymerElement {
 
       <div class="split">
         <div class="main">
-          <h1>WORBLI’s Team</h1>
+          <h1>Team</h1>
             <worbli-profile name="domenic-thomas" title="Co-Founder + CEO" linkedin="domenic-thomas-5403676"></worbli-profile>
             <worbli-profile name="craig-kellogg" title="Co-Founder + COO" linkedin="ckellogg"></worbli-profile>
             <worbli-profile name="robert-dewilder" title="Co-Founder + CTO" linkedin="robert-dewilder-6b83311/"></worbli-profile>
