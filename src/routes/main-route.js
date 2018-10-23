@@ -27,7 +27,8 @@ class MainRoute extends PolymerElement {
         }
         h1 {
           color: var(--blue-text);
-          font-size: 50px;
+          font-size: 33px;
+          font-weight: 500;
         }
         .tile-holder {
           margin-top: 24px;
@@ -120,9 +121,7 @@ class MainRoute extends PolymerElement {
 			.mobile-signup-buttons{
 				display:block;
 			}
-      h1 {
-        font-size: 25px;
-      }
+
       p {
         font-size: 11px;
       }
@@ -146,7 +145,7 @@ class MainRoute extends PolymerElement {
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <div class="split">
         <div class="main">
-          <h1>Making blockchain legitimate.</h1>
+          <h1>Making Blockchain Legitimate.</h1>
           <p>The future is near and we’re ready to take you there.</p>
 
           <div class="mobile-signup-buttons">

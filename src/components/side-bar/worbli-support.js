@@ -26,7 +26,7 @@ class WorbliSupport extends PolymerElement {
         <div class="container">
             <div class="title">Support Center</div>
             <p class="faq-text">Find out the answers to all of your questions here...</p>
-            <img src="./images/home-page/support-icon.png" width="230px" class="support-icon">
+            <!-- <img src="./images/home-page/support-icon.png" width="230px" class="support-icon"> -->
             <a href="https://worbli.zendesk.com" class="button" target="_blank">Take me there...</a>
             <p class="bottom-space"></p>
         </div>
