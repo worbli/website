@@ -58,8 +58,11 @@ class WorbliHeader extends PolymerElement {
         background:url('./images/noun_hamburger_menu.png');
         background-size:contain;
         background-repeat:no-repeat;
-        width:50px;
+        width:25px;
         display:none;
+        position: relative;
+        top: 14px;
+        right: 13px;
       }
       .navigation.open{
         display:block;

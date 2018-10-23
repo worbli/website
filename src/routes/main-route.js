@@ -120,6 +120,12 @@ class MainRoute extends PolymerElement {
 			.mobile-signup-buttons{
 				display:block;
 			}
+      h1 {
+        font-size: 25px;
+      }
+      p {
+        font-size: 11px;
+      }
 		}
       </style>
 
@@ -143,11 +149,10 @@ class MainRoute extends PolymerElement {
           <h1>Making blockchain legit.</h1>
           <p>The future is near and we’re ready to take you there.</p>
 
-<!-- TODO Only show these on mobile -->
-			<div class="mobile-signup-buttons">
-			<button class="btn-critical" on-click="_signIn">Sign In</button>
-			<button class="btn-critical" on-click="_joinNow">Join Now</button>
-			</div>
+          <div class="mobile-signup-buttons">
+            <button class="btn-critical" on-click="_signIn">Sign In</button>
+            <button class="btn-critical" on-click="_joinNow">Join Now</button>
+          </div>
           
           <div class="tile-holder">
 
