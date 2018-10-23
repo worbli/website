@@ -89,7 +89,7 @@ class ProfservicesRoute extends PolymerElement {
           <h2>Flexible Integration</h2>
           <p>If you want us to take on the entire product or hand of to us for the parts you are unfamiliar with</p>
           <h2>Smart Contracts</h2>
-          <p>If you want us to take on the entire product or hand of to us for the parts you are unfamiliar with</p>
+          <p>Seasoned cpp devs to facilitate contracts that bridge the chain and dApp</p>
           <h2>Security Audits</h2>
           <p>Knowing what you are releasing can only be used as its intended</p>
           <h2>Funding</h2>
