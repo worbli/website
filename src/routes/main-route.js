@@ -146,7 +146,7 @@ class MainRoute extends PolymerElement {
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <div class="split">
         <div class="main">
-          <h1>Making blockchain legit.</h1>
+          <h1>Making blockchain legitimate.</h1>
           <p>The future is near and we’re ready to take you there.</p>
 
           <div class="mobile-signup-buttons">
