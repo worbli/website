@@ -11,17 +11,17 @@ class WorbliOnfido extends PolymerElement {
             color: var(--grey-text);
             font-size: 12px;
         }
-        .container{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            padding: 40px 0 170px 0;
-            border-top: 1px solid var(--grey-keyline);
-            margin-top: 40px;
+        .center{
+          text-align: center;
+          padding: 12px;
+        }
+        .print {
+          width: 300px;
+          height: 300px;
         }
       </style>
-      <div class="container">
-
+      <div class="center">
+      <img src="./images/dashboard-icons/print.svg" class="print">
       <p>Verify your identity to get an on-chain Worbli account and redeem your Share Drop</p>
         <button id='onfido-button' disabled>[[buttonText]]</button>
         <div id='onfido-mount'></div>
