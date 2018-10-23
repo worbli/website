@@ -83,45 +83,21 @@ class ProfservicesRoute extends PolymerElement {
       <div class="split">
         <div class="main">
           <h1>Professional Services</h1>
-          <b>WORBLI' Professional Servives is a user friendly financial services ecosystem where users, developers and businesses can access a huge range of powerful and cost-effective applications in the world.</b></br></br>
-          <p>WORBLI is a secure platform where users from every continent in the world can access their favourite and most used applications from anywhere, anytime.<p></br>
-          <p>Our platform is powered by EOSIO, which allows us to deliver best in class speed, transparency, and free transactions for users in a fully compliant environment.</p></br>
-          <p>Remember the days where you had to pay bank and third party fees? WORBLI is going to make this a thing of the past.</p>
-        <h2>Product Lifecycle</h2>
-          <p>We believe blockchain technology will considerably improve financial services, cloud computing, data analysis, security and storage, supply chain logistics, social networks, voting, healthcare, income inequality, accounting, contractual arrangements and so much more, and WORBLI will be at the forefront of this technological revolution.</p></br>
-          <p>Imagine many of the current obstacles between blockchain technology and real-world application removed. Developers will be able to design and build applications for users knowing the associated financial/ transactional services are preconfigured and free, and merchant processing is available for businesses to instantly convert digital and fiat currencies into any payment form they desire (GBP, USD or BTC, EOS, WBI).</p></br>
-          <p>… think about that for a second. The customer (i.e. you) can pay for a product or service with whatever currency they want, and the business (i.e. Adidas) can choose to receive that payment in any currency they want!</p></br>
-          <p>Developers can launch new applications knowing anyone on the WORBLI Network can access and use their product and/or service. WORBLI provides the network that makes all this possible, leaving developers free to innovate and produce the most powerful and cost-effective applications in the world.</p></br></br>
-           <h2>Key Features</h2>
-          <div class="features">
-            <div class="left">
-              <b>Decentralization</b> 
-              <p>There is no central authority for transaction approval. The transactions are peer-to-peer with the Blockchain verifying transactions.</p>
-              <b>Finance focused blockchain</b> 
-              <p>The network governance is designed to meet the regulatory needs of global financial services and financial technology businesses.</p>
-              <b>Strong community</b> 
-              <p>Support With solid connections to the EOS network, we have mutual support from many EOS entities and communities such as block producers and advisors.</p>
-              <b>Tamper-proof transactions</b> 
-              <p>No one can alter the transaction ledger. The ledger is immutable.</p>
-              <b>Account recovery</b> 
-              <p>Provided for all customers. Customer accounts are recoverable when private keys are lost.</p>
-              <b>Optimized for the enterprise</b> 
-              <p>Businesses and corporations will benefit from predictable pricing models when planning to operate on the network.</p>
-            </div>
-            <div class="right">
-              <b>Security</b> 
-              <p>Individual accounts and customers wallets cannot be hacked or altered.</p>
-              <b>Startup friendly</b> 
-              <p>Startups will benefit from exchange listing and merchant processing services to quickly launch and fund their projects. </p>
-              <b>Compliance</b> 
-              <p>Enterprise business will benefit from full AML/KYC user account verification.</p>
-              <b>Speed of transactions</b> 
-              <p>Peer-to-peer token transfers and traditional financial transactions transfer in seconds.</p>
-              <b>Superior infrastructure</b> 
-              <p>Leveraging our independent EOS blockchain with features such as built-in developer tools and feeless transactions.</p>
-            </div>
-          </div>
-                         </div>
+          <b>WORBLI Professional Servives brings blockchain expertise and innovation into the heart of every industry.</b></br></br>
+          <h2>Delivery Platforms</h2>
+          <p>Web, Mobile, Games Platforms</p>
+          <h2>Flexible Integration</h2>
+          <p>If you want us to take on the entire product or hand of to us for the parts you are unfamiliar with</p>
+          <h2>Smart Contracts</h2>
+          <p>If you want us to take on the entire product or hand of to us for the parts you are unfamiliar with</p>
+          <h2>Security Audits</h2>
+          <p>Knowing what you are releasing can only be used as its intended</p>
+          <h2>Funding</h2>
+          <p>Raising funds</p></br>
+          <h2>Product Lifecycle</h2>
+          <p>Ideation & Specification, Wireframe UX/UI, Graphic Design, Implementation, Audit, Launch, Review</p></br>
+
+        </div>
         <div class="side">
             <worbli-partners></worbli-partners>
             <worbli-producers></worbli-producers>
