@@ -156,23 +156,23 @@ class MainRoute extends PolymerElement {
           
           <div class="tile-holder">
 
-            <div class="container square" on-click="_join" tabindex="7">
+          <a href="/about/" class="box-link" tabindex="7">
+            <div class="container square">
               <div class="pic pic1"></div>
               <div class="footer">
               <h4>WORBLI Financial District</h4>
               <div class="description">Learn about the next generation of financial services...</div>   
               </div>
             </div>
+          </a>
         
-            <a href="/about/" class="box-link" tabindex="8">
-              <div class="container square">
-                <div class="pic pic2"></div>
-                <div class="footer">
-                <h4>Claim your Sharedrop</h4>
-                <div class="description">If you held EOS on 7th September, 1159PM UTC...</div>
-                </div>
-              </div>
-            </a>
+          <div class="container square" on-click="_join" tabindex="8">
+            <div class="pic pic2"></div>
+            <div class="footer">
+            <h4>Claim your Sharedrop</h4>
+            <div class="description">If you held EOS on 7th September, 1159PM UTC...</div>
+            </div>
+          </div>
 
             <a href="/team/" class="box-link" tabindex="9">
               <div class="container square">
