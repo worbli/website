@@ -61,7 +61,7 @@ class MainRoute extends PolymerElement {
           margin-bottom: 6px;
         }
         .description {
-          font-size: 13px;
+          font-size: 11px;
           font-weight: 200;
           line-height: 18px;
         }
