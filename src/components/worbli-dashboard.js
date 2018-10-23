@@ -72,7 +72,7 @@ class WorbliDasboard extends PolymerElement {
       </style>
       <div class="container-dashboard">
         <div class="logo">
-          <a href="/"><img src="./images/logo-blue.png" alt="Worbli"></a>
+          <a href="/"><img src="./images/logo.svg" alt="Worbli" height="30px"></a>
         </div>
       </div>
 

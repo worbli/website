@@ -95,7 +95,7 @@ class WorbliHeader extends PolymerElement {
       }
     </style>
       <div class="container-header">
-      <div class="logo"><a href="/" tabindex="0"><img src="./images/logo-blue.png" alt="Worbli"></a></div>
+      <div class="logo"><a href="/" tabindex="0"><img src="./images/logo.svg" alt="Worbli" height="30px"></a></div>
 		  <button class="menu-toggle" on-click="_toggleMenu"></button>
       <div class="navigation">
           <ul>
