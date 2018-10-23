@@ -11,7 +11,7 @@ class WorbliDasboard extends PolymerElement {
           color: var(--grey-text);
           font-size: 12px;
       }
-      .container{
+      .container-dashboard{
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
@@ -70,7 +70,7 @@ class WorbliDasboard extends PolymerElement {
           }
       }
       </style>
-      <div class="container">
+      <div class="container-dashboard">
         <div class="logo">
           <a href="/"><img src="./images/logo-blue.png" alt="Worbli"></a>
         </div>
