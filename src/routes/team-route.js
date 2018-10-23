@@ -54,7 +54,7 @@ class TeamRoute extends PolymerElement {
         }
         h1 {
           color: var(--blue-text);
-          font-weight: 600;
+          font-weight: 200;
           margin-bottom: 12px;
         }
         h2 {
