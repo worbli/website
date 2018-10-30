@@ -79,7 +79,7 @@ class WorbliSnapshot extends PolymerElement {
   }
 
   _checkSnapshot(){
-    if (this.email){
+    if (this.accountName){
       fetch(`https://api.dac.city/api/v1/snap-shot/${this.accountName}`)
       .then((response) => {
           return response.json()
