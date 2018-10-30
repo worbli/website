@@ -62,7 +62,7 @@ class WorbliJoin extends PolymerElement {
             cursor: var(--btnCursor, not-allowed);
         }
         label{
-            font-size: 11px;
+            font-size: 13px;
         }
         .center {
             padding: 20px 0 0;
@@ -84,7 +84,7 @@ class WorbliJoin extends PolymerElement {
             background-size: contain;
             vertical-align: middle;
             cursor: pointer;
-            margin-top: 2px;
+            margin-top: 0px;
             outline:0;
             border: 0;
             padding:0;
@@ -106,6 +106,14 @@ class WorbliJoin extends PolymerElement {
             display:flex;
             display: inline-block;
             height: 29px;
+        }
+        a {
+            color: var(--blue-text);
+            text-decoration: none;
+        }
+        a:hover {
+            color: var(--blue-text);
+            text-decoration: underline;
         }
 
       </style>
