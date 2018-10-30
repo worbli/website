@@ -88,7 +88,7 @@ class WorbliJoin extends PolymerElement {
                 <button class="btn-critical" on-click="_sendEmail">Join</button>
                 <div class="center">Already on WORBLI? <span on-click="_signIn">Log In</span></div>
             </template>
-            <template is="dom-if" if="{{!complete}}">
+            <template is="dom-if" if="{{complete}}">
                 <h2>Sent</h2>
                 <p>Please check your email, we have sent you a confirmation email to: {{email}}</p>
                 <div class="center">Already on WORBLI? <span on-click="_signIn">Log In</span></div>
