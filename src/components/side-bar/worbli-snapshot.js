@@ -104,7 +104,7 @@ class WorbliSnapshot extends PolymerElement {
       })
       .then((response) => {
           if(response.total){
-            this.wbitotal(response.total * 0.8)
+            this.wbitotal = response.total * 0.8
           } else {
             this.complete = false;
           }
