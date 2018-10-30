@@ -148,19 +148,18 @@ _marketingCheckbox(){
 }
 
 _sendEmail(){
-    console.log(this.email)
-    console.log(this.termsCheckboxValue)
-    console.log(this.marketingCheckboxValue)
-   // this.set('route.path', '/dashboard/email');
-   console.log('Sending email');
-
+    // TODO: Validate email
 if (this.email){
     fetch(`https://api.dac.city/api/v1/send-email/validate/${this.email}~${this.securityCode}`)
     .then((response) => {
         return response.json()
     })
     .then((response) => {
-        console.log(response)
+        if(response = true){
+            this.complete = true
+        } else {
+            console.log('try again')
+        }
     })
 }
 
