@@ -111,7 +111,13 @@ class WorbliSnapshot extends PolymerElement {
       })
       .then((response) => {
           if(response.total){
-            this.wbitotal = (response.total * 0.8).toFixed(4);
+            let total = (response.total * 0.8);
+            let fifth = total / 5;
+            this.wbitotal = fifth.toFixed(4)
+            setTimeout(() => { this.wbitotal = (fifth*2).toFixed(4) }, 200);
+            setTimeout(() => { this.wbitotal = (fifth*3).toFixed(4) }, 200);
+            setTimeout(() => { this.wbitotal = (fifth*4).toFixed(4) }, 200);
+            setTimeout(() => { this.wbitotal = (total).toFixed(4) }, 200);
           } else {
             this.complete = false;
           }
