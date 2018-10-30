@@ -116,9 +116,9 @@ class WorbliSnapshot extends PolymerElement {
             let timeToShow = 400
             this.wbitotal = fifth.toFixed(4)
             setTimeout(() => { this.wbitotal = (fifth*2).toFixed(4) }, timeToShow);
-            setTimeout(() => { this.wbitotal = (fifth*3).toFixed(4) }, timeToShow);
-            setTimeout(() => { this.wbitotal = (fifth*4).toFixed(4) }, timeToShow);
-            setTimeout(() => { this.wbitotal = (total).toFixed(4) }, timeToShow);
+            setTimeout(() => { this.wbitotal = (fifth*3).toFixed(4) }, timeToShow * 2);
+            setTimeout(() => { this.wbitotal = (fifth*4).toFixed(4) }, timeToShow * 3);
+            setTimeout(() => { this.wbitotal = (total).toFixed(4) }, timeToShow * 4);
           } else {
             this.complete = false;
           }
