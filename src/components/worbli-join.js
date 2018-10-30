@@ -79,13 +79,20 @@ class WorbliJoin extends PolymerElement {
 
       </style>
             <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
-            <h2>Join WORBLI</h2>
-            <p>WORBLI is the place to access smarter financial services</p>
-            <input type="text" class="text" placeholder="Email Address" id="email" value="{{email::input}}">
-            <label><input type="checkbox" name="checkbox" id="terms" value="{{terms::input}}" on-mousedown="_termsCheckbox"> I agree to the <span><a href="/terms/">Terms</a></span> and <span><a href="/privacy/">Privacy Policy</a></span></label></br>
-            <label><input type="checkbox" name="checkbox" id="marketing" value="{{marketing::input}}" on-mousedown="_marketingCheckbox"> I'm happy to recieve marketing communications from WORBLI</label></br></br>
-            <button class="btn-critical" on-click="_sendEmail">Join</button>
-            <div class="center">Already on WORBLI? <span on-click="_signIn">Log In</span></div>
+            <template is="dom-if" if="{{!complete}}">
+                <h2>Join WORBLI</h2>
+                <p>WORBLI is the place to access smarter financial services</p>
+                <input type="text" class="text" placeholder="Email Address" id="email" value="{{email::input}}">
+                <label><input type="checkbox" name="checkbox" id="terms" value="{{terms::input}}" on-mousedown="_termsCheckbox"> I agree to the <span><a href="/terms/">Terms</a></span> and <span><a href="/privacy/">Privacy Policy</a></span></label></br>
+                <label><input type="checkbox" name="checkbox" id="marketing" value="{{marketing::input}}" on-mousedown="_marketingCheckbox"> I'm happy to recieve marketing communications from WORBLI</label></br></br>
+                <button class="btn-critical" on-click="_sendEmail">Join</button>
+                <div class="center">Already on WORBLI? <span on-click="_signIn">Log In</span></div>
+            </template>
+            <template is="dom-if" if="{{!complete}}">
+                <h2>Sent</h2>
+                <p>Please check your email, we have sent you a confirmation email to: {{email}}</p>
+                <div class="center">Already on WORBLI? <span on-click="_signIn">Log In</span></div>
+            </template>
     `;
   }
   static get properties() {
@@ -94,6 +101,10 @@ class WorbliJoin extends PolymerElement {
             type: Boolean,
             reflectToAttribute: true,
             notify: true,
+        },
+        complete: {
+            type: Boolean,
+            value: false,
         },
         securityCode: {
             type: Text,
