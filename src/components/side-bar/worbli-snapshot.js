@@ -58,7 +58,8 @@ class WorbliSnapshot extends PolymerElement {
         } 
         h1{
           font-weight: 800;
-          color: var(--blue-text)
+          color: var(--blue-text);
+          margin: 7px 0 0 12px;
         }
 
       </style>
@@ -73,7 +74,7 @@ class WorbliSnapshot extends PolymerElement {
               <button type="button" class="btn-critical" on-click="_checkSnapshot">Check Snapshot</button>
             </template>
             <template is="dom-if" if="{{complete}}">
-              <h1>[[wbitotal]]</h1>
+              <h1>[[wbitotal]] WBI</h1>
             </template>
         </div>
         
@@ -104,7 +105,7 @@ class WorbliSnapshot extends PolymerElement {
       })
       .then((response) => {
           if(response.total){
-            this.wbitotal = response.total * 0.8
+            this.wbitotal = (response.total * 0.8).toFixed(4);
           } else {
             this.complete = false;
           }
