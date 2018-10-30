@@ -79,8 +79,10 @@ class WorbliSnapshot extends PolymerElement {
               <button type="button" class="btn-critical" on-click="_checkSnapshot">Check Snapshot</button>
             </template>
             <template is="dom-if" if="{{complete}}">
-              <p>Your snapshot balance is:</p>
-              <h1>[[wbitotal]] WBI</h1>
+              <div on-click="_clear">
+                <p>Your snapshot balance is:</p>
+                <h1>[[wbitotal]] WBI</h1>
+              </div
             </template>
         </div>
         
@@ -102,6 +104,10 @@ class WorbliSnapshot extends PolymerElement {
     };
   }
 
+  _clear(){
+    this.complete = false;
+    this.accountName = "";
+  }
   _checkSnapshot(){
     this.complete = true;
     if (this.accountName){
