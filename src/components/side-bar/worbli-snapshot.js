@@ -82,14 +82,12 @@ class WorbliSnapshot extends PolymerElement {
     if (this.accountName){
       fetch(`https://api.dac.city/api/v1/snap-shot/${this.accountName}`)
       .then((response) => {
-          console.log(response)
           return response.json()
       })
       .then((response) => {
-        console.log(response)
-          if(response = !false){
-            console.log(response)
-            console.log(JSON.parse(response))
+          if(response.total){
+            console.log(response.total)
+            console.log(response.total * 0.7)
           } else {
               console.log('try again')
           }
