@@ -51,6 +51,8 @@ class WorbliSnapshot extends PolymerElement {
           display: block;
           font-size: 12px;
           cursor: pointer;
+          opacity: var(--btnOpacity, 0.3);
+          cursor: var(--btnCursor, not-allowed);
         }
         .container{
           display: block;
@@ -74,13 +76,11 @@ class WorbliSnapshot extends PolymerElement {
 
       </style>
 
-
-
         <div class="container">
             <div class="title">Check Snapshot</div>
             <template is="dom-if" if="{{!complete}}">
               <label>Mainnet Account Name:</label>
-              <input id="accountName" value="{{accountName::input}}" name="first-name" type="text" class="text">
+              <input id="accountName" value="{{accountName::input}}" name="first-name" type="text" class="text" on-keyup="_confirmAccountName">
               <button type="button" class="btn-critical" on-click="_checkSnapshot">Check Snapshot</button>
             </template>
             <template is="dom-if" if="{{complete}}">
@@ -112,6 +112,16 @@ class WorbliSnapshot extends PolymerElement {
   _clear(){
     this.complete = false;
     this.accountName = "";
+  }
+
+  _confirmAccountName(){
+    if(this.accountName.length >= 6){
+      this.updateStyles({'--btnOpacity': 1});
+      this.updateStyles({'--btnCursor': 'pointer'});
+    } else {
+      this.updateStyles({'--btnOpacity': 0.3});
+      this.updateStyles({'--btnCursor': 'not-allowed)'});
+    }
   }
   _checkSnapshot(){
     this.complete = true;
