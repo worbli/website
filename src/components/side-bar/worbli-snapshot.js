@@ -66,6 +66,11 @@ class WorbliSnapshot extends PolymerElement {
           display: block;
           margin: 12px 0 0 12px;
         }
+        .return {
+          display: block;
+          cursor: pointer;
+          width: 100%;
+        }
 
       </style>
 
@@ -79,7 +84,7 @@ class WorbliSnapshot extends PolymerElement {
               <button type="button" class="btn-critical" on-click="_checkSnapshot">Check Snapshot</button>
             </template>
             <template is="dom-if" if="{{complete}}">
-              <div on-click="_clear">
+              <div on-click="_clear" class="return">
                 <p>Your snapshot balance is:</p>
                 <h1>[[wbitotal]] WBI</h1>
               </div
