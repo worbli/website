@@ -87,7 +87,7 @@ class WorbliSnapshot extends PolymerElement {
       .then((response) => {
           if(response.total){
             console.log(response.total)
-            console.log(response.total * 0.7)
+            console.log(response.total * 1.7)
           } else {
               console.log('try again')
           }
