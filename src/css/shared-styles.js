@@ -83,7 +83,6 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         background: -o-linear-gradient(top,#FFFFFF,#f9f9f9);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF',
         endColorstr='#f9f9f9');
-        cursor: pointer;
         margin-bottom: 12px;
     }
 

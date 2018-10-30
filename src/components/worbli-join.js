@@ -1,4 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import { updateStyles } from '@polymer/polymer/lib/mixins/element-mixin.js';
 import '@polymer/app-route/app-location.js';
 import '../css/shared-styles.js';
 
@@ -51,9 +52,14 @@ class WorbliJoin extends PolymerElement {
         }
   
         button {
-            cursor: pointer;
             vertical-align: middle;
             outline: none;
+            opacity: var(--btnOpacity, 0.3);
+            cursor: var(--btnCursor, not-allowed);
+        }
+        .btn-critical{
+            opacity: var(--btnOpacity, 0.3);
+            cursor: var(--btnCursor, not-allowed);
         }
         label{
             font-size: 11px;
@@ -75,9 +81,9 @@ class WorbliJoin extends PolymerElement {
             <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
             <h2>Join WORBLI</h2>
             <p>WORBLI is the place to access smarter financial services</p>
-            <input type="text" class="text" placeholder="Email Address" id="email">
-            <label><input type="checkbox" name="checkbox" value="value"> I agree to the <span><a href="/terms/">Terms</a></span> and <span><a href="/privacy/">Privacy Policy</a></span></label></br>
-            <label><input type="checkbox" name="checkbox" value="value"> I'm happy to recieve marketing communications from WORBLI</label></br></br>
+            <input type="text" class="text" placeholder="Email Address" id="email" value="{{email::input}}">
+            <label><input type="checkbox" name="checkbox" id="terms" value="{{terms::input}}" on-mousedown="_termsCheckbox"> I agree to the <span><a href="/terms/">Terms</a></span> and <span><a href="/privacy/">Privacy Policy</a></span></label></br>
+            <label><input type="checkbox" name="checkbox" id="marketing" value="{{marketing::input}}" on-mousedown="_marketingCheckbox"> I'm happy to recieve marketing communications from WORBLI</label></br></br>
             <button class="btn-critical" on-click="_sendEmail">Join</button>
             <div class="center">Already on WORBLI? <span on-click="_signIn">Log In</span></div>
     `;
@@ -89,11 +95,67 @@ class WorbliJoin extends PolymerElement {
             reflectToAttribute: true,
             notify: true,
         },
+        securityCode: {
+            type: Text,
+        },
     };
   }
 
+ready() {
+    super.ready();
+    console.log('Getting security code');
+    fetch('https://api.dac.city/api/v1/security-code/')
+    .then((response) => {
+        return response.json()
+    })
+    .then((response) => {
+        this.securityCode = response.security_code;
+    })
+}
+
+_termsCheckbox(){
+    if(this.termsCheckbox === undefined && this.termsCheckboxValue === undefined){
+        this.termsCheckboxValue = true
+      } else {
+        this.termsCheckboxValue = !this.termsCheckboxValue;
+      };
+      if(this.termsCheckboxValue){
+        this.updateStyles({'--btnOpacity': 1});
+        this.updateStyles({'--btnCursor': 'pointer'});
+      } else {
+        this.updateStyles({'--btnOpacity': 0.3});
+        this.updateStyles({'--btnCursor': 'not-allowed)'});
+      }
+}
+
+_marketingCheckbox(){
+    if(this.marketingCheckbox === undefined && this.marketingCheckboxValue === undefined){
+        this.marketingCheckboxValue = true
+      } else {
+        this.marketingCheckboxValue = !this.marketingCheckboxValue;
+      } 
+}
+
 _sendEmail(){
-    this.set('route.path', '/dashboard/email');
+    console.log(this.email)
+    console.log(this.termsCheckboxValue)
+    console.log(this.marketingCheckboxValue)
+   // this.set('route.path', '/dashboard/email');
+   console.log('Sending email');
+
+if (this.email){
+    fetch(`https://api.dac.city/api/v1/send-email/verify/${this.email}~${this.securityCode}`)
+    .then((response) => {
+        return response.json()
+    })
+    .then((response) => {
+        console.log(response)
+    })
+}
+
+
+
+
 }
 _signIn(){
     this.join = false;
