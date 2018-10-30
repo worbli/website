@@ -65,7 +65,7 @@ class WorbliSnapshot extends PolymerElement {
             <div class="title">Check Snapshot</div>
             <label>Mainnet Account Name:</label>
               <input id="accountName" value="{{accountName::input}}" name="first-name" type="text" class="text">
-              <button type="button" class="btn-critical">Check Snapshot</button>
+              <button type="button" class="btn-critical" on-click="_checkSnapshot">Check Snapshot</button>
         </div>
         
     `;
@@ -78,7 +78,7 @@ class WorbliSnapshot extends PolymerElement {
     };
   }
 
-  checkSnapshot(){
+  _checkSnapshot(){
     if (this.email){
       fetch(`https://api.dac.city/api/v1/snap-shot/${this.accountName}`)
       .then((response) => {
