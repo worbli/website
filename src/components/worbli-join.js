@@ -41,7 +41,7 @@ class WorbliJoin extends PolymerElement {
   
         input.text:focus {
             background: #fff;
-            border: 1px solid #8bd2d0 !important;
+            border: 1px solid #AFD7B3 !important;
             box-shadow: 0 0 0 2px rgba(133,176,212,0.4);
         }
       
@@ -121,7 +121,7 @@ class WorbliJoin extends PolymerElement {
             <template is="dom-if" if="{{!complete}}">
                 <h2>Join WORBLI</h2>
                 <p>WORBLI is the place to access smarter financial services</p>
-                <input type="text" class="text" placeholder="Email Address" id="email" value="{{email::input}}">
+                <input type="email" class="text" placeholder="Email Address" id="email" value="{{email::input}}">
                 
                 <div class="checkbox-container">
                     <input type="checkbox" name="checkbox" id="terms" value="{{terms::input}}" on-mousedown="_termsCheckbox">
@@ -194,25 +194,30 @@ _marketingCheckbox(){
 }
 
 _sendEmail(){
-    // TODO: Validate email
-if (this.email){
-    fetch(`https://api.dac.city/api/v1/send-email/validate/${this.email}~${this.securityCode}`)
-    .then((response) => {
-        return response.json()
-    })
-    .then((response) => {
-        if(response = true){
-            this.complete = true
-        } else {
-            console.log('try again')
-        }
-    })
+    if (this.email && this._validateEmail(this.email)){
+        fetch(`https://api.dac.city/api/v1/send-email/validate/${this.email}~${this.securityCode}`)
+        .then((response) => {
+            return response.json()
+        })
+        .then((response) => {
+            if(response = true){
+                this.complete = true
+            } else {
+                console.log('try again')
+            }
+        })
+    } else {
+        this.email = ""
+    }
 }
 
 
-
-
+_validateEmail(email){
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
 }
+
+
 _signIn(){
     this.join = false;
 }
