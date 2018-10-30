@@ -76,6 +76,37 @@ class WorbliJoin extends PolymerElement {
             cursor: pointer;
             font-weight: 600;
         }
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 18px;
+            background: url(./images/checkbox.svg) no-repeat;
+            background-size: contain;
+            vertical-align: middle;
+            cursor: pointer;
+            margin-top: 2px;
+            outline:0;
+            border: 0;
+            padding:0;
+            min-width:20px;
+        }
+        input[type="checkbox"]:checked {
+            background-image: url(./images/checkbox-selected.svg);
+            outline:0;
+        }
+        .checkbox-label {
+            color: #9da1ab;
+            padding: 0 0 0 3px;
+            line-height: 20px;
+            margin: 23px 0 0;
+            width: auto;
+            font-weight: 400;
+        }
+        .checkbox-container{
+            display:flex;
+            display: inline-block;
+            height: 29px;
+        }
 
       </style>
             <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
@@ -83,8 +114,15 @@ class WorbliJoin extends PolymerElement {
                 <h2>Join WORBLI</h2>
                 <p>WORBLI is the place to access smarter financial services</p>
                 <input type="text" class="text" placeholder="Email Address" id="email" value="{{email::input}}">
-                <label><input type="checkbox" name="checkbox" id="terms" value="{{terms::input}}" on-mousedown="_termsCheckbox"> I agree to the <span><a href="/terms/">Terms and Privacy Policy</a></span></label></br>
-                <label><input type="checkbox" name="checkbox" id="marketing" value="{{marketing::input}}" on-mousedown="_marketingCheckbox"> I'm happy to recieve marketing communications from WORBLI</label></br></br>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" name="checkbox" id="terms" value="{{terms::input}}" on-mousedown="_termsCheckbox">
+                    <label class="checkbox-label"> I agree to the <span><a href="/terms/">Terms and Privacy Policy</a></span></label></br>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="checkbox" id="marketing" value="{{marketing::input}}" on-mousedown="_marketingCheckbox">
+                    <label class="checkbox-label"> I'm happy to recieve marketing communications from WORBLI</label></br></br>
+                </div>
                 <button class="btn-critical" on-click="_sendEmail">Join</button>
                 <div class="center">Already on WORBLI? <span on-click="_signIn">Log In</span></div>
             </template>
