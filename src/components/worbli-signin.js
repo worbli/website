@@ -75,8 +75,8 @@ class WorbliSignin extends PolymerElement {
 
             <h2>Sign In</h2>
             <p>Welcome back to WORBLI.....</p>
-            <input type="text" class="text" name="email" placeholder="Email" id="loginEmail">
-            <input type="text" class="text" name="password" placeholder="Password" id="password">
+            <input type="text" class="text" name="email" placeholder="Email" id="email" value="{{email::input}}">
+            <input type="password" class="text" name="password" placeholder="Password" id="password" value="{{password::input}}"">
             <button class="btn-critical" on-click="_checkPassword">Sign In</button>
             <div class="center">New to Worbli? <span on-click="_join">Join WORBLI</span></div>
     `;
@@ -93,6 +93,11 @@ class WorbliSignin extends PolymerElement {
 
 _join(){
     this.join = true;
+}
+
+_checkPassword(){
+    console.log(this.email);
+    console.log(this.password);
 }
 
 } window.customElements.define('worbli-signin', WorbliSignin);
