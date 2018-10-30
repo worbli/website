@@ -39,7 +39,7 @@ class WorbliSignin extends PolymerElement {
   
         input.text:focus {
             background: #fff;
-            border: 1px solid #8bd2d0 !important;
+            border: 1px solid #AFD7B3 !important;
             box-shadow: 0 0 0 2px rgba(133,176,212,0.4);
         }
       
@@ -50,9 +50,10 @@ class WorbliSignin extends PolymerElement {
         }
   
         button {
-            cursor: pointer;
             vertical-align: middle;
             outline: none;
+            opacity: var(--btnOpacity, 0.3);
+            cursor: var(--btnCursor, not-allowed);
         }
   
         label{
@@ -74,9 +75,9 @@ class WorbliSignin extends PolymerElement {
       </style>
 
             <h2>Sign In</h2>
-            <p>Welcome back to WORBLI.....</p>
-            <input type="text" class="text" name="email" placeholder="Email" id="email" value="{{email::input}}">
-            <input type="password" class="text" name="password" placeholder="Password" id="password" value="{{password::input}}"">
+            <p>Welcome back to WORBLI!</p>
+            <input type="text" class="text" name="email" placeholder="Email" id="email" value="{{email::input}}" on-keyup="_confirmEmail">
+            <input type="password" class="text" name="password" placeholder="Password" id="password" value="{{password::input}}" on-keyup="_confirmPassword">
             <button class="btn-critical" on-click="_checkPassword">Sign In</button>
             <div class="center">New to Worbli? <span on-click="_join">Join WORBLI</span></div>
     `;
@@ -88,6 +89,14 @@ class WorbliSignin extends PolymerElement {
         reflectToAttribute: true,
         notify: true,
       },
+      emailConfirmed: {
+        type: Boolean,
+        value: false,
+      },
+      passwordConfirmed: {
+        type: Boolean,
+        value: false,
+      },
     };
   }
 
@@ -95,9 +104,31 @@ _join(){
     this.join = true;
 }
 
-_checkPassword(){
-    console.log(this.email);
-    console.log(this.password);
+_confirmEmail(){
+    this.emailConfirmed = this._validateEmail(this.email);
+    this._buttonActive();
+}
+_confirmPassword(){
+    if (this.password.length >=7){
+        this.passwordConfirmed = true;
+        this._buttonActive();
+    } else {
+        this.passwordConfirmed = false;
+    }
+}
+_buttonActive(){
+    if(this.passwordConfirmed && this.emailConfirmed){
+        this.updateStyles({'--btnOpacity': 1});
+        this.updateStyles({'--btnCursor': 'pointer'});
+      } else {
+        this.updateStyles({'--btnOpacity': 0.3});
+        this.updateStyles({'--btnCursor': 'not-allowed)'});
+      }
+}
+
+_validateEmail(email){
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
 }
 
 } window.customElements.define('worbli-signin', WorbliSignin);

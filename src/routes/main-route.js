@@ -38,7 +38,7 @@ class MainRoute extends PolymerElement {
           max-width: 840px
         }
         .square {
-          width: 390px;
+          width: 396px;
           min-height: 400px;
           margin-right: 24px;
           margin-bottom: 24px;

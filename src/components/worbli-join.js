@@ -121,7 +121,7 @@ class WorbliJoin extends PolymerElement {
             <template is="dom-if" if="{{!complete}}">
                 <h2>Join WORBLI</h2>
                 <p>WORBLI is the place to access smarter financial services</p>
-                <input type="email" class="text" placeholder="Email Address" id="email" value="{{email::input}}">
+                <input type="email" class="text" placeholder="Email Address" id="email" value="{{email::input}}" on-keyup="_confirmEmail">
                 
                 <div class="checkbox-container">
                     <input type="checkbox" name="checkbox" id="terms" value="{{terms::input}}" on-mousedown="_termsCheckbox">
@@ -152,6 +152,10 @@ class WorbliJoin extends PolymerElement {
             type: Boolean,
             value: false,
         },
+        confirmedEmail: {
+            type: Boolean,
+            value: false,
+        },
         securityCode: {
             type: Text,
         },
@@ -170,13 +174,21 @@ ready() {
     })
 }
 
+_confirmEmail(){
+    this.confirmedEmail = this._validateEmail(this.email);
+    this_buttonActive()
+}
 _termsCheckbox(){
     if(this.termsCheckbox === undefined && this.termsCheckboxValue === undefined){
         this.termsCheckboxValue = true
       } else {
         this.termsCheckboxValue = !this.termsCheckboxValue;
       };
-      if(this.termsCheckboxValue){
+    this_buttonActive()
+}
+
+_buttonActive(){
+    if(this.termsCheckboxValue && this.confirmedEmail){
         this.updateStyles({'--btnOpacity': 1});
         this.updateStyles({'--btnCursor': 'pointer'});
       } else {
