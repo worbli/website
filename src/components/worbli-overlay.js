@@ -114,16 +114,6 @@ class WorbliOverlay extends PolymerElement {
     _signIn(){
         this.join = false;
     }
-    _sendEmail(){
-        // const email = this.shadowRoot.querySelector('#email').value;
-        // fetch(`http://testnetapi.worbli.io/api/v1/send-mail/${email}`)
-        // .then((response) => {
-        //     console.log(response);
-        // })
-        // .catch((error) => {
-        //     console.log(error);
-        // })
-    }
     _checkPassword(){
         const email = this.shadowRoot.querySelector('#loginEmail').value;
         const password = this.shadowRoot.querySelector('#password').value;
