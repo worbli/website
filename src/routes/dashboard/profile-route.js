@@ -164,7 +164,7 @@ class ProfileRoute extends PolymerElement {
           font-size: 13px;
           border: 1px solid #D9DBDE;
           border-radius: 3px;
-          background: url(../images/dropdown.gif) no-repeat;
+          background: url(./images/dropdown.gif) no-repeat;
           background-size: 18px 22px;
           background-position: 100% 50%;
         }
