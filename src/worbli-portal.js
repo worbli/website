@@ -54,6 +54,9 @@ class WorbliPortal extends PolymerElement {
         <signin-route name="signin"></signin-route>
         <join-route name="join"></join-route>
         <profservices-route name="profservices"></profservices-route>
+        <networkterms-route name="networkterms"></networkterms-route>
+        <developerterms-route name="developerterms"></developerterms-route>
+        <platformterms-route name="platformterms"></platformterms-route>
       </iron-pages>
       
     `;
@@ -85,7 +88,7 @@ class WorbliPortal extends PolymerElement {
   _routePageChanged(page) {
     if (!page) {
       this.page = 'main';
-    } else if (['main', 'network', 'about', 'team', 'roadmap', 'register', 'sharedrop', 'support', 'terms', 'privacy', 'dashboard', 'signin', 'join', 'profservices'].indexOf(page) !== -1) {
+    } else if (['main', 'network', 'about', 'team', 'roadmap', 'register', 'sharedrop', 'support', 'terms', 'privacy', 'dashboard', 'signin', 'join', 'profservices', 'networkterms', 'developerterms', 'platformterms'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -133,6 +136,15 @@ class WorbliPortal extends PolymerElement {
         break;
       case 'profservices':
         import('./routes/profservices-route.js');
+        break;
+      case 'networkterms':
+        import('./routes/networkterms-route.js');
+        break;
+      case 'developerterms':
+        import('./routes/developerterms-route.js');
+        break;
+      case 'platformterms':
+        import('./routes/platformterms-route.js');
         break;
       case 'dashboard':
         this.dashboard = true;

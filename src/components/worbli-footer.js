@@ -68,11 +68,11 @@ class WorbliFooter extends PolymerElement {
       </style>
       <div class="container-footer">
         <div>&copy; 2018 Worbli Pty Ltd. All rights reserved.<br>
-        View our <a href="/terms/">Terms & Conditions<a> or <a href="/privacy/">Privacy Policy</a>
+        View our <a href="/terms/">Terms and Privacy Policy</a>
         
         </div>
         <div><a href="mailto:hello@worbli.io">hello@worbli.io</a></div>
-        <div>5865 Neal Ave N Ste 175</br> Stillwater, MN 55082</div>
+        <div>5865 Neal Ave N Ste 175</br> Stillwater, MN 55082, United States</div>
         <div class="social-links">
             <ul>
                 <li><a href="https://www.facebook.com/worbli" target=”_blank”></a></li>
