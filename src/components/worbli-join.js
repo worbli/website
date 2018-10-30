@@ -144,7 +144,7 @@ _sendEmail(){
    console.log('Sending email');
 
 if (this.email){
-    fetch(`https://api.dac.city/api/v1/send-email/verify/${this.email}~${this.securityCode}`)
+    fetch(`https://api.dac.city/api/v1/send-email/validate/${this.email}~${this.securityCode}`)
     .then((response) => {
         return response.json()
     })
