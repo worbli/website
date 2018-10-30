@@ -73,7 +73,7 @@ class WorbliSnapshot extends PolymerElement {
               <button type="button" class="btn-critical" on-click="_checkSnapshot">Check Snapshot</button>
             </template>
             <template is="dom-if" if="{{complete}}">
-              <h1>[[wbiTotal]]</h1>
+              <h1>[[wbitotal]]</h1>
             </template>
         </div>
         
@@ -84,7 +84,7 @@ class WorbliSnapshot extends PolymerElement {
       accountName: {
         type: String,
       },
-      wbiTotal: {
+      wbitotal: {
         type: String,
         value: 0.00,
       },
@@ -104,7 +104,7 @@ class WorbliSnapshot extends PolymerElement {
       })
       .then((response) => {
           if(response.total){
-            this.wbiTotal(response.total * 0.7)
+            this.wbitotal(response.total * 0.8)
           } else {
             this.complete = false;
           }
