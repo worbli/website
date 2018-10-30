@@ -56,6 +56,10 @@ class WorbliSnapshot extends PolymerElement {
           display: block;
           padding-bottom: 9px;
         } 
+        h1{
+          font-weight: 800;
+          color: var(--blue-text)
+        }
 
       </style>
 
@@ -63,9 +67,14 @@ class WorbliSnapshot extends PolymerElement {
 
         <div class="container">
             <div class="title">Check Snapshot</div>
-            <label>Mainnet Account Name:</label>
+            <template is="dom-if" if="{{!complete}}">
+              <label>Mainnet Account Name:</label>
               <input id="accountName" value="{{accountName::input}}" name="first-name" type="text" class="text">
               <button type="button" class="btn-critical" on-click="_checkSnapshot">Check Snapshot</button>
+            </template>
+            <template is="dom-if" if="{{complete}}">
+              <h1>[[wbiTotal]]</h1>
+            </template>
         </div>
         
     `;
@@ -75,10 +84,19 @@ class WorbliSnapshot extends PolymerElement {
       accountName: {
         type: String,
       },
+      wbiTotal: {
+        type: String,
+        value: 0.00,
+      },
+      complete: {
+        type: Boolean,
+        value: false,
+      },
     };
   }
 
   _checkSnapshot(){
+    this.complete = true;
     if (this.accountName){
       fetch(`https://api.dac.city/api/v1/snap-shot/${this.accountName}`)
       .then((response) => {
@@ -86,10 +104,9 @@ class WorbliSnapshot extends PolymerElement {
       })
       .then((response) => {
           if(response.total){
-            console.log(response.total)
-            console.log(response.total * 1.7)
+            this.wbiTotal(response.total * 0.7)
           } else {
-              console.log('try again')
+            this.complete = false;
           }
       })
     }
