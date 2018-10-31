@@ -23,6 +23,10 @@ Install [PM2](http://pm2.keymetrics.io/)
     npm install pm2 -g |
 
 
+##### Install
+
+    npm install
+
 ##### Build
 
     npm run build
@@ -35,10 +39,8 @@ Install [PM2](http://pm2.keymetrics.io/)
 
 ```
 server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
-        root /var/www/testnetapi.worbli.io;
-        server_name _;
+        root /var/www/www.dac.city;
+        server_name www.dac.city;
 
         location / {
                 proxy_pass http://localhost:8080;
@@ -48,6 +50,14 @@ server {
                 proxy_set_header Host $host;
                 proxy_cache_bypass $http_upgrade;
         }
+
+    listen [::]:443 ssl ipv6only=on; 
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/www.dac.city/fullchain.pem; 
+    ssl_certificate_key /etc/letsencrypt/live/www.dac.city/privkey.pem; 
+    include /etc/letsencrypt/options-ssl-nginx.conf; 
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; 
+
 }
 ```
 
