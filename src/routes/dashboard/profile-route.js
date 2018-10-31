@@ -492,10 +492,8 @@ class ProfileRoute extends PolymerElement {
             <div class="footer">
               <button type="button" on-click="_saveProfile">Save Profile</button>
             </div>
-        </div>
         </template>
-
-
+        </div>
       </div>
       
       <worbli-footer name="footer"></worbli-footer>
