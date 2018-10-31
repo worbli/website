@@ -22,6 +22,11 @@ class WorbliSupport extends PolymerElement {
         .support-icon{
           padding-left: 20px;
         }
+        @media only screen and (max-width: 600px){
+          :host{
+            max-width: 346px;
+          }
+        }
       </style>
         <div class="container">
             <div class="title">Support Center</div>

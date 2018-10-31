@@ -11,7 +11,7 @@ class WorbliFooter extends PolymerElement {
 			font-size: 12px;
 			width:auto;
 		}
-        .container-footer{
+        .container-footer {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -35,6 +35,14 @@ class WorbliFooter extends PolymerElement {
             width: 30px;
             height: 30px;
         }
+        @media only screen and (max-width: 600px){
+          .container-footer {
+            padding: 40px 0 63px 0;
+          }
+        }
+
+
+            
 
         li:nth-child(1) a {background: url('./images/sprite.png') 0 -120px;}
         li:nth-child(2) a {background: url('./images/sprite.png') -35px -120px;}

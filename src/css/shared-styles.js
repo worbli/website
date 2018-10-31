@@ -51,17 +51,15 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         display: block;
         box-shadow: inset 0 0 0 1px #c8d6e8;
         padding: 6px;
-        max-width: 210px;
         border-radius: 3px;
         text-align: center;
         padding-top:12px;
         height: 25px;
-        margin-left: 25px;
+        margin: 0 22px 0 22px;
         text-decoration: none;
         color: #4978b3;
         font-size: 12px;
         font-weight: 600;
-        width: 100%;
       }
       .btn-critical {
         display: block;

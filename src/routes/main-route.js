@@ -35,7 +35,8 @@ class MainRoute extends PolymerElement {
           margin-top: 24px;
           display: flex;
           flex-wrap: wrap;
-          max-width: 840px
+          max-width: 840px;
+          justify-content: center;
         }
         .square {
           width: 396px;
@@ -113,30 +114,32 @@ class MainRoute extends PolymerElement {
         .btn-join {
           display: block;
           text-align: center;
-		}
-		
-		.mobile-signup-buttons{
-			display:none;
-		}
-		@media only screen and (max-width: 600px){
-			.mobile-signup-buttons{
-				display:block;
-        margin-top: 12px;
-			}
-      h1{
-        font-size: 21px;
-      }
-      .square {
-        width: 346px;
-        margin-right: 0px;
-      }
-      .side {
-        width: 344px;
-        padding-left: 0px;
-      }
-      p {
-        font-size: 11px;
-      }
+		    }		
+        .mobile-signup-buttons{
+          display:none;
+        }
+	    	@media only screen and (max-width: 600px){
+			  .mobile-signup-buttons{
+				  display:block;
+          margin-top: 12px;
+			  }
+        h1 {
+          font-size: 20px;
+        }
+        .square {
+          width: 346px;
+          margin-right: 0px;
+        }
+        .side {
+          width: 100vw;
+          padding-left: 0px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        p {
+          font-size: 11px;
+        }
 		}
       </style>
 
