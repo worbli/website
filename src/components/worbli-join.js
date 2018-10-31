@@ -176,7 +176,7 @@ ready() {
 
 _confirmEmail(){
     this.confirmedEmail = this._validateEmail(this.email);
-    this.buttonActive()
+    this._buttonActive()
 }
 _termsCheckbox(){
     if(this.termsCheckbox === undefined && this.termsCheckboxValue === undefined){
@@ -184,7 +184,7 @@ _termsCheckbox(){
       } else {
         this.termsCheckboxValue = !this.termsCheckboxValue;
       };
-    this.buttonActive()
+    this._buttonActive()
 }
 
 _buttonActive(){
