@@ -120,6 +120,7 @@ _checkPassword(){
     var profile = JSON.parse(localStorage.getItem("worbli_profile"));
     if(profile){
         this.set('route.path', `/dashboard/profile/${profile.security_code}`);
+        this.dispatchEvent(new CustomEvent('hideOverlay',{bubbles: true, composed: true, detail: {action: 'hide'}}));
     } else {
         this.error = "Incorect email and password combination";
     }

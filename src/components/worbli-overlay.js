@@ -85,6 +85,9 @@ class WorbliOverlay extends PolymerElement {
         window.addEventListener('overlay', (event) => {
             this._show(event.detail.action);
         });
+        window.addEventListener('hideOverlay', (event) => {
+            this._hide();
+        });
     }
 
     _show(event) {
