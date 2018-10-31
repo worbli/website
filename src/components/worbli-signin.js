@@ -90,7 +90,7 @@ class WorbliSignin extends PolymerElement {
     <p>Welcome back to WORBLI!</p>
     <input type="text" class="text" name="email" placeholder="Email" id="email" value="{{email::input}}" on-keyup="_confirmEmail">
     <input type="password" class="text" name="password" placeholder="Password" id="password" value="{{password::input}}" on-keyup="_confirmPassword">
-    <small class="comment error">[[firstNameError]]</small>
+    <small class="comment error">[[error]]</small>
     <button class="btn-critical" on-click="_checkPassword">Sign In</button>
     <div class="center">New to Worbli? <span on-click="_join">Join WORBLI</span></div>
     `;
