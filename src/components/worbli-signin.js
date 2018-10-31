@@ -1,5 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '../css/shared-styles.js';
+import '@polymer/app-route/app-location.js';
 
 class WorbliSignin extends PolymerElement {
   static get template() {
@@ -71,15 +72,27 @@ class WorbliSignin extends PolymerElement {
             cursor: pointer;
             font-weight: 600;
         }
+        .error{
+          color: #E54D53;
+        }
+        .comment {
+          display: block;
+          line-height: 18px;
+          color: #9da1ab;
+          padding: 9px 0 0;
+          margin: 0 0 -2px 0;
+          font-size: 12px;
+        }
 
       </style>
-
-            <h2>Sign In</h2>
-            <p>Welcome back to WORBLI!</p>
-            <input type="text" class="text" name="email" placeholder="Email" id="email" value="{{email::input}}" on-keyup="_confirmEmail">
-            <input type="password" class="text" name="password" placeholder="Password" id="password" value="{{password::input}}" on-keyup="_confirmPassword">
-            <button class="btn-critical" on-click="_checkPassword">Sign In</button>
-            <div class="center">New to Worbli? <span on-click="_join">Join WORBLI</span></div>
+    <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
+    <h2>Sign In</h2>
+    <p>Welcome back to WORBLI!</p>
+    <input type="text" class="text" name="email" placeholder="Email" id="email" value="{{email::input}}" on-keyup="_confirmEmail">
+    <input type="password" class="text" name="password" placeholder="Password" id="password" value="{{password::input}}" on-keyup="_confirmPassword">
+    <small class="comment error">[[firstNameError]]</small>
+    <button class="btn-critical" on-click="_checkPassword">Sign In</button>
+    <div class="center">New to Worbli? <span on-click="_join">Join WORBLI</span></div>
     `;
   }
   static get properties() {
@@ -103,13 +116,20 @@ class WorbliSignin extends PolymerElement {
 _join(){
     this.join = true;
 }
-
+_checkPassword(){
+    var profile = JSON.parse(localStorage.getItem("worbli_profile"));
+    if(profile){
+        this.set('route.path', `/dashboard/profile/${profile.security_code}`);
+    } else {
+        this.error = "Incorect email and password combination";
+    }
+}
 _confirmEmail(){
     this.emailConfirmed = this._validateEmail(this.email);
     this._buttonActive();
 }
 _confirmPassword(){
-    if (this.password.length >=7){
+    if (this.password && this.password.length >=7){
         this.passwordConfirmed = true;
         this._buttonActive();
     } else {
