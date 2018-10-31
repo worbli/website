@@ -475,6 +475,8 @@ class ProfileRoute extends PolymerElement {
                 <small class="comment error">[[countryResidenceError]]</small>
             </div>
           </div>
+
+        <template is="dom-if" if="{{!complete}}">
           <hr>
           <div class="input-area">
             <div class="section-name">Password</div>
@@ -486,12 +488,12 @@ class ProfileRoute extends PolymerElement {
               <small class="comment error">[[emailError]]</small>
             </div>
           </div>
-          <template is="dom-if" if="{{!complete}}">
+          <
             <div class="footer">
               <button type="button" on-click="_saveProfile">Save Profile</button>
             </div>
-          </template>
         </div>
+        </template>
 
 
       </div>
