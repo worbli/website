@@ -212,15 +212,15 @@ class ProfileRoute extends PolymerElement {
             <div class="section-name">Profile</div>
             <div class="form-inputs">
               <label>First Name </label>
-              <input id="first-name" value="{{firstName::input}}" name="first-name" type="text" class="text">
+              <input id="first-name" value="{{firstName::input}}" name="first-name" type="text" class="text" disabled="{{complete}}">
               <small class="comment">Your real first name, as found on your ID.</small>
               <small class="comment error">[[firstNameError]]</small>
               <label>Family Name </label>
-              <input id="family-name" value="{{familyName::input}}" ame="family-name" type="text" class="text">
+              <input id="family-name" value="{{familyName::input}}" ame="family-name" type="text" class="text" disabled="{{complete}}">
               <small class="comment">Your real family name, as found on your ID.</small>
               <small class="comment error">[[familyNameError]]</small>
               <label>Country of Residence</label>
-              <select class="dropdown" value="{{countryResidence::input}}">
+              <select class="dropdown" value="{{countryResidence::input}}" disabled="{{complete}}">
                 <option value="0">Select</option>
                   <option value="4">Afghanistan</option>
                   <option value="248">Åland Islands</option>
@@ -480,9 +480,9 @@ class ProfileRoute extends PolymerElement {
             <div class="section-name">Password</div>
             <div class="form-inputs">
               <label>Password</label>
-              <input id="passwordOne" value="{{passwordOne::input}}" name="password" type="password" class="text">
+              <input id="passwordOne" value="{{passwordOne::input}}" name="password" type="password" class="text" disabled="{{complete}}">
               <label>Confirm Password</label>
-              <input id="passwordTwo" value="{{passwordTwo::input}}" name="confirm-password" type="password" class="text">
+              <input id="passwordTwo" value="{{passwordTwo::input}}" name="confirm-password" type="password" class="text" disabled="{{complete}}">
               <small class="comment error">[[emailError]]</small>
             </div>
           </div>
@@ -505,6 +505,9 @@ class ProfileRoute extends PolymerElement {
       complete: {
         type: Boolean,
         value: false,
+      },
+      readonly: {
+        type: Text,
       },
     };
   }
