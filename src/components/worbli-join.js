@@ -2,7 +2,7 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import { updateStyles } from '@polymer/polymer/lib/mixins/element-mixin.js';
 import '@polymer/app-route/app-location.js';
 import '../css/shared-styles.js';
-
+import '../worbli-env.js';
 class WorbliJoin extends PolymerElement {
   static get template() {
     return html`
@@ -118,6 +118,7 @@ class WorbliJoin extends PolymerElement {
 
       </style>
             <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
+            <worbli-env api-path="{{apiPath}}""></worbli-env>
             <template is="dom-if" if="{{!complete}}">
                 <h2>Join WORBLI</h2>
                 <p>WORBLI is the place to access smarter financial services</p>
@@ -159,18 +160,21 @@ class WorbliJoin extends PolymerElement {
         securityCode: {
             type: Text,
         },
+        apiPath: {
+            type: Text,
+            observer: '_ready',
+        },
     };
   }
 
-ready() {
-    super.ready();
-    console.log('Getting security code');
-    fetch('https://api.dac.city/api/v1/security-code/')
+_ready() {
+    fetch(`${this.apiPath}/security-code/`)
     .then((response) => {
         return response.json()
     })
     .then((response) => {
         this.securityCode = response.security_code;
+        console.log(this.securityCode);
     })
 }
 
@@ -207,7 +211,7 @@ _marketingCheckbox(){
 
 _sendEmail(){
     if (this.email && this._validateEmail(this.email)){
-        fetch(`https://api.dac.city/api/v1/send-email/validate/${this.email}~${this.securityCode}`)
+        fetch(`${this.apiPath}/send-email/validate/${this.email}~${this.securityCode}`)
         .then((response) => {
             return response.json()
         })
