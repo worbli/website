@@ -157,6 +157,9 @@ class VerifyRoute extends PolymerElement {
           background-color: #F6F6F7;
           margin-left: 100px;
         }
+        .notReady{
+          cursor: not-allowed;
+        }
       </style>
       
       <!-- Google Tag Manager (noscript) -->
@@ -177,8 +180,9 @@ class VerifyRoute extends PolymerElement {
         <div class="side">
           <div class="container">
               <a href="/dashboard/profile"><div class="navigation">My Profile</div></a>
-              <a href="/dashboard/verify"><div class="navigation selected">Identity Verification</div></a>
-              <a href="/dashboard/claim"><div class="navigation">Claim Sharedrop</div></a>
+              <div class="navigation selected notReady">Identity Verification</div>
+              <div class="navigation notReady">Claim Sharedrop</div>
+              <div class="navigation notReady">News</div>
               <a href="/"><div class="navigation">Logout</div></a>
           </div>
         </div>
