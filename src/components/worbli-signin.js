@@ -1,6 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '../css/shared-styles.js';
 import '@polymer/app-route/app-location.js';
+import '../worbli-env.js';
 
 class WorbliSignin extends PolymerElement {
   static get template() {
@@ -74,24 +75,27 @@ class WorbliSignin extends PolymerElement {
         }
         .error{
           color: #E54D53;
+          margin-bottom:6px;
         }
         .comment {
           display: block;
           line-height: 18px;
           color: #9da1ab;
           padding: 9px 0 0;
-          margin: 0 0 -2px 0;
+          margin: 0 0 16px 0;
           font-size: 12px;
+          color: #E54D53;
         }
 
       </style>
     <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
+    <worbli-env api-path="{{apiPath}}""></worbli-env>
     <h2>Sign In</h2>
     <p>Welcome back to WORBLI!</p>
     <input type="text" class="text" name="email" placeholder="Email" id="email" value="{{email::input}}" on-keyup="_confirmEmail">
     <input type="password" class="text" name="password" placeholder="Password" id="password" value="{{password::input}}" on-keyup="_confirmPassword">
     <small class="comment error">[[error]]</small>
-    <button class="btn-critical" on-click="_checkPassword">Sign In</button>
+    <button class="btn-critical" on-click="_login">Sign In</button>
     <div class="center">New to Worbli? <span on-click="_join">Join WORBLI</span></div>
     `;
   }
@@ -110,31 +114,51 @@ class WorbliSignin extends PolymerElement {
         type: Boolean,
         value: false,
       },
+      apiPath: {
+        type: Text,
+      },
     };
   }
 
 _join(){
     this.join = true;
 }
-_checkPassword(){
-    var profile = JSON.parse(localStorage.getItem("worbli_profile"));
-    if(profile){
+
+_login(){
+    const data = {
+        email: this.email,
+        password: this.password,
+    }
+    const url = `${this.apiPath}/login-user/`;
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(data), 
+      headers:{'Content-Type': 'application/json'}
+    })
+    .then(response => {
+        console.log(response);
+        var profile = JSON.parse(localStorage.getItem("worbli_profile"));
         this.set('route.path', `/dashboard/profile/${profile.security_code}`);
         this.dispatchEvent(new CustomEvent('hideOverlay',{bubbles: true, composed: true, detail: {action: 'hide'}}));
-    } else {
+    })
+    .catch(error => {
         this.error = "Incorect email and password combination";
-    }
+    });
 }
+
 _confirmEmail(){
     this.emailConfirmed = this._validateEmail(this.email);
     this._buttonActive();
 }
 _confirmPassword(){
-    if (this.password && this.password.length >=7){
-        this.passwordConfirmed = true;
-        this._buttonActive();
-    } else {
+    const strongRegex = new RegExp("^(?=.*[a-z])(?=.*\d|.*[!@#\$%\^&\*])(?=.*[A-Z])(?:.{8,})$");
+    if(!strongRegex.test(this.password)) {
+        this.error = "Password must be at least 8 characters long and must include uppercase and lowercase letters and a digit or special character";
         this.passwordConfirmed = false;
+    } else {
+        this.error = "";
+        this.passwordConfirmed = true;
+        this._buttonActive(); 
     }
 }
 _buttonActive(){

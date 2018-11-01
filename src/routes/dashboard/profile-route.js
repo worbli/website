@@ -545,9 +545,9 @@ class ProfileRoute extends PolymerElement {
     this.firstNameError = "";
     this.familyNameError = "";
 
-    const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    const strongRegex = new RegExp("^(?=.*[a-z])(?=.*\d|.*[!@#\$%\^&\*])(?=.*[A-Z])(?:.{8,})$");
     if(!strongRegex.test(this.passwordOne)) {
-      this.emailError = "Password must be stronger";
+      this.emailError = "Password must be at least 8 characters long and must include uppercase and lowercase letters and a digit or special character";
       postCheck = false;
     } 
     if(this.passwordOne !== this.passwordTwo){
