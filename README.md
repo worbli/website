@@ -12,7 +12,7 @@ Install [Polymer CLI](https://github.com/Polymer/polymer-cli) using
 
 Install [PRPL-Server](https://www.npmjs.com/package/prpl-server)
 
-    npm install prpl-server -g
+    sudo npm install prpl-server -g
 
 Install [nginx](https://www.nginx.com/)
 
@@ -33,7 +33,7 @@ Install [PM2](http://pm2.keymetrics.io/)
 
 ##### Start service with PM2
 
-    pm2 start npm -- start
+    sudo pm2 start npm -- start --watch 
 
 ##### Proxy with nginx
 

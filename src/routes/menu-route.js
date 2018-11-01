@@ -74,8 +74,8 @@ class MenuRoute extends PolymerElement {
         gtag('config', 'UA-117118714-1');
       </script>
 
-
-      <worbli-footer name="footer"></worbli-footer>
+        <img src="">
+        <worbli-footer name="footer"></worbli-footer>
     `;
   }
 } window.customElements.define('menu-route', MenuRoute);

@@ -3,6 +3,7 @@ import '../../css/shared-styles.js';
 import '../../components/worbli-footer.js';
 import '../../components/side-bar/worbli-snapshot.js';
 import '@polymer/app-route/app-location.js';
+import '../../worbli-env.js';
 
 class ProfileRoute extends PolymerElement {
   static get template() {
@@ -195,6 +196,7 @@ class ProfileRoute extends PolymerElement {
       </script>
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
+      <worbli-env api-path="{{apiPath}}""></worbli-env>
       <div class="split">
         <div class="side">
           <div class="container">
@@ -508,12 +510,21 @@ class ProfileRoute extends PolymerElement {
       readonly: {
         type: Text,
       },
+      apiPath: {
+        type: Text,
+      },
     };
   }
 
   ready() {
     super.ready();
+    var request = JSON.parse(localStorage.getItem("worbli_request"));
     var profile = JSON.parse(localStorage.getItem("worbli_profile"));
+
+    if(!request || !profile){
+      this.set('route.path', '/');
+    }
+
     if(profile){
       this.firstName = profile.first_name;
       this.familyName = profile.family_name;
@@ -552,16 +563,31 @@ class ProfileRoute extends PolymerElement {
       postCheck = false;
     }
     if(postCheck !== false){
-      const profile = {
+      const data = {
         first_name : this.firstName,
         family_name : this.familyName,
         country_residence : this.countryResidence,
         security_code : security_code[3],
+        password: this.passwordOne,
       }
-      localStorage.setItem("worbli_profile", JSON.stringify(profile));
+      this._save(data);
+      data.password = null
+      localStorage.setItem('worbli_profile', JSON.stringify(data));
       this.complete = true;
     }
 
   }
+
+_save(data){
+  const url = `${this.apiPath}/register-user/`;
+  fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(data), 
+    headers:{'Content-Type': 'application/json'}
+  })
+  .then(response => console.log('Success:', JSON.stringify(response)))
+  .catch(error => console.error('Error:', error));
+}
+  
 
 } window.customElements.define('profile-route', ProfileRoute);

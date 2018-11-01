@@ -211,6 +211,11 @@ _marketingCheckbox(){
 
 _sendEmail(){
     if (this.email && this._validateEmail(this.email)){
+        const data = {
+            email: this.email,
+            security_code: this.securityCode,
+        }
+        localStorage.setItem('worbli_request', JSON.stringify(data));
         fetch(`${this.apiPath}/send-email/validate/${this.email}~${this.securityCode}`)
         .then((response) => {
             return response.json()
