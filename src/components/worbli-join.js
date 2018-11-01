@@ -168,14 +168,12 @@ class WorbliJoin extends PolymerElement {
   }
 
 _ready() {
-    console.log(`${this.apiPath}/security-code/`)
     fetch(`${this.apiPath}/security-code/`)
     .then((response) => {
         return response.json()
     })
     .then((response) => {
         this.securityCode = response.security_code;
-        console.log(this.securityCode);
     })
 }
 

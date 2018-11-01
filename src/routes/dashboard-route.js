@@ -55,7 +55,6 @@ class DasboardRoute extends PolymerElement {
   }
 
   _routePageChanged(page) {
-    console.log(page);
     if (!page) {
       this.page = 'email';
     } else if (['claim', 'email', 'profile', 'verify'].indexOf(page) !== -1) {

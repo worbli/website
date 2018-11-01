@@ -139,9 +139,6 @@ _login(){
         return response.json();
     })
     .then(response => {
-        console.log("response");
-        console.log(response);
-        console.log("response");
         if(response === true){
             var profile = JSON.parse(localStorage.getItem("worbli_profile"));
             this.set('route.path', `/dashboard/profile/${profile.security_code}`);

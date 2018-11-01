@@ -117,25 +117,7 @@ class WorbliOverlay extends PolymerElement {
     _signIn(){
         this.join = false;
     }
-    _checkPassword(){
-        const email = this.shadowRoot.querySelector('#loginEmail').value;
-        const password = this.shadowRoot.querySelector('#password').value;
-        const params = {
-            headers: {"content-type":"application/json; charset=UTF-8"},
-            body: {
-                email: email, 
-                password: password
-            },
-            method: "POST"
-        }
-        fetch('http://testnetapi.worbli.io/api/v1/sign-in/', params)
-        .then((response) => {
-            console.log(response);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-    }
+
 
 
 } window.customElements.define('worbli-overlay', WorbliOverlay);
