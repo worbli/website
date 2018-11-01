@@ -129,17 +129,26 @@ _login(){
         email: this.email,
         password: this.password,
     }
-    const url = `${this.apiPath}/login-user/`;
+    const url = `${this.apiPath}/login/`;
     fetch(url, {
       method: 'POST',
       body: JSON.stringify(data), 
       headers:{'Content-Type': 'application/json'}
     })
     .then(response => {
+        return response.json();
+    })
+    .then(response => {
+        console.log("response");
         console.log(response);
-        var profile = JSON.parse(localStorage.getItem("worbli_profile"));
-        this.set('route.path', `/dashboard/profile/${profile.security_code}`);
-        this.dispatchEvent(new CustomEvent('hideOverlay',{bubbles: true, composed: true, detail: {action: 'hide'}}));
+        console.log("response");
+        if(response === true){
+            var profile = JSON.parse(localStorage.getItem("worbli_profile"));
+            this.set('route.path', `/dashboard/profile/${profile.security_code}`);
+            this.dispatchEvent(new CustomEvent('hideOverlay',{bubbles: true, composed: true, detail: {action: 'hide'}}));
+        } else {
+            this.error = "Incorect email and password combination";
+        }
     })
     .catch(error => {
         this.error = "Incorect email and password combination";
