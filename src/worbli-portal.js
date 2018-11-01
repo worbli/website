@@ -30,7 +30,7 @@ class WorbliPortal extends PolymerElement {
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
       <worbli-overlay></worbli-overlay>
 
-      <template is="dom-if" if="{{!dashboard}}">
+      <template is="dom-if" if="{{header}}">
         <worbli-header name="header" class="center"></worbli-header>
       </template>
 
@@ -57,6 +57,7 @@ class WorbliPortal extends PolymerElement {
         <networkterms-route name="networkterms"></networkterms-route>
         <developerterms-route name="developerterms"></developerterms-route>
         <platformterms-route name="platformterms"></platformterms-route>
+        <menu-route name="menu"></menu-route>
       </iron-pages>
       
     `;
@@ -88,7 +89,7 @@ class WorbliPortal extends PolymerElement {
   _routePageChanged(page) {
     if (!page) {
       this.page = 'main';
-    } else if (['main', 'network', 'about', 'team', 'roadmap', 'register', 'sharedrop', 'support', 'terms', 'privacy', 'dashboard', 'signin', 'join', 'profservices', 'networkterms', 'developerterms', 'platformterms'].indexOf(page) !== -1) {
+    } else if (['main', 'network', 'about', 'team', 'roadmap', 'register', 'sharedrop', 'support', 'terms', 'privacy', 'dashboard', 'signin', 'join', 'profservices', 'networkterms', 'developerterms', 'platformterms', 'menu'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -96,7 +97,17 @@ class WorbliPortal extends PolymerElement {
   }
 
   _pageChanged(page) {
-    this.dashboard = false;
+    if (page === 'menu'){
+      this.dahboard = false;
+      this.header = false;
+    } else if (page === 'dashboard') {
+      this.dahboard = true;
+      this.header = false;
+    } else {
+      this.dahboard = false;
+      this.header = true;
+    }
+
     switch (page) {
       case 'main':
         import('./routes/main-route.js');
@@ -147,8 +158,10 @@ class WorbliPortal extends PolymerElement {
         import('./routes/platformterms-route.js');
         break;
       case 'dashboard':
-        this.dashboard = true;
         import('./routes/dashboard-route.js');
+        break;
+      case 'menu':
+        import('./routes/menu-route.js');
         break;
       case 'error':
         import('./routes/error-route.js');

@@ -488,7 +488,6 @@ class ProfileRoute extends PolymerElement {
               <small class="comment error">[[emailError]]</small>
             </div>
           </div>
-          <
             <div class="footer">
               <button type="button" on-click="_saveProfile">Save Profile</button>
             </div>
@@ -531,6 +530,11 @@ class ProfileRoute extends PolymerElement {
     this.firstNameError = "";
     this.familyNameError = "";
 
+    const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    if(!strongRegex.test(this.passwordOne)) {
+      this.emailError = "Password must be stronger";
+      postCheck = false;
+    } 
     if(this.passwordOne !== this.passwordTwo){
       this.emailError = "Passwords do not match each other!";
       postCheck = false;
@@ -559,4 +563,5 @@ class ProfileRoute extends PolymerElement {
     }
 
   }
+
 } window.customElements.define('profile-route', ProfileRoute);
