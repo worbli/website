@@ -520,8 +520,12 @@ class ProfileRoute extends PolymerElement {
     super.ready();
     var request = JSON.parse(localStorage.getItem("worbli_request"));
     var profile = JSON.parse(localStorage.getItem("worbli_profile"));
-
-    if(!request || !profile){
+    console.log(request)
+    console.log(profile)
+    console.log(request)
+    if(request || profile){
+      console.log('got one')
+    } else {
       this.set('route.path', '/');
     }
 

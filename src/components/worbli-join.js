@@ -168,6 +168,7 @@ class WorbliJoin extends PolymerElement {
   }
 
 _ready() {
+    console.log(`${this.apiPath}/security-code/`)
     fetch(`${this.apiPath}/security-code/`)
     .then((response) => {
         return response.json()
@@ -216,6 +217,7 @@ _sendEmail(){
             security_code: this.securityCode,
         }
         localStorage.setItem('worbli_request', JSON.stringify(data));
+
         fetch(`${this.apiPath}/send-email/validate/${this.email}~${this.securityCode}`)
         .then((response) => {
             return response.json()
