@@ -19,11 +19,27 @@ class WorbliTelegram extends PolymerElement {
         .bottom-space {
           padding-bottom: 20px;
         }
+        .image {
+          width: 30px;
+          display: inline-block;
+          position: relative;
+          top: -5px;
+          
+        }
+        .open-text{
+          display: inline-block;
+          position: relative;
+          top: -16px;
+          text-align: left;
+        }
       </style>
         <div class="container">
             <div class="title">Telegram</div>
             <p class="faq-text">Chat live with the WORBLI team</p>
-            <a href="https://t.me/worblicommunity" class="button" target="_blank">Open Telegram</a>
+            <a href="https://t.me/worblicommunity" class="button" target="_blank">
+              <img class="image" src="./images/telegram.svg">
+              <div class="open-text">Open Telegram</div>
+            </a>
             <p class="bottom-space"></p>
         </div>
     `;
