@@ -6,9 +6,9 @@ class WorbliTelegram extends PolymerElement {
     return html`
       <style include="shared-styles">
         div {
-            flex-grow: 1;
-            color: var(--grey-text);
-            font-size: 12px;
+          flex-grow: 1;
+          color: var(--grey-text);
+          font-size: 12px;
         }
         .faq-text {
           font-size: 13px;
@@ -20,24 +20,18 @@ class WorbliTelegram extends PolymerElement {
           padding-bottom: 20px;
         }
         .image {
-          width: 30px;
-          display: inline-block;
-          position: relative;
-          top: -5px;
-          
+          width: 90px;
+          margin: -10px 83px -30px 83px;
+          height: 90px;
         }
-        .open-text{
-          display: inline-block;
-          position: relative;
-          top: -16px;
-          text-align: left;
-        }
+
       </style>
         <div class="container">
             <div class="title">Telegram</div>
+            <img class="image" src="./images/telegram.svg">
             <p class="faq-text">Chat live with the WORBLI team</p>
             <a href="https://t.me/worblicommunity" class="button" target="_blank">
-              <img class="image" src="./images/telegram.svg">
+           
               <div class="open-text">Open Telegram</div>
             </a>
             <p class="bottom-space"></p>
