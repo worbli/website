@@ -21,7 +21,7 @@ class WorbliDasboard extends PolymerElement {
       }
       ul {
         list-style: none;
-        text-align: center;
+        text-align: right;
       }
       li {
         display: inline;
@@ -74,6 +74,13 @@ class WorbliDasboard extends PolymerElement {
         <div class="logo">
           <a href="/"><img src="./images/logo.svg" alt="Worbli" height="30px"></a>
         </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="/team/" tabindex="2">TEAM</a></li>
+            <li><a href="/roadmap/" tabindex="3">ROADMAP</a></li>
+            <li><a href="/network/" tabindex="4">NETWORK</a></li>
+          </ul>
+      </div>
       </div>
 
   

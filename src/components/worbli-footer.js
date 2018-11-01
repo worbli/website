@@ -8,9 +8,9 @@ class WorbliFooter extends PolymerElement {
         div {
             flex-grow: 1;
             color: var(--grey-text);
-			font-size: 12px;
-			width:auto;
-		}
+			      font-size: 12px;
+			      width:auto;
+		    }
         .container-footer {
             display: flex;
             flex-direction: row;
@@ -38,6 +38,11 @@ class WorbliFooter extends PolymerElement {
         @media only screen and (max-width: 600px){
           .container-footer {
             padding: 40px 0 63px 0;
+            text-align: center;
+          }
+          .social-links ul {
+            width: 315px;
+            display: block !important;
           }
         }
 

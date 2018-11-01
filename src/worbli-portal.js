@@ -97,15 +97,14 @@ class WorbliPortal extends PolymerElement {
   }
 
   _pageChanged(page) {
-    console.log(page)
     if (page === 'menu'){
-      this.dahboard = false;
+      this.dashboard = false;
       this.header = false;
-    } else if (page === 'profile') {
-      this.dahboard = true;
+    } else if (page === 'profile' || page === 'dashboard') {
+      this.dashboard = true;
       this.header = false;
     } else {
-      this.dahboard = false;
+      this.dashboard = false;
       this.header = true;
     }
 
