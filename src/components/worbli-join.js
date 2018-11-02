@@ -174,6 +174,9 @@ class WorbliJoin extends PolymerElement {
   }
 
 _ready() {
+    this._fetchSecurityCode();
+}
+_fetchSecurityCode(){
     fetch(`${this.apiPath}/security-code/`)
     .then((response) => {
         return response.json()
@@ -235,7 +238,8 @@ _sendEmail(){
         })
         .then((response) => {
             if(response = true){
-                this.complete = true
+                this.complete = true;
+                this._fetchSecurityCode();
             } else {
                 console.log('try again')
             }
