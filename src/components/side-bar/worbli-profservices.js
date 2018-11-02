@@ -26,7 +26,7 @@ class WorbliProfservices extends PolymerElement {
         <div class="container">
             <div class="title">Professional Services</div>
             <p class="faq-text">Leveraging our deep talent pool, launch your dApp in safe hands</p>
-            <a href="/profservices/" class="button" target="_blank">Enquire Now</a>
+            <a href="/profservices/" class="button">Enquire Now</a>
             <p class="bottom-space"></p>
         </div>
     `;
