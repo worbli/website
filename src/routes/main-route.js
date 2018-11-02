@@ -6,6 +6,7 @@ import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
 import '../components/side-bar/worbli-profservices.js';
+import '../components/side-bar/worbli-snapshot.js';
 
 class MainRoute extends PolymerElement {
   static get template() {
@@ -212,6 +213,7 @@ class MainRoute extends PolymerElement {
         </div>
         
         <div class="side">
+          <worbli-snapshot></worbli-snapshot>
           <worbli-support></worbli-support>
           <worbli-whitepaper></worbli-whitepaper>
           <worbli-profservices></worbli-profservices>

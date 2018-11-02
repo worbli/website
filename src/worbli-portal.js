@@ -5,7 +5,6 @@ import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
 import './components/worbli-header.js';
-import './components/worbli-dashboard.js';
 import './components/worbli-overlay.js';
 
 
@@ -29,14 +28,7 @@ class WorbliPortal extends PolymerElement {
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
       <worbli-overlay></worbli-overlay>
-
-      <template is="dom-if" if="{{header}}">
-        <worbli-header name="header" class="center"></worbli-header>
-      </template>
-
-      <template is="dom-if" if="{{dashboard}}">
-        <worbli-dashboard name="dashboard" class="center"></worbli-dashboard>
-      </template>
+      <worbli-header name="header" class="center"></worbli-header>
 
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main" class="center">
         <main-route name="main"></main-route>
@@ -97,17 +89,6 @@ class WorbliPortal extends PolymerElement {
   }
 
   _pageChanged(page) {
-    if (page === 'menu'){
-      this.dashboard = false;
-      this.header = false;
-    } else if (page === 'profile' || page === 'dashboard') {
-      this.dashboard = true;
-      this.header = false;
-    } else {
-      this.dashboard = false;
-      this.header = true;
-    }
-
     switch (page) {
       case 'main':
         import('./routes/main-route.js');

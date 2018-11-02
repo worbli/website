@@ -12,7 +12,7 @@ class WorbliHeader extends PolymerElement {
           font-size: 12px;
       }
       .container-header{
-		position:relative;
+		    position:relative;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -92,7 +92,25 @@ class WorbliHeader extends PolymerElement {
         .buttons {
           display: none;
         }
+        .dropdown {
+          position: relative;
+          display: inline-block;
       }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+}
     </style>
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <div class="container-header">
@@ -108,10 +126,19 @@ class WorbliHeader extends PolymerElement {
             <li><a href="/network/" tabindex="4">NETWORK</a></li>
           </ul>
       </div>
-      <div class="buttons">
-          <button type="button" on-click="_signIn" tabindex="5">SIGN IN</button>
-          <button type="button" class="selected" on-click="_join" tabindex="6">JOIN NOW</button>
+
+      <template is="dom-if" if="{{logedIn}}">
+        <div class="buttons">
+            <button type="button" on-click="_signOut" tabindex="5">SIGN OUT</button>
+            <button type="button" class="selected" on-click="_goProfile" tabindex="6">PROFILE</button>
         </div>
+      </template>
+      <template is="dom-if" if="{{!logedIn}}">
+      <div class="buttons">
+            <button type="button" on-click="_signIn" tabindex="5">SIGN IN</button>
+            <button type="button" class="selected" on-click="_join" tabindex="6">JOIN NOW</button>
+        </div>
+      </template>
 	    </div>
     `;
   }
@@ -121,9 +148,36 @@ class WorbliHeader extends PolymerElement {
         type: String,
         value: 'worbli-header',
       },
+      route: {
+        type: Object,
+        observer: "_routeChanged"
+      },
+      logedIn: {
+        type: Boolean,
+        value: false,
+      },
+      worbliProfile: {
+        type: Object,
+      }
     };
   }
 
+  _routeChanged(){
+    this.worbliProfile = JSON.parse(localStorage.getItem("worbli_profile"));
+    if(this.worbliProfile){
+      this.logedIn = true;
+    } else {
+      this.logedIn = false;
+    }
+  }
+
+  _signOut(){
+    localStorage.removeItem("worbli_profile");
+    this.set('route.path', `/`);
+  }
+  _goProfile(){
+    this.set('route.path', `/dashboard/profile/${this.worbli_profile.security_code}`);
+  }
   _signIn() {
     this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'signin'}}));
   }

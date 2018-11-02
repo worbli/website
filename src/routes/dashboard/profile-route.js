@@ -206,7 +206,6 @@ class ProfileRoute extends PolymerElement {
               <div class="navigation notReady">News</div>
               <a href="/"><div class="navigation">Logout</div></a>
           </div>
-          <worbli-snapshot></worbli-snapshot>
         </div>
         <div class="main">
           <h1>My Profile</h1>

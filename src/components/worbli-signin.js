@@ -93,7 +93,7 @@ class WorbliSignin extends PolymerElement {
     <h2>Sign In</h2>
     <p>Welcome back to WORBLI!</p>
     <input type="text" class="text" name="email" placeholder="Email" id="email" value="{{email::input}}" on-keyup="_confirmEmail">
-    <input type="password" class="text" name="password" placeholder="Password" id="password" value="{{password::input}}" on-keyup="_confirmPassword">
+    <input type="password" class="text" name="password" placeholder="Password" id="password" value="{{password::input}}">
     <small class="comment error">[[error]]</small>
     <button class="btn-critical" on-click="_login">Sign In</button>
     <div class="center">New to Worbli? <span on-click="_join">Join WORBLI</span></div>
@@ -155,17 +155,6 @@ _login(){
 _confirmEmail(){
     this.emailConfirmed = this._validateEmail(this.email);
     this._buttonActive();
-}
-_confirmPassword(){
-    const strongRegex = new RegExp("^(?=.*[a-z])(?=.*\d|.*[!@#\$%\^&\*])(?=.*[A-Z])(?:.{8,})$");
-    if(!strongRegex.test(this.password)) {
-        this.error = "Password must be at least 8 characters long and must include uppercase and lowercase letters and a digit or special character";
-        this.passwordConfirmed = false;
-    } else {
-        this.error = "";
-        this.passwordConfirmed = true;
-        this._buttonActive(); 
-    }
 }
 _buttonActive(){
     if(this.passwordConfirmed && this.emailConfirmed){

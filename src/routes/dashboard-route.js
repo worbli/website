@@ -26,10 +26,7 @@ class DasboardRoute extends PolymerElement {
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main" class="center">
         <profile-route name="profile"></profile-route>
         <verify-route name="verify"></verify-route>
-        <claim-route name="claim"></claim-route>
-        <!-- TODO: Delete email route once implemented -->
-        <email-route name="email"></email-route> 
-        
+        <claim-route name="claim"></claim-route>        
       </iron-pages>
       
     `;
@@ -56,8 +53,8 @@ class DasboardRoute extends PolymerElement {
 
   _routePageChanged(page) {
     if (!page) {
-      this.page = 'email';
-    } else if (['claim', 'email', 'profile', 'verify'].indexOf(page) !== -1) {
+      this.page = 'profile';
+    } else if (['claim', 'profile', 'verify'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -69,9 +66,6 @@ class DasboardRoute extends PolymerElement {
         case 'claim':
             import('./dashboard/claim-route.js');
             break;  
-        case 'email':
-            import('./dashboard/email-route.js');
-            break;
         case 'profile':
             import('./dashboard/profile-route.js');
             break;
