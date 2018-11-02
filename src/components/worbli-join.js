@@ -164,6 +164,10 @@ class WorbliJoin extends PolymerElement {
             type: Text,
             observer: '_ready',
         },
+        resetJoin: {
+            type: Boolean,
+            observer: '_reset',
+        }
     };
   }
 
@@ -175,6 +179,12 @@ _ready() {
     .then((response) => {
         this.securityCode = response.security_code;
     })
+}
+
+_reset(){
+    if(resetJoin ===  true){
+        this.complete = false;
+    } 
 }
 
 _confirmEmail(){

@@ -58,7 +58,7 @@ class WorbliOverlay extends PolymerElement {
     <div class="overlay" on-click="_hide">
         <template is="dom-if" if="{{join}}">
             <div class="card" on-click="_clickCard">
-                <worbli-join join="{{join}}"></worbli-join>
+                <worbli-join join="{{join}}" reset-join={{resetJoin}}></worbli-join>
             </div>
         </template>
 
@@ -103,11 +103,15 @@ class WorbliOverlay extends PolymerElement {
     }
 
     _hide() {
+        this.resetJoin = true;
         this.updateStyles({'--opacity': 0});
         setTimeout(()=>{
             this.updateStyles({'--display-none-block': 'none'});
         }, 200);
     }
+
+
+
     _clickCard(event) {
         event.stopPropagation();
     }
