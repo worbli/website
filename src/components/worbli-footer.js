@@ -46,9 +46,6 @@ class WorbliFooter extends PolymerElement {
           }
         }
 
-
-            
-
         li:nth-child(1) a {background: url('./images/sprite.png') 0 -120px;}
         li:nth-child(2) a {background: url('./images/sprite.png') -35px -120px;}
         li:nth-child(3) a {background: url('./images/sprite.png') -72px -120px;}
@@ -84,7 +81,7 @@ class WorbliFooter extends PolymerElement {
         View our <a href="/terms/">Terms and Privacy Policy</a>
         
         </div>
-        <div><a href="mailto:hello@worbli.io">hello@worbli.io</a></div>
+        <div>491B River Valley Road #15-01 Valley Point </br>Singapore 248373</div>
         <div></div>
         <div class="social-links">
             <ul>

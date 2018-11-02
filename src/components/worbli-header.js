@@ -133,7 +133,7 @@ class WorbliHeader extends PolymerElement {
             <button type="button" class="selected" on-click="_goProfile" tabindex="6">PROFILE</button>
         </div>
       </template>
-      <template is="dom-if" if="{{!logedIn}}">
+      <template is="dom-if" if="{{logedOut}}">
       <div class="buttons">
             <button type="button" on-click="_signIn" tabindex="5">SIGN IN</button>
             <button type="button" class="selected" on-click="_join" tabindex="6">JOIN NOW</button>
@@ -156,6 +156,10 @@ class WorbliHeader extends PolymerElement {
         type: Boolean,
         value: false,
       },
+      logedOut: {
+        type: Boolean,
+        value: false,
+      },
       worbliProfile: {
         type: Object,
       }
@@ -163,11 +167,19 @@ class WorbliHeader extends PolymerElement {
   }
 
   _routeChanged(){
-    this.worbliProfile = JSON.parse(localStorage.getItem("worbli_profile"));
-    if(this.worbliProfile){
-      this.logedIn = true;
-    } else {
+    let str = this.route.path.split("/")
+    if(str[1] === 'dashboard'){
       this.logedIn = false;
+      this.logedOut = false;
+    } else {
+      this.worbliProfile = JSON.parse(localStorage.getItem("worbli_profile"));
+      if(this.worbliProfile){
+        this.logedIn = true;
+        this.logedOut = false;
+      } else {
+        this.logedIn = false;
+        this.logedOut = true;
+      }
     }
   }
 
