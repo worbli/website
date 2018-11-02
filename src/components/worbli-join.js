@@ -167,6 +167,8 @@ class WorbliJoin extends PolymerElement {
         resetJoin: {
             type: Boolean,
             observer: '_reset',
+            reflectToAttribute: true,
+            notify: true,
         }
     };
   }
@@ -182,8 +184,9 @@ _ready() {
 }
 
 _reset(){
-    if(resetJoin ===  true){
+    if(resetJoin === true){
         this.complete = false;
+        this.resetJoin = false;
     } 
 }
 

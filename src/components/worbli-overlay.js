@@ -77,6 +77,10 @@ class WorbliOverlay extends PolymerElement {
             type: String,
             value: 'worbli-overlay',
         },
+        resetJoin: {
+            type: Boolean,
+            value: false,
+        }
         };
     }
 
