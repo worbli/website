@@ -184,7 +184,7 @@ _ready() {
 }
 
 _reset(){
-    if(resetJoin === true){
+    if(this.resetJoin === true){
         this.complete = false;
         this.resetJoin = false;
     } 
