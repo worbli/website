@@ -27,32 +27,31 @@ class WorbliProducers extends PolymerElement {
 <div class="container">
     <div class="title">Block Producers</div>
         <div class="bps">
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/dune.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-blocksmith.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-cafe-block.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-cannon.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-costa-rica.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-dac.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-detroit.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-dublin.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-fish.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-germany.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-nairobi.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-new-york.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-real.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-rio.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-sg.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-sphere.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-titan.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-tribe.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eosys.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/genereos.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/gravity-pool.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/hkeos.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/infinity-bloc.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/chain-rift.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-gravity-pool.png"></div>
-            <div class="bp"><img width="60px" src="./images/bp-logos/blue/octagon-labs.png"></div>
+            <a href="https://www.dunenode.com/"><div class="bp"><img width="60px" src="./images/bp-logos/blue/dune.png"></div></a>
+            <a href="https://eosblocksmith.io/"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-blocksmith.png"></div></a>
+            <a href="https://www.eoscafeblock.com/"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-cafe-block.png"></div></a>
+            <a href="https://eoscannon.io"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-cannon.png"></div></a>
+            <a href="https://eoscostarica.io/"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-costa-rica.png"></div></a>
+            <a href="https://eosdac.io"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-dac.png"></div></a>
+            <a href="https://eosdetroit.io"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-detroit.png"></div></a>
+            <a href="https://eosdublin.com"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-dublin.png"></div></a>
+            <a href="https://bp.fish"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-fish.png"></div></a>
+            <a href="https://eosgermany.one/"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-germany.png"></div></a>
+            <a href="https://www.eosnairobi.io/"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-nairobi.png"></div></a>
+            <a href="https://eosnewyork.io"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-new-york.png"></div></a>
+            <a href="http://eosreal.com/"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-real.png"></div></a>
+            <a href="https://eosrio.io"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-rio.png"></div></a>
+            <a href="http://eos.vote/EOS_Singapore_pc_eng.html"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-sg.png"></div></a>
+            <a href="https://eosphere.io"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-sphere.png"></div></a>
+            <a href="https://eostitan.com/"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-titan.png"></div></a>
+            <a href="http://eostribe.io"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eos-tribe.png"></div></a>
+            <a href="https://eosys.io"><div class="bp"><img width="60px" src="./images/bp-logos/blue/eosys.png"></div></a>
+            <a href="https://www.genereos.io"><div class="bp"><img width="60px" src="./images/bp-logos/blue/genereos.png"></div></a>
+            <a href="http://eosgravity.com/"><div class="bp"><img width="60px" src="./images/bp-logos/blue/gravity-pool.png"></div></a>
+            <a href="https://hkeos.com"><div class="bp"><img width="60px" src="./images/bp-logos/blue/hkeos.png"></div></a>
+            <a href="https://www.infinitybloc.io"><div class="bp"><img width="60px" src="./images/bp-logos/blue/infinity-bloc.png"></div></a>
+            <a href="https://www.chainrift.com/"><div class="bp"><img width="60px" src="./images/bp-logos/blue/chain-rift.png"></div></a>
+            <a href="https://octagonlabs.org/"><div class="bp"><img width="60px" src="./images/bp-logos/blue/octagon-labs.png"></div></a>
         </div>
     </div>
 </div>
