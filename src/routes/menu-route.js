@@ -58,7 +58,29 @@ class MenuRoute extends PolymerElement {
           margin-top: 12px;
           margin-bottom: 12px;
         }
+        img{
+          width: 130px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 50px;
+          margin-bottom: 50px;
+        }
+        ul {
+          list-style-type: none;
+        }
+        a {
+          text-align: center;
+          display: block;
+          line-height: 50px;
+          text-decoration: none;
+          color: var(--blue-text);
+          margin-bottom: 6px;
+          border-bottom: 1px solid #DBE2EE;
+          font-weight: 600;
+        }
       </style>
+      
 
       <!-- Google Tag Manager (noscript) -->
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
@@ -74,7 +96,18 @@ class MenuRoute extends PolymerElement {
         gtag('config', 'UA-117118714-1');
       </script>
 
-        <img src="">
+        <img src="./images/worbli-square.svg">
+        <ul>
+        <a href="/"><li>Home</li></a>
+        <a href="/about"><li>About</li></a>
+        <a href="/team"><li>Team</li></a>
+        <a href="/roadmap"><li>Roadmap</li></a>
+        <a href="/network"><li>Network</li></a>
+        <a href="https://worbli.zendesk.com/hc/en-us"><li>Support</li></a>
+        <a href="/join"><li>Join</li></a>
+        <a href="/signin"><li>Sign In</li></a>
+
+        </ul>
         <worbli-footer name="footer"></worbli-footer>
     `;
   }

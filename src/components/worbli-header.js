@@ -1,6 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '../css/shared-styles.js';
-
+import '@polymer/app-route/app-location.js';
 class WorbliHeader extends PolymerElement {
   static get template() {
     return html`
@@ -94,6 +94,7 @@ class WorbliHeader extends PolymerElement {
         }
       }
     </style>
+      <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <div class="container-header">
       <div class="logo">
         <a href="/" tabindex="0"><img src="./images/logo.svg" alt="Worbli" height="30px"></a>
@@ -132,8 +133,7 @@ class WorbliHeader extends PolymerElement {
   }
 
   _toggleMenu(){
-	  	var menuEl = this.shadowRoot.querySelector('.navigation');
-	  	menuEl.classList.toggle('open');
+    this.set('route.path', `/menu`);
   }
 
 } window.customElements.define('worbli-header', WorbliHeader);
