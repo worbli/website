@@ -75,6 +75,11 @@ class WorbliFooter extends PolymerElement {
 				display: inline-flex;
 			}
 		}
+    a {
+      line-height: 0; 
+      font-size: 0;
+      color: transparent; 
+      }
       </style>
       <div class="container-footer">
         <div>&copy; 2018 Worbli Pty Ltd. All rights reserved.<br>
@@ -85,14 +90,14 @@ class WorbliFooter extends PolymerElement {
         <div></div>
         <div class="social-links">
             <ul>
-                <li><a href="https://www.facebook.com/worbli" target=”_blank”></a></li>
-                <li><a href="https://www.instagram.com/worbli.io/" target=”_blank”></a></li>
-                <li><a href="https://www.twitter.com/WORBLI" target=”_blank”></a></li>
-                <li><a href="https://www.linkedin.com/company/worbli" target=”_blank”></a></li>
-                <li><a href="https://t.me/worblicommunity" target=”_blank”></a></li>
-                <li><a href="https://www.medium.com/@WORBLI" target=”_blank”></a></li>
-                <li><a href="https://steemit.com/@worbli" target=”_blank”></a></li>
-                <li><a href="https://www.youtube.com/channel/UCzJHGK-1utdhj623VYHSprA" target=”_blank”></a></li>
+                <li><a href="https://www.facebook.com/worbli" target=”_blank”>Facebook</a></li>
+                <li><a href="https://www.instagram.com/worbli.io/" target=”_blank”>Instagram</a></li>
+                <li><a href="https://www.twitter.com/WORBLI" target=”_blank”>Twitter</a></li>
+                <li><a href="https://www.linkedin.com/company/worbli" target=”_blank”>Linkedin</a></li>
+                <li><a href="https://t.me/worblicommunity" target=”_blank”>Telegram</a></li>
+                <li><a href="https://www.medium.com/@WORBLI" target=”_blank”>Medium</a></li>
+                <li><a href="https://steemit.com/@worbli" target=”_blank”>Steemit</a></li>
+                <li><a href="https://www.youtube.com/channel/UCzJHGK-1utdhj623VYHSprA" target=”_blank”>YouTube</a></li>
             </ul>
         </div>
       </div>
