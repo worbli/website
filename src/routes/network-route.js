@@ -42,7 +42,7 @@ class NetworkRoute extends PolymerElement {
         gtag('config', 'UA-117118714-1');
       </script>
 
-      <worbli-rpc connect endpoint="https://worbli.genereos.io" jsonrpc="{{jsonrpc}}"></worbli-rpc>
+      <worbli-rpc connect endpoint="https://endpoint-1.worbli.io" jsonrpc="{{jsonrpc}}"></worbli-rpc>
       <!-- <worbli-rpc connect endpoint="https://api.eosnewyork.io" jsonrpc="{{jsonrpc}}"></worbli-rpc> -->
 
       <div class="split">
