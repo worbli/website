@@ -75,56 +75,34 @@ class MainRoute extends PolymerElement {
           background-size: cover;
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
-        }
-        .no-webp .pic4 {
-          background-image: url("./images/home-page/bottom-right.png");
-        }
-        .webp .pic4 {
-          background-image: url("./images/home-page/bottom-right.web");
-        }
 
+        }
         .pic3 {
-          background-position: center; 
-          background-repeat: no-repeat;
-          background-size: cover;
-          border-top-left-radius: 4px;
-          border-top-right-radius: 4px;
-        }
-        .no-webp .pic3 {
           background-image: url("./images/home-page/bottom-left.png");
-        }
-        .webp .pic3 {
-          background-image: url("./images/home-page/bottom-left.web");
-        }
+          background-position: center; 
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
 
+        }
         .pic2 {
-          background-position: center; 
-          background-repeat: no-repeat;
-          background-size: cover;
-          border-top-left-radius: 4px;
-          border-top-right-radius: 4px;
-        }
-        .no-webp .pic2 {
           background-image: url("./images/home-page/top-right.png");
-        }
-        .webp .pic2 {
-          background-image: url("./images/home-page/top-right.web");
-        }
+          background-position: center; 
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
 
+        }
         .pic1 {
+          background-image: url('./images/home-page/top-left.png');
           background-position: center; 
           background-repeat: no-repeat;
           background-size: cover;
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
         }
-        .no-webp .pic1 {
-          background-image: url("./images/home-page/top-left.png");
-        }
-        .webp .pic1 {
-          background-image: url("./images/home-page/top-left.web");
-        }
-
         .box-link {
           text-decoration: none;
           color: #393E46;
@@ -166,18 +144,18 @@ class MainRoute extends PolymerElement {
       </style>
 
       <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
       <!-- End Google Tag Manager (noscript) -->
 
       <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
+      <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
       <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-117118714-1');
-      </script>
+      </script> -->
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <div class="split">
@@ -244,6 +222,7 @@ class MainRoute extends PolymerElement {
     `;
   }
 
+
   _joinNow(){
     this.set('route.path', '/join');
   }
@@ -253,5 +232,9 @@ class MainRoute extends PolymerElement {
   _join() {
     this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'join'}}));
   }
+
+
+
+
 
 } window.customElements.define('main-route', MainRoute);
