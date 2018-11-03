@@ -76,10 +76,11 @@ class WorbliSnapshot extends PolymerElement {
 
       </style>
 
+
         <div class="container">
             <div class="title">Check Snapshot</div>
             <template is="dom-if" if="{{!complete}}">
-              <label>Mainnet Account Name:</label>
+              <label for="accountName">Mainnet Account Name:</label>
               <input id="accountName" value="{{accountName::input}}" name="first-name" type="text" class="text" on-keyup="_confirmAccountName">
               <button type="button" class="btn-critical" on-click="_checkSnapshot">Check Snapshot</button>
             </template>
