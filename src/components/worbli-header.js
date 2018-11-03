@@ -38,7 +38,7 @@ class WorbliHeader extends PolymerElement {
         color: var(--blue-navigation);
         font-size: 14px;
         text-decoration: none;
-        margin-right:30px;
+        margin-left:30px;
         font-weight: 600;
       }
       button {
