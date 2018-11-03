@@ -55,7 +55,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         text-align: center;
         padding-top:12px;
         height: 25px;
-        margin: 0 22px 0 22px;
+        margin: 0 12px 0 12px;
         text-decoration: none;
         color: #4978b3;
         font-size: 12px;

@@ -24,17 +24,28 @@ class WorbliTelegram extends PolymerElement {
           margin: -10px 83px -30px 83px;
           height: 90px;
         }
+        .container-paper{
+          display:block;
+          background-color: white;
+          border-radius: 3px;
+          box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+          -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+          -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+          padding-bottom: 1px;
+          margin-bottom: 12px
+        }
+        .button{
+          margin-bottom: 12px;
+        }
 
       </style>
-        <div class="container">
+        <div class="container-paper">
             <div class="title">Telegram</div>
             <img class="image" src="./images/telegram.svg" alt="Telegram">
             <p class="faq-text">Chat live with the WORBLI team</p>
             <a href="https://t.me/worblicommunity" class="button">
-           
               <div class="open-text">Open Telegram</div>
             </a>
-            <p class="bottom-space"></p>
         </div>
     `;
   }

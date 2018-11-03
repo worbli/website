@@ -53,45 +53,57 @@ class WorbliHeader extends PolymerElement {
       img {
         vertical-align: middle;
 	    }
-      .menu-toggle{
-        background:url('./images/noun_hamburger_menu.png');
-        background-size:contain;
-        background-repeat:no-repeat;
+      .menu-togglee{
         display:none;
-        height:30px;
-        position: relative;
-        top: 11px;
       }
       .center {
           max-width: 1160px;
           margin: 0 auto;
         }
+        .logoimg{
+          height:30px
+        }
 
       @media only screen and (max-width: 600px) {
-        .navigation {
+        .navigation{
           display: none;
         }
-        .menu-toggle{
+        .menu-togglee{
           display:block;
+          position:fixed;
+          opacity: 0.3;
+          width: 25px;
+          height: 25px;
+          right: 15px;
+          top: 10px;
+          background:url('./images/noun_hamburger_menu.png');
+          background-size:contain;
+          background-repeat:no-repeat;
+          z-index:500;
+          filter: grayscale(100%);
         }
         .logo {
           text-align: center;
         }
         .container-header {
-          line-height: 50px;
-          padding-bottom: 10px;
+          line-height: 45px;
+        }
+        .logoimg{
+          height:25px
         }
       }
     </style>
+    <div class="menu-togglee" on-click="_toggleMenu"></div>
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <div class="container-header">
         <div class="logo">
           <a href="/" tabindex="0">
-            <img src="./images/logo.svg" alt="Worbli Logo" height="30px">      
+            <img src="./images/logo.svg" alt="Worbli Logo" height="30px" class="logoimg">      
           </a>
         </div>
-		    <div class="menu-toggle" on-click="_toggleMenu" name="menu" id="menu"></div>
+		    
         <div class="navigation">
+        
             <ul>
               <li><a href="/about/" tabindex="1">ABOUT</a></li>
               <li><a href="/team/" tabindex="2">TEAM</a></li>
@@ -159,6 +171,7 @@ class WorbliHeader extends PolymerElement {
   }
 
   _toggleMenu(){
+    console.log('fired')
     this.set('route.path', `/menu`);
   }
 

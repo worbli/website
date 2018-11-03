@@ -23,12 +23,20 @@ class WorbliPortal extends PolymerElement {
           max-width: 1160px;
           margin: 0 auto;
         }
+        @media only screen and (max-width: 600px){
+          .header {
+            position: fixed;
+            top: 0; 
+            width: 100%; 
+            z-index:999999;
+          }
+        }
       </style>
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
       <worbli-overlay></worbli-overlay>
-      <worbli-header name="header"></worbli-header>
+      <worbli-header name="header" class="header"></worbli-header>
 
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main" class="center">
         <main-route name="main"></main-route>

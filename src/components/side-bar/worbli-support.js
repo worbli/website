@@ -17,7 +17,7 @@ class WorbliSupport extends PolymerElement {
           padding: 12px;
         }
         .bottom-space {
-          padding-bottom: 20px;
+          padding-bottom: 12px;
         }
         .support-icon{
           padding-left: 20px;
