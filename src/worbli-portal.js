@@ -42,7 +42,9 @@ class WorbliPortal extends PolymerElement {
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
       <worbli-overlay></worbli-overlay>
-      <worbli-header name="header" class="header"></worbli-header>
+      <template is="dom-if" if="{{!hide}}">
+        <worbli-header name="header" class="header"></worbli-header>
+      </template>
 
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main" class="center">
         <main-route name="main"></main-route>
@@ -76,7 +78,7 @@ class WorbliPortal extends PolymerElement {
         reflectToAttribute: true,
         observer: '_pageChanged'
       },
-      dashboard: {
+      hide: {
         type: Boolean,
         value: false,
       },
@@ -93,6 +95,11 @@ class WorbliPortal extends PolymerElement {
   }
 
   _routePageChanged(page) {
+    if (page === 'menu'){
+      this.hide = true;
+    } else {
+      this.hide = false;
+    }
     if (!page) {
       this.page = 'main';
     } else if (['main', 'network', 'about', 'team', 'roadmap', 'register', 'sharedrop', 'support', 'terms', 'privacy', 'dashboard', 'signin', 'join', 'profservices', 'networkterms', 'developerterms', 'platformterms', 'menu'].indexOf(page) !== -1) {

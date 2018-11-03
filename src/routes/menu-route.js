@@ -108,7 +108,7 @@ class MenuRoute extends PolymerElement {
         <a href="/signin"><li>Sign In</li></a>
 
         </ul>
-        <worbli-footer name="footer"></worbli-footer>
+   
     `;
   }
 } window.customElements.define('menu-route', MenuRoute);
