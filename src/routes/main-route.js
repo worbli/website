@@ -202,10 +202,7 @@ class MainRoute extends PolymerElement {
             <a href="/network/" class="box-link">
               <div class="container square">
                 <div class="pic pic4"></div>
-                  <div class="footer">
-                    <h4>Developer Resources</h4>
-                    <div class="description">Check out which BP produced the last block...</div>
-                  </div>
+                  <div class="footer"><h4>WORBLI Developer Resources</h4><div class="description">Check out which BP produced the last block...</div></div>
                 </div>
               </div>
             </a>
