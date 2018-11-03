@@ -7,7 +7,9 @@
   ],
   "extraDependencies": [
     "manifest.json",
+    "modernizr-custom.js",
     "images/*",
+    "src/libraries/*.js",
     "node_modules/@webcomponents/webcomponentsjs/*.js",
     "!node_modules/@webcomponents/webcomponentsjs/gulpfile.js",
     "node_modules/@webcomponents/webcomponentsjs/bundles/*.js"
