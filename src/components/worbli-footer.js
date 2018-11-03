@@ -15,9 +15,9 @@ class WorbliFooter extends PolymerElement {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            padding: 40px 0 170px 0;
+            padding: 19px 0 19px 0;
             border-top: 1px solid var(--grey-keyline);
-            margin-top: 40px;
+            margin-top: 7px;
         }
         a {
             color: var(--grey-text);

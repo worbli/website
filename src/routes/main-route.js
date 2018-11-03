@@ -22,7 +22,7 @@ class MainRoute extends PolymerElement {
         }
         .side {
           width: 280px;
-          padding-left: 30px;
+          padding-left: 19px;
         }
         .main {
           flex-grow: 1;
@@ -31,19 +31,24 @@ class MainRoute extends PolymerElement {
           color: var(--blue-text);
           font-size: 33px;
           font-weight: 500;
+          line-height: 0.7;
+          margin-top: 10px;
         }
         .tile-holder {
-          margin-top: 24px;
           display: flex;
           flex-wrap: wrap;
-          max-width: 840px;
-          justify-content: center;
+          max-width: 860px;
         }
         .square {
-          width: 396px;
+          width: 420px;
           min-height: 400px;
-          margin-right: 24px;
-          margin-bottom: 24px;
+          margin-right: 19px;
+          margin-bottom: 19px;
+        }
+
+        .no-right {
+          margin-right: 0px;
+
         }
         .footer{
           border-top: 1px solid #f5f5f5;
@@ -118,6 +123,9 @@ class MainRoute extends PolymerElement {
         .mobile-signup-buttons{
           display:none;
         }
+        .tag{
+          line-height: 3.5;
+        }
 	    	@media only screen and (max-width: 600px){
 			  .mobile-signup-buttons{
 				  display:block;
@@ -161,7 +169,7 @@ class MainRoute extends PolymerElement {
       <div class="split">
         <div class="main">
           <h1>Where Fintech & Blockchain Meet</h1>
-          <p>The future is near and we’re ready to take you there.</p>
+          <p class="tag">The future is near and we’re ready to take you there.</p>
 
           <div class="mobile-signup-buttons">
             <button class="btn-critical" on-click="_signIn">Sign In</button>
@@ -180,7 +188,7 @@ class MainRoute extends PolymerElement {
             </div>
           </a>
         
-          <div class="container square" on-click="_join">
+          <div class="container square no-right" on-click="_join">
             <div class="pic pic2"></div>
             <div class="footer">
             <h4>Claim your Sharedrop</h4>
@@ -198,8 +206,8 @@ class MainRoute extends PolymerElement {
               </div>
             </a>
 
-            <a href="/network/" class="box-link">
-              <div class="container square">
+            <a href="/network/" class="box-link ">
+              <div class="container square no-right ">
                 <div class="pic pic4"></div>
                   <div class="footer"><h4>WORBLI Developer Resources</h4><div class="description">Check out which BP produced the last block...</div></div>
                 </div>

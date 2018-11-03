@@ -5,6 +5,12 @@ class WorbliHeader extends PolymerElement {
   static get template() {
     return html`
     <style include="shared-styles">
+        :host {
+          display: block;
+          margin-bottom:17px;
+          background-color: white;
+          box-shadow: inset 0 1px 0 #f5f5f5, 0 1px 0px rgba(0,0,0,0.08), 0 2px 2px rgba(0,0,0,0.05);
+        }
       div {
           display: inline-block;
           flex-grow: 1;
@@ -17,8 +23,8 @@ class WorbliHeader extends PolymerElement {
         flex-direction: row;
         flex-wrap: wrap;
         line-height: 60px;
-        border-bottom: 1px solid var(--grey-keyline);
-        margin-bottom: 40px;
+        margin: 0 auto;
+        max-width: 1160px;
       }
       ul {
         list-style: none;
@@ -56,6 +62,10 @@ class WorbliHeader extends PolymerElement {
         position: relative;
         top: 11px;
       }
+      .center {
+          max-width: 1160px;
+          margin: 0 auto;
+        }
 
       @media only screen and (max-width: 600px) {
         .navigation {
@@ -71,26 +81,24 @@ class WorbliHeader extends PolymerElement {
           line-height: 50px;
           padding-bottom: 10px;
         }
-
-
-}
+      }
     </style>
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <div class="container-header">
-      <div class="logo">
-        <a href="/" tabindex="0">
-        <img src="./images/logo.svg" alt="Worbli Logo" height="30px">      
-      </a>
-      </div>
-		  <div class="menu-toggle" on-click="_toggleMenu" name="menu" id="menu"></div>
-      <div class="navigation">
-          <ul>
-            <li><a href="/about/" tabindex="1">ABOUT</a></li>
-            <li><a href="/team/" tabindex="2">TEAM</a></li>
-            <li><a href="/roadmap/" tabindex="3">ROADMAP</a></li>
-            <li><a href="/network/" tabindex="4">NETWORK</a></li>
-          </ul>
-      </div>
+        <div class="logo">
+          <a href="/" tabindex="0">
+            <img src="./images/logo.svg" alt="Worbli Logo" height="30px">      
+          </a>
+        </div>
+		    <div class="menu-toggle" on-click="_toggleMenu" name="menu" id="menu"></div>
+        <div class="navigation">
+            <ul>
+              <li><a href="/about/" tabindex="1">ABOUT</a></li>
+              <li><a href="/team/" tabindex="2">TEAM</a></li>
+              <li><a href="/roadmap/" tabindex="3">ROADMAP</a></li>
+              <li><a href="/network/" tabindex="4">NETWORK</a></li>
+            </ul>
+        </div>
 	    </div>
     `;
   }
