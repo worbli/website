@@ -171,7 +171,7 @@ class MainRoute extends PolymerElement {
           
           <div class="tile-holder">
 
-          <a href="/about/" class="box-link" tabindex="0">
+          <a href="/about/" class="box-link">
             <div class="container square">
               <div class="pic pic1"></div>
               <div class="footer">
@@ -181,7 +181,7 @@ class MainRoute extends PolymerElement {
             </div>
           </a>
         
-          <div class="container square" on-click="_join" tabindex="1">
+          <div class="container square" on-click="_join">
             <div class="pic pic2"></div>
             <div class="footer">
             <h4>Claim your Sharedrop</h4>
@@ -189,7 +189,7 @@ class MainRoute extends PolymerElement {
             </div>
           </div>
 
-            <a href="/team/" class="box-link" tabindex="2">
+            <a href="/team/" class="box-link">
               <div class="container square">
                 <div class="pic pic3"></div>
                 <div class="footer">
@@ -199,7 +199,7 @@ class MainRoute extends PolymerElement {
               </div>
             </a>
 
-            <a href="/network/" class="box-link" tabindex="3">
+            <a href="/network/" class="box-link">
               <div class="container square">
                 <div class="pic pic4"></div>
                   <div class="footer">

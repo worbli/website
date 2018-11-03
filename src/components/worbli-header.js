@@ -51,11 +51,10 @@ class WorbliHeader extends PolymerElement {
         background:url('./images/noun_hamburger_menu.png');
         background-size:contain;
         background-repeat:no-repeat;
-        width:25px;
         display:none;
+        height:30px;
         position: relative;
-        top: 14px;
-        right: 13px;
+        top: 11px;
       }
 
       @media only screen and (max-width: 600px) {
@@ -79,9 +78,18 @@ class WorbliHeader extends PolymerElement {
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <div class="container-header">
       <div class="logo">
-        <a href="/" tabindex="0"><img src="./images/logo.svg" alt="Worbli" height="30px"></a>
+        <a href="/" tabindex="0">
+  
+          <picture>
+            <source srcset="./images/logo.webp" type="image/webp">
+            <source srcset="./images/logo.png" type="image/png"> 
+            <source srcset="./images/logo.svg" type="image/svg"> 
+            <img src="./images/logo.png" alt="Worbli Logo" height="30px">
+          </picture>
+      
+      </a>
       </div>
-		  <button class="menu-toggle" on-click="_toggleMenu" name="menu" id="menu"></button>
+		  <div class="menu-toggle" on-click="_toggleMenu" name="menu" id="menu"></div>
       <div class="navigation">
           <ul>
             <li><a href="/about/" tabindex="1">ABOUT</a></li>
