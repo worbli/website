@@ -28,7 +28,7 @@ class WorbliTelegram extends PolymerElement {
       </style>
         <div class="container">
             <div class="title">Telegram</div>
-            <img class="image" src="./images/telegram.svg">
+            <img class="image" src="./images/telegram.svg" alt="Telegram">
             <p class="faq-text">Chat live with the WORBLI team</p>
             <a href="https://t.me/worblicommunity" class="button" target="_blank">
            

@@ -81,7 +81,7 @@ class WorbliHeader extends PolymerElement {
       <div class="logo">
         <a href="/" tabindex="0"><img src="./images/logo.svg" alt="Worbli" height="30px"></a>
       </div>
-		  <button class="menu-toggle" on-click="_toggleMenu"></button>
+		  <button class="menu-toggle" on-click="_toggleMenu" name="menu" id="menu"></button>
       <div class="navigation">
           <ul>
             <li><a href="/about/" tabindex="1">ABOUT</a></li>
