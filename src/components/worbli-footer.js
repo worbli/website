@@ -39,6 +39,8 @@ class WorbliFooter extends PolymerElement {
           .container-footer {
             padding: 40px 0 63px 0;
             text-align: center;
+            border-top: none;
+            padding: 0;
           }
           .social-links ul {
             width: 315px;

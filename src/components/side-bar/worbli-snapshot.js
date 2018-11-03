@@ -23,7 +23,7 @@ class WorbliSnapshot extends PolymerElement {
           display: block;
           font-size: 12px;
           color: #393d4d;
-          font-weight: 600;
+          font-weight: 200;
           padding: 17px 0 7px;
           width: 340px;
           margin-left: 16px;

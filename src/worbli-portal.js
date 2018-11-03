@@ -23,13 +23,19 @@ class WorbliPortal extends PolymerElement {
           max-width: 1160px;
           margin: 0 auto;
         }
-        @media only screen and (max-width: 600px){
-          .header {
+        .header {
             position: fixed;
             top: 0; 
             width: 100%; 
             z-index:999999;
           }
+        iron-pages {
+          padding-top: 80px;
+        }
+        @media only screen and (max-width: 600px){
+          iron-pages {
+          padding-top: 0px;
+        }
         }
       </style>
 
