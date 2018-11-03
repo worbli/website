@@ -111,14 +111,6 @@ class WorbliFooter extends PolymerElement {
       </script>
     `;
   }
-  static get properties() {
-    return {
-      prop1: {
-        type: String,
-        value: 'worbli-footer',
-      },
-    };
-  }
 }
 
 window.customElements.define('worbli-footer', WorbliFooter);

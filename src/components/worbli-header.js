@@ -22,7 +22,7 @@ class WorbliHeader extends PolymerElement {
       }
       ul {
         list-style: none;
-        text-align: center;
+        text-align: right;
       }
       li {
         display: inline;
@@ -44,13 +44,6 @@ class WorbliHeader extends PolymerElement {
         cursor: pointer;
         border-radius: 3px;
       }
-      .buttons {
-        text-align: right;
-      }
-      .selected {
-        color: white;
-        background-color: var(--blue-button);
-      }
       img {
         vertical-align: middle;
 	    }
@@ -64,17 +57,7 @@ class WorbliHeader extends PolymerElement {
         top: 14px;
         right: 13px;
       }
-      .navigation.open{
-        display:block;
-        position:absolute;
-        top:100%;
-        width:100%;
-        background-color:#fff;
-        z-index:100;
-      }
-      .navigation.open li{
-        display:block;
-      }
+
       @media only screen and (max-width: 600px) {
         .navigation {
           display: none;
@@ -89,27 +72,8 @@ class WorbliHeader extends PolymerElement {
           line-height: 50px;
           padding-bottom: 10px;
         }
-        .buttons {
-          display: none;
-        }
-        .dropdown {
-          position: relative;
-          display: inline-block;
-      }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-}
 
-  .dropdown:hover .dropdown-content {
-      display: block;
-  }
 }
     </style>
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
@@ -126,19 +90,6 @@ class WorbliHeader extends PolymerElement {
             <li><a href="/network/" tabindex="4">NETWORK</a></li>
           </ul>
       </div>
-
-      <template is="dom-if" if="{{logedIn}}">
-        <div class="buttons">
-            <button type="button" on-click="_signOut" tabindex="5">SIGN OUT</button>
-            <button type="button" class="selected" on-click="_goProfile" tabindex="6">PROFILE</button>
-        </div>
-      </template>
-      <template is="dom-if" if="{{logedOut}}">
-      <div class="buttons">
-            <button type="button" on-click="_signIn" tabindex="5">SIGN IN</button>
-            <button type="button" class="selected" on-click="_join" tabindex="6">JOIN NOW</button>
-        </div>
-      </template>
 	    </div>
     `;
   }
