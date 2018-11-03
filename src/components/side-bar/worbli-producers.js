@@ -14,9 +14,9 @@ class WorbliProducers extends PolymerElement {
           width: 60px;
           height: 60px;
           padding: 16px;
-          opacity: 0.5;
+          /* opacity: 0.5;
           -webkit-filter: grayscale(0.5);
-          filter: grayscale(0.5);
+          filter: grayscale(0.5); */
         }
         .bps{
           display: flex;

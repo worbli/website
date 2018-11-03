@@ -11,14 +11,26 @@ class WorbliPartners extends PolymerElement {
             font-size: 12px;
         }
         .bp {
-          width: 60px;
-          height: 60px;
-          padding: 16px;
+          width: 105px;
+          height: 105px;
+          padding: 0 16px;
+          background-color:red;
+          
         }
         .bps{
           display: flex;
           flex-wrap: wrap
         }
+       .bps a:nth-child(1) div {background: url('./images/strategic-partners.png') 519px -54px;}
+       .bps a:nth-child(2) div {background: url('./images/strategic-partners.png') 1039px -54px;}
+       .bps a:nth-child(3) div {background: url('./images/strategic-partners.png') 785px -54px;}
+       .bps a:nth-child(4) div {background: url('./images/strategic-partners.png') 913px -54px;}
+       .bps a:nth-child(5) div {background: url('./images/strategic-partners.png') 259px -54px;}
+       .bps a:nth-child(6) div {background: url('./images/strategic-partners.png') -1261px -54px;}
+       .bps a:nth-child(7) div {background: url('./images/strategic-partners.png') -216px -54px;}
+       .bps a:nth-child(8) div {background: url('./images/strategic-partners.png') -353px -54px;}
+       .bps a:nth-child(9) div {background: url('./images/strategic-partners.png') -475px -54px;}
+       .bps a:nth-child(10) div {background: url('./images/strategic-partners.png') -85px -54px;}
       </style>
 
 
@@ -26,16 +38,16 @@ class WorbliPartners extends PolymerElement {
         <div class="container">
             <div class="title">Strategic Partners</div>
             <div class="bps">
-              <div class="bp"><a href="http://www.pinsentmasons.com"><img width="60px" src="./images/strategic-partners/pinsent-masons.png"></a></div>
-              <div class="bp"><a href="http://hklaw.com/"><img width="60px" src="./images/strategic-partners/holland-knight.png"></a></div>
-              <div class="bp"><a href="http://onfido.com/"><img width="60px" src="./images/strategic-partners/on-fido.png"></a></div>
-              <div class="bp"><a href="http://interblockchain.io/"><img width="60px" src="./images/strategic-partners/interblockchain-io.png"></a></div>
-              <div class="bp"><a href="http://webprofits.com.au/"><img width="60px" src="./images/strategic-partners/webprofits.png"></a></div>
-              <div class="bp"><a href="http://www.trybe.one"><img width="60px" src="./images/strategic-partners/trybe.png"></a></div>
-              <div class="bp"><a href="http://eosdetroit.io/"><img width="60px" src="./images/strategic-partners/eos-detroit.png"></a></div>
-              <div class="bp"><a href="http://www.eosgermany.one"><img width="60px" src="./images/strategic-partners/eos-germany.png"></a></div>
-              <div class="bp"><a href="http://genereos.io/"><img width="60px" src="./images/strategic-partners/genereos.png"></a></div>
-              <div class="bp"><a href="https://www.chintai.io/"><img width="60px" src="./images/strategic-partners/chintai.png"></a></div>
+            <a href="http://www.pinsentmasons.com"><div class="bp pinsentmasons"></div></a>
+            <a href="http://hklaw.com/"><div class="bp"></div></a>
+            <a href="http://onfido.com/"><div class="bp"></div></a>
+            <a href="http://interblockchain.io/"><div class="bp"></div></a>
+            <a href="http://webprofits.com.au/"><div class="bp"></div></a>
+            <a href="http://www.trybe.one"><div class="bp"></div></a>
+            <a href="http://eosdetroit.io/"><div class="bp"></div></a>
+            <a href="http://www.eosgermany.one"><div class="bp"></div></a>
+            <a href="http://genereos.io/"><div class="bp"></div></a>
+            <a href="https://www.chintai.io/"><div class="bp"></div></a>
             </div>
         </div>
         

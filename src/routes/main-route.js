@@ -78,7 +78,7 @@ class MainRoute extends PolymerElement {
 
         }
         .pic3 {
-          background-image: url("./images/bottom-left.png");
+          background-image: url("./images/home-page/bottom-left.png");
           background-position: center; 
           background-repeat: no-repeat;
           background-size: cover;

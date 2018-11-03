@@ -138,6 +138,7 @@ class TeamRoute extends PolymerElement {
           <worbli-producers></worbli-producers>
           <worbli-telegram></worbli-telegram>
       </div>
+      </div>
       <worbli-footer name="footer"></worbli-footer>
     `;
   }
