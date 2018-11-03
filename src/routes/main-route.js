@@ -75,35 +75,56 @@ class MainRoute extends PolymerElement {
           background-size: cover;
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
-
         }
+        .no-webp .pic4 {
+          background-image: url("./images/home-page/bottom-right.png");
+        }
+        .webp .pic4 {
+          background-image: url("./images/home-page/bottom-right.web");
+        }
+
         .pic3 {
+          background-position: center; 
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+        }
+        .no-webp .pic3 {
           background-image: url("./images/home-page/bottom-left.png");
-          background-position: center; 
-          background-repeat: no-repeat;
-          background-size: cover;
-          border-top-left-radius: 4px;
-          border-top-right-radius: 4px;
-
         }
+        .webp .pic3 {
+          background-image: url("./images/home-page/bottom-left.web");
+        }
+
         .pic2 {
+          background-position: center; 
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+        }
+        .no-webp .pic2 {
           background-image: url("./images/home-page/top-right.png");
-          background-position: center; 
-          background-repeat: no-repeat;
-          background-size: cover;
-          border-top-left-radius: 4px;
-          border-top-right-radius: 4px;
-
         }
+        .webp .pic2 {
+          background-image: url("./images/home-page/top-right.web");
+        }
+
         .pic1 {
-          background-image: url("./images/home-page/top-left.png");
           background-position: center; 
           background-repeat: no-repeat;
           background-size: cover;
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
-
         }
+        .no-webp .pic1 {
+          background-image: url("./images/home-page/top-left.png");
+        }
+        .webp .pic1 {
+          background-image: url("./images/home-page/top-left.web");
+        }
+
         .box-link {
           text-decoration: none;
           color: #393E46;
