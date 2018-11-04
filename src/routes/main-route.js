@@ -229,7 +229,7 @@ class MainRoute extends PolymerElement {
             </div>
           </a>
         
-          <div class="container square no-right" on-click="_join">
+          <div class="container square no-right">
             <div class="pic pic2"></div>
             <div class="footer">
             <h4>Claim your Sharedrop</h4>
