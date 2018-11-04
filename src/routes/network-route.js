@@ -37,6 +37,9 @@ class NetworkRoute extends PolymerElement {
             order: 1;
             padding-right: 0;
           }
+          worbli-snapshot {
+            display: none;
+          }
         }
   
       </style>

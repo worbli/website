@@ -108,6 +108,7 @@ class BlockProducers extends PolymerElement {
             ul.blue:hover {
                 background-color: #f5f5f5;
             }
+
             @media only screen and (max-width: 600px){
                 .head-titles{
                     display: none;
@@ -117,7 +118,13 @@ class BlockProducers extends PolymerElement {
                 }
                 .location{
                     height: 20px;
+                    margin-top: 4px
                 }
+                .owner{
+                    font-size: 18px;
+                    margin-left: 12px;
+                }
+                
             }
         </style>
         <div class="container">
