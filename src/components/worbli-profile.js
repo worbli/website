@@ -11,6 +11,7 @@ class WorbliProfile extends PolymerElement {
         box-shadow: inset 0 0 10px #000000;
         border-radius: 50%;
         opacity: 0.85;
+        margin-top:20px;
     }
     img:hover {
         opacity: 1;
@@ -70,7 +71,7 @@ class WorbliProfile extends PolymerElement {
 	}
     .flip-container, .front, .back {
         width: 220px;
-        height: 227px;
+        height: 200px;
     }
 
     .flipper {
@@ -96,7 +97,7 @@ class WorbliProfile extends PolymerElement {
     }
 
     .front {
-        padding-top:20px;
+        padding-top:10px;
         text-align: center;
         z-index: 2;
         background: #FFF;
