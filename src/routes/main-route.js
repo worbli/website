@@ -73,7 +73,7 @@ class MainRoute extends PolymerElement {
           line-height: 18px;
         }
         .pic4 {
-          background-image: url("./images/home-page/bottom-right.png");
+          background-image: url("./images/home-page/bottom-right.jpg");
           background-position: center; 
           background-repeat: no-repeat;
           background-size: cover;
@@ -82,7 +82,7 @@ class MainRoute extends PolymerElement {
 
         }
         .pic3 {
-          background-image: url("./images/home-page/bottom-left.png");
+          background-image: url("./images/home-page/bottom-left.jpg");
           background-position: center; 
           background-repeat: no-repeat;
           background-size: cover;
@@ -91,7 +91,7 @@ class MainRoute extends PolymerElement {
 
         }
         .pic2 {
-          background-image: url("./images/home-page/top-right.png");
+          background-image: url("./images/home-page/top-right.jpg");
           background-position: center; 
           background-repeat: no-repeat;
           background-size: cover;
@@ -100,7 +100,7 @@ class MainRoute extends PolymerElement {
 
         }
         .pic1 {
-          background-image: url('./images/home-page/top-left.png');
+          background-image: url('./images/home-page/top-left.jpg');
           background-position: center; 
           background-repeat: no-repeat;
           background-size: cover;

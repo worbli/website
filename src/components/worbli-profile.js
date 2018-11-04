@@ -11,16 +11,14 @@ class WorbliProfile extends PolymerElement {
         box-shadow: inset 0 0 10px #000000;
         border-radius: 50%;
         opacity: 0.85;
-        margin-top:20px;
+        margin-top:40px;
+        margin-bottom:20px;
     }
     img:hover {
         opacity: 1;
     }
     .container {
         position: relative;
-
-
-
     }
     h4 {
         font-size: 14px;
@@ -57,7 +55,7 @@ class WorbliProfile extends PolymerElement {
         -moz-perspective: 1000;
         -o-perspective: 1000;
         perspective: 1000;
-        margin: 12px;
+        margin: 6px 6px;
     }
 
 	.flip-container:hover 
@@ -70,8 +68,8 @@ class WorbliProfile extends PolymerElement {
 		transform: rotateY(180deg);
 	}
     .flip-container, .front, .back {
-        width: 220px;
-        height: 200px;
+        width: 255px;
+        height: 255px;
     }
 
     .flipper {
@@ -97,7 +95,6 @@ class WorbliProfile extends PolymerElement {
     }
 
     .front {
-        padding-top:10px;
         text-align: center;
         z-index: 2;
         background: #FFF;
@@ -117,6 +114,10 @@ class WorbliProfile extends PolymerElement {
         -moz-transform: rotateY(180deg);
         -o-transform: rotateY(180deg);
         transform: rotateY(180deg);
+    }
+    .profile{
+        text-align: left;
+        margin: 12px;
     }
 
 
@@ -149,6 +150,7 @@ class WorbliProfile extends PolymerElement {
                     <p>[[title]]</p>
                 </div>
                 <div class="back">
+                    <p class="profile">[[profile]]</p>
                     <div class="footer">
                         <template is="dom-if" if="{{linkedin}}">
                             <a href="https://www.linkedin.com/in/[[linkedin]]/" target="_blaank"><div class="linked-in"></div><a>
@@ -156,6 +158,7 @@ class WorbliProfile extends PolymerElement {
                         <template is="dom-if" if="{{!linkedin}}">
                             <div class="linked-in-none"></div>
                         </template> 
+                        
                     <div>
                 </div>
             </div>
