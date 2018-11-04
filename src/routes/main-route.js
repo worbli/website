@@ -205,11 +205,7 @@ class MainRoute extends PolymerElement {
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <div class="split">
         <div class="main">
-        <div class="mobile-signup-buttons">
-            <button class="btn-critical" on-click="_joinNow">Join Now</button>
-            <button class="btn-critical" on-click="_signIn">Sign In</button>
-            
-          </div>
+
 
           <h1>Where Fintech & Blockchain Meet</h1>
           <p class="tag">The future is near and we’re ready to take you there.</p>
