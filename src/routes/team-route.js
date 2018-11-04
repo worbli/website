@@ -82,6 +82,17 @@ class TeamRoute extends PolymerElement {
           display: flex;
           flex-wrap: wrap
         }
+        @media only screen and (max-width: 600px){
+          .main {
+            margin-left: 12px;
+            margin-top: 4px;
+          }
+          .side {
+          width: 100vw;
+          padding-left: 0px;
+          }
+        }
+
       </style>
 
       <!-- Google Tag Manager (noscript) -->

@@ -65,6 +65,15 @@ class AboutRoute extends PolymerElement {
           font-size: 16px;
           font-weight: 600;
         }
+        @media only screen and (max-width: 600px){
+          b, p, h2{
+            margin: 12px;
+          }
+          h1{
+            margin-top:5x;
+          }
+
+        }
       </style>
       <!-- Google Tag Manager (noscript) -->
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"

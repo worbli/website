@@ -57,6 +57,27 @@ class WorbliProfile extends PolymerElement {
         display: inline-block;
         margin: 12px 10px 6px 6px;
     }
+    @media only screen and (max-width: 600px){
+          .container {
+            min-width: 159px;
+            margin-right: 10px;
+
+          }
+          h4 {
+            font-size: 12px;
+            color: var(--blue-text);
+            font-weight: 600;
+            text-transform: capitalize;
+            }
+            p {
+                font-size: 10px;
+                margin-bottom: 12px;
+                max-width: 159px;
+                white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            }
+        }
     </style>
     <div class="container">
 

@@ -34,8 +34,8 @@ class WorbliPortal extends PolymerElement {
         }
         @media only screen and (max-width: 600px){
           iron-pages {
-          padding-top: 0px;
-        }
+            padding-top: 0px;
+          }
         }
       </style>
 

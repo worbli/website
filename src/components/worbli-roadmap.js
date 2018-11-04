@@ -5,6 +5,9 @@ class WorbliRoadmap extends PolymerElement {
   static get template() {
     return html`
     <style include="shared-styles">
+    :host {
+        min-width:350px;
+    }
         div {
             font-size: 12px;
             display: inline-block;
@@ -21,6 +24,7 @@ class WorbliRoadmap extends PolymerElement {
             margin-left:24px;
             margin-right:12px;
         }
+
 
     </style>
     <div>

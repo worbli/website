@@ -20,9 +20,7 @@ class WorbliTelegram extends PolymerElement {
           padding-bottom: 20px;
         }
         .image {
-          width: 90px;
-          margin: -10px 83px -30px 83px;
-          height: 90px;
+          margin: 12px;
         }
         .container-paper{
           display:block;
@@ -41,7 +39,7 @@ class WorbliTelegram extends PolymerElement {
       </style>
         <div class="container-paper">
             <div class="title">Telegram</div>
-            <img class="image" src="./images/telegram.svg" alt="Telegram">
+            <img class="image" src="./images/telegramintro.png" alt="Telegram">
             <p class="faq-text">Chat live with the WORBLI team</p>
             <a href="https://t.me/worblicommunity" class="button">
               <div class="open-text">Open Telegram</div>
