@@ -118,6 +118,8 @@ class WorbliProfile extends PolymerElement {
     .profile{
         text-align: left;
         margin: 12px;
+        height:185px;
+        overflow: hidden;
     }
 
 
@@ -132,14 +134,10 @@ class WorbliProfile extends PolymerElement {
             font-weight: 600;
             text-transform: capitalize;
         }
-        p {
-            font-size: 10px;
-            margin-bottom: 12px;
-            max-width: 159px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+        .flip-container, .front, .back {
+    width: 316px;
+    height: 255px;
+}
     }
     </style>
         <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
