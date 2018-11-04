@@ -17,13 +17,11 @@ class WorbliPartners extends PolymerElement {
           border-radius: 1px;
           box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
           margin-bottom:12px;
-          
         }
         .bps{
           display: flex;
           flex-wrap: wrap;
           padding:12px;
-          
         }
  
        .bps a:nth-child(1) div {background: url('./images/strategic-partners.png') 513px -73px; margin-right:12px;}
