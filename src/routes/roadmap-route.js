@@ -77,7 +77,6 @@ class RoadmapRoute extends PolymerElement {
             width: 100vw;
             padding-left: 0px;
           }
-
         }
       </style>
 

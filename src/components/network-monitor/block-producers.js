@@ -108,10 +108,21 @@ class BlockProducers extends PolymerElement {
             ul.blue:hover {
                 background-color: #f5f5f5;
             }
+            @media only screen and (max-width: 600px){
+                .head-titles{
+                    display: none;
+                }
+                .number{
+                    display: none;
+                }
+                .location{
+                    height: 20px;
+                }
+            }
         </style>
         <div class="container">
             <div class="title">Worbli Block Producers</div>
-            <ul>
+            <ul class="head-titles">
                 <li class="number"></li>
                 <li class="logo"></li>
                 <li class="owner">Name:</li>

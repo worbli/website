@@ -25,6 +25,19 @@ class NetworkRoute extends PolymerElement {
           flex-grow: 1;
           padding-right: 12px;
         }
+        @media only screen and (max-width: 600px){
+          :host {
+            margin-top: 60px;
+          }
+          .side{
+            order: 0;
+            width: 100vw;
+          }
+          .main {
+            order: 1;
+            padding-right: 0;
+          }
+        }
   
       </style>
 
