@@ -125,6 +125,13 @@ class MainRoute extends PolymerElement {
         .tag{
           line-height: 3.5;
         }
+        .next {
+          width: 20px;
+          position: absolute;
+          right: 23px;
+          bottom: 21px;
+          opacity: 0.5;
+        }
 	    	@media only screen and (max-width: 600px){
 			  .mobile-signup-buttons{
 				  display:block;
@@ -216,7 +223,8 @@ class MainRoute extends PolymerElement {
               <div class="pic pic1"></div>
               <div class="footer">
               <h4>WORBLI Financial District</h4>
-              <div class="description">Learn about the next generation of financial services...</div>   
+              <div class="description">Learn about the next generation of financial services...</div>
+              <img src="./images/next.svg" class="next"> 
               </div>
             </div>
           </a>
@@ -226,6 +234,7 @@ class MainRoute extends PolymerElement {
             <div class="footer">
             <h4>Claim your Sharedrop</h4>
             <div class="description">If you held EOS on 7th September, 1159PM UTC...</div>
+            <img src="./images/next.svg" class="next"> 
             </div>
           </div>
 
@@ -235,6 +244,7 @@ class MainRoute extends PolymerElement {
                 <div class="footer">
                   <h4>WORBLI Team & Partners</h4>
                   <div class="description">Discover who’s building the WORBLI ecosystem...</div>
+                  <img src="./images/next.svg" class="next"> 
                 </div>
               </div>
             </a>
@@ -243,6 +253,7 @@ class MainRoute extends PolymerElement {
               <div class="container square no-right ">
                 <div class="pic pic4"></div>
                   <div class="footer"><h4>WORBLI Developer Resources</h4><div class="description">Check out which BP produced the last block...</div></div>
+                  <img src="./images/next.svg" class="next"> 
                 </div>
               </div>
             </a>
