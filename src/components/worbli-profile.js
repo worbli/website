@@ -17,16 +17,9 @@ class WorbliProfile extends PolymerElement {
     }
     .container {
         position: relative;
-        background: #FFF;
-        border-radius: 3px;
-        box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-        -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-        -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-        margin-bottom: 18px;
-        min-width: 260px;
-        margin-right: 12px;
-        text-align: center;
-        padding-top: 30px;
+
+
+
     }
     h4 {
         font-size: 14px;
@@ -57,53 +50,115 @@ class WorbliProfile extends PolymerElement {
         display: inline-block;
         margin: 12px 10px 6px 6px;
     }
-    @media only screen and (max-width: 600px){
-          .container {
-            min-width: 159px;
-            margin-right: 10px;
 
-          }
-          h4 {
+    .flip-container {
+        -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        -o-perspective: 1000;
+        perspective: 1000;
+        margin: 12px;
+    }
+
+	.flip-container:hover 
+    .flipper,  
+    .flip-container.hover 
+    .flipper {
+		-webkit-transform: rotateY(180deg);
+		-moz-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+    .flip-container, .front, .back {
+        width: 220px;
+        height: 227px;
+    }
+
+    .flipper {
+        -webkit-transition: 0.6s;
+        -webkit-transform-style: preserve-3d;
+        -moz-transition: 0.6s;
+        -moz-transform-style: preserve-3d;
+        -o-transition: 0.6s;
+        -o-transform-style: preserve-3d;
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+    .front, .back {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .front {
+        padding-top:20px;
+        text-align: center;
+        z-index: 2;
+        background: #FFF;
+        border-radius: 3px;
+        box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+        -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+        -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+    }
+
+    .back {
+        background: #FFF;
+        border-radius: 3px;
+        box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+        -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+        -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+
+
+    @media only screen and (max-width: 600px){
+        .container {
+            min-width: 162px;
+            margin-right: 0px;
+        }
+        h4 {
             font-size: 12px;
             color: var(--blue-text);
             font-weight: 600;
             text-transform: capitalize;
-            }
-            p {
-                font-size: 10px;
-                margin-bottom: 12px;
-                max-width: 159px;
-                white-space: nowrap;
+        }
+        p {
+            font-size: 10px;
+            margin-bottom: 12px;
+            max-width: 159px;
+            white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            }
         }
+    }
     </style>
-    <div class="container">
-
-        <template is="dom-if" if="{{linkedin}}">
-            <a href="https://www.linkedin.com/in/[[linkedin]]/" target="_blaank">
-                <img src="./images/team-photos/[[name]].png" width="120px" height="120px" alt="[[formattedName]]">
-            <a>
-        </template>
-        <template is="dom-if" if="{{!linkedin}}">
-            <img src="./images/team-photos/[[name]].png" width="120px" height="120px" alt="[[formattedName]]">
-        </template>
-
-
-
-        <h4>[[formattedName]]</h4>
-        <p>[[title]]</p>
-        <div class="footer">
-        <template is="dom-if" if="{{linkedin}}">
-            <a href="https://www.linkedin.com/in/[[linkedin]]/" target="_blaank"><div class="linked-in"></div><a>
-        </template>
-        <template is="dom-if" if="{{!linkedin}}">
-            <div class="linked-in-none"></div>
-        </template>
-            
-        <div>
-    </div>
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front">
+                    <img src="./images/team-photos/[[name]].png" width="120px" height="120px" alt="[[formattedName]]">
+                    <h4>[[formattedName]]</h4>
+                    <p>[[title]]</p>
+                </div>
+                <div class="back">
+                    <div class="footer">
+                        <template is="dom-if" if="{{linkedin}}">
+                            <a href="https://www.linkedin.com/in/[[linkedin]]/" target="_blaank"><div class="linked-in"></div><a>
+                        </template>
+                        <template is="dom-if" if="{{!linkedin}}">
+                            <div class="linked-in-none"></div>
+                        </template> 
+                    <div>
+                </div>
+            </div>
+        </div>
     `;
   }
   static get properties() {
@@ -119,6 +174,9 @@ class WorbliProfile extends PolymerElement {
             type: Text,
         },
         linkedin: {
+            type: Text,
+        },
+        profile: {
             type: Text,
         },
     };

@@ -23,7 +23,7 @@ class NetworkRoute extends PolymerElement {
         }
         .main {
           flex-grow: 1;
-          padding-left: 30px;
+          padding-right: 30px;
         }
   
       </style>
@@ -43,11 +43,14 @@ class NetworkRoute extends PolymerElement {
       </script>
 
       <worbli-rpc connect endpoint="https://endpoint-1.worbli.io" jsonrpc="{{jsonrpc}}"></worbli-rpc>
-      <!-- <worbli-rpc connect endpoint="https://api.eosnewyork.io" jsonrpc="{{jsonrpc}}"></worbli-rpc> -->
 
       <div class="split">
-        <block-info class="side" jsonrpc="[[jsonrpc]]" producer="{{producer}}" interval="500"></block-info>
-        <block-producers class="main" jsonrpc="[[jsonrpc]]" producer="[[producer]]" interval="500"></block-producers>
+        <div class="main">
+          <block-producers class="main" jsonrpc="[[jsonrpc]]" producer="[[producer]]" interval="500"></block-producers>
+        </div>
+        <div class="side">
+          <block-info class="side" jsonrpc="[[jsonrpc]]" producer="{{producer}}" interval="500"></block-info>
+        </div>
       </div>
       <worbli-footer name="footer"></worbli-footer>
     `;
