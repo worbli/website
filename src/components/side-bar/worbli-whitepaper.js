@@ -35,8 +35,8 @@ class WorbliWhitepaper extends PolymerElement {
         .white-paper{
           margin: 0 auto;
           display:block;
-          padding-top:12px;
           padding-bottom:12px;
+          width: 255px;
         }
         .bottom-text{
           margin:12px;
@@ -46,15 +46,20 @@ class WorbliWhitepaper extends PolymerElement {
           text-decoration: none;
           color: black;
         }
+        .top {
+          margin-top:12px;
+        }
       </style>
         <div class="container-paper">
-            <div class="title">Short Paper</div>
+            <div class="title">Download Papers</div>
             <a href="https://drive.google.com/a/worbli.io/uc?authuser=1&id=1YTFLUf1h_XsjTHCDdiClBYS74STt_n5J&export=download">
-            <img src="./images/white-paper.png" alt="white paper" class="white-paper">
-      </a>
-            <a href="https://drive.google.com/a/worbli.io/uc?authuser=1&id=1a0Ec-2glbFXTgvr-7PnAdye0aPcHhmGd&export=download" class="bottom-text">Or download our full White Paper</a>
-          
-            <a href="https://drive.google.com/a/worbli.io/uc?authuser=1&id=1YTFLUf1h_XsjTHCDdiClBYS74STt_n5J&export=download" class="button">Download Short Paper</a>
+              <img src="./images/shortpaper.png" alt="white paper" class="white-paper top">
+            </a>
+            <a href="https://drive.google.com/a/worbli.io/uc?authuser=1&id=1YTFLUf1h_XsjTHCDdiClBYS74STt_n5J&export=download">
+              <img src="./images/whitepaper.png" alt="white paper" class="white-paper">
+            </a>
+
+   
         </div>
     `;
   }
