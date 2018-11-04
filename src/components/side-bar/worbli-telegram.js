@@ -20,7 +20,12 @@ class WorbliTelegram extends PolymerElement {
           padding-bottom: 20px;
         }
         .image {
-          margin: 12px;
+          margin: 12px 12px 0 12px;
+          width: 255px;
+        }
+        .image-two {
+          width: 255px;
+          margin: 6px 12px 6px 12px;
         }
         .container-paper{
           display:block;
@@ -38,11 +43,12 @@ class WorbliTelegram extends PolymerElement {
 
       </style>
         <div class="container-paper">
-            <div class="title">Telegram</div>
-            <img class="image" src="./images/telegramintro.png" alt="Telegram">
-            <p class="faq-text">Chat live with the WORBLI team</p>
-            <a href="https://t.me/worblicommunity" class="button">
-              <div class="open-text">Open Telegram</div>
+            <div class="title">Social</div>
+            <a href="https://t.me/worblicommunity">
+              <img class="image" src="./images/telegramlink.png" alt="Telegram">
+            </a>
+            <a href="https://t.me/worblicommunity">
+              <img class="image-two" src="./images/mediumlink.png" alt="Medium">
             </a>
         </div>
     `;
