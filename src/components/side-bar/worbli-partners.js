@@ -11,29 +11,32 @@ class WorbliPartners extends PolymerElement {
             font-size: 12px;
         }
         .bp {
-          width: 105px;
-          height: 105px;
+          width: 88px;
+          height: 88px;
           padding: 0 16px;
-          background-color:red;
+          border-radius: 1px;
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+          margin-bottom:12px;
           
         }
         .bps{
           display: flex;
-          flex-wrap: wrap
+          flex-wrap: wrap;
+          padding:12px;
+          
         }
-       .bps a:nth-child(1) div {background: url('./images/strategic-partners.png') 519px -54px;}
-       .bps a:nth-child(2) div {background: url('./images/strategic-partners.png') 1039px -54px;}
-       .bps a:nth-child(3) div {background: url('./images/strategic-partners.png') 785px -54px;}
-       .bps a:nth-child(4) div {background: url('./images/strategic-partners.png') 913px -54px;}
-       .bps a:nth-child(5) div {background: url('./images/strategic-partners.png') 259px -54px;}
-       .bps a:nth-child(6) div {background: url('./images/strategic-partners.png') -1261px -54px;}
-       .bps a:nth-child(7) div {background: url('./images/strategic-partners.png') -216px -54px;}
-       .bps a:nth-child(8) div {background: url('./images/strategic-partners.png') -353px -54px;}
-       .bps a:nth-child(9) div {background: url('./images/strategic-partners.png') -475px -54px;}
-       .bps a:nth-child(10) div {background: url('./images/strategic-partners.png') -85px -54px;}
+ 
+       .bps a:nth-child(1) div {background: url('./images/strategic-partners.png') 513px -73px; margin-right:12px;}
+       .bps a:nth-child(2) div {background: url('./images/strategic-partners.png') 1036px -73px;}
+       .bps a:nth-child(3) div {background: url('./images/strategic-partners.png') 776px -70px; margin-right:12px;}
+       .bps a:nth-child(4) div {background: url('./images/strategic-partners.png') 906px -71px;}
+       .bps a:nth-child(5) div {background: url('./images/strategic-partners.png') 251px -72px; margin-right:12px;}
+       .bps a:nth-child(6) div {background: url('./images/strategic-partners.png') -1267px -71px;}
+       .bps a:nth-child(7) div {background: url('./images/strategic-partners.png') -191px -63px; margin-right:12px;  background-size: 1225% auto;}
+       .bps a:nth-child(8) div {background: url('./images/strategic-partners.png') -889px -60px;  background-size: 1225% auto;}
+       .bps a:nth-child(9) div {background: url('./images/strategic-partners.png') -485px -70px; margin-right:12px; margin-bottom:0px;}
+       .bps a:nth-child(10) div {background: url('./images/strategic-partners.png') -92px -71px; margin-bottom:0px;}
       </style>
-
-
 
         <div class="container">
             <div class="title">Strategic Partners</div>
