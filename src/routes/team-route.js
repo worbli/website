@@ -28,7 +28,7 @@ class TeamRoute extends PolymerElement {
         }
         .main {
           flex-grow: 1;
-          max-width: 840px;
+          max-width: 878px;
         }
         .container {
           position: relative;

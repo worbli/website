@@ -4,7 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/worbli-rpc.js';
 import '../components/network-monitor/block-info.js';
 import '../components/network-monitor/block-producers.js';
-
+import '../components/side-bar/worbli-snapshot.js';
 
 class NetworkRoute extends PolymerElement {
   static get template() {
@@ -23,7 +23,7 @@ class NetworkRoute extends PolymerElement {
         }
         .main {
           flex-grow: 1;
-          padding-right: 30px;
+          padding-right: 12px;
         }
   
       </style>
@@ -50,6 +50,7 @@ class NetworkRoute extends PolymerElement {
         </div>
         <div class="side">
           <block-info class="side" jsonrpc="[[jsonrpc]]" producer="{{producer}}" interval="500"></block-info>
+          <worbli-snapshot></worbli-snapshot>
         </div>
       </div>
       <worbli-footer name="footer"></worbli-footer>

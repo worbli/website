@@ -68,7 +68,7 @@ class WorbliProfile extends PolymerElement {
 		transform: rotateY(180deg);
 	}
     .flip-container, .front, .back {
-        width: 255px;
+        width: 270px;
         height: 255px;
     }
 

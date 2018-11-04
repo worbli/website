@@ -28,7 +28,7 @@ class RoadmapRoute extends PolymerElement {
         }
         .main {
           flex-grow: 1;
-          max-width: 770px;
+          max-width: 850px;
         }
         .container {
           position: relative;
