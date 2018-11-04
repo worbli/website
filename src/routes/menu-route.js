@@ -104,8 +104,6 @@ class MenuRoute extends PolymerElement {
         <a href="/roadmap"><li>Roadmap</li></a>
         <a href="/network"><li>Network</li></a>
         <a href="https://worbli.zendesk.com/hc/en-us"><li>Support</li></a>
-        <a href="/join"><li>Join</li></a>
-        <a href="/signin"><li>Sign In</li></a>
 
         </ul>
    
