@@ -98,38 +98,7 @@ class AboutRoute extends PolymerElement {
           <p>WORBLI’s platform is powered by EOSIO, allowing WORBLI to deliver, fast, compliant and secure applications, products and services to the world.</p></br>
           <p>WORBLI is in the process of creating new technology that enables the financial services and technology sectors to benefit from offering their customers instant transactions.</p>
           <iframe width="840" height="472" src="https://www.youtube.com/embed/3tcVg279HLg?start=788" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          <h2>WORBLI’s Vision</h2>
-          <p>Through blockchain technology, WORBLI will be at the forefront of a technological revolution that spans the financial services sector, cloud computing, data analysis, security and storage, supply chain logistics, social networking, voting, healthcare, income inequality, accounting, contractual arrangements and so much more.</p></br>
-          <p>WORBLI exists to remove all obstacles and to foster a positive environment that allows developers to design and build applications for users knowing the associated financial/ transactional services are preconfigured; and merchant processing is available for businesses to instantly convert digital and fiat currencies into any payment form they desire (GBP, USD or BTC, EOS, WBI, ETH, LTC, XRP, etc).</p><br>
-          <p>Our vision stems from one simple reality. We envision a day in the near future, whereby everybody is able to pay for a product or service in any currency or cryptocurrency of their choice. Now, that would be amazing, and that's the world that WORBLI is bringing to you..</p></br></br>
-           <h2>Key Features</h2>
-          <div class="features">
-            <div class="left">
-              <b>Finance Focused</b> 
-              <p>WORBLI’s network governance is designed to meet the regulatory needs of global financial services and financial technology businesses.</p>
-              <b>Strong Community</b> 
-              <p>EOSIO users and community members have created an environment that demands world-leading technology. WORBLI has a hungry and passionate audience and community.</b>
-              <b>Tamper-proof Transactions</b>
-              <p>The ledger is immutable and transactions can’t be altered.</p> 
-              <b>Account recovery</b> 
-              <p>Customer accounts can be recovered when private keys are lost.</p>
-              <b>Enterprise Ready</b>
-              <p>Businesses and corporations will benefit from predictable pricing models when planning to operate on the network.</p>
-            </div>
-            <div class="right">
-              <b>Startup Friendly</b> 
-              <p>Startups and Incubators will benefit from corporate advisory, exchange listings, merchant processing services, and events, to quickly launch and fund their projects.</p>
-              <b>Secure</b> 
-              <p>Individual accounts and customers wallets are secured by the blockchain.</p> 
-              <b>Compliant</b>
-              <p>Developers and businesses will benefit from full AML/KYC user account verification.</p>
-              <b>Fast</b>
-              <p>Traditional financial transactions and peer-to-peer token transfers happen in seconds.</p>
-              <b>Superior infrastructure</b> 
-              <p>Leveraging our independent EOS blockchain with features such as built-in developer tools and feeless transactions.</p>
-            </div>
-          </div>
-          <iframe width="840" height="472" src="https://www.youtube.com/embed/ideiyhAlvOQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          
                </div>
         <div class="side">
           <worbli-whitepaper></worbli-whitepaper>
