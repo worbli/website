@@ -100,6 +100,7 @@ class MenuRoute extends PolymerElement {
         <ul>
         <a href="/"><li>Home</li></a>
         <a href="/about"><li>About</li></a>
+        <a href="/vision"><li>Vision</li></a>
         <a href="/team"><li>Team</li></a>
         <a href="/roadmap"><li>Roadmap</li></a>
         <a href="/network"><li>Network</li></a>
