@@ -63,7 +63,7 @@ class MenuRoute extends PolymerElement {
           display: block;
           margin-left: auto;
           margin-right: auto;
-          margin-top: 50px;
+          margin-top: 30px;
           margin-bottom: 50px;
         }
         ul {
@@ -96,7 +96,7 @@ class MenuRoute extends PolymerElement {
         gtag('config', 'UA-117118714-1');
       </script>
 
-        <img src="./images/worbli-square.svg">
+        <img src="./images/logo.svg">
         <ul>
         <a href="/"><li>Home</li></a>
         <a href="/about"><li>About</li></a>
