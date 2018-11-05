@@ -67,11 +67,13 @@ class VisionRoute extends PolymerElement {
         .img-holder{
             width: 100%;
             display: block;
+            margin-top: 10px;
         }
         .icons{
               position: relative;
               top: 10px;
               left: -5px;
+              opacity: 0.2;
           }
           /* .features p {
               height:80px;
@@ -109,31 +111,31 @@ class VisionRoute extends PolymerElement {
             <div class="left">
             <div class="img-holder"><img src="./images/vision/finance-focused.svg" width="50px" class="icons"></div>
               <b>Finance Focused</b> 
-              <p>WORBLI’s network governance is designed to meet the regulatory needs of global financial services and financial technology businesses.</p>
+              <p>WORBLI’s network governance is designed to meet the regulatory needs of global financial services.</p>
               <div class="img-holder"><img src="./images/vision/strong-community.svg" width="50px" class="icons"></div>
               <b>Strong Community</b> 
               <p>EOSIO users and community members have created an environment that demands world-leading technology.</b>
               <div class="img-holder"><img src="./images/vision/tamper-proof-transactions.svg" width="50px" class="icons"></div>
               <b>Tamper-proof Transactions</b>
-              <p>The ledger is immutable and transactions can’t be altered.</p> 
+              <p>The ledger is immutable and transactions can’t be altered, the blockchain and eliminates the need for middlemen.</p> 
               <div class="img-holder"><img src="./images/vision/account-recovery.svg" width="50px" class="icons"></div>
               <b>Account recovery</b> 
-              <p>Customer accounts can be recovered when private keys are lost.</p>
+              <p>Customer accounts can be recovered even when a customer loses thier private keys.</p>
               <div class="img-holder"><img src="./images/vision/enterprise-ready.svg" width="50px" class="icons"></div>
               <b>Enterprise Ready</b>
-              <p>Businesses and corporations will benefit from predictable pricing models when planning to operate on the WORBLI network.</p>
+              <p>Businesses and corporations will benefit from predictable pricing models when planning to operate on the network.</p>
             </div>
             <div class="right">
             <div class="img-holder"><img src="./images/vision/startup-friendly.svg" width="50px" class="icons"></div>
             <b>Startup Friendly</b> 
-              <p>Startups and Incubators will benefit from corporate advisory, exchange listings, merchant processing services, and events, to quickly launch and fund their projects.</p>
+              <p>Startups will benefit from corporate advisory, exchange listings, merchant processing services, to launch and fund projects.</p>
               <div class="img-holder"><img src="./images/vision/secure.svg" width="50px" class="icons"></div>
               <b>Secure</b> 
-              <p>Individual accounts and customers wallets are secured by the blockchain.</p> 
+              <p>Individual accounts and customers wallets are secured by the blockchain, customers have more control over data.</p> 
               <div class="img-holder"><img src="./images/vision/compliant.svg" width="50px" class="icons"></div>
               <b>Compliant</b>
-              <p>Developers and businesses will benefit from full AML/KYC user account verification.</p>
-              <div class="img-holder"><img src="./images/vision/compliant.svg" width="50px" class="icons"></div>
+              <p>Developers and businesses will operate with the knowledge that all users have completed full AML/KYC user account verification.</p>
+              <div class="img-holder"><img src="./images/vision/fast.svg" width="50px" class="icons"></div>
               <b>Fast</b>
               <p>Traditional financial transactions and peer-to-peer token transfers happen in seconds.</p>
               <div class="img-holder"><img src="./images/vision/superior-infrastructure.svg" width="50px" class="icons"></div>
