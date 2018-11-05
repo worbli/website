@@ -63,6 +63,7 @@ class TeamRoute extends PolymerElement {
         }
         worbli-profile {
           display: inline-block;
+          margin: auto;
         }
         .advisors{
           padding-top: 40px;
