@@ -5,7 +5,6 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
-import '../components/side-bar/worbli-profservices.js';
 import '../components/side-bar/worbli-snapshot.js';
 import '../components/worbli-subscribe.js';
 class MainRoute extends PolymerElement {
@@ -218,14 +217,16 @@ class MainRoute extends PolymerElement {
             </div>
           </a>
         
+          <a href="/network/" class="box-link">
           <div class="container square no-right">
             <div class="pic pic2"></div>
             <div class="footer">
-            <h4>Claim your Sharedrop</h4>
-            <div class="description">If you held EOS on 7th September, 1159PM UTC...</div>
+            <h4>WORBLI Developer Resources</h4>
+            <div class="description">Check out which BP produced the last block...</div>
             <img src="./images/next.svg" class="next"> 
             </div>
           </div>
+          </a>
 
             <a href="/team/" class="box-link">
               <div class="container square">
@@ -238,10 +239,10 @@ class MainRoute extends PolymerElement {
               </div>
             </a>
 
-            <a href="/network/" class="box-link ">
+            <a href="/profservices/" class="box-link ">
               <div class="container square no-right ">
                 <div class="pic pic4"></div>
-                  <div class="footer"><h4>WORBLI Developer Resources</h4><div class="description">Check out which BP produced the last block...</div></div>
+                  <div class="footer"><h4>WORBLI Professional Services</h4><div class="description">Launch your dApp in safe hands</div></div>
                   <img src="./images/next.svg" class="next"> 
                 </div>
               </div>
@@ -253,7 +254,6 @@ class MainRoute extends PolymerElement {
           <worbli-snapshot></worbli-snapshot>
           <worbli-support></worbli-support>
           <worbli-whitepaper></worbli-whitepaper>
-          <worbli-profservices></worbli-profservices>
           <worbli-telegram></worbli-telegram>
           
         </div>

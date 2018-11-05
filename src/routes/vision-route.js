@@ -26,7 +26,6 @@ class VisionRoute extends PolymerElement {
           margin-bottom: 12px;
         }
         b {
-          padding-top: 24px;
           display: block;
           font-size: 20px;
           font-weight: 600;
@@ -65,14 +64,25 @@ class VisionRoute extends PolymerElement {
           font-size: 16px;
           font-weight: 600;
         }
+        .img-holder{
+            width: 100%;
+            display: block;
+        }
+        .icons{
+              position: relative;
+              top: 10px;
+              left: -5px;
+          }
+          /* .features p {
+              height:80px;
+          } */
         @media only screen and (max-width: 600px){
-          b, p, h2{
+           p, h2{
             margin: 12px;
           }
           h1{
             margin-top:5x;
           }
-
         }
       </style>
       <!-- Google Tag Manager (noscript) -->
@@ -97,26 +107,36 @@ class VisionRoute extends PolymerElement {
            <h2>Key Features</h2>
           <div class="features">
             <div class="left">
+            <div class="img-holder"><img src="./images/vision/finance-focused.svg" width="50px" class="icons"></div>
               <b>Finance Focused</b> 
               <p>WORBLI’s network governance is designed to meet the regulatory needs of global financial services and financial technology businesses.</p>
+              <div class="img-holder"><img src="./images/vision/strong-community.svg" width="50px" class="icons"></div>
               <b>Strong Community</b> 
-              <p>EOSIO users and community members have created an environment that demands world-leading technology. WORBLI has a hungry and passionate audience and community.</b>
+              <p>EOSIO users and community members have created an environment that demands world-leading technology.</b>
+              <div class="img-holder"><img src="./images/vision/tamper-proof-transactions.svg" width="50px" class="icons"></div>
               <b>Tamper-proof Transactions</b>
               <p>The ledger is immutable and transactions can’t be altered.</p> 
+              <div class="img-holder"><img src="./images/vision/account-recovery.svg" width="50px" class="icons"></div>
               <b>Account recovery</b> 
               <p>Customer accounts can be recovered when private keys are lost.</p>
+              <div class="img-holder"><img src="./images/vision/enterprise-ready.svg" width="50px" class="icons"></div>
               <b>Enterprise Ready</b>
-              <p>Businesses and corporations will benefit from predictable pricing models when planning to operate on the network.</p>
+              <p>Businesses and corporations will benefit from predictable pricing models when planning to operate on the WORBLI network.</p>
             </div>
             <div class="right">
-              <b>Startup Friendly</b> 
+            <div class="img-holder"><img src="./images/vision/startup-friendly.svg" width="50px" class="icons"></div>
+            <b>Startup Friendly</b> 
               <p>Startups and Incubators will benefit from corporate advisory, exchange listings, merchant processing services, and events, to quickly launch and fund their projects.</p>
+              <div class="img-holder"><img src="./images/vision/secure.svg" width="50px" class="icons"></div>
               <b>Secure</b> 
               <p>Individual accounts and customers wallets are secured by the blockchain.</p> 
+              <div class="img-holder"><img src="./images/vision/compliant.svg" width="50px" class="icons"></div>
               <b>Compliant</b>
               <p>Developers and businesses will benefit from full AML/KYC user account verification.</p>
+              <div class="img-holder"><img src="./images/vision/compliant.svg" width="50px" class="icons"></div>
               <b>Fast</b>
               <p>Traditional financial transactions and peer-to-peer token transfers happen in seconds.</p>
+              <div class="img-holder"><img src="./images/vision/superior-infrastructure.svg" width="50px" class="icons"></div>
               <b>Superior infrastructure</b> 
               <p>Leveraging our independent EOS blockchain with features such as built-in developer tools and feeless transactions.</p>
             </div>
