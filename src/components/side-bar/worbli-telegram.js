@@ -20,12 +20,16 @@ class WorbliTelegram extends PolymerElement {
           padding-bottom: 20px;
         }
         .image {
-          margin: 12px 12px 0 12px;
+          margin: 0 auto;
+          display: block;
+          padding-bottom: 12px;
           width: 255px;
         }
         .image-two {
+          margin: 0 auto;
+          display: block;
+          padding-bottom: 12px;
           width: 255px;
-          margin: 6px 12px 6px 12px;
         }
         .container-paper{
           display:block;
@@ -40,12 +44,15 @@ class WorbliTelegram extends PolymerElement {
         .button{
           margin-bottom: 12px;
         }
+        .top {
+          margin-top: 12px;
+        }
 
       </style>
         <div class="container-paper">
             <div class="title">Social</div>
             <a href="https://t.me/worblicommunity" target="_blank">
-              <img class="image" src="./images/telegramlink.png" alt="Telegram">
+              <img class="image top" src="./images/telegramlink.png" alt="Telegram">
             </a>
             <a href="https://medium.com/@WORBLI" target="_blank">
               <img class="image-two" src="./images/mediumlink.png" alt="Medium">
