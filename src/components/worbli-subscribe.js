@@ -61,6 +61,7 @@ class WorbliSubscribe extends PolymerElement {
             font-size: 13px;
             background: #232675;
             padding: 5px 20px;
+            cursor: pointer;
         }
         .email{
             color: #9BE2F9;
@@ -82,7 +83,7 @@ class WorbliSubscribe extends PolymerElement {
             <div class="pic">
                 <div class="left"></div>
                 <div class="right">
-                    <div><input type="email" name="email" class="email"><input type="submit" value="Subscribe" class="submit"></div>
+                    <div><input type="email" name="email" class="email" value="{{email::input}}"><input type="submit" value="Subscribe" class="submit" on-click="_subscribe"></div>
                     <div class="tagline">By registering you agree to the <a href="/terms/">terms and conditions</a></br> and opt-in to marketing communications.</div>
                 </div>
             </div>
@@ -101,6 +102,10 @@ class WorbliSubscribe extends PolymerElement {
             notify: true,
         },
     };
+  }
+
+  _subscribe(){
+      console.log(this.email)
   }
 
 _sendEmail(){
@@ -133,5 +138,35 @@ _validateEmail(email){
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
 }
+
+_login(){
+    const data = {
+        email: this.email,
+        password: this.password,
+    }
+    const url = `${this.apiPath}/login/`;
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(data), 
+      headers:{'Content-Type': 'application/json'}
+    })
+    .then(response => {
+        return response.json();
+    })
+    .then(response => {
+        if(response === true){
+            var profile = JSON.parse(localStorage.getItem("worbli_profile"));
+            this.set('route.path', `/dashboard/profile/${profile.security_code}`);
+            this.dispatchEvent(new CustomEvent('hideOverlay',{bubbles: true, composed: true, detail: {action: 'hide'}}));
+        } else {
+            this.error = "Incorect email and password combination";
+        }
+    })
+    .catch(error => {
+        this.error = "Incorect email and password combination";
+    });
+}
+
+
 
 } window.customElements.define('worbli-subscribe', WorbliSubscribe);
