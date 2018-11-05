@@ -90,7 +90,7 @@ class VisionRoute extends PolymerElement {
       </script>
       <div class="split">
         <div class="main">
-         <h2>WORBLI’s Vision</h2>
+         <h1>WORBLI’s Vision</h1>
           <p>Through blockchain technology, WORBLI will be at the forefront of a technological revolution that spans the financial services sector, cloud computing, data analysis, security and storage, supply chain logistics, social networking, voting, healthcare, income inequality, accounting, contractual arrangements and so much more.</p></br>
           <p>WORBLI exists to remove all obstacles and to foster a positive environment that allows developers to design and build applications for users knowing the associated financial/ transactional services are preconfigured; and merchant processing is available for businesses to instantly convert digital and fiat currencies into any payment form they desire (GBP, USD or BTC, EOS, WBI, ETH, LTC, XRP, etc).</p><br>
           <p>Our vision stems from one simple reality. We envision a day in the near future, whereby everybody is able to pay for a product or service in any currency or cryptocurrency of their choice. Now, that would be amazing, and that's the world that WORBLI is bringing to you..</p></br></br>
