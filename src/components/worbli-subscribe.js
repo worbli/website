@@ -20,7 +20,7 @@ class WorbliSubscribe extends PolymerElement {
           margin-bottom: 6px;
         }
         .description {
-          font-size: 11px;
+          font-size: 13px;
           font-weight: 200;
           line-height: 18px;
         }
@@ -79,7 +79,7 @@ class WorbliSubscribe extends PolymerElement {
                 <div class="left"></div>
                 <div class="right">
                     <div><input type="email" name="email" class="email"><input type="submit" value="Subscribe" class="submit"></div>
-                    <div class="tagline">By registering you agree to the terms and conditions</br> and opt-in to marketing communications.</div>
+                    <div class="tagline">By registering you agree to the <a href="/terms/">terms and conditions</a></br> and opt-in to marketing communications.</div>
                 </div>
             </div>
             <div class="footer">

@@ -44,10 +44,10 @@ class WorbliTelegram extends PolymerElement {
       </style>
         <div class="container-paper">
             <div class="title">Social</div>
-            <a href="https://t.me/worblicommunity">
+            <a href="https://t.me/worblicommunity" target="_blank">
               <img class="image" src="./images/telegramlink.png" alt="Telegram">
             </a>
-            <a href="https://medium.com/@WORBLI">
+            <a href="https://medium.com/@WORBLI" target="_blank">
               <img class="image-two" src="./images/mediumlink.png" alt="Medium">
             </a>
         </div>
