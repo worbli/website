@@ -105,68 +105,42 @@ class WorbliSubscribe extends PolymerElement {
   }
 
   _subscribe(){
-      console.log(this.email)
-  }
-
-_sendEmail(){
-    if (this.email && this._validateEmail(this.email)){
-        const data = {
-            email: this.email,
-            security_code: this.securityCode,
-        }
-        localStorage.setItem('worbli_request', JSON.stringify(data));
-
-        fetch(`${this.apiPath}/send-email/validate/${this.email}~${this.securityCode}`)
+    const listId = "5AB8C552EA63F13E";
+    const url = `https://api.createsend.com/api/v3.2/subscribers/${listId}`;
+    const data = {
+        "EmailAddress": this.email,
+        "Name": "New Subscriber",
+        "CustomFields": [{
+            "Key": "website",
+            "Value": "http://worbli.io"
+            }],
+        "Resubscribe": true,
+        "RestartSubscriptionBasedAutoresponders": true,
+        "ConsentToTrack":"Yes"
+    }
+      if (this.email && this._validateEmail(this.email)){
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(data), 
+            headers:{'Content-Type': 'application/json'}
+        })
         .then((response) => {
+            console.log(response)
             return response.json()
         })
         .then((response) => {
-            if(response = true){
-                this.complete = true;
-                this._fetchSecurityCode();
-            } else {
-                console.log('try again')
-            }
+            console.log(response)
         })
-    } else {
-        this.email = ""
+      } else {
+          this.email = ""
+          this.error = "Invalid Email Address"
+      }
+  }
+
+
+    _validateEmail(email){
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
     }
-}
-
-
-_validateEmail(email){
-    var re = /\S+@\S+\.\S+/;
-    return re.test(email);
-}
-
-_login(){
-    const data = {
-        email: this.email,
-        password: this.password,
-    }
-    const url = `${this.apiPath}/login/`;
-    fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(data), 
-      headers:{'Content-Type': 'application/json'}
-    })
-    .then(response => {
-        return response.json();
-    })
-    .then(response => {
-        if(response === true){
-            var profile = JSON.parse(localStorage.getItem("worbli_profile"));
-            this.set('route.path', `/dashboard/profile/${profile.security_code}`);
-            this.dispatchEvent(new CustomEvent('hideOverlay',{bubbles: true, composed: true, detail: {action: 'hide'}}));
-        } else {
-            this.error = "Incorect email and password combination";
-        }
-    })
-    .catch(error => {
-        this.error = "Incorect email and password combination";
-    });
-}
-
-
 
 } window.customElements.define('worbli-subscribe', WorbliSubscribe);
