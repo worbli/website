@@ -126,7 +126,13 @@ class MainRoute extends PolymerElement {
           bottom: 21px;
           opacity: 0.5;
         }
+        worbli-snapshot{
+          margin-top: 81px;
+        }
 	    	@media only screen and (max-width: 600px){
+          worbli-snapshot{
+          margin-top:0px;
+        }
 			  .mobile-signup-buttons{
 				  display:block;
           margin: 12px;
