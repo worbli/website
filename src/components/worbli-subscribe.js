@@ -72,6 +72,10 @@ class WorbliSubscribe extends PolymerElement {
             background: #232675;
             width: 230px;
         }
+        a{
+            color: white;
+            text-decoration:none;
+        }
         </style>
         <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
         <div class="container">
