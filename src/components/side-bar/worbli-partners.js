@@ -39,16 +39,16 @@ class WorbliPartners extends PolymerElement {
         <div class="container">
             <div class="title">Strategic Partners</div>
             <div class="bps">
-            <a href="http://www.pinsentmasons.com"><div class="bp pinsentmasons"></div></a>
-            <a href="http://hklaw.com/"><div class="bp"></div></a>
-            <a href="http://onfido.com/"><div class="bp"></div></a>
-            <a href="http://interblockchain.io/"><div class="bp"></div></a>
-            <a href="http://webprofits.com.au/"><div class="bp"></div></a>
-            <a href="http://www.trybe.one"><div class="bp"></div></a>
-            <a href="http://eosdetroit.io/"><div class="bp"></div></a>
-            <a href="http://www.eosgermany.one"><div class="bp"></div></a>
-            <a href="http://genereos.io/"><div class="bp"></div></a>
-            <a href="https://www.chintai.io/"><div class="bp"></div></a>
+            <a href="http://www.pinsentmasons.com" target="_blank"><div class="bp pinsentmasons"></div></a>
+            <a href="http://hklaw.com/" target="_blank"><div class="bp"></div></a>
+            <a href="http://onfido.com/" target="_blank"><div class="bp"></div></a>
+            <a href="http://interblockchain.io/" target="_blank"><div class="bp"></div></a>
+            <a href="http://webprofits.com.au/" target="_blank"><div class="bp"></div></a>
+            <a href="http://www.trybe.one" target="_blank"><div class="bp"></div></a>
+            <a href="http://eosdetroit.io/" target="_blank"><div class="bp"></div></a>
+            <a href="http://www.eosgermany.one" target="_blank"><div class="bp"></div></a>
+            <a href="http://genereos.io/" target="_blank"><div class="bp"></div></a>
+            <a href="https://www.chintai.io/" target="_blank"><div class="bp"></div></a>
             </div>
         </div>
         
