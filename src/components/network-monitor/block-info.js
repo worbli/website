@@ -33,7 +33,7 @@ class BlockInfo extends PolymerElement {
                 font-size: 28px;
                 font-weight: 800;
                 text-transform: uppercase;
-                line-height: 16px;
+                line-height: 40px;
                 padding: 13px 12px;
                 letter-spacing: 2px;
             }

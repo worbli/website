@@ -7,7 +7,7 @@ import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
 import '../components/side-bar/worbli-profservices.js';
 import '../components/side-bar/worbli-snapshot.js';
-
+import '../components/worbli-subscribe.js';
 class MainRoute extends PolymerElement {
   static get template() {
     return html`
@@ -44,10 +44,8 @@ class MainRoute extends PolymerElement {
           margin-right: 19px;
           margin-bottom: 19px;
         }
-
         .no-right {
           margin-right: 0px;
-
         }
         .footer{
           border-top: 1px solid #f5f5f5;
@@ -79,7 +77,6 @@ class MainRoute extends PolymerElement {
           background-size: cover;
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
-
         }
         .pic3 {
           background-image: url("./images/home-page/bottom-left.jpg");
@@ -88,7 +85,6 @@ class MainRoute extends PolymerElement {
           background-size: cover;
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
-
         }
         .pic2 {
           background-image: url("./images/home-page/top-right.jpg");
@@ -97,7 +93,6 @@ class MainRoute extends PolymerElement {
           background-size: cover;
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
-
         }
         .pic1 {
           background-image: url('./images/home-page/top-left.jpg');
@@ -209,9 +204,7 @@ class MainRoute extends PolymerElement {
 
           <h1>Where Fintech & Blockchain Meet</h1>
           <p class="tag">The future is near and we’re ready to take you there.</p>
-
-
-          
+          <worbli-subscribe></worbli-subscribe>
           <div class="tile-holder">
 
           <a href="/about/" class="box-link">
