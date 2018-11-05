@@ -43,8 +43,9 @@ class WorbliFooter extends PolymerElement {
             padding: 0;
           }
           .social-links ul {
-            width: 315px;
+            width: 262px;
             display: block !important;
+            margin: auto;
           }
         }
 
