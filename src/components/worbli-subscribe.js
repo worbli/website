@@ -25,18 +25,63 @@ class WorbliSubscribe extends PolymerElement {
           line-height: 18px;
         }
         .pic {
-            height: 133px;
+            height: 100px;
             background-image: url("./images/home-page/subscribe.png");
             background-position: center; 
             background-repeat: no-repeat;
             background-size: cover;
             border-top-left-radius: 4px;
             border-top-right-radius: 4px;
+            display: flex;
+            width:100%;
+        }
+        .tagline{
+            color: white;
+            font-size: 11px;
+            margin-top: 10px;
+        }
+        .left{
+            flex-grow:3;
+            display:block;
+        }
+        .right{
+            display:block;
+            flex-grow:1;
+            text-align: right;
+            padding-top:15px;
+            padding-right:15px;
+        }
+        .submit{
+            margin-left: 12px;
+            color: #9BE2F9;
+            padding: 5px 7px;
+            line-height: 19px;
+            border: 1px solid #9BE2F9;
+            border-radius: 2px;
+            font-size: 13px;
+            background: #232675;
+            padding: 5px 20px;
+        }
+        .email{
+            color: #9BE2F9;
+            padding: 5px 7px;
+            line-height: 19px;
+            border: 1px solid #9BE2F9;
+            border-radius: 2px;
+            font-size: 13px;
+            background: #232675;
+            width: 230px;
         }
         </style>
         <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
         <div class="container">
-            <div class="pic"></div>
+            <div class="pic">
+                <div class="left"></div>
+                <div class="right">
+                    <div><input type="email" name="email" class="email"><input type="submit" value="Subscribe" class="submit"></div>
+                    <div class="tagline">By registering you agree to the terms and conditions</br> and opt-in to marketing communications.</div>
+                </div>
+            </div>
             <div class="footer">
             <h4>Sign Up for Launch Updates</h4>
             <div class="description">We're on a mission to develop the world's most cost-effective and developer-friendly, consumer and enterprise Blockchain Platform. We hope you are excited to take part in Blockchain's Financial District! Sign up for email updates.</div>
