@@ -93,6 +93,7 @@ class AboutRoute extends PolymerElement {
           <h1>About WORBLI</h1>
           <b>Here at WORBLI we are on a mission to develop the world’s most cost-effective and developer-friendly, consumer and enterprise blockchain platform.</b></br></br>
           <p>To do this WORBLI is offering a user-friendly financial services ecosystem where users, developers, and businesses can access a huge range of powerful applications with limitless possibilities.<p></br>
+          <iframe width="840" height="472" src="https://www.youtube.com/embed/QKAPbJbOdnU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <h2>Where Fintech and Blockchain Meet</h2>
           <p>WORBLI’s platform is powered by EOSIO, allowing WORBLI to deliver, fast, compliant and secure applications, products and services to the world.</p></br>
           <p>WORBLI is in the process of creating new technology that enables the financial services and technology sectors to benefit from offering their customers instant transactions.</p>
