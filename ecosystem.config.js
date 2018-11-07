@@ -1,4 +1,4 @@
-{
+module.exports = {
     apps: [{
         name : "worbli-www",
         script : "npm",
