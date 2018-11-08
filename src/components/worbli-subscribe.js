@@ -49,8 +49,8 @@ class WorbliSubscribe extends PolymerElement {
             display:block;
             flex-grow:1;
             text-align: right;
-            padding-top:15px;
-            padding-right:15px;
+            padding-top: 23px;
+            padding-right: 27px;
         }
         .submit{
             margin-left: 12px;
@@ -74,9 +74,18 @@ class WorbliSubscribe extends PolymerElement {
             background: #232675;
             width: 230px;
         }
-        a{
+        h2 {
+            color: #93bda4;
+            font-size: 15px;
+            margin-top: 20px;
+            margin-right: 12px;
+        }
+        a {
             color: white;
             text-decoration:none;
+        }
+        .container {
+            cursor: default;
         }
         ::placeholder { 
             color: #9BE2F9;
@@ -89,15 +98,20 @@ class WorbliSubscribe extends PolymerElement {
             <div class="pic">
                 <div class="left"></div>
                 <div class="right">
-                    <div>
-                        <input type="email" name="email" class="email" value="{{email::input}}" placeholder="[[placeholder]]">
-                        <input type="submit" value="Subscribe" class="submit" on-click="_subscribe">
-                    </div>
-                    <div class="tagline">By registering you agree to the <a href="/terms/">terms and conditions</a></br> and opt-in to marketing communications.</div>
+                    <template is="dom-if" if="{{!complete}}">
+                        <div>
+                            <input type="email" name="email" class="email" value="{{email::input}}" placeholder="[[placeholder]]">
+                            <input type="submit" value="Subscribe" class="submit" on-click="_subscribe">
+                        </div>
+                        <div class="tagline">By subscribing to this mailing list you opt in to marketing communications.</div>
+                    </template>
+                    <template is="dom-if" if="{{complete}}">
+                        <h2>[[completeMessage]]</h2>
+                    </template>
                 </div>
             </div>
             <div class="footer">
-            <h4>Sign Up for Launch Updates</h4>
+            <h4>Sign up for our mailing list</h4>
             <div class="description">We're on a mission to develop the world's most cost-effective and developer-friendly, consumer and enterprise Blockchain Platform. We hope you are excited to take part in Blockchain's Financial District! Sign up for email updates.</div>
             </div>
         </div>
@@ -116,6 +130,13 @@ class WorbliSubscribe extends PolymerElement {
         placeholder: {
             type: Text,
             value: 'Email',
+        },
+        complete: {
+            type: Boolean,
+            value: false,
+        },
+        completeMessage: {
+            type: Text,
         }
     };
   }
@@ -124,7 +145,6 @@ class WorbliSubscribe extends PolymerElement {
       if (this._validateEmail(this.email)){
         const url = `${this.apiPath}/email/add`;
         const body = {email: this.email};
-        console.log(body);
         fetch(url, {
           method: 'POST',
           body: JSON.stringify(body), 
@@ -136,12 +156,19 @@ class WorbliSubscribe extends PolymerElement {
         .then(response => {
             if(response.data === 'pass'){
                 this.email = "";
-                this.placeholder = "Your email is now registered, Thank You!"
+                this.complete = true;
+                this.completeMessage = "Your email is now registered, Thank You!"
+                setTimeout(() => { 
+                    this.complete = false;
+                 }, 3000);
             } else {
                 this.email = "";
-                this.placeholder = "Try again, invalid Email"
+                this.complete = true;
+                this.completeMessage = "Try again, invalid Email"
+                setTimeout(() => { 
+                    this.complete = false;
+                 }, 3000);
             }
-
         })
         .catch(response => {
             return response.json();

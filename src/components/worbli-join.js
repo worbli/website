@@ -189,7 +189,7 @@ class WorbliJoin extends PolymerElement {
 
 _reset(){
     if(this.resetJoin === true){
-        setTimeout(function(){
+        setTimeout(() => {
             this.complete = false;
             this.resetJoin = false;
         }, 2000);
