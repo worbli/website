@@ -1,6 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@polymer/app-route/app-location.js';
 import '../css/shared-styles.js';
+import '../worbli-env.js';
 class WorbliSubscribe extends PolymerElement {
   static get template() {
     return html`
@@ -83,12 +84,13 @@ class WorbliSubscribe extends PolymerElement {
         }
         </style>
         <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
+        <worbli-env api-path={{apiPath}}></worbli-env>
         <div class="container">
             <div class="pic">
                 <div class="left"></div>
                 <div class="right">
                     <div>
-                        <input type="email" name="email" class="email" value="{{email::input}}" placeholder="Email">
+                        <input type="email" name="email" class="email" value="{{email::input}}" placeholder="[[placeholder]]">
                         <input type="submit" value="Subscribe" class="submit" on-click="_subscribe">
                     </div>
                     <div class="tagline">By registering you agree to the <a href="/terms/">terms and conditions</a></br> and opt-in to marketing communications.</div>
@@ -108,39 +110,45 @@ class WorbliSubscribe extends PolymerElement {
             reflectToAttribute: true,
             notify: true,
         },
+        apiPath: {
+            type: Text,
+        },
+        placeholder: {
+            type: Text,
+            value: 'Email',
+        }
     };
   }
 
   _subscribe(){
-    const listId = "5AB8C552EA63F13E";
-    const url = `https://api.createsend.com/api/v3.2/subscribers/${listId}`;
-    const data = {
-        "EmailAddress": this.email,
-        "Name": "New Subscriber",
-        "CustomFields": [{
-            "Key": "website",
-            "Value": "http://worbli.io"
-            }],
-        "Resubscribe": true,
-        "RestartSubscriptionBasedAutoresponders": true,
-        "ConsentToTrack":"Yes"
-    }
-      if (this.email && this._validateEmail(this.email)){
+      if (this._validateEmail(this.email)){
+        const url = `${this.apiPath}/email/add`;
+        const body = {email: this.email};
+        console.log(body);
         fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(data), 
-            headers:{'Content-Type': 'application/json'}
+          method: 'POST',
+          body: JSON.stringify(body), 
+          headers:{'Content-Type': 'application/json'}
         })
-        .then((response) => {
-            console.log(response)
-            return response.json()
+        .then(response => {
+            return response.json();
         })
-        .then((response) => {
-            console.log(response)
+        .then(response => {
+            if(response.data === 'pass'){
+                this.email = "";
+                this.placeholder = "Your email is now registered, Thank You!"
+            } else {
+                this.email = "";
+                this.placeholder = "Try again, invalid Email"
+            }
+
+        })
+        .catch(response => {
+            return response.json();
         })
       } else {
-          this.email = ""
-          this.error = "Invalid Email Address"
+          this.email = "";
+          this.placeholder = "Try again, invalid Email"
       }
   }
 
