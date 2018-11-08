@@ -65,8 +65,18 @@ class WorbliHeader extends PolymerElement {
         background-color: var(--blue-navigation);
         color: white;
         padding: 12px 24px 12px 24px;
-
         border-radius: 3px;
+        cursor: pointer;
+      }
+      .join-btn{
+        text-transform: uppercase;
+        color: var(--blue-navigation);
+        font-size: 14px;
+        text-decoration: none;
+        margin-left:30px;
+        font-weight: 600;
+        margin-right: 30px;
+        cursor: pointer;
       }
 
       @media only screen and (max-width: 600px) {
@@ -120,8 +130,8 @@ class WorbliHeader extends PolymerElement {
 
       <div class="navigation">
         <ul>
-          <li><a href="#" tabindex="1" on-click="_join">JOIN WORBLI</a></li>
-          <li><a href="#" tabindex="1" class="blue-bg" on-click="_signIn">SIGN IN</a></li>
+          <li on-click="_join" class="join-btn">JOIN WORBLI</a></li>
+          <li on-click="_signIn" class="blue-bg">SIGN IN</a></li>
         </ul>
     </div>
 
