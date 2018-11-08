@@ -22,7 +22,9 @@ class WorbliProducers extends PolymerElement {
         }
         .bps{
           display: flex;
-          flex-wrap: wrap
+          flex-wrap: wrap;
+          max-width: 267px;
+          margin: auto;
         }
         .topline {
           margin-top: 12px;

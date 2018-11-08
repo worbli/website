@@ -115,6 +115,19 @@ class WorbliJoin extends PolymerElement {
             color: var(--blue-text);
             text-decoration: underline;
         }
+        .error{
+          color: #E54D53;
+          margin-bottom:6px;
+        }
+        .comment {
+          display: block;
+          line-height: 18px;
+          color: #9da1ab;
+          padding: 9px 0 0;
+          margin: 0 0 16px 0;
+          font-size: 12px;
+          color: #E54D53;
+        }
 
       </style>
             <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
@@ -132,6 +145,7 @@ class WorbliJoin extends PolymerElement {
                     <input type="checkbox" name="checkbox" id="marketing" value="{{marketing::input}}" on-mousedown="_marketingCheckbox">
                     <label class="checkbox-label">By registering you agree to the terms and conditions and opt-in to marketing communications.</label></br></br>
                 </div>
+                <small class="comment error">[[error]]</small>
                 <button class="btn-critical" on-click="_sendEmail">Join</button>
                 <div class="center">Already on WORBLI? <span on-click="_signIn">Log In</span></div>
             </template>
@@ -162,7 +176,6 @@ class WorbliJoin extends PolymerElement {
         },
         apiPath: {
             type: Text,
-            observer: '_ready',
         },
         resetJoin: {
             type: Boolean,
@@ -173,23 +186,13 @@ class WorbliJoin extends PolymerElement {
     };
   }
 
-_ready() {
-    this._fetchSecurityCode();
-}
-_fetchSecurityCode(){
-    fetch(`${this.apiPath}/security-code/`)
-    .then((response) => {
-        return response.json()
-    })
-    .then((response) => {
-        this.securityCode = response.security_code;
-    })
-}
 
 _reset(){
     if(this.resetJoin === true){
-        this.complete = false;
-        this.resetJoin = false;
+        setTimeout(function(){
+            this.complete = false;
+            this.resetJoin = false;
+        }, 2000);
     } 
 }
 
@@ -228,20 +231,23 @@ _sendEmail(){
     if (this.email && this._validateEmail(this.email)){
         const data = {
             email: this.email,
-            security_code: this.securityCode,
+            agreed_terms: this.termsCheckboxValue,
+            agreed_marketing: this.marketingCheckboxValue,
         }
-        localStorage.setItem('worbli_request', JSON.stringify(data));
-
-        fetch(`${this.apiPath}/send-email/validate/${this.email}~${this.securityCode}`)
+        const url = `${this.apiPath}/email/authorize/`;
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(data), 
+            headers:{'Content-Type': 'application/json'}
+          })
         .then((response) => {
             return response.json()
         })
         .then((response) => {
-            if(response = true){
+            if(response.data === 'pass'){
                 this.complete = true;
-                this._fetchSecurityCode();
             } else {
-                console.log('try again')
+                this.error = "Invalid email, please try again!"
             }
         })
     } else {

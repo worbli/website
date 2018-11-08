@@ -5,9 +5,8 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
-import '../components/side-bar/worbli-profservices.js';
 import '../components/side-bar/worbli-snapshot.js';
-
+import '../components/worbli-subscribe.js';
 class MainRoute extends PolymerElement {
   static get template() {
     return html`
@@ -44,10 +43,8 @@ class MainRoute extends PolymerElement {
           margin-right: 19px;
           margin-bottom: 19px;
         }
-
         .no-right {
           margin-right: 0px;
-
         }
         .footer{
           border-top: 1px solid #f5f5f5;
@@ -68,7 +65,7 @@ class MainRoute extends PolymerElement {
           margin-bottom: 6px;
         }
         .description {
-          font-size: 11px;
+          font-size: 13px;
           font-weight: 200;
           line-height: 18px;
         }
@@ -79,7 +76,6 @@ class MainRoute extends PolymerElement {
           background-size: cover;
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
-
         }
         .pic3 {
           background-image: url("./images/home-page/bottom-left.jpg");
@@ -88,7 +84,6 @@ class MainRoute extends PolymerElement {
           background-size: cover;
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
-
         }
         .pic2 {
           background-image: url("./images/home-page/top-right.jpg");
@@ -97,7 +92,6 @@ class MainRoute extends PolymerElement {
           background-size: cover;
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
-
         }
         .pic1 {
           background-image: url('./images/home-page/top-left.jpg');
@@ -132,7 +126,13 @@ class MainRoute extends PolymerElement {
           bottom: 21px;
           opacity: 0.5;
         }
+        worbli-snapshot{
+          margin-top: 81px;
+        }
 	    	@media only screen and (max-width: 600px){
+          worbli-snapshot{
+          margin-top:0px;
+        }
 			  .mobile-signup-buttons{
 				  display:block;
           margin: 12px;
@@ -205,17 +205,11 @@ class MainRoute extends PolymerElement {
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <div class="split">
         <div class="main">
-        <div class="mobile-signup-buttons">
-            <button class="btn-critical" on-click="_joinNow">Join Now</button>
-            <button class="btn-critical" on-click="_signIn">Sign In</button>
-            
-          </div>
+
 
           <h1>Where Fintech & Blockchain Meet</h1>
           <p class="tag">The future is near and we’re ready to take you there.</p>
-
-
-          
+          <worbli-subscribe></worbli-subscribe>
           <div class="tile-holder">
 
           <a href="/about/" class="box-link">
@@ -229,14 +223,16 @@ class MainRoute extends PolymerElement {
             </div>
           </a>
         
+          <a href="/network/" class="box-link">
           <div class="container square no-right">
             <div class="pic pic2"></div>
             <div class="footer">
-            <h4>Claim your Sharedrop</h4>
-            <div class="description">If you held EOS on 7th September, 1159PM UTC...</div>
+            <h4>WORBLI Developer Resources</h4>
+            <div class="description">Check out which BP produced the last block...</div>
             <img src="./images/next.svg" class="next"> 
             </div>
           </div>
+          </a>
 
             <a href="/team/" class="box-link">
               <div class="container square">
@@ -249,10 +245,10 @@ class MainRoute extends PolymerElement {
               </div>
             </a>
 
-            <a href="/network/" class="box-link ">
+            <a href="/profservices/" class="box-link ">
               <div class="container square no-right ">
                 <div class="pic pic4"></div>
-                  <div class="footer"><h4>WORBLI Developer Resources</h4><div class="description">Check out which BP produced the last block...</div></div>
+                  <div class="footer"><h4>WORBLI Professional Services</h4><div class="description">Launch your dApp in safe hands</div></div>
                   <img src="./images/next.svg" class="next"> 
                 </div>
               </div>
@@ -264,7 +260,6 @@ class MainRoute extends PolymerElement {
           <worbli-snapshot></worbli-snapshot>
           <worbli-support></worbli-support>
           <worbli-whitepaper></worbli-whitepaper>
-          <worbli-profservices></worbli-profservices>
           <worbli-telegram></worbli-telegram>
           
         </div>

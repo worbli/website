@@ -129,7 +129,7 @@ _login(){
         email: this.email,
         password: this.password,
     }
-    const url = `${this.apiPath}/login/`;
+    const url = `${this.apiPath}/user/login/`;
     fetch(url, {
       method: 'POST',
       body: JSON.stringify(data), 
@@ -139,9 +139,8 @@ _login(){
         return response.json();
     })
     .then(response => {
-        if(response === true){
-            var profile = JSON.parse(localStorage.getItem("worbli_profile"));
-            this.set('route.path', `/dashboard/profile/${profile.security_code}`);
+        if (response.data === 'pass'){
+            this.set('route.path', `/dashboard/profile/`);
             this.dispatchEvent(new CustomEvent('hideOverlay',{bubbles: true, composed: true, detail: {action: 'hide'}}));
         } else {
             this.error = "Incorect email and password combination";
@@ -157,7 +156,8 @@ _confirmEmail(){
     this._buttonActive();
 }
 _buttonActive(){
-    if(this.passwordConfirmed && this.emailConfirmed){
+
+    if (this.emailConfirmed){
         this.updateStyles({'--btnOpacity': 1});
         this.updateStyles({'--btnCursor': 'pointer'});
       } else {

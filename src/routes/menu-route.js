@@ -63,7 +63,7 @@ class MenuRoute extends PolymerElement {
           display: block;
           margin-left: auto;
           margin-right: auto;
-          margin-top: 50px;
+          margin-top: 30px;
           margin-bottom: 50px;
         }
         ul {
@@ -96,16 +96,15 @@ class MenuRoute extends PolymerElement {
         gtag('config', 'UA-117118714-1');
       </script>
 
-        <img src="./images/worbli-square.svg">
+        <img src="./images/logo.svg">
         <ul>
         <a href="/"><li>Home</li></a>
         <a href="/about"><li>About</li></a>
+        <a href="/vision"><li>Vision</li></a>
         <a href="/team"><li>Team</li></a>
         <a href="/roadmap"><li>Roadmap</li></a>
         <a href="/network"><li>Network</li></a>
         <a href="https://worbli.zendesk.com/hc/en-us"><li>Support</li></a>
-        <a href="/join"><li>Join</li></a>
-        <a href="/signin"><li>Sign In</li></a>
 
         </ul>
    
