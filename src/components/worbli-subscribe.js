@@ -77,13 +77,20 @@ class WorbliSubscribe extends PolymerElement {
             color: white;
             text-decoration:none;
         }
+        ::placeholder { 
+            color: #9BE2F9;
+            opacity: 1; 
+        }
         </style>
         <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
         <div class="container">
             <div class="pic">
                 <div class="left"></div>
                 <div class="right">
-                    <div><input type="email" name="email" class="email" value="{{email::input}}"><input type="submit" value="Subscribe" class="submit" on-click="_subscribe"></div>
+                    <div>
+                        <input type="email" name="email" class="email" value="{{email::input}}" placeholder="Email">
+                        <input type="submit" value="Subscribe" class="submit" on-click="_subscribe">
+                    </div>
                     <div class="tagline">By registering you agree to the <a href="/terms/">terms and conditions</a></br> and opt-in to marketing communications.</div>
                 </div>
             </div>

@@ -6,6 +6,7 @@ class WorbliHeader extends PolymerElement {
     return html`
     <style include="shared-styles">
         :host {
+          line-height: 0;
           display: block;
           margin-bottom:17px;
           background-color: white;
@@ -53,9 +54,6 @@ class WorbliHeader extends PolymerElement {
       img {
         vertical-align: middle;
 	    }
-      .menu-togglee{
-        display:none;
-      }
       .center {
           max-width: 1160px;
           margin: 0 auto;
@@ -63,6 +61,13 @@ class WorbliHeader extends PolymerElement {
         .logoimg{
           height:30px
         }
+      .blue-bg{
+        background-color: var(--blue-navigation);
+        color: white;
+        padding: 12px 24px 12px 24px;
+
+        border-radius: 3px;
+      }
 
       @media only screen and (max-width: 600px) {
         .navigation{
@@ -112,6 +117,16 @@ class WorbliHeader extends PolymerElement {
               <li><a href="/network/" tabindex="4">NETWORK</a></li>
             </ul>
         </div>
+
+      <div class="navigation">
+        <ul>
+          <li><a href="#" tabindex="1" on-click="_join">JOIN WORBLI</a></li>
+          <li><a href="#" tabindex="1" class="blue-bg" on-click="_signIn">SIGN IN</a></li>
+        </ul>
+    </div>
+
+
+
 	    </div>
     `;
   }

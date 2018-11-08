@@ -6,7 +6,7 @@ import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
 import '../components/side-bar/worbli-snapshot.js';
-// import '../components/worbli-subscribe.js';
+import '../components/worbli-subscribe.js';
 class MainRoute extends PolymerElement {
   static get template() {
     return html`
@@ -209,7 +209,7 @@ class MainRoute extends PolymerElement {
 
           <h1>Where Fintech & Blockchain Meet</h1>
           <p class="tag">The future is near and we’re ready to take you there.</p>
-          <!-- <worbli-subscribe></worbli-subscribe> -->
+          <worbli-subscribe></worbli-subscribe>
           <div class="tile-holder">
 
           <a href="/about/" class="box-link">
