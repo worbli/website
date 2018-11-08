@@ -67,6 +67,7 @@ class WorbliHeader extends PolymerElement {
         padding: 12px 24px 12px 24px;
         border-radius: 3px;
         cursor: pointer;
+        font-weight: 600;
       }
       .join-btn{
         text-transform: uppercase;
