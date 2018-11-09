@@ -125,6 +125,7 @@ _join(){
 }
 
 _login(){
+    this.error = "";
     const data = {
         email: this.email,
         password: this.password,
