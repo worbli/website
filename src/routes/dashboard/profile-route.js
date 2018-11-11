@@ -268,23 +268,26 @@ class ProfileRoute extends PolymerElement {
     if(this.route && this.route.__queryParams && this.route.__queryParams.token) {
       const token = this.route.__queryParams.token;
       const url = `${this.apiPath}/user/auth`;
+      console.log(token);
+      console.log(url);
       fetch(url, {
         method: 'POST',
-        headers: {'Authorization': `Bearer ${token}`}
+        headers: {'Authorization': `Bearer ${token}`},
+        body: {'test':'1234'}
       })
       .then(response => {
         console.log(response);
         if(response.data){
           console.log('good')
         } else {
-          this.set('route.path', '/');
+          ///this.set('route.path', '/');
         }
       })
       .catch(error => {
-        this.set('route.path', '/');
+        //this.set('route.path', '/');
       });
     } else {
-      this.set('route.path', '/');
+      //this.set('route.path', '/');
     }
   }
 
