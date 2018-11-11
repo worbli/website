@@ -275,6 +275,9 @@ class ProfileRoute extends PolymerElement {
         headers: {'Authorization': `Bearer ${token}`},
         body: {'test':'1234'}
       })
+      .then((response) => {
+        return response.json()
+      })
       .then(response => {
         console.log(response);
         if(response.data){
