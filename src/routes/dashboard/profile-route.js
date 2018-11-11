@@ -265,8 +265,24 @@ class ProfileRoute extends PolymerElement {
 
   ready() {
     super.ready();
-    if(this.route && this.route.__queryParams && this.route.__queryParams.token){
-      // check token with /auth
+    if(this.route && this.route.__queryParams && this.route.__queryParams.token) {
+      const token = this.route.__queryParams.token;
+      const url = `${this.apiPath}/user/auth`;
+      fetch(url, {
+        method: 'POST',
+        headers: {'Authorization': `Bearer ${token}`}
+      })
+      .then(response => {
+        console.log(response);
+        if(response.data){
+          console.log('good')
+        } else {
+          this.set('route.path', '/');
+        }
+      })
+      .catch(error => {
+        this.set('route.path', '/');
+      });
     } else {
       this.set('route.path', '/');
     }
