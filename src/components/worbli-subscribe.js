@@ -144,7 +144,7 @@ class WorbliSubscribe extends PolymerElement {
   _subscribe(){
       if (this._validateEmail(this.email)){
         const url = `${this.apiPath}/email/add`;
-        const body = {email: this.email};
+        const body = {email: this.email, confirmation_marketing: true};
         fetch(url, {
           method: 'POST',
           body: JSON.stringify(body), 

@@ -244,8 +244,10 @@ _sendEmail(){
             return response.json()
         })
         .then((response) => {
-            if(response.data === 'pass'){
+            console.log(response);
+            if(response.data === true){
                 this.complete = true;
+                this.error = ""
             } else {
                 this.error = "Invalid email, please try again!"
             }
