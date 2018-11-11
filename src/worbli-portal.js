@@ -101,7 +101,7 @@ class WorbliPortal extends PolymerElement {
     }
     if (!page) {
       this.page = 'main';
-    } else if (['main', 'network', 'about', 'vision', 'team', 'roadmap', 'register', 'sharedrop', 'support', 'terms', 'privacy', 'profservices', 'networkterms', 'developerterms', 'platformterms', 'menu'].indexOf(page) !== -1) {
+    } else if (['main', 'network', 'about', 'vision', 'team', 'roadmap', 'register', 'sharedrop', 'support', 'terms', 'privacy', 'profservices', 'networkterms', 'developerterms', 'platformterms', 'menu', 'dashboard'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -157,6 +157,9 @@ class WorbliPortal extends PolymerElement {
         break;
       case 'menu':
         import('./routes/menu-route.js');
+        break;
+      case 'dashboard':
+        import('./routes/dashboard-route.js');
         break;
       case 'error':
         import('./routes/error-route.js');
