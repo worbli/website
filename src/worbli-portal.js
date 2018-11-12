@@ -32,13 +32,15 @@ class WorbliPortal extends PolymerElement {
         iron-pages {
           padding-top: 80px;
         }
+        img {
+          opacity: 0;
+        }
         @media only screen and (max-width: 600px){
           iron-pages {
             padding-top: 0px;
           }
         }
       </style>
-
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
       <worbli-overlay></worbli-overlay>

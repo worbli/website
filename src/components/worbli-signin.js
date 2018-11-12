@@ -150,7 +150,7 @@ _reset(){
     const data = {
         email: this.email,
     }
-    const url = `${this.apiPath}/user/reset/`;
+    const url = `${this.apiPath}/email/reset/`;
     fetch(url, {
       method: 'POST',
       body: JSON.stringify(data), 
