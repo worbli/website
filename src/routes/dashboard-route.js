@@ -26,7 +26,9 @@ class DasboardRoute extends PolymerElement {
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main" class="center">
         <profile-route name="profile"></profile-route>
         <verify-route name="verify"></verify-route>
-        <claim-route name="claim"></claim-route>        
+        <claim-route name="claim"></claim-route> 
+        <identity-route name="identity"></identity-route> 
+        <password-route name="password"></password-route>        
       </iron-pages>
       
     `;
@@ -54,7 +56,7 @@ class DasboardRoute extends PolymerElement {
   _routePageChanged(page) {
     if (!page) {
       this.page = 'profile';
-    } else if (['claim', 'profile', 'verify'].indexOf(page) !== -1) {
+    } else if (['claim', 'profile', 'verify', 'identity', 'password'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -69,8 +71,14 @@ class DasboardRoute extends PolymerElement {
         case 'profile':
             import('./dashboard/profile-route.js');
             break;
+        case 'identity':
+            import('./dashboard/identity-route.js');
+            break;
         case 'verify':
             import('./dashboard/verify-route.js');
+            break;
+        case 'password':
+            import('./dashboard/password-route.js');
             break;
     }
   }

@@ -27,7 +27,7 @@ class WorbliPortal extends PolymerElement {
             position: fixed;
             top: 0; 
             width: 100%; 
-            z-index:999999;
+            z-index:100;
           }
         iron-pages {
           padding-top: 80px;

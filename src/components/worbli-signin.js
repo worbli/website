@@ -140,7 +140,7 @@ _login(){
         return response.json();
     })
     .then(response => {
-        if (response.data === 'pass'){
+        if (response.data === true){
             this.set('route.path', `/dashboard/profile/`);
             this.dispatchEvent(new CustomEvent('hideOverlay',{bubbles: true, composed: true, detail: {action: 'hide'}}));
         } else {
@@ -157,7 +157,6 @@ _confirmEmail(){
     this._buttonActive();
 }
 _buttonActive(){
-
     if (this.emailConfirmed){
         this.updateStyles({'--btnOpacity': 1});
         this.updateStyles({'--btnCursor': 'pointer'});
@@ -171,5 +170,6 @@ _validateEmail(email){
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
 }
+
 
 } window.customElements.define('worbli-signin', WorbliSignin);

@@ -17,7 +17,7 @@ class WorbliOverlay extends PolymerElement {
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: 2; 
+            z-index: 300; 
         }
 
         .overlay{
@@ -32,7 +32,7 @@ class WorbliOverlay extends PolymerElement {
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: 3; 
+            z-index: 300; 
             cursor: pointer; 
             display: flex;
             align-items: center;
