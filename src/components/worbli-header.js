@@ -198,7 +198,6 @@ class WorbliHeader extends PolymerElement {
   }
 
   _toggleMenu(){
-    console.log('fired')
     this.set('route.path', `/menu`);
   }
 

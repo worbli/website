@@ -244,7 +244,6 @@ _sendEmail(){
             return response.json()
         })
         .then((response) => {
-            console.log(response);
             if(response.data === true){
                 this.complete = true;
                 this.error = ""

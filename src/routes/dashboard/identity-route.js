@@ -296,7 +296,6 @@ class IdentityRoute extends PolymerElement {
 
 
 _save(data){
-  console.log(data);
   const token = localStorage.getItem("token");
   const url = `${this.apiPath}/user/profile/`;
   fetch(url, {

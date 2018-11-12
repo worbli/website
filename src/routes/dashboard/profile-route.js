@@ -925,7 +925,6 @@ class ProfileRoute extends PolymerElement {
   }
 
 _save(data){
-  console.log(data);
   const token = localStorage.getItem("token");
   const url = `${this.apiPath}/kyc/applicant/`;
   fetch(url, {
