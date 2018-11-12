@@ -76,6 +76,7 @@ class WorbliSignin extends PolymerElement {
         .error{
           color: #E54D53;
           margin-bottom:6px;
+          cursor: pointer;
         }
         .comment {
           display: block;
@@ -90,12 +91,24 @@ class WorbliSignin extends PolymerElement {
       </style>
     <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
     <worbli-env api-path="{{apiPath}}""></worbli-env>
-    <h2>Sign In</h2>
-    <p>Welcome back to WORBLI!</p>
-    <input type="text" class="text" name="email" placeholder="Email" id="email" value="{{email::input}}" on-keyup="_confirmEmail">
-    <input type="password" class="text" name="password" placeholder="Password" id="password" value="{{password::input}}">
-    <small class="comment error">[[error]]</small>
-    <button class="btn-critical" on-click="_login">Sign In</button>
+
+
+    <template is="dom-if" if="{{!forgotPassword}}">
+        <h2>Sign In</h2>
+        <p>Welcome back to WORBLI!</p>
+        <input type="text" class="text" name="email" placeholder="Email" id="email" value="{{email::input}}" on-keyup="_confirmEmail">
+        <input type="password" class="text" name="password" placeholder="Password" id="password" value="{{password::input}}">
+        <small class="comment error" on-click="_toggle">[[error]]</small>
+        <button class="btn-critical" on-click="_login">Sign In</button>
+    </template>
+    <template is="dom-if" if="{{forgotPassword}}">
+        <h2>Forgot Password?</h2>
+        <p>Enter your email address</p>
+        <input type="text" class="text" name="email" placeholder="Email" id="email" value="{{email::input}}" on-keyup="_confirmEmail">
+        <small class="comment error">[[error]]</small>
+        <button class="btn-critical" on-click="_reset">Send Email</button>
+    </template>
+
     <div class="center">New to Worbli? <span on-click="_join">Join WORBLI</span></div>
     `;
   }
@@ -114,6 +127,10 @@ class WorbliSignin extends PolymerElement {
         type: Boolean,
         value: false,
       },
+      forgotPassword: {
+        type: Boolean,
+        value: false,
+      },
       apiPath: {
         type: Text,
       },
@@ -122,6 +139,33 @@ class WorbliSignin extends PolymerElement {
 
 _join(){
     this.join = true;
+}
+
+_toggle(){
+    this.error = "";
+    this.forgotPassword = true;
+}
+_reset(){
+    this.error = "";
+    const data = {
+        email: this.email,
+    }
+    const url = `${this.apiPath}/user/reset/`;
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(data), 
+      headers:{'Content-Type': 'application/json'}
+    })
+    .then(response => {
+        return response.json();
+    })
+    .then(response => {
+            this.forgotPassword = false;
+            this.dispatchEvent(new CustomEvent('hideOverlay',{bubbles: true, composed: true, detail: {action: 'hide'}}));
+    })
+    .catch(error => {
+        this.error = "Please, try again";
+    });
 }
 
 _login(){
@@ -144,11 +188,11 @@ _login(){
             this.set('route.path', `/dashboard/profile/`);
             this.dispatchEvent(new CustomEvent('hideOverlay',{bubbles: true, composed: true, detail: {action: 'hide'}}));
         } else {
-            this.error = "Incorect email and password combination";
+            this.error = "Forgot password?, Click here to reset your password.";
         }
     })
     .catch(error => {
-        this.error = "Incorect email and password combination";
+        this.error = "Forgot password?, Click here to reset your password.";
     });
 }
 
