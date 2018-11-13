@@ -882,12 +882,17 @@ class ProfileRoute extends PolymerElement {
           this.addressCity = response.profile.address_city || "";
           this.addressRegion = response.profile.address_region || "";
           this.addressZip = response.profile.address_zip || "";
-          this.addressCountry = response.profile.address_country.toUpperCase() || "";
+          if(response.profile && response.profile.address_country){
+            this.addressCountry = response.profile.address_country.toUpperCase() || "";
+          }
           this.phoneCode = response.profile.phone_code || "";
           this.phoneMobile = response.profile.phone_mobile || "";
-          // this.dobYear = new Date(response.profile.date_birth).getFullYear() || "";
-          // this.dobMonth = new Date(response.profile.date_birth).getMonth() || "";
-          // this.dobDay = new Date(response.profile.date_birth).getDay() || "";
+          if(response.profile && response.profile.date_birth){
+            this.dobYear = new Date(response.profile.date_birth).getFullYear() || "";
+            this.dobMonth = new Date(response.profile.date_birth).getMonth() || "";
+            this.dobDay = new Date(response.profile.date_birth).getDay() || "";
+          }
+
           this.gender = response.profile.gender || "";
         }
       })
@@ -973,7 +978,6 @@ _save(data){
   })
   .then((response) => {return response.json()})
   .then((response) => {
-    localStorage.setItem("kyc_token", JSON.stringify(response.kyc_token.token));
     this.set('route.path', '/dashboard/identity/')
   })
   .catch(error => console.log('Error:', error));
