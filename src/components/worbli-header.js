@@ -129,13 +129,22 @@ class WorbliHeader extends PolymerElement {
             </ul>
         </div>
 
-      <div class="navigation">
-        <ul>
-          <li on-click="_join" class="join-btn">JOIN WORBLI</a></li>
-          <li on-click="_signIn" class="blue-bg">SIGN IN</a></li>
-        </ul>
-    </div>
-
+      <template is="dom-if" if="{{!logedIn}}">
+        <div class="navigation">
+          <ul>
+            <li on-click="_join" class="join-btn">JOIN WORBLI</a></li>
+            <li on-click="_signIn" class="blue-bg">SIGN IN</a></li>
+          </ul>
+      </div>
+    </template>
+    <template is="dom-if" if="{{logedIn}}">
+        <div class="navigation">
+          <ul>
+            <li on-click="_signOut" class="join-btn">SIGN OUT</a></li>
+            <li on-click="_dashboard" class="blue-bg">DASHBOARD</a></li>
+          </ul>
+      </div>
+    </template>
 
 
 	    </div>
@@ -155,10 +164,6 @@ class WorbliHeader extends PolymerElement {
         type: Boolean,
         value: false,
       },
-      logedOut: {
-        type: Boolean,
-        value: false,
-      },
       worbliProfile: {
         type: Object,
       }
@@ -166,24 +171,18 @@ class WorbliHeader extends PolymerElement {
   }
 
   _routeChanged(){
-    let str = this.route.path.split("/")
-    if(str[1] === 'dashboard'){
-      this.logedIn = false;
-      this.logedOut = false;
-    } else {
-      this.worbliProfile = JSON.parse(localStorage.getItem("worbli_profile"));
-      if(this.worbliProfile){
-        this.logedIn = true;
-        this.logedOut = false;
-      } else {
-        this.logedIn = false;
-        this.logedOut = true;
-      }
-    }
+    const dashboardLocation = this.route.path.split("/")
+    if(dashboardLocation[1] == 'dashboard' && dashboardLocation[2] == 'profile'){
+      this.logedIn = true;
+    } 
   }
 
+  _dashboard(){
+    this.set('route.path', `/dashboard/profile/`);
+  }
   _signOut(){
-    localStorage.removeItem("worbli_profile");
+    this.logedIn = false;
+    localStorage.removeItem("token");
     this.set('route.path', `/`);
   }
   _goProfile(){
