@@ -841,7 +841,7 @@ class ProfileRoute extends PolymerElement {
 
   ready() {
     super.ready();
-    this._getData();
+    //this._getData();
     const token = this.route.__queryParams.token || localStorage.getItem("token");
     if(token) {
       const url = `${this.apiPath}/user/auth`;
@@ -852,6 +852,7 @@ class ProfileRoute extends PolymerElement {
       .then((response) => {return response.json()})
       .then(response => {
         if(response.data === false){
+          console.log('badtoken')
           localStorage.removeItem("token");
           this.set('route.path', '/')
         } else {
@@ -859,7 +860,9 @@ class ProfileRoute extends PolymerElement {
         }
       })
       .catch(error => {this.set('route.path', '/')});
-    } else {this.set('route.path', '/')}
+    } else {
+      console.log('no token')
+      this.set('route.path', '/')}
   }
 
   _getData(){
