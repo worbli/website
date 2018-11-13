@@ -143,7 +143,7 @@ class WorbliJoin extends PolymerElement {
                 </div>
                 <div class="checkbox-container">
                     <input type="checkbox" name="checkbox" id="marketing" value="{{marketing::input}}" on-mousedown="_marketingCheckbox">
-                    <label class="checkbox-label">By registering you agree to the terms and conditions and opt-in to marketing communications.</label></br></br>
+                    <label class="checkbox-label">I would like to opt in to marketing communications.</label></br></br>
                 </div>
                 <small class="comment error">[[error]]</small>
                 <button class="btn-critical" on-click="_sendEmail">Join</button>

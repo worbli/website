@@ -198,7 +198,6 @@ class ProfileRoute extends PolymerElement {
           color:#272727;
         }
         .sidebar{
-          padding-top: 24px;
           padding-bottom: 12px;
           background: #FFF;
           border-radius: 3px;
@@ -208,6 +207,9 @@ class ProfileRoute extends PolymerElement {
         }
         .dropdown-short{
           width:100px;
+        }
+        .title{
+          margin-bottom: 24px;
         }
       </style>
       
@@ -230,6 +232,7 @@ class ProfileRoute extends PolymerElement {
       <div class="split">
         <div class="side">
           <div class="sidebar">
+          <div class="title">Create a WORBLI Account</div>
             <img src="./images/profile-step1.png" class='steps'>
             <div class='step-text'>
               <div class="step">Profile</div>
@@ -671,7 +674,7 @@ class ProfileRoute extends PolymerElement {
               </select>
               <small class="comment error">[[phoneCodeError]]</small>
               <label>Mobile</label>
-              <input id="phoneMobile" value="{{phoneMobile::input}}" ame="phoneMobile" type="text" class="text" disabled="{{complete}}">
+              <input id="phoneMobile" value="{{phoneMobile::input}}" name="phoneMobile" type="number" class="text" disabled="{{complete}}">
               <small class="comment error">[[phoneMobileError]]</small>
             </div>
           </div>
@@ -926,7 +929,7 @@ class ProfileRoute extends PolymerElement {
 
 _save(data){
   const token = localStorage.getItem("token");
-  const url = `${this.apiPath}/kyc/applicant/`;
+  const url = `${this.apiPath}/user/profile/`;
   fetch(url, {
     method: 'POST',
     body: JSON.stringify(data), 

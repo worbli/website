@@ -190,11 +190,11 @@ _login(){
             this.set('route.path', `/dashboard/profile/`);
             this.dispatchEvent(new CustomEvent('hideOverlay',{bubbles: true, composed: true, detail: {action: 'hide'}}));
         } else {
-            this.error = "Forgot password?, Click here to reset your password.";
+            this.error = "Forgot password? Click here to reset your password.";
         }
     })
     .catch(error => {
-        this.error = "Forgot password?, Click here to reset your password.";
+        this.error = "Forgot password? Click here to reset your password.";
     });
 }
 
