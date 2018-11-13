@@ -841,6 +841,7 @@ class ProfileRoute extends PolymerElement {
 
   ready() {
     super.ready();
+    this._getData();
     const token = this.route.__queryParams.token || localStorage.getItem("token");
     if(token) {
       const url = `${this.apiPath}/user/auth`;
@@ -855,6 +856,38 @@ class ProfileRoute extends PolymerElement {
           this.set('route.path', '/')
         } else {
           localStorage.setItem("token", token);
+        }
+      })
+      .catch(error => {this.set('route.path', '/')});
+    } else {this.set('route.path', '/')}
+  }
+
+  _getData(){
+    const token = this.route.__queryParams.token || localStorage.getItem("token");
+    if(token) {
+      const url = `${this.apiPath}/user/profile/`;
+      fetch(url, {
+        method: 'GET',
+        headers: {'Authorization': `Bearer ${token}`},
+      })
+      .then((response) => {return response.json()})
+      .then(response => {
+        if(response.data === true){
+          this.nameFirst = response.profile.name_first || "";
+          this.nameMiddle = response.profile.name_middle || "";
+          this.nameLast = response.profile.name_last || "";
+          this.addressOne = response.profile.address_one || "";
+          this.addressTwo = response.profile.address_two || "";
+          this.addressCity = response.profile.address_city || "";
+          this.addressRegion = response.profile.address_region || "";
+          this.addressZip = response.profile.address_zip || "";
+          this.addressCountry = response.profile.address_country.toUpperCase() || "";
+          this.phoneCode = response.profile.phone_code || "";
+          this.phoneMobile = response.profile.phone_mobile || "";
+          this.dobYear = new Date(response.profile.date_birth).getFullYear() || "";
+          this.dobMonth = new Date(response.profile.date_birth).getMonth() || "";
+          this.dobDay = new Date(response.profile.date_birth).getDay() || "";
+          this.gender = response.profile.gender || "";
         }
       })
       .catch(error => {this.set('route.path', '/')});
@@ -940,7 +973,7 @@ _save(data){
     localStorage.setItem("kyc_token", JSON.stringify(response.kyc_token.token));
     this.set('route.path', '/dashboard/identity/')
   })
-  .catch(error => console.error('Error:', error));
+  .catch(error => console.log('Error:', error));
 }
 
 
