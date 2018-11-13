@@ -841,7 +841,7 @@ class ProfileRoute extends PolymerElement {
 
   ready() {
     super.ready();
-    //this._getData();
+    this._getData();
     const token = this.route.__queryParams.token || localStorage.getItem("token");
     if(token) {
       const url = `${this.apiPath}/user/auth`;
@@ -852,7 +852,6 @@ class ProfileRoute extends PolymerElement {
       .then((response) => {return response.json()})
       .then(response => {
         if(response.data === false){
-          console.log('badtoken')
           localStorage.removeItem("token");
           this.set('route.path', '/')
         } else {
@@ -861,7 +860,6 @@ class ProfileRoute extends PolymerElement {
       })
       .catch(error => {this.set('route.path', '/')});
     } else {
-      console.log('no token')
       this.set('route.path', '/')}
   }
 
@@ -887,13 +885,15 @@ class ProfileRoute extends PolymerElement {
           this.addressCountry = response.profile.address_country.toUpperCase() || "";
           this.phoneCode = response.profile.phone_code || "";
           this.phoneMobile = response.profile.phone_mobile || "";
-          this.dobYear = new Date(response.profile.date_birth).getFullYear() || "";
-          this.dobMonth = new Date(response.profile.date_birth).getMonth() || "";
-          this.dobDay = new Date(response.profile.date_birth).getDay() || "";
+          // this.dobYear = new Date(response.profile.date_birth).getFullYear() || "";
+          // this.dobMonth = new Date(response.profile.date_birth).getMonth() || "";
+          // this.dobDay = new Date(response.profile.date_birth).getDay() || "";
           this.gender = response.profile.gender || "";
         }
       })
-      .catch(error => {this.set('route.path', '/')});
+      .catch(error => {
+        console.log(error)
+      });
     } else {this.set('route.path', '/')}
   }
 
