@@ -1,4 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import '@polymer/app-route/app-location.js';
 import '../../css/shared-styles.js';
 
 class BlockInfo extends PolymerElement {
@@ -47,6 +48,7 @@ class BlockInfo extends PolymerElement {
                 letter-spacing: 1px;
             }
         </style>
+        <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
         <div class="container">
             <div class="title">Current Block Info</div>
             <p class="block">[[info.head_block_num]]</p>
@@ -72,27 +74,49 @@ class BlockInfo extends PolymerElement {
             type: Object,
             notify: true,
             reflectToAttribute: true,
-        }
+        },
+        onPage: {
+            type: Boolean,
+            value: false,
+        },
+        route: {
+            type: Object,
+            observer: "_routeChanged"
+          },
     };
   }
 
-  _getBlockInfo(){
-      
-    if(this.jsonrpc){
-        setInterval(()=>{
-            this.jsonrpc.get_info()
-            .then((info) => {
-                info.head_block_num = info.head_block_num.toLocaleString()
-                let formatted_block_time = info.head_block_time.split('T');
-                let no_seconds = formatted_block_time[1].split('.');
-                info.head_block_time = `${formatted_block_time[0]} ${no_seconds[0]}`;
-                this.info = info;
-                this.producer = info.head_block_producer;
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-        }, this.interval);
+  _routeChanged(){
+    const location = this.route.path.split("/")
+    if(location[1] == 'network'){
+        
+      this.onPage = true;
+      this._getBlockInfo();
+    } else {
+        clearInterval(this.refreshIntervalId);
+        this.onPage = false; 
+    }
+  }
+
+
+  _getBlockInfo(){  
+    if(this.jsonrpc && this.onPage){
+        this.refreshIntervalId = setInterval(()=>{
+            if(this.jsonrpc){
+                this.jsonrpc.get_info()
+                .then((info) => {
+                    info.head_block_num = info.head_block_num.toLocaleString()
+                    let formatted_block_time = info.head_block_time.split('T');
+                    let no_seconds = formatted_block_time[1].split('.');
+                    info.head_block_time = `${formatted_block_time[0]} ${no_seconds[0]}`;
+                    this.info = info;
+                    this.producer = info.head_block_producer;
+                })
+                .catch((err) => {
+                    console.log(err)
+                }) 
+            }
+        }, this.interval)
     }
   }
 } window.customElements.define('block-info', BlockInfo);
