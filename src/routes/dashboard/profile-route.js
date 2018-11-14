@@ -208,9 +208,10 @@ class ProfileRoute extends PolymerElement {
         .dropdown-short{
           width:100px;
         }
-        .title{
-          margin-bottom: 24px;
+        .intro{
+          padding: 12px;
         }
+
       </style>
       
       <!-- Google Tag Manager (noscript) -->
@@ -232,17 +233,26 @@ class ProfileRoute extends PolymerElement {
       <div class="split">
         <div class="side">
           <div class="sidebar">
-          <div class="title">Create a WORBLI Account</div>
-            <img src="./images/profile-step1.png" class='steps'>
-            <div class='step-text'>
-              <div class="step">Profile</div>
-              <div>Identity</div>
-              <div>Account</div>
-            </div>
+          <div class="title">Verification</div>
+          <div class="title">Review</div>
+          <div class="title">Status</div>
+          <div class="title">Worbli Account</div>
+          <div class="title">Claim Sharedrop</div>
+          <div class="title">Change Password</div>
           </div>
         </div>
+
+
+
+
         <div class="main">
-          <h1>Profile</h1>
+          <h1>Verification</h1>
+          <p class="intro">Completing the verification process will grant you complete access to the the myriad of financial services and applications on the WORBLI network.</p>
+          <div class="footer">
+              <button type="button" on-click="_startVerificatoin">Start Verification</button>
+            </div>
+
+<!-- START TEMPLATE -->
           <div class="input-area">
             <div class="section-name">Name</div>
             <div class="form-inputs">
@@ -813,6 +823,8 @@ class ProfileRoute extends PolymerElement {
             </div>
           </div>
 
+<!-- END TEMPLATE -->
+
             <div class="footer">
               <button type="button" on-click="_saveProfile">Save Profile</button>
             </div>
@@ -842,7 +854,7 @@ class ProfileRoute extends PolymerElement {
   ready() {
     super.ready();
     this._getData();
-    const token = this.route.__queryParams.token || localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     if(token) {
       const url = `${this.apiPath}/user/auth`;
       fetch(url, {
@@ -855,16 +867,37 @@ class ProfileRoute extends PolymerElement {
           localStorage.removeItem("token");
           this.set('route.path', '/')
         } else {
-          localStorage.setItem("token", token);
+          this.onfido_status = response.onfido_status;
         }
       })
       .catch(error => {this.set('route.path', '/')});
     } else {
-      this.set('route.path', '/')}
+      this.set('route.path', '/')
+    }
+  }
+
+  _startVerificatoin(){
+    const token = localStorage.getItem("token");
+    if(token) {
+      const url = `${this.apiPath}/kyc/applicant`;
+      fetch(url, {
+        method: 'GET',
+        headers: {'Authorization': `Bearer ${token}`},
+      })
+      .then((response) => {return response.json()})
+      .then(response => {
+        this.onfido_status = response.onfido_status;
+        const token = response.token;
+        //localStorage.setItem("token", token);
+      })
+      .catch(error => {this.set('route.path', '/')});
+    } else {
+      this.set('route.path', '/')
+    }
   }
 
   _getData(){
-    const token = this.route.__queryParams.token || localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     if(token) {
       const url = `${this.apiPath}/user/profile/`;
       fetch(url, {
