@@ -229,6 +229,8 @@ _marketingCheckbox(){
 
 _sendEmail(){
     if (this.email && this._validateEmail(this.email)){
+        this.complete = true;
+        this.error = ""
         const data = {
             email: this.email,
             agreed_terms: this.termsCheckboxValue,
@@ -245,7 +247,7 @@ _sendEmail(){
         })
         .then((response) => {
             if(response.data === true){
-                this.complete = true;
+                this.sent = true;
                 this.error = ""
             } else {
                 this.error = "Invalid email, please try again!"
