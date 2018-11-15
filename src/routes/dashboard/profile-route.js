@@ -224,6 +224,7 @@ class ProfileRoute extends PolymerElement {
           color: #4978b3;
           font-size: 12px;
           font-weight: 600;
+          width: 290px;
         }
 
       </style>
@@ -845,7 +846,7 @@ class ProfileRoute extends PolymerElement {
               <!-- <div on-click="_onfidoJwt">Start</div> -->
               
               <!-- <template is="dom-if" if="{{showIframe}}"> -->
-              <a href="https://kyc.dac.city?kyc_token=[[kycToken2]]" target="_blank" class="button">open window</a>
+              <a href="https://kyc.dac.city?kyc_token=[[kycToken2]]" target="_blank" class="button">Upload in new tab</a>
               <!-- <iframe src="https://kyc.dac.city?kyc_token=[[kycToken2]]" height="700" width="500"></iframe> -->
               <!-- </template> -->
             </div>
