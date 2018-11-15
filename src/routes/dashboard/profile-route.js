@@ -237,7 +237,8 @@ class ProfileRoute extends PolymerElement {
       <div class="split">
         <div class="side">
           <div class="sidebar">
-          <div class="title">Verification</div>
+          <div class="title">Application</div>
+          <div class="title">Documents</div>
           <div class="title">Review</div>
           <div class="title">Status</div>
           <div class="title">Worbli Account</div>
@@ -250,15 +251,15 @@ class ProfileRoute extends PolymerElement {
 
 
         <div class="main">
-          <h1>Verification</h1>
+          <h1>Application</h1>
 
-        <template is="dom-if" if="{{!started}}">
+        <!-- <template is="dom-if" if="{{!started}}">
           <p class="intro">Completing the verification process will grant you complete access to the the myriad of financial services and applications on the WORBLI network.</p>
           <div class="footer">
               <button type="button" on-click="_startVerificatoin">Start Verification</button>
             </div>
-        </template>
-        <template is="dom-if" if="{{started}}">
+        </template> -->
+        <!-- <template is="dom-if" if="{{started}}"> -->
           <div class="input-area">
             <div class="section-name">Name</div>
             <div class="form-inputs">
@@ -844,7 +845,7 @@ class ProfileRoute extends PolymerElement {
             <div class="footer">
               <button type="button" on-click="_saveProfile">Save Profile</button>
             </div>
-        </template>
+        <!-- </template> -->
         </div>
       </div>
       </br></br>
