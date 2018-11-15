@@ -211,9 +211,19 @@ class ProfileRoute extends PolymerElement {
         .intro{
           padding: 12px;
         }
-        iframe{
-          border: 1px solid #d1d5d7;
-          border-radius: 2px;
+        .button {
+          display: block;
+          box-shadow: inset 0 0 0 1px #c8d6e8;
+          padding: 6px;
+          border-radius: 3px;
+          text-align: center;
+          padding-top: 12px;
+          height: 25px;
+          margin: 0 12px 0 12px;
+          text-decoration: none;
+          color: #4978b3;
+          font-size: 12px;
+          font-weight: 600;
         }
 
       </style>
@@ -238,7 +248,6 @@ class ProfileRoute extends PolymerElement {
         <div class="side">
           <div class="sidebar">
           <div class="title">Application</div>
-          <div class="title">Documents</div>
           <div class="title">Review</div>
           <div class="title">Status</div>
           <div class="title">Worbli Account</div>
@@ -836,7 +845,7 @@ class ProfileRoute extends PolymerElement {
               <!-- <div on-click="_onfidoJwt">Start</div> -->
               
               <!-- <template is="dom-if" if="{{showIframe}}"> -->
-              <a href="https://kyc.dac.city?kyc_token=[[kycToken2]]" target="_blank">open window</a>
+              <a href="https://kyc.dac.city?kyc_token=[[kycToken2]]" target="_blank" class="button">open window</a>
               <!-- <iframe src="https://kyc.dac.city?kyc_token=[[kycToken2]]" height="700" width="500"></iframe> -->
               <!-- </template> -->
             </div>
@@ -881,8 +890,15 @@ class ProfileRoute extends PolymerElement {
 
   ready() {
     super.ready();
+    // get the users data if there is any
     this._getData();
+    // make a new jwt incase the old one expired
     this._onfidoJwt();
+    // make sure the users token is good
+    this._authUser();
+  }
+
+  _authUser(){
     const token = localStorage.getItem("token");
     if(token) {
       const url = `${this.apiPath}/user/auth`;
@@ -927,28 +943,6 @@ class ProfileRoute extends PolymerElement {
     }
   }
 
-  _startVerificatoin(){
-    const token = localStorage.getItem("token");
-    if(token) {
-      const url = `${this.apiPath}/kyc/applicant`;
-      fetch(url, {
-        method: 'GET',
-        headers: {'Authorization': `Bearer ${token}`},
-      })
-      .then((response) => {return response.json()})
-      .then(response => {
-        this.onfido_status = response.onfido_status;
-        if(this.onfido_status === 'started'){
-          this.started = true;
-        }
-        const token = response.token;
-        localStorage.setItem("token", token);
-      })
-      .catch(error => {this.set('route.path', '/')});
-    } else {
-      this.set('route.path', '/')
-    }
-  }
 
   _getData(){
     const token = localStorage.getItem("token");
@@ -979,7 +973,6 @@ class ProfileRoute extends PolymerElement {
             this.dobMonth = new Date(response.profile.date_birth).getMonth() || "";
             this.dobDay = new Date(response.profile.date_birth).getDay() || "";
           }
-
           this.gender = response.profile.gender || "";
         }
       })
