@@ -247,11 +247,14 @@ class ProfileRoute extends PolymerElement {
 
         <div class="main">
           <h1>Verification</h1>
+
+<template is="dom-if" if="{{!started}}">
           <p class="intro">Completing the verification process will grant you complete access to the the myriad of financial services and applications on the WORBLI network.</p>
           <div class="footer">
               <button type="button" on-click="_startVerificatoin">Start Verification</button>
             </div>
-
+      </template>
+<template is="dom-if" if="{{started}}">
 <!-- START TEMPLATE -->
           <div class="input-area">
             <div class="section-name">Name</div>
@@ -823,6 +826,7 @@ class ProfileRoute extends PolymerElement {
             </div>
           </div>
 
+</template>
 <!-- END TEMPLATE -->
 
             <div class="footer">
@@ -839,6 +843,10 @@ class ProfileRoute extends PolymerElement {
   static get properties() {
     return {
       complete: {
+        type: Boolean,
+        value: false,
+      },
+      started: {
         type: Boolean,
         value: false,
       },
@@ -868,6 +876,9 @@ class ProfileRoute extends PolymerElement {
           this.set('route.path', '/')
         } else {
           this.onfido_status = response.onfido_status;
+          if(this.onfido_status === 'started'){
+            this.started = true;
+          }
         }
       })
       .catch(error => {this.set('route.path', '/')});
@@ -887,8 +898,11 @@ class ProfileRoute extends PolymerElement {
       .then((response) => {return response.json()})
       .then(response => {
         this.onfido_status = response.onfido_status;
+        if(this.onfido_status === 'started'){
+          this.started = true;
+        }
         const token = response.token;
-        //localStorage.setItem("token", token);
+        localStorage.setItem("token", token);
       })
       .catch(error => {this.set('route.path', '/')});
     } else {
