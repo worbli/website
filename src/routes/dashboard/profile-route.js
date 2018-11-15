@@ -853,7 +853,7 @@ class ProfileRoute extends PolymerElement {
           </div>
          
             <div class="footer">
-              <button type="button" on-click="_saveProfile">Save Profile</button>
+              <button type="button" on-click="_saveProfile">Save Application Form</button>
             </div>
         <!-- </template> -->
         </div>
