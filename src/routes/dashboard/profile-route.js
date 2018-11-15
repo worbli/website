@@ -211,6 +211,10 @@ class ProfileRoute extends PolymerElement {
         .intro{
           padding: 12px;
         }
+        iframe{
+          border: 1px solid #d1d5d7;
+          border-radius: 2px;
+        }
 
       </style>
       
@@ -248,14 +252,13 @@ class ProfileRoute extends PolymerElement {
         <div class="main">
           <h1>Verification</h1>
 
-<template is="dom-if" if="{{!started}}">
+        <template is="dom-if" if="{{!started}}">
           <p class="intro">Completing the verification process will grant you complete access to the the myriad of financial services and applications on the WORBLI network.</p>
           <div class="footer">
               <button type="button" on-click="_startVerificatoin">Start Verification</button>
             </div>
-      </template>
-<template is="dom-if" if="{{started}}">
-<!-- START TEMPLATE -->
+        </template>
+        <template is="dom-if" if="{{started}}">
           <div class="input-area">
             <div class="section-name">Name</div>
             <div class="form-inputs">
@@ -825,14 +828,23 @@ class ProfileRoute extends PolymerElement {
               <small class="comment error">[[genderError]]</small>
             </div>
           </div>
-
-</template>
-<!-- END TEMPLATE -->
-
+          <hr>
+            <div class="input-area">
+            <div class="section-name">Documents</div>
+            <div class="form-inputs">
+              <!-- <div on-click="_onfidoJwt">Start</div> -->
+              
+              <!-- <template is="dom-if" if="{{showIframe}}"> -->
+              <a href="https://kyc.dac.city?kyc_token=[[kycToken2]]" target="_blank">open window</a>
+              <!-- <iframe src="https://kyc.dac.city?kyc_token=[[kycToken2]]" height="700" width="500"></iframe> -->
+              <!-- </template> -->
+            </div>
+          </div>
+         
             <div class="footer">
               <button type="button" on-click="_saveProfile">Save Profile</button>
             </div>
-  
+        </template>
         </div>
       </div>
       </br></br>
@@ -856,12 +868,20 @@ class ProfileRoute extends PolymerElement {
       apiPath: {
         type: Text,
       },
+      kycToken2: {
+        type: Text,
+      },
+      showIframe: {
+        type: Boolean,
+        value: false,
+      }
     };
   }
 
   ready() {
     super.ready();
     this._getData();
+    this._onfidoJwt();
     const token = localStorage.getItem("token");
     if(token) {
       const url = `${this.apiPath}/user/auth`;
@@ -880,6 +900,25 @@ class ProfileRoute extends PolymerElement {
             this.started = true;
           }
         }
+      })
+      .catch(error => {this.set('route.path', '/')});
+    } else {
+      this.set('route.path', '/')
+    }
+  }
+
+  _onfidoJwt(){
+    const token = localStorage.getItem("token");
+    if(token) {
+      const url = `${this.apiPath}/kyc/applicant`;
+      fetch(url, {
+        method: 'POST',
+        headers: {'Authorization': `Bearer ${token}`},
+      })
+      .then((response) => {return response.json()})
+      .then(response => {
+        this.kycToken2 = response.kyc_token;
+        this.showIframe = true;
       })
       .catch(error => {this.set('route.path', '/')});
     } else {
