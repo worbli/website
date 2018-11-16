@@ -28,7 +28,11 @@ class DasboardRoute extends PolymerElement {
         <verify-route name="verify"></verify-route>
         <claim-route name="claim"></claim-route> 
         <identity-route name="identity"></identity-route> 
-        <password-route name="password"></password-route>        
+        <password-route name="password"></password-route>  
+        <review-route name="review"></review-route>  
+        <status-route name="status"></status-route> 
+        <account-route name="account"></account-route>   
+        <sharedrop-route name="sharedrop"></sharedrop-route>        
       </iron-pages>
       
     `;
@@ -56,7 +60,7 @@ class DasboardRoute extends PolymerElement {
   _routePageChanged(page) {
     if (!page) {
       this.page = 'profile';
-    } else if (['claim', 'profile', 'verify', 'identity', 'password'].indexOf(page) !== -1) {
+    } else if (['sharedrop','account', 'claim', 'profile', 'verify', 'identity', 'password', 'review', 'status'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -76,6 +80,18 @@ class DasboardRoute extends PolymerElement {
             break;
         case 'verify':
             import('./dashboard/verify-route.js');
+            break;
+        case 'review':
+            import('./dashboard/review-route.js');
+            break;
+        case 'status':
+            import('./dashboard/status-route.js');
+            break;
+        case 'account':
+            import('./dashboard/account-route.js');
+            break;
+        case 'sharedrop':
+            import('./dashboard/sharedrop-route.js');
             break;
         case 'password':
             import('./dashboard/password-route.js');

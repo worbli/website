@@ -5,7 +5,7 @@ import '../../components/side-bar/worbli-snapshot.js';
 import '@polymer/app-route/app-location.js';
 import '../../worbli-env.js';
 
-class PasswordRoute extends PolymerElement {
+class AccountRoute extends PolymerElement {
   static get template() {
     return html`
           <style include="shared-styles">
@@ -198,7 +198,6 @@ class PasswordRoute extends PolymerElement {
           color:#272727;
         }
         .sidebar{
-          padding-top: 24px;
           padding-bottom: 12px;
           background: #FFF;
           border-radius: 3px;
@@ -209,6 +208,31 @@ class PasswordRoute extends PolymerElement {
         .dropdown-short{
           width:100px;
         }
+        .intro{
+          padding: 12px;
+        }
+        .button {
+          display: block;
+          box-shadow: inset 0 0 0 1px #c8d6e8;
+          padding: 6px;
+          border-radius: 3px;
+          text-align: center;
+          padding-top: 12px;
+          height: 25px;
+          margin: 0 12px 0 12px;
+          text-decoration: none;
+          color: #4978b3;
+          font-size: 12px;
+          font-weight: 600;
+          width: 290px;
+        }
+        .text{
+          text-transform: capitalize;
+        }
+        .upper {
+          text-transform: uppercase;
+        }
+
       </style>
       
       <!-- Google Tag Manager (noscript) -->
@@ -230,32 +254,54 @@ class PasswordRoute extends PolymerElement {
       <div class="split">
         <div class="side">
           <div class="container">
-            <a href="/dashboard/profile"><div class="navigation">Application</div></a>
-            <a href="/dashboard/review"><div class="navigation">Review</div></a>
+            <a href="/dashboard/profile"><div class="navigation ">Application</div></a>
+            <a href="/dashboard/review"><div class="navigation ">Review</div></a>
             <a href="/dashboard/status"><div class="navigation">Status</div></a>
-            <a href="/dashboard/account"><div class="navigation">Account</div></a>
+            <a href="/dashboard/account"><div class="navigation selected">Account</div></a>
             <a href="/dashboard/sharedrop"><div class="navigation">Sharedrop</div></a>
-            <a href="/dashboard/password"><div class="navigation selected">Password</div></a>
+            <a href="/dashboard/password"><div class="navigation">Password</div></a>
           </div>
         </div>
+
+
+
+
         <div class="main">
-          <h1>Set Password</h1>
+          <h1>Worbli Account</h1>
+
+        <!-- <template is="dom-if" if="{{!started}}">
+          <p class="intro">Completing the verification process will grant you complete access to the the myriad of financial services and applications on the WORBLI network.</p>
+          <div class="footer">
+              <button type="button" on-click="_startVerificatoin">Start Verification</button>
+            </div>
+        </template> -->
+        <!-- <template is="dom-if" if="{{started}}"> -->
           <div class="input-area">
-            <div class="section-name">Passwords</div>
+            <div class="section-name">Name</div>
             <div class="form-inputs">
-              <label>Password</label>
-              <input id="password" value="{{password::input}}" name="password" type="password" class="text">
-              <small class="comment error">[[passwordError]]</small>
-              <label>Confirm Password</label>
-              <input id="passwordTwo" value="{{passwordTwo::input}}" ame="passwordTwo" type="password" class="text">
-              <small class="comment error">[[passwordTwoError]]</small>
+              <label>Account Name </label>
+              <input id="nameFirst" value="{{nameFirst::input}}" name="nameFirst" type="text" class="text" disabled="{{complete}}">
+              <small class="comment error">[[nameFirstError]]</small>
             </div>
           </div>
-         
-            <div class="footer">
-              <button type="button" on-click="_savePassword">Set Password</button>
+          <hr>
+
+        <div class="input-area">
+            <div class="section-name">Keys</div>
+            <div class="form-inputs">
+              <label>Active Public Key</label>
+              <input id="nameFirst" value="{{nameFirst::input}}" name="nameFirst" type="text" class="text" disabled="{{complete}}">
+              <small class="comment error">[[nameFirstError]]</small>
+              <label>Owner Public Key</label>
+              <input id="nameFirst" value="{{nameFirst::input}}" name="nameFirst" type="text" class="text" disabled="{{complete}}">
+              <small class="comment error">[[nameFirstError]]</small>
             </div>
-  
+          </div>
+     
+            <div class="footer">
+              <button type="button" on-click="_saveProfile">Apply for Account</button>
+            </div>
+        <!-- </template> -->
         </div>
       </div>
       </br></br>
@@ -269,18 +315,34 @@ class PasswordRoute extends PolymerElement {
         type: Boolean,
         value: false,
       },
+      started: {
+        type: Boolean,
+        value: false,
+      },
       readonly: {
         type: Text,
       },
       apiPath: {
         type: Text,
       },
+      kycToken2: {
+        type: Text,
+      },
+      showIframe: {
+        type: Boolean,
+        value: false,
+      }
     };
   }
 
   ready() {
     super.ready();
-    const token = this.route.__queryParams.token || localStorage.getItem("token");
+    // make sure the users token is good
+    this._authUser();
+  }
+
+  _authUser(){
+    const token = localStorage.getItem("token");
     if(token) {
       const url = `${this.apiPath}/user/auth`;
       fetch(url, {
@@ -293,36 +355,23 @@ class PasswordRoute extends PolymerElement {
           localStorage.removeItem("token");
           this.set('route.path', '/')
         } else {
-          localStorage.setItem("token", token);
+          this.onfido_status = response.onfido_status;
+          if(this.onfido_status === 'started'){
+            this.started = true;
+          }
         }
       })
       .catch(error => {this.set('route.path', '/')});
-    } else {this.set('route.path', '/')}
-  }
-
-  _savePassword(){
-    this.passwordError = ""
-    this.passwordTwoError = ""
-    const password = this.password;
-    const passwordTwo = this.passwordTwo;
-    if (password != passwordTwo){
-        this.passwordTwoError = "Passwords are not the same"
-    } else if (this._validatePassword()){
-        this._save({password});
     } else {
-        this.passwordTwoError = "Passwords are not strong enough"
+      this.set('route.path', '/')
     }
   }
 
-  _validatePassword(){
-    const password = this.password;
-    var re = /^(?=.*[a-z])(?=.*\d|.*[!@#\$%\^&\*])(?=.*[A-Z])(?:.{8,})$/;
-    return re.test(password);
-}
+
 
 _save(data){
   const token = localStorage.getItem("token");
-  const url = `${this.apiPath}/user/password/`;
+  const url = `${this.apiPath}/user/profile/`;
   fetch(url, {
     method: 'POST',
     body: JSON.stringify(data), 
@@ -330,16 +379,10 @@ _save(data){
   })
   .then((response) => {return response.json()})
   .then((response) => {
-     if(response.data){
-        localStorage.removeItem("token");
-        this.set('route.path', '/')
-        this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'signin'}}));
-     } else {
-        this.passwordTwoError = "Click the email link again"
-     }
+    this.set('route.path', '/dashboard/review/')
   })
-  .catch(error => console.error('Error:', error));
+  .catch(error => console.log('Error:', error));
 }
 
 
-} window.customElements.define('password-route', PasswordRoute);
+} window.customElements.define('account-route', AccountRoute);

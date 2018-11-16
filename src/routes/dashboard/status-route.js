@@ -5,7 +5,7 @@ import '../../components/side-bar/worbli-snapshot.js';
 import '@polymer/app-route/app-location.js';
 import '../../worbli-env.js';
 
-class PasswordRoute extends PolymerElement {
+class StatusRoute extends PolymerElement {
   static get template() {
     return html`
           <style include="shared-styles">
@@ -61,7 +61,6 @@ class PasswordRoute extends PolymerElement {
           background-color: #F6F6F7;
         }
         .footer {
-          margin-top: 24px;
           display: block;
           height: 63px;
           border-top: 1px solid #f5f5f5;
@@ -125,6 +124,12 @@ class PasswordRoute extends PolymerElement {
           padding: 17px 0 7px;
           width: 340px;
         }
+        .label{
+            font-size: 12px;
+            color: #393d4d;
+            font-weight: 600; 
+            text-transform: capitalize; 
+        }
         input {
           width: 307px;
           background: #f8f8f8;
@@ -150,7 +155,6 @@ class PasswordRoute extends PolymerElement {
           font-size: 12px;
         }
         hr {
-          margin-top: 24px;
           display: block;
           border-top: 1px solid #f5f5f5;
         }
@@ -198,7 +202,6 @@ class PasswordRoute extends PolymerElement {
           color:#272727;
         }
         .sidebar{
-          padding-top: 24px;
           padding-bottom: 12px;
           background: #FFF;
           border-radius: 3px;
@@ -209,6 +212,31 @@ class PasswordRoute extends PolymerElement {
         .dropdown-short{
           width:100px;
         }
+        .intro{
+          padding: 12px;
+        }
+        .button {
+          display: block;
+          box-shadow: inset 0 0 0 1px #c8d6e8;
+          padding: 6px;
+          border-radius: 3px;
+          text-align: center;
+          padding-top: 12px;
+          height: 25px;
+          margin: 0 12px 0 12px;
+          text-decoration: none;
+          color: #4978b3;
+          font-size: 12px;
+          font-weight: 600;
+          width: 290px;
+        }
+        .text{
+          text-transform: capitalize;
+        }
+        .upper {
+          text-transform: uppercase;
+        }
+
       </style>
       
       <!-- Google Tag Manager (noscript) -->
@@ -229,33 +257,43 @@ class PasswordRoute extends PolymerElement {
       <worbli-env api-path="{{apiPath}}""></worbli-env>
       <div class="split">
         <div class="side">
-          <div class="container">
-            <a href="/dashboard/profile"><div class="navigation">Application</div></a>
-            <a href="/dashboard/review"><div class="navigation">Review</div></a>
-            <a href="/dashboard/status"><div class="navigation">Status</div></a>
+        <div class="container">
+            <a href="/dashboard/profile"><div class="navigation ">Application</div></a>
+            <a href="/dashboard/review"><div class="navigation ">Review</div></a>
+            <a href="/dashboard/status"><div class="navigation selected">Status</div></a>
             <a href="/dashboard/account"><div class="navigation">Account</div></a>
             <a href="/dashboard/sharedrop"><div class="navigation">Sharedrop</div></a>
-            <a href="/dashboard/password"><div class="navigation selected">Password</div></a>
+            <a href="/dashboard/password"><div class="navigation">Password</div></a>
           </div>
         </div>
+
         <div class="main">
-          <h1>Set Password</h1>
+          <h1>Status</h1>
           <div class="input-area">
-            <div class="section-name">Passwords</div>
+            <div class="section-name">Document Report</div>
             <div class="form-inputs">
-              <label>Password</label>
-              <input id="password" value="{{password::input}}" name="password" type="password" class="text">
-              <small class="comment error">[[passwordError]]</small>
-              <label>Confirm Password</label>
-              <input id="passwordTwo" value="{{passwordTwo::input}}" ame="passwordTwo" type="password" class="text">
-              <small class="comment error">[[passwordTwoError]]</small>
+              <p class="label">Verified</p>
             </div>
           </div>
-         
-            <div class="footer">
-              <button type="button" on-click="_savePassword">Set Password</button>
+          <hr>
+          <div class="input-area">
+            <div class="section-name">Facial Similarity Report</div>
+                <div class="form-inputs">
+                    <p class="label">Failed</p>
+                </div>
             </div>
-  
+            <hr>
+          <div class="input-area">
+            <div class="section-name">Identity Report</div>
+                <div class="form-inputs">
+                    <p class="label">Reviewing</p>
+                </div>
+            </div>
+        
+            <div class="footer">
+              <button type="button" on-click="_saveProfile">Create Worbli Account</button>
+            </div>
+
         </div>
       </div>
       </br></br>
@@ -269,77 +307,70 @@ class PasswordRoute extends PolymerElement {
         type: Boolean,
         value: false,
       },
+      started: {
+        type: Boolean,
+        value: false,
+      },
       readonly: {
         type: Text,
       },
       apiPath: {
         type: Text,
       },
+      kycToken2: {
+        type: Text,
+      },
+      showIframe: {
+        type: Boolean,
+        value: false,
+      }
     };
   }
 
   ready() {
     super.ready();
-    const token = this.route.__queryParams.token || localStorage.getItem("token");
+    // get the users data if there is any
+    this._getData();
+  }
+
+  _getData(){
+    const token = localStorage.getItem("token");
     if(token) {
-      const url = `${this.apiPath}/user/auth`;
+      const url = `${this.apiPath}/user/profile/`;
       fetch(url, {
-        method: 'POST',
+        method: 'GET',
         headers: {'Authorization': `Bearer ${token}`},
       })
       .then((response) => {return response.json()})
       .then(response => {
-        if(response.data === false){
-          localStorage.removeItem("token");
-          this.set('route.path', '/')
-        } else {
-          localStorage.setItem("token", token);
+        if(response.data === true){
+          this.nameFirst = response.profile.name_first || "";
+          this.nameMiddle = response.profile.name_middle || "";
+          this.nameLast = response.profile.name_last || "";
+          this.addressNumber = response.profile.address_number || "";
+          this.addressOne = response.profile.address_one || "";
+          this.addressTwo = response.profile.address_two || "";
+          this.addressCity = response.profile.address_city || "";
+          this.addressRegion = response.profile.address_region || "";
+          this.addressZip = response.profile.address_zip || "";
+          if(response.profile && response.profile.address_country){
+            this.addressCountry = response.profile.address_country.toUpperCase() || "";
+          }
+          this.phoneCode = response.profile.phone_code || "";
+          this.phoneMobile = response.profile.phone_mobile || "";
+          if(response.profile && response.profile.date_birth){
+            this.dobYear = new Date(response.profile.date_birth).getFullYear() || "";
+            this.dobMonth = new Date(response.profile.date_birth).getMonth() || "";
+            this.dobDay = new Date(response.profile.date_birth).getDay() || "";
+          }
+          this.gender = response.profile.gender || "";
         }
       })
-      .catch(error => {this.set('route.path', '/')});
+      .catch(error => {
+        console.log(error)
+      });
     } else {this.set('route.path', '/')}
   }
 
-  _savePassword(){
-    this.passwordError = ""
-    this.passwordTwoError = ""
-    const password = this.password;
-    const passwordTwo = this.passwordTwo;
-    if (password != passwordTwo){
-        this.passwordTwoError = "Passwords are not the same"
-    } else if (this._validatePassword()){
-        this._save({password});
-    } else {
-        this.passwordTwoError = "Passwords are not strong enough"
-    }
-  }
 
-  _validatePassword(){
-    const password = this.password;
-    var re = /^(?=.*[a-z])(?=.*\d|.*[!@#\$%\^&\*])(?=.*[A-Z])(?:.{8,})$/;
-    return re.test(password);
-}
-
-_save(data){
-  const token = localStorage.getItem("token");
-  const url = `${this.apiPath}/user/password/`;
-  fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(data), 
-    headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
-  })
-  .then((response) => {return response.json()})
-  .then((response) => {
-     if(response.data){
-        localStorage.removeItem("token");
-        this.set('route.path', '/')
-        this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'signin'}}));
-     } else {
-        this.passwordTwoError = "Click the email link again"
-     }
-  })
-  .catch(error => console.error('Error:', error));
-}
-
-
-} window.customElements.define('password-route', PasswordRoute);
+} window.customElements.define('status-route', StatusRoute);

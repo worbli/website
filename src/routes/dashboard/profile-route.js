@@ -226,6 +226,12 @@ class ProfileRoute extends PolymerElement {
           font-weight: 600;
           width: 290px;
         }
+        .text{
+          text-transform: capitalize;
+        }
+        .upper {
+          text-transform: uppercase;
+        }
 
       </style>
       
@@ -247,13 +253,13 @@ class ProfileRoute extends PolymerElement {
       <worbli-env api-path="{{apiPath}}""></worbli-env>
       <div class="split">
         <div class="side">
-          <div class="sidebar">
-          <div class="title">Application</div>
-          <div class="title">Review</div>
-          <div class="title">Status</div>
-          <div class="title">Worbli Account</div>
-          <div class="title">Claim Sharedrop</div>
-          <div class="title">Change Password</div>
+        <div class="container">
+            <a href="/dashboard/profile"><div class="navigation selected">Application</div></a>
+            <a href="/dashboard/review"><div class="navigation">Review</div></a>
+            <a href="/dashboard/status"><div class="navigation">Status</div></a>
+            <a href="/dashboard/account"><div class="navigation">Account</div></a>
+            <a href="/dashboard/sharedrop"><div class="navigation">Sharedrop</div></a>
+            <a href="/dashboard/password"><div class="navigation">Password</div></a>
           </div>
         </div>
 
@@ -289,6 +295,9 @@ class ProfileRoute extends PolymerElement {
           <div class="input-area">
             <div class="section-name">Address</div>
             <div class="form-inputs">
+              <label>Building Number</label>
+              <input id="addressNumber" value="{{addressNumber::input}}" name="addressNumber" type="number" class="text" disabled="{{complete}}">
+              <small class="comment error">[[addressNumberError]]</small>
               <label>Street</label>
               <input id="addressOne" value="{{addressOne::input}}" name="addressOne" type="text" class="text" disabled="{{complete}}">
               <small class="comment error">[[addressOneError]]</small>
@@ -302,7 +311,7 @@ class ProfileRoute extends PolymerElement {
               <input id="addressRegion" value="{{addressRegion::input}}" ame="addressRegion" type="text" class="text" disabled="{{complete}}">
               <small class="comment error">[[addressRegionError]]</small>
               <label>Zip / Postal Code</label>
-              <input id="addressZip" value="{{addressZip::input}}" ame="addressZip" type="text" class="text" disabled="{{complete}}">
+              <input id="addressZip" value="{{addressZip::input}}" ame="addressZip" type="text" class="text upper" disabled="{{complete}}">
               <small class="comment error">[[addressZipError]]</small>
               <label>Country</label>
               <select class="dropdown" id="addressCountry" value="{{addressCountry::input}}">
@@ -959,6 +968,7 @@ class ProfileRoute extends PolymerElement {
           this.nameFirst = response.profile.name_first || "";
           this.nameMiddle = response.profile.name_middle || "";
           this.nameLast = response.profile.name_last || "";
+          this.addressNumber = response.profile.address_number || "";
           this.addressOne = response.profile.address_one || "";
           this.addressTwo = response.profile.address_two || "";
           this.addressCity = response.profile.address_city || "";
@@ -988,6 +998,7 @@ class ProfileRoute extends PolymerElement {
     const name_first = this.nameFirst;
     const name_middle = this.nameMiddle;
     const name_last = this.nameLast;
+    const address_number = this.addressNumber;
     const address_one = this.addressOne;
     let address_two = this.addressTwo;
     const address_city = this.addressCity;
@@ -1000,6 +1011,7 @@ class ProfileRoute extends PolymerElement {
     const dob_month = this.dobMonth;
     const dob_day = this.dobDay;
     const gender = this.gender;
+    this.addressNumberError = "";
     this.nameFirstError = "";
     this.nameMiddleError = "";
     this.nameLastError = "";
@@ -1022,7 +1034,7 @@ class ProfileRoute extends PolymerElement {
     if(address_one === undefined || address_one === ""){check = false; this.addressOneError = "Please enter an address"};
     if(address_one && address_one.length > 255){check = false; this.addressOneError = "Address too long"};
     if(address_two && address_two.length > 150){check = false; this.addressTwoError = "Address too long"};
-    if(!address_two){address_two = " "};
+    if(address_number === undefined || address_number === ""){check = false; this.addressNumberError = "Please enter a building number"};
     if(address_city === undefined || address_city === ""){check = false; this.addressCityError = "Please enter a city"};
     if(address_city && address_city.length > 50){check = false; this.addressCityError = "City too long"};
     if(address_region === undefined || address_region === ""){check = false; this.addressRegionError = "Please enter a region"};
@@ -1044,7 +1056,7 @@ class ProfileRoute extends PolymerElement {
     if(gender === undefined || gender === ""){check = false; this.genderError = "Please select a gender"};
     const date_birth = `${this.dobYear}-${this.dobMonth}-${this.dobDay}`;
     if(check === true){
-      const data = {name_first, name_middle, name_last, address_one, address_two, address_city, address_region, address_zip, address_country, phone_code, phone_mobile, date_birth, gender}
+      const data = {name_first, name_middle, name_last, address_one, address_two, address_city, address_region, address_zip, address_country, phone_code, phone_mobile, date_birth, gender, address_number}
       this._save(data);
     }
   }
@@ -1059,7 +1071,7 @@ _save(data){
   })
   .then((response) => {return response.json()})
   .then((response) => {
-    this.set('route.path', '/dashboard/identity/')
+    this.set('route.path', '/dashboard/review/')
   })
   .catch(error => console.log('Error:', error));
 }
