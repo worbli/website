@@ -269,39 +269,40 @@ class AccountRoute extends PolymerElement {
         <div class="main">
           <h1>Worbli Account</h1>
 
-        <!-- <template is="dom-if" if="{{!started}}">
-          <p class="intro">Completing the verification process will grant you complete access to the the myriad of financial services and applications on the WORBLI network.</p>
-          <div class="footer">
-              <button type="button" on-click="_startVerificatoin">Start Verification</button>
-            </div>
-        </template> -->
-        <!-- <template is="dom-if" if="{{started}}"> -->
+          <template is="dom-if" if="{{!complete}}">
           <div class="input-area">
             <div class="section-name">Name</div>
             <div class="form-inputs">
               <label>Account Name </label>
-              <input id="nameFirst" value="{{nameFirst::input}}" name="nameFirst" type="text" class="text" disabled="{{complete}}">
-              <small class="comment error">[[nameFirstError]]</small>
+              <input id="worbliAccountName" value="{{worbliAccountName::input}}" name="worbliAccountName" type="text" class="text">
+              <small class="comment error">[[worbliAccountNameError]]</small>
             </div>
           </div>
           <hr>
 
-        <div class="input-area">
+          <div class="input-area">
             <div class="section-name">Keys</div>
             <div class="form-inputs">
               <label>Active Public Key</label>
-              <input id="nameFirst" value="{{nameFirst::input}}" name="nameFirst" type="text" class="text" disabled="{{complete}}">
-              <small class="comment error">[[nameFirstError]]</small>
+              <input id="publicKeyActive" value="{{publicKeyActive::input}}" name="publicKeyActive" type="text" class="text">
+              <small class="comment error">[[publicKeyActiveError]]</small>
               <label>Owner Public Key</label>
-              <input id="nameFirst" value="{{nameFirst::input}}" name="nameFirst" type="text" class="text" disabled="{{complete}}">
-              <small class="comment error">[[nameFirstError]]</small>
+              <input id="publicKeyOwner" value="{{publicKeyOwner::input}}" name="publicKeyOwner" type="text" class="text">
+              <small class="comment error">[[publicKeyOwnerError]]</small>
             </div>
           </div>
+          </template>
+
+          <template is="dom-if" if="{{complete}}">
+          <p class="intro">Your account has been successfully created!</p>
+          </template>
+
+
      
             <div class="footer">
-              <button type="button" on-click="_saveProfile">Apply for Account</button>
+              <button type="button" on-click="_applyAccount">Apply for Account</button>
             </div>
-        <!-- </template> -->
+
         </div>
       </div>
       </br></br>
@@ -367,22 +368,54 @@ class AccountRoute extends PolymerElement {
     }
   }
 
+  
 
-
-_save(data){
-  const token = localStorage.getItem("token");
-  const url = `${this.apiPath}/user/profile/`;
-  fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(data), 
-    headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
-  })
-  .then((response) => {return response.json()})
-  .then((response) => {
-    this.set('route.path', '/dashboard/review/')
-  })
-  .catch(error => console.log('Error:', error));
+_applyAccount(data){
+  let check = true;
+  this.publicKeyActiveError = "";
+  this.publicKeyOwnerError = "";
+  this.worbliAccountNameError = ""
+  const worbli_account_name = this.worbliAccountName;
+  const public_key_active = this.publicKeyActive;
+  const public_key_owner = this.publicKeyOwner;
+  const nameConfirmed = this._validateAccountName(worbli_account_name);
+  const activeConfirmed = this._validatePublicKey(public_key_active);
+  const ownerConfirmed = this._validatePublicKey(public_key_owner);
+  if(!activeConfirmed){this.publicKeyActiveError = "Wrong public key format. Make sure you are not pasting your private key."; check = false}
+  if(!ownerConfirmed){this.publicKeyOwnerError = "Wrong public key format. Make sure you are not pasting your private key."; check = false}
+  if(!nameConfirmed){this.worbliAccountNameError = "Account name must be between 6 and 12 characters, must start with a letter and can contain only lowercase letters and numbers 1-5."; check = false;} 
+  if(check === true){
+    const data = {worbli_account_name, public_key_active, public_key_owner}
+    const token = localStorage.getItem("token");
+    const url = `${this.apiPath}/user/account/`;
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(data), 
+      headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
+    })
+    .then((response) => {return response.json()})
+    .then((response) => {
+      if(response.data === false){
+        this.worbliAccountNameError = response.error
+      } else {
+        this.complete = true;
+      }
+    })
+    .catch(error => {
+      console.log("response");
+      this.worbliAccountNameError = "Account name is already taken"
+    });
+  }
 }
 
+_validateAccountName(name){
+  var re = /^[a-z](?=[a-z1-5]{5,11}$)/;
+  return re.test(name);
+}
+
+_validatePublicKey(key){
+  var re = /^EOS[A-Za-z0-9]{50}$/;
+  return re.test(key);
+}
 
 } window.customElements.define('account-route', AccountRoute);
