@@ -1,5 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '../../css/shared-styles.js';
+import '../../worbli-env.js';
 
 class WorbliSnapshot extends PolymerElement {
   static get template() {
@@ -76,7 +77,7 @@ class WorbliSnapshot extends PolymerElement {
 
       </style>
 
-
+        <worbli-env api-path="{{apiPath}}""></worbli-env>
         <div class="container">
             <div class="title">Check Snapshot</div>
             <template is="dom-if" if="{{!complete}}">
@@ -107,6 +108,9 @@ class WorbliSnapshot extends PolymerElement {
         type: Boolean,
         value: false,
       },
+      apiPath: {
+        type: Text,
+      },
     };
   }
 
@@ -127,7 +131,7 @@ class WorbliSnapshot extends PolymerElement {
   _checkSnapshot(){
     this.complete = true;
     if (this.accountName){
-      fetch(`https://api-b.worbli.io/api/v1/snap-shot/${this.accountName}`)
+      fetch(`${this.apiPath}/user/snapshot?account=${this.accountName}`)
       .then((response) => {
           return response.json()
       })
