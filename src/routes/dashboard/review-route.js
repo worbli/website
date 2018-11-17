@@ -285,8 +285,8 @@ class ReviewRoute extends PolymerElement {
                     <p class="label">{{addressTwoError}} </p>
                     <p class="label">{{addressCity}} </p>
                     <p class="label">{{addressRegion}} </p>
-                    <p class="label">{{addressZip}} </p>
-                    <p class="label">{{addressCountry}} </p>
+                    <p class="label upper">{{addressZip}} </p>
+                    <p class="label upper">{{addressCountry}} </p>
                 </div>
             </div>
             <hr>
@@ -314,11 +314,13 @@ class ReviewRoute extends PolymerElement {
             <div class="input-area">
                 <div class="section-name">Documents</div>
                 <div class="form-inputs">
-                    <p class="label"> 3{{documentCount}} </p>
+                    <p class="label"> {{documentCount}} </p>
+                    <small class="comment error">[[documentCountError]]</small>
+                    
                 </div>
             </div>
             <div class="footer">
-              <button type="button" on-click="_saveProfile">Submit Application</button>
+              <button type="button" on-click="_submitApplication">Submit Application</button>
             </div>
 
         </div>
@@ -350,20 +352,34 @@ class ReviewRoute extends PolymerElement {
       showIframe: {
         type: Boolean,
         value: false,
+      },
+      route: {
+        type: Object,
+        observer: '_routeChanged'
       }
     };
   }
 
-  ready() {
-    super.ready();
-    this._getData();
+  _submitApplication(){
+    if(this.documentCount >= 2){
+      const token = localStorage.getItem("token");
+      const url = `${this.apiPath}/kyc/check/`;
+      fetch(url, {
+        method: 'GET',
+        headers: {'Authorization': `Bearer ${token}`},
+      })
+    } else {
+      this.documentCountError = "Return to your appliucation and add your documents"
+    }
   }
-  _saveProfile(){
-    this.set('route.path', '/dashboard/status/')
+  _routeChanged(){
+    if(this.route.path === '/dashboard/review/' || this.route.path === '/dashboard/review')
+    this._getData();
   }
 
 
   _getData(){
+    this.documentCountError = ""
     const token = localStorage.getItem("token");
     if(token) {
       const url = `${this.apiPath}/user/profile/`;
@@ -373,6 +389,7 @@ class ReviewRoute extends PolymerElement {
       })
       .then((response) => {return response.json()})
       .then(response => {
+        this.documentCount = response.image_count;
         if(response.data === true){
           this.nameFirst = response.profile.name_first || "";
           this.nameMiddle = response.profile.name_middle || "";
@@ -383,16 +400,12 @@ class ReviewRoute extends PolymerElement {
           this.addressCity = response.profile.address_city || "";
           this.addressRegion = response.profile.address_region || "";
           this.addressZip = response.profile.address_zip || "";
-          if(response.profile && response.profile.address_country){
-            this.addressCountry = response.profile.address_country.toUpperCase() || "";
-          }
+          this.addressCountry = response.profile.address_country || "";
           this.phoneCode = response.profile.phone_code || "";
           this.phoneMobile = response.profile.phone_mobile || "";
-          if(response.profile && response.profile.date_birth){
-            this.dobYear = new Date(response.profile.date_birth).getFullYear() || "";
-            this.dobMonth = new Date(response.profile.date_birth).getMonth() || "";
-            this.dobDay = new Date(response.profile.date_birth).getDay() || "";
-          }
+          this.dobYear = response.profile.date_birth_year || "";
+          this.dobMonth = response.profile.date_birth_month || "";
+          this.dobDay = response.profile.date_birth_day || "";
           this.gender = response.profile.gender || "";
         }
       })

@@ -171,8 +171,8 @@ class WorbliHeader extends PolymerElement {
   }
 
   _routeChanged(){
-    const dashboardLocation = this.route.path.split("/")
-    if(dashboardLocation[1] == 'dashboard' && dashboardLocation[2] == 'profile'){
+    const token = localStorage.getItem("token");
+    if(token){
       this.logedIn = true;
     } 
   }

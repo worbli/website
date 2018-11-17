@@ -235,20 +235,6 @@ class ProfileRoute extends PolymerElement {
 
       </style>
       
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
-
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <worbli-env api-path="{{apiPath}}""></worbli-env>
       <div class="split">
@@ -263,30 +249,19 @@ class ProfileRoute extends PolymerElement {
           </div>
         </div>
 
-
-
-
         <div class="main">
           <h1>Application</h1>
-
-        <!-- <template is="dom-if" if="{{!started}}">
-          <p class="intro">Completing the verification process will grant you complete access to the the myriad of financial services and applications on the WORBLI network.</p>
-          <div class="footer">
-              <button type="button" on-click="_startVerificatoin">Start Verification</button>
-            </div>
-        </template> -->
-        <!-- <template is="dom-if" if="{{started}}"> -->
           <div class="input-area">
             <div class="section-name">Name</div>
             <div class="form-inputs">
               <label>First Name </label>
-              <input id="nameFirst" value="{{nameFirst::input}}" name="nameFirst" type="text" class="text" disabled="{{complete}}">
+              <input id="nameFirst" value="{{nameFirst::input}}" name="nameFirst" type="text" class="text"">
               <small class="comment error">[[nameFirstError]]</small>
               <label>Middle Name </label>
-              <input id="nameMiddle" value="{{nameMiddle::input}}" ame="nameMiddle" type="text" class="text" disabled="{{complete}}">
+              <input id="nameMiddle" value="{{nameMiddle::input}}" ame="nameMiddle" type="text" class="text"">
               <small class="comment error">[[nameMiddleError]]</small>
               <label>Family Name </label>
-              <input id="nameLast" value="{{nameLast::input}}" ame="nameLast" type="text" class="text" disabled="{{complete}}">
+              <input id="nameLast" value="{{nameLast::input}}" ame="nameLast" type="text" class="text"">
               <small class="comment error">[[nameLastError]]</small>
             </div>
           </div>
@@ -296,22 +271,22 @@ class ProfileRoute extends PolymerElement {
             <div class="section-name">Address</div>
             <div class="form-inputs">
               <label>Building Number</label>
-              <input id="addressNumber" value="{{addressNumber::input}}" name="addressNumber" type="number" class="text" disabled="{{complete}}">
+              <input id="addressNumber" value="{{addressNumber::input}}" name="addressNumber" type="number" class="text">
               <small class="comment error">[[addressNumberError]]</small>
               <label>Street</label>
-              <input id="addressOne" value="{{addressOne::input}}" name="addressOne" type="text" class="text" disabled="{{complete}}">
+              <input id="addressOne" value="{{addressOne::input}}" name="addressOne" type="text" class="text">
               <small class="comment error">[[addressOneError]]</small>
               <label></label>
-              <input id="addressTwo" value="{{addressTwo::input}}" ame="addressTwo" type="text" class="text" disabled="{{complete}}">
+              <input id="addressTwo" value="{{addressTwo::input}}" ame="addressTwo" type="text" class="text">
               <small class="comment error">[[addressTwoError]]</small>
               <label>City</label>
-              <input id="addressCity" value="{{addressCity::input}}" ame="addressCity" type="text" class="text" disabled="{{complete}}">
+              <input id="addressCity" value="{{addressCity::input}}" ame="addressCity" type="text" class="text">
               <small class="comment error">[[addressCityError]]</small>
               <label>State / Province / Region</label>
-              <input id="addressRegion" value="{{addressRegion::input}}" ame="addressRegion" type="text" class="text" disabled="{{complete}}">
+              <input id="addressRegion" value="{{addressRegion::input}}" ame="addressRegion" type="text" class="text">
               <small class="comment error">[[addressRegionError]]</small>
               <label>Zip / Postal Code</label>
-              <input id="addressZip" value="{{addressZip::input}}" ame="addressZip" type="text" class="text upper" disabled="{{complete}}">
+              <input id="addressZip" value="{{addressZip::input}}" ame="addressZip" type="text" class="text upper">
               <small class="comment error">[[addressZipError]]</small>
               <label>Country</label>
               <select class="dropdown" id="addressCountry" value="{{addressCountry::input}}">
@@ -710,7 +685,7 @@ class ProfileRoute extends PolymerElement {
               </select>
               <small class="comment error">[[phoneCodeError]]</small>
               <label>Mobile</label>
-              <input id="phoneMobile" value="{{phoneMobile::input}}" name="phoneMobile" type="number" class="text" disabled="{{complete}}">
+              <input id="phoneMobile" value="{{phoneMobile::input}}" name="phoneMobile" type="number" class="text"">
               <small class="comment error">[[phoneMobileError]]</small>
             </div>
           </div>
@@ -722,7 +697,7 @@ class ProfileRoute extends PolymerElement {
             <div class="form-inputs">
               <label>Date Of Birth</label>
               <select class="dropdown dropdown-short" id="dobDay" value="{{dobDay::input}}">
-                <option value="">Day...</option>
+
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -756,7 +731,6 @@ class ProfileRoute extends PolymerElement {
                 <option value="31">31</option>
               </select>
               <select class="dropdown dropdown-short" id="dobMonth" value="{{dobMonth::input}}">
-                <option value="">Month...</option>
                 <option value="1">1 - Jan</option>
                 <option value="2">2 - Feb</option>
                 <option value="3">3 - Mar</option>
@@ -771,7 +745,6 @@ class ProfileRoute extends PolymerElement {
                 <option value="12">12 - Dec</option>
               </select>
               <select class="dropdown dropdown-short" id="dobYear" value="{{dobYear::input}}">
-                <option value="">Year...</option>
                 <option value="2002">2002</option>
                 <option value="2001">2001</option>
                 <option value="2000">2000</option>
@@ -974,17 +947,13 @@ class ProfileRoute extends PolymerElement {
           this.addressCity = response.profile.address_city || "";
           this.addressRegion = response.profile.address_region || "";
           this.addressZip = response.profile.address_zip || "";
-          if(response.profile && response.profile.address_country){
-            this.addressCountry = response.profile.address_country.toUpperCase() || "";
-          }
           this.phoneCode = response.profile.phone_code || "";
           this.phoneMobile = response.profile.phone_mobile || "";
-          if(response.profile && response.profile.date_birth){
-            this.dobYear = new Date(response.profile.date_birth).getFullYear() || "";
-            this.dobMonth = new Date(response.profile.date_birth).getMonth() || "";
-            this.dobDay = new Date(response.profile.date_birth).getDay() || "";
-          }
+          this.dobYear = response.profile.date_birth_year || "";
+          this.dobMonth = response.profile.date_birth_month || "";
+          this.dobDay = response.profile.date_birth_day || "";
           this.gender = response.profile.gender || "";
+          if(response.profile && response.profile.address_country){this.addressCountry = response.profile.address_country.toUpperCase() || ""}
         }
       })
       .catch(error => {
@@ -1007,9 +976,9 @@ class ProfileRoute extends PolymerElement {
     const address_country = this.addressCountry;
     const phone_code = this.phoneCode;
     const phone_mobile = this.phoneMobile;
-    const dob_year = this.dobYear;
-    const dob_month = this.dobMonth;
-    const dob_day = this.dobDay;
+    const date_birth_year = this.dobYear;
+    const date_birth_month = this.dobMonth;
+    const date_birth_day = this.dobDay;
     const gender = this.gender;
     this.addressNumberError = "";
     this.nameFirstError = "";
@@ -1050,13 +1019,12 @@ class ProfileRoute extends PolymerElement {
     if(phone_mobile === undefined || phone_mobile === ""){check = false; this.phoneMobileError = "Please enter a mobile number"};
     if(phone_mobile && phone_mobile.length > 15){check = false; this.phoneMobileError = "Phone too long"};
     if(phone_mobile && phone_mobile.length < 3){check = false; this.phoneMobileError = "Phone too short"};
-    if(dob_year === undefined || dob_year === ""){check = false; this.dobError = "Please select a year"};
-    if(dob_month === undefined || dob_month === ""){check = false; this.dobError = "Please select a month"};
-    if(dob_day === undefined || dob_day === ""){check = false; this.dobError = "Please select a day"};
+    if(date_birth_year === undefined || date_birth_year === ""){check = false; this.dobError = "Please select a year"};
+    if(date_birth_month === undefined || date_birth_month === ""){check = false; this.dobError = "Please select a month"};
+    if(date_birth_day === undefined || date_birth_day === ""){check = false; this.dobError = "Please select a day"};
     if(gender === undefined || gender === ""){check = false; this.genderError = "Please select a gender"};
-    const date_birth = `${this.dobYear}-${this.dobMonth}-${this.dobDay}`;
     if(check === true){
-      const data = {name_first, name_middle, name_last, address_one, address_two, address_city, address_region, address_zip, address_country, phone_code, phone_mobile, date_birth, gender, address_number}
+      const data = {name_first, name_middle, name_last, address_one, address_two, address_city, address_region, address_zip, address_country, phone_code, phone_mobile, date_birth_day, date_birth_month, date_birth_year, gender, address_number}
       this._save(data);
     }
   }
