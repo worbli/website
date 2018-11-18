@@ -263,9 +263,6 @@ class SharedropRoute extends PolymerElement {
           </div>
         </div>
 
-
-
-
         <div class="main">
           <h1>Claim Sharedrop</h1>
 
@@ -286,11 +283,13 @@ class SharedropRoute extends PolymerElement {
             </div>
           </div>
       
-
-
-     
             <div class="footer">
-              <button type="button" on-click="_saveProfile">Sign with Scatter</button>
+            <template is="dom-if" if="{{!scatterConnected}}">
+              <button type="button" on-click="_connectScatter">Login to Worbli with Scatter</button>
+            </template>
+            <template is="dom-if" if="{{scatterConnected}}">
+              <button type="button" on-click="_signScatter">Sign Transaction with Scatter</button>
+            </template>
             </div>
         <!-- </template> -->
         </div>
@@ -322,6 +321,16 @@ class SharedropRoute extends PolymerElement {
       showIframe: {
         type: Boolean,
         value: false,
+      },
+      scatterConnected: {
+        type: Boolean,
+        value: false, 
+      },
+      eos: {
+        type: Object,
+      },
+      scatter: {
+        type: Object,
       }
     };
   }
@@ -346,6 +355,7 @@ class SharedropRoute extends PolymerElement {
           localStorage.removeItem("token");
           this.set('route.path', '/')
         } else {
+          localStorage.setItem('security_code', response.security_code);
           this.onfido_status = response.onfido_status;
           if(this.onfido_status === 'started'){
             this.started = true;
@@ -358,22 +368,49 @@ class SharedropRoute extends PolymerElement {
     }
   }
 
+  _connectScatter(){
+    let scatter, eos;
+    const network = {
+      blockchain:'eos',
+      protocol:'https',
+      host:'nodes.get-scatter.com',
+      port:443,
+      chainId:'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
+    }
+    const options = {expireInSeconds:60};
+    const reqFields = {accounts:[network]};
+    ScatterJS.plugins(new ScatterEOS());
+    ScatterJS.scatter.connect("worbli")
+    .then(connected => {
+        if (!connected) return false;
+        scatter = ScatterJS.scatter;
+        scatter.getIdentity(reqFields)
+        .then(() => {
+          eos = scatter.eos(network, Eos, options) 
+          this.scatterConnected = true;
+          this.eos = eos;
+          this.scatter = scatter; 
+        })
+        .catch((error) => {
+          alert('Scatter not found, Open it and try again');
+        });
+    })
+    .catch(error => console.log(error));
+  }
 
-
-_save(data){
-  const token = localStorage.getItem("token");
-  const url = `${this.apiPath}/user/profile/`;
-  fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(data), 
-    headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
-  })
-  .then((response) => {return response.json()})
-  .then((response) => {
-    this.set('route.path', '/dashboard/review/')
-  })
-  .catch(error => console.log('Error:', error));
-}
-
+  _signScatter(){
+      const account = this.scatter.identity.accounts.find(x => x.blockchain === 'eos');
+      const options = { authorization:[`${account.name}@${account.authority}`]};
+      const contractAccount = 'worbliworbli';
+      const functionName = 'reg';
+      const owner = account.name;
+      const securitycode = localStorage.getItem("security_code");
+      const args = {owner, securitycode}
+      this.eos.transaction([contractAccount], sendTx => {
+          sendTx[contractAccount][functionName](args, options)
+      })
+      .then(trx => console.log('trx', trx))
+      .catch(err => console.error(err));
+  }
 
 } window.customElements.define('sharedrop-route', SharedropRoute);
