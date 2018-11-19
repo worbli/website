@@ -2,6 +2,7 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../../css/shared-styles.js';
 import '../../components/worbli-footer.js';
 import '../../components/side-bar/worbli-snapshot.js';
+import '../../components/side-bar/worbli-dashnav.js';
 import '@polymer/app-route/app-location.js';
 import '../../worbli-env.js';
 
@@ -229,14 +230,7 @@ class PasswordRoute extends PolymerElement {
       <worbli-env api-path="{{apiPath}}""></worbli-env>
       <div class="split">
         <div class="side">
-          <div class="container">
-            <a href="/dashboard/profile"><div class="navigation">Application</div></a>
-            <a href="/dashboard/review"><div class="navigation">Review</div></a>
-            <a href="/dashboard/status"><div class="navigation">Status</div></a>
-            <a href="/dashboard/account"><div class="navigation">Account</div></a>
-            <a href="/dashboard/sharedrop"><div class="navigation">Sharedrop</div></a>
-            <a href="/dashboard/password"><div class="navigation selected">Password</div></a>
-          </div>
+          <worbli-dashnav></worbli-dashnav>
         </div>
         <div class="main">
           <h1>Set Password</h1>
@@ -278,27 +272,7 @@ class PasswordRoute extends PolymerElement {
     };
   }
 
-  ready() {
-    super.ready();
-    const token = this.route.__queryParams.token || localStorage.getItem("token");
-    if(token) {
-      const url = `${this.apiPath}/user/auth`;
-      fetch(url, {
-        method: 'POST',
-        headers: {'Authorization': `Bearer ${token}`},
-      })
-      .then((response) => {return response.json()})
-      .then(response => {
-        if(response.data === false){
-          localStorage.removeItem("token");
-          this.set('route.path', '/')
-        } else {
-          localStorage.setItem("token", token);
-        }
-      })
-      .catch(error => {this.set('route.path', '/')});
-    } else {this.set('route.path', '/')}
-  }
+
 
   _savePassword(){
     this.passwordError = ""

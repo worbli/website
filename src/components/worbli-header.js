@@ -178,7 +178,7 @@ class WorbliHeader extends PolymerElement {
   }
 
   _dashboard(){
-    this.set('route.path', `/dashboard/profile/`);
+    this.set('route.path', `/dashboard/profile`);
   }
   _signOut(){
     this.logedIn = false;

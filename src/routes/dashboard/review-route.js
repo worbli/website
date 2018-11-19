@@ -3,6 +3,7 @@ import '../../css/shared-styles.js';
 import '../../components/worbli-footer.js';
 import '../../components/side-bar/worbli-snapshot.js';
 import '@polymer/app-route/app-location.js';
+import '../../components/side-bar/worbli-dashnav.js';
 import '../../worbli-env.js';
 
 class ReviewRoute extends PolymerElement {
@@ -257,14 +258,7 @@ class ReviewRoute extends PolymerElement {
       <worbli-env api-path="{{apiPath}}""></worbli-env>
       <div class="split">
         <div class="side">
-        <div class="container">
-            <a href="/dashboard/profile"><div class="navigation ">Application</div></a>
-            <a href="/dashboard/review"><div class="navigation selected">Review</div></a>
-            <a href="/dashboard/status"><div class="navigation">Status</div></a>
-            <a href="/dashboard/account"><div class="navigation">Account</div></a>
-            <a href="/dashboard/sharedrop"><div class="navigation">Sharedrop</div></a>
-            <a href="/dashboard/password"><div class="navigation">Password</div></a>
-          </div>
+          <worbli-dashnav></worbli-dashnav>
         </div>
 
         <div class="main">

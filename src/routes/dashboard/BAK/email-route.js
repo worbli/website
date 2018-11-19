@@ -1,5 +1,5 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-import '../../css/shared-styles.js';
+import '../../../css/shared-styles.js';
 
 class EmailRoute extends PolymerElement {
   static get template() {

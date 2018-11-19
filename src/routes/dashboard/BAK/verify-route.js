@@ -1,7 +1,7 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-import '../../css/shared-styles.js';
-import '../../components/worbli-footer.js';
-import '../../components/worbli-onfido.js';
+import '../../../css/shared-styles.js';
+import '../../../components/worbli-footer.js';
+import '../../../components/worbli-onfido.js';
 
 class VerifyRoute extends PolymerElement {
   static get template() {

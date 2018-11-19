@@ -1,6 +1,6 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-import '../../css/shared-styles.js';
-import '../../components/worbli-footer.js';
+import '../../../css/shared-styles.js';
+import '../../../components/worbli-footer.js';
 
 class ClaimRoute extends PolymerElement {
   static get template() {

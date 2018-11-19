@@ -3,6 +3,7 @@ import '../../css/shared-styles.js';
 import '../../components/worbli-footer.js';
 import '../../components/side-bar/worbli-snapshot.js';
 import '@polymer/app-route/app-location.js';
+import '../../components/side-bar/worbli-dashnav.js';
 import '../../worbli-env.js';
 
 class AccountRoute extends PolymerElement {
@@ -253,14 +254,7 @@ class AccountRoute extends PolymerElement {
       <worbli-env api-path="{{apiPath}}""></worbli-env>
       <div class="split">
         <div class="side">
-          <div class="container">
-            <a href="/dashboard/profile"><div class="navigation ">Application</div></a>
-            <a href="/dashboard/review"><div class="navigation ">Review</div></a>
-            <a href="/dashboard/status"><div class="navigation">Status</div></a>
-            <a href="/dashboard/account"><div class="navigation selected">Account</div></a>
-            <a href="/dashboard/sharedrop"><div class="navigation">Sharedrop</div></a>
-            <a href="/dashboard/password"><div class="navigation">Password</div></a>
-          </div>
+          <worbli-dashnav></worbli-dashnav>
         </div>
 
 
@@ -336,39 +330,6 @@ class AccountRoute extends PolymerElement {
     };
   }
 
-  ready() {
-    super.ready();
-    // make sure the users token is good
-    this._authUser();
-  }
-
-  _authUser(){
-    const token = localStorage.getItem("token");
-    if(token) {
-      const url = `${this.apiPath}/user/auth`;
-      fetch(url, {
-        method: 'POST',
-        headers: {'Authorization': `Bearer ${token}`},
-      })
-      .then((response) => {return response.json()})
-      .then(response => {
-        if(response.data === false){
-          localStorage.removeItem("token");
-          this.set('route.path', '/')
-        } else {
-          this.onfido_status = response.onfido_status;
-          if(this.onfido_status === 'started'){
-            this.started = true;
-          }
-        }
-      })
-      .catch(error => {this.set('route.path', '/')});
-    } else {
-      this.set('route.path', '/')
-    }
-  }
-
-  
 
 _applyAccount(data){
   let check = true;

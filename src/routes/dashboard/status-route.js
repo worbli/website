@@ -3,6 +3,7 @@ import '../../css/shared-styles.js';
 import '../../components/worbli-footer.js';
 import '../../components/side-bar/worbli-snapshot.js';
 import '@polymer/app-route/app-location.js';
+import '../../components/side-bar/worbli-dashnav.js';
 import '../../worbli-env.js';
 
 class StatusRoute extends PolymerElement {
@@ -257,14 +258,7 @@ class StatusRoute extends PolymerElement {
       <worbli-env api-path="{{apiPath}}""></worbli-env>
       <div class="split">
         <div class="side">
-        <div class="container">
-            <a href="/dashboard/profile"><div class="navigation ">Application</div></a>
-            <a href="/dashboard/review"><div class="navigation ">Review</div></a>
-            <a href="/dashboard/status"><div class="navigation selected">Status</div></a>
-            <a href="/dashboard/account"><div class="navigation">Account</div></a>
-            <a href="/dashboard/sharedrop"><div class="navigation">Sharedrop</div></a>
-            <a href="/dashboard/password"><div class="navigation">Password</div></a>
-          </div>
+          <worbli-dashnav></worbli-dashnav>
         </div>
 
         <div class="main">
@@ -329,7 +323,6 @@ class StatusRoute extends PolymerElement {
 
   ready() {
     super.ready();
-    // get the users data if there is any
     this._getData();
   }
 
@@ -344,26 +337,7 @@ class StatusRoute extends PolymerElement {
       .then((response) => {return response.json()})
       .then(response => {
         if(response.data === true){
-          this.nameFirst = response.profile.name_first || "";
-          this.nameMiddle = response.profile.name_middle || "";
-          this.nameLast = response.profile.name_last || "";
-          this.addressNumber = response.profile.address_number || "";
-          this.addressOne = response.profile.address_one || "";
-          this.addressTwo = response.profile.address_two || "";
-          this.addressCity = response.profile.address_city || "";
-          this.addressRegion = response.profile.address_region || "";
-          this.addressZip = response.profile.address_zip || "";
-          if(response.profile && response.profile.address_country){
-            this.addressCountry = response.profile.address_country.toUpperCase() || "";
-          }
-          this.phoneCode = response.profile.phone_code || "";
-          this.phoneMobile = response.profile.phone_mobile || "";
-          if(response.profile && response.profile.date_birth){
-            this.dobYear = new Date(response.profile.date_birth).getFullYear() || "";
-            this.dobMonth = new Date(response.profile.date_birth).getMonth() || "";
-            this.dobDay = new Date(response.profile.date_birth).getDay() || "";
-          }
-          this.gender = response.profile.gender || "";
+          // TODO: get status
         }
       })
       .catch(error => {

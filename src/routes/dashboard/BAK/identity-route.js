@@ -1,9 +1,9 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-import '../../css/shared-styles.js';
-import '../../components/worbli-footer.js';
-import '../../components/side-bar/worbli-snapshot.js';
+import '../../../css/shared-styles.js';
+import '../../../components/worbli-footer.js';
+import '../../../components/side-bar/worbli-snapshot.js';
 import '@polymer/app-route/app-location.js';
-import '../../worbli-env.js';
+import '../../../worbli-env.js';
 
 class IdentityRoute extends PolymerElement {
   static get template() {
