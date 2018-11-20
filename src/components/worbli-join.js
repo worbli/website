@@ -230,17 +230,13 @@ _marketingCheckbox(){
 _sendEmail(){
     if (this.email && this._validateEmail(this.email)){
         const email = this.email;
-        const agreed_terms = this.termsCheckboxValue;
-        const agreed_marketing = this.marketingCheckboxValue;
+        let agreed_terms = this.termsCheckboxValue;
+        let agreed_marketing = this.marketingCheckboxValue;
         if(agreed_terms === undefined){agreed_terms = false};
         if(agreed_marketing === undefined){agreed_marketing = false};
         this.complete = true;
         this.error = ""
-        const data = {
-            email: this.email,
-            agreed_terms: this.termsCheckboxValue,
-            agreed_marketing: this.marketingCheckboxValue,
-        }
+        const data = {email, agreed_terms, agreed_marketing}
         const url = `${this.apiPath}/email/authorize/`;
         fetch(url, {
             method: 'POST',

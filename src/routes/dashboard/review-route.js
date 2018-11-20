@@ -362,6 +362,14 @@ class ReviewRoute extends PolymerElement {
         method: 'GET',
         headers: {'Authorization': `Bearer ${token}`},
       })
+      .then((response) => {return response.json()})
+      .then(response => {
+        if(response.data === true){
+          const token = response.token;
+          localStorage.setItem("token", token);
+          this.set('route.path', '/dashboard/status');
+        }
+      })
     } else {
       this.documentCountError = "Return to your appliucation and add your documents"
     }

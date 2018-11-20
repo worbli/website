@@ -1003,7 +1003,14 @@ _save(data){
   })
   .then((response) => {return response.json()})
   .then((response) => {
-    this.set('route.path', '/dashboard/review/')
+    if(response.data === true){
+      const token = response.newjwt;
+      localStorage.setItem("token", token);
+      this.set('route.path', '/dashboard/review/')
+    } else {
+      console.log(error)
+    }
+
   })
   .catch(error => console.log('Error:', error));
 }

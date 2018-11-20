@@ -269,23 +269,36 @@ class StatusRoute extends PolymerElement {
               <p class="label">Verified</p>
             </div>
           </div>
+
           <hr>
+
           <div class="input-area">
             <div class="section-name">Facial Similarity Report</div>
                 <div class="form-inputs">
                     <p class="label">Failed</p>
                 </div>
             </div>
+
             <hr>
+
+          <div class="input-area">
+            <div class="section-name">Watchlist Report</div>
+                <div class="form-inputs">
+                <p class="label">Reviewing</p>
+            </div>
+          </div>
+
+          <hr>
+
           <div class="input-area">
             <div class="section-name">Identity Report</div>
                 <div class="form-inputs">
-                    <p class="label">Reviewing</p>
-                </div>
+                <p class="label">Reviewing</p>
             </div>
+          </div>
         
             <div class="footer">
-              <button type="button" on-click="_saveProfile">Create Worbli Account</button>
+              <button type="button" on-click="_checkStatus">Check Status</button>
             </div>
 
         </div>
@@ -321,15 +334,12 @@ class StatusRoute extends PolymerElement {
     };
   }
 
-  ready() {
-    super.ready();
-    this._getData();
-  }
 
-  _getData(){
+
+  _checkStatus(){
     const token = localStorage.getItem("token");
     if(token) {
-      const url = `${this.apiPath}/user/profile/`;
+      const url = `${this.apiPath}/kyc/status/`;
       fetch(url, {
         method: 'GET',
         headers: {'Authorization': `Bearer ${token}`},

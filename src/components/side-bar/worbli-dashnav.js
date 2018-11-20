@@ -53,7 +53,7 @@ class WorbliDashnav extends PolymerElement {
         <worbli-env api-path="{{apiPath}}""></worbli-env>
         <div class="container">
 
-          <template is="dom-if" if="{{notStarted}}">
+          <template is="dom-if" if="{{default}}">
             <a href="/dashboard/profile" class="link active"><div class="nav selected">Application</div></a>
             <a href="/dashboard/review" class="link"><div class="nav">Review</div></a>
             <a href="/dashboard/status" class="link"><div class="nav">Status</div></a>
@@ -137,7 +137,7 @@ class WorbliDashnav extends PolymerElement {
         notify: true,
         reflectToAttribute: true
       },
-      notStarted: {
+      default: {
         type: Boolean,
         value: false,
       },
@@ -170,6 +170,10 @@ class WorbliDashnav extends PolymerElement {
   _routeChanged(){
       const location = this.route.path.split("/")[1];
       this.page = this.route.path.split("/")[2];
+      if(this.page === 'password' && this.route && this.route.__queryParams && this.route.__queryParams.token){
+        const token = this.route.__queryParams.token;
+        localStorage.setItem("token", token);
+      }
       if(location === 'dashboard'){
         this._auth();
       }
@@ -205,13 +209,13 @@ class WorbliDashnav extends PolymerElement {
   }
 
   _statusChanged(){
-    this.notStarted = false;
+    this.default = false;
     this.started = false;
     this.review = false;
     this.approved = false;
     this.named = false;
     this.credited = false;
-    if(this.onfidoStatus === 'not-started'){this.notStarted = true};
+    if(this.onfidoStatus === 'default'){this.default = true};
     if(this.onfidoStatus === 'started'){this.started = true};
     if(this.onfidoStatus === 'review'){this.review = true};
     if(this.onfidoStatus === 'approved'){this.approved = true};
@@ -223,10 +227,10 @@ class WorbliDashnav extends PolymerElement {
   _bounce(){
     const status = this.onfidoStatus;
     const page = this.page;
-    if(status === 'not-started' && page === 'review' ){this._goHome()}
-    if(status === 'not-started' && page === 'status' ){this._goHome()}
-    if(status === 'not-started' && page === 'account' ){this._goHome()}
-    if(status === 'not-started' && page === 'sharedrop' ){this._goHome()}
+    if(status === 'default' && page === 'review' ){this._goHome()}
+    if(status === 'default' && page === 'status' ){this._goHome()}
+    if(status === 'default' && page === 'account' ){this._goHome()}
+    if(status === 'default' && page === 'sharedrop' ){this._goHome()}
     if(status === 'started' && page === 'status' ){this._goHome()}
     if(status === 'started' && page === 'account' ){this._goHome()}
     if(status === 'started' && page === 'sharedrop' ){this._goHome()}
