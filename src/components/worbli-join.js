@@ -229,6 +229,11 @@ _marketingCheckbox(){
 
 _sendEmail(){
     if (this.email && this._validateEmail(this.email)){
+        const email = this.email;
+        const agreed_terms = this.termsCheckboxValue;
+        const agreed_marketing = this.marketingCheckboxValue;
+        if(agreed_terms === undefined){agreed_terms = false};
+        if(agreed_marketing === undefined){agreed_marketing = false};
         this.complete = true;
         this.error = ""
         const data = {
