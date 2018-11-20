@@ -936,10 +936,10 @@ class ProfileRoute extends PolymerElement {
     let address_two = this.addressTwo;
     const address_city = this.addressCity;
     const address_region = this.addressRegion;
-    const address_zip = this.addressZip;
+    const address_zip = this.addressZip.replace(/\s/g,'');
     const address_country = this.addressCountry;
     const phone_code = this.phoneCode;
-    const phone_mobile = this.phoneMobile;
+    const phone_mobile = this.phoneMobile.replace(/-|\s/g,'');
     const date_birth_year = this.dobYear;
     const date_birth_month = this.dobMonth;
     const date_birth_day = this.dobDay;
@@ -980,7 +980,7 @@ class ProfileRoute extends PolymerElement {
     if(phone_code === undefined || phone_code === ""){check = false; this.phoneCodeError = "Please select a dialing code"};
     if(phone_code && phone_code.length < 1){check = false; this.phoneCodeError = "Phone code too short"};
     if(phone_code && phone_code.length > 4){check = false; this.phoneCodeError = "Phone code too long"};
-    if(phone_mobile === undefined || phone_mobile === ""){check = false; this.phoneMobileError = "Please enter a mobile number"};
+    if(phone_mobile === undefined || phone_mobile === ""){check = false; this.phoneMobileError = "Please enter a mobile number with no spaces or dashes"};
     if(phone_mobile && phone_mobile.length > 15){check = false; this.phoneMobileError = "Phone too long"};
     if(phone_mobile && phone_mobile.length < 3){check = false; this.phoneMobileError = "Phone too short"};
     if(date_birth_year === undefined || date_birth_year === ""){check = false; this.dobError = "Please select a year"};
