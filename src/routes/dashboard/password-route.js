@@ -284,7 +284,7 @@ class PasswordRoute extends PolymerElement {
     } else if (this._validatePassword()){
         this._save({password});
     } else {
-        this.passwordTwoError = "Passwords are not strong enough"
+        this.passwordTwoError = "Password must be at least 8 characters long and must include uppercase and lowercase letters and a digit or a special character"
     }
   }
 
