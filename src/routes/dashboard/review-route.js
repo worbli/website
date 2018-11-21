@@ -403,7 +403,7 @@ class ReviewRoute extends PolymerElement {
         }
       })
     } else {
-      this.documentCountError = "Return to your appliucation and add your documents"
+      this.documentCountError = "Return to your application and add your documents"
     }
   }
   _routeChanged(){
