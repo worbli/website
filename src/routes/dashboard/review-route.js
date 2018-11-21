@@ -334,7 +334,9 @@ class ReviewRoute extends PolymerElement {
                 </div>
             </div>
             <div class="footer">
+              
               <button type="button" on-click="_submitApplication">[[btnText]]</button>
+              <small class="comment">[[patient]]</small>
             </div>
 
         </div>
@@ -374,11 +376,15 @@ class ReviewRoute extends PolymerElement {
       btnText: {
         type: Text,
         value: 'Submit Application'
+      },
+      patient: {
+        type: Text,
       }
     };
   }
 
   _submitApplication(){
+    this.patient = "Please be patient";
     this.btnText = "Submitting...";
     if(this.documentCount >= 2){
       const token = localStorage.getItem("token");
