@@ -74,6 +74,9 @@ class WorbliSnapshot extends PolymerElement {
           cursor: pointer;
           width: 100%;
         }
+        .lowercase {
+          text-transform: lowercase;
+        }
 
       </style>
 
@@ -82,7 +85,7 @@ class WorbliSnapshot extends PolymerElement {
             <div class="title">Check Snapshot</div>
             <template is="dom-if" if="{{!complete}}">
               <label for="accountName">Mainnet Account Name:</label>
-              <input id="accountName" value="{{accountName::input}}" name="first-name" type="text" class="text" on-keyup="_confirmAccountName">
+              <input id="accountName" value="{{accountName::input}}" name="first-name" type="text" class="text lowercase" on-keyup="_confirmAccountName">
               <button type="button" class="btn-critical" on-click="_checkSnapshot">Check Snapshot</button>
             </template>
             <template is="dom-if" if="{{complete}}">
@@ -131,7 +134,9 @@ class WorbliSnapshot extends PolymerElement {
   _checkSnapshot(){
     this.complete = true;
     if (this.accountName){
-      fetch(`${this.apiPath}/user/snapshot?account=${this.accountName}`)
+      const accountName = this.accountName;
+      const lowerName = accountName.toLowerCase();
+      fetch(`${this.apiPath}/user/snapshot?account=${lowerName}`)
       .then((response) => {
           return response.json()
       })
