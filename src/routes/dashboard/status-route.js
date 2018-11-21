@@ -370,7 +370,7 @@ class StatusRoute extends PolymerElement {
         if(response.data === true){
           this.btnText = 'Check Status';
           localStorage.setItem("token", response.token);
-          // this.set('route.path', '/dashboard/account')
+          this.set('route.path', '/dashboard/account')
         }
       })
       .catch(error => {
