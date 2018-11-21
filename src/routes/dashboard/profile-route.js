@@ -437,7 +437,7 @@ class ProfileRoute extends PolymerElement {
               <input id="addressFlatNumber" value="{{addressFlatNumber::input}}" name="addressFlatNumber" type="number" class="text">
               <small class="comment error">[[addressFlatNumberError]]</small>
               <label>Building Name</label>
-              <input id="addressBuildingName" value="{{addressBuildingName::input}}" name="addressBuildingName" type="number" class="text">
+              <input id="addressBuildingName" value="{{addressBuildingName::input}}" name="addressBuildingName" type="text" class="text">
               <small class="comment error">[[addressBuildingNameError]]</small>
               <label>Building Number</label>
               <input id="addressBuildingNumber" value="{{addressBuildingNumber::input}}" name="addressBuildingNumber" type="number" class="text">
