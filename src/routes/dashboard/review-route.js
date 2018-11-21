@@ -275,40 +275,40 @@ class ReviewRoute extends PolymerElement {
           <div class="input-area">
             <div class="section-name">Address</div>
                 <div class="form-inputs">
-                    <p class="label">{{addressNumber}} {{addressOne}} </p>
-                    <p class="label">{{addressTwoError}} </p>
-                    <p class="label">{{addressCity}} </p>
-                    <p class="label">{{addressRegion}} </p>
-                    <p class="label upper">{{addressZip}} </p>
-                    <p class="label upper">{{addressCountry}} </p>
+                    <p class="label">[[addressBuildingNumber]] [[addressFlatNumber]] [[addressBuildingName]] </p>
+                    <p class="label">[[addressOne]] </p>
+                    <p class="label">[[addressTwo]] </p>
+                    <p class="label">[[addressTown]][[addressState]]</p>
+                    <p class="label upper">[[addressZip]] </p>
+                    <p class="label upper">[[addressCountry]] </p>
                 </div>
             </div>
             <hr>
             <div class="input-area">
                 <div class="section-name">Phone</div>
                 <div class="form-inputs">
-                    <p class="label">+ {{phoneCode}} {{phoneMobile}} </p>
+                    <p class="label">+ [[phoneCode]] [[phoneMobile]] </p>
                 </div>
             </div>
             <hr>
             <div class="input-area">
                 <div class="section-name">Date Of Birth</div>
                 <div class="form-inputs">
-                    <p class="label"> {{dobDay}}/{{dobMonth}}/{{dobYear}} </p>
+                    <p class="label"> [[dobDay]]/[[dobMonth]]/[[dobYear]] </p>
                 </div>
             </div>
             <hr>
             <div class="input-area">
                 <div class="section-name">Gender</div>
                 <div class="form-inputs">
-                    <p class="label"> {{gender}} </p>
+                    <p class="label"> [[gender]] </p>
                 </div>
             </div>
             <hr>
             <div class="input-area">
                 <div class="section-name">Documents</div>
                 <div class="form-inputs">
-                    <p class="label"> {{documentCount}} </p>
+                    <p class="label"> [[documentCount]] </p>
                     <small class="comment error">[[documentCountError]]</small>
                     
                 </div>
@@ -403,13 +403,16 @@ class ReviewRoute extends PolymerElement {
           this.nameMiddle = response.profile.name_middle || "";
           this.nameLast = response.profile.name_last || "";
 
-          this.addressNumber = response.profile.address_number || "";
+          this.addressCountry = response.profile.address_country || "";
+          this.addressFlatNumber = response.profile.address_flat_number || "";
+          this.addressBuildingName = response.profile.address_building_name || "";
+          this.addressBuildingNumber = response.profile.address_building_number || "";
           this.addressOne = response.profile.address_one || "";
           this.addressTwo = response.profile.address_two || "";
-          this.addressCity = response.profile.address_city || "";
-          this.addressRegion = response.profile.address_region || "";
+          this.addressState = response.profile.address_state || "";
+          this.addressTown = response.profile.address_town || "";
           this.addressZip = response.profile.address_zip || "";
-          this.addressCountry = response.profile.address_country || "";
+
 
           this.phoneCode = response.profile.phone_code || "";
           this.phoneMobile = response.profile.phone_mobile || "";
