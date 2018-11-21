@@ -297,7 +297,7 @@ class ProfileRoute extends PolymerElement {
             <div class="form-inputs">
             <p class="comment warn">Depending on your jurisdiction fill in the</br> appropriate form fields.</p>
             <label>Country</label>
-              <select class="dropdown" id="addressCountry" value="{{addressCountry::input}}">
+              <select class="dropdown" id="addressCountry" value="{{addressCountry::input}}" on-change="_countryChanged">
                 <option value="">Select...</option>
                 <option value="AFG">Afghanistan</option>
                 <option value="ALA">Åland Islands</option>
@@ -465,6 +465,64 @@ class ProfileRoute extends PolymerElement {
                 <option value="ZWE">Zimbabwe</option>
               </select>
               <small class="comment error">[[addressCountryError]]</small>
+              <template is="dom-if" if="{{showState}}">
+              <label>State</label>
+                <select class="dropdown" id="addressState" value="{{addressState::input}}">
+                  <option value="">Select...</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>	
+              </template>
+              <small class="comment error">[[addressStateError]]</small>
               <label>Appartment / Flat Number</label>
               <input id="addressFlatNumber" value="{{addressFlatNumber::input}}" name="addressFlatNumber" type="number" class="text">
               <small class="comment error">[[addressFlatNumberError]]</small>
@@ -480,9 +538,6 @@ class ProfileRoute extends PolymerElement {
               <label>Address Line 2</label>
               <input id="addressTwo" value="{{addressTwo::input}}" ame="addressTwo" type="text" class="text">
               <small class="comment error">[[addressTwoError]]</small>
-              <label>State (US only)</label>
-              <input id="addressState" value="{{addressState::input}}" ame="addressState" type="text" class="text">
-              <small class="comment error">[[addressStateError]]</small>
               <label>City / Town</label>
               <input id="addressTown" value="{{addressTown::input}}" ame="addressTown" type="text" class="text">
               <small class="comment error">[[addressTownError]]</small>
@@ -890,6 +945,10 @@ class ProfileRoute extends PolymerElement {
       btnText:{
         type: Text,
         value: 'Save Application Form',
+      },
+      showState: {
+        type: Boolean,
+        value: false,
       }
     };
   }
@@ -1050,6 +1109,12 @@ class ProfileRoute extends PolymerElement {
         date_birth_year, 
         gender}
       this._save(data);
+    }
+  }
+
+  _countryChanged(){
+    if (this.addressCountry == 'USA') {
+      this.showState = true;
     }
   }
 
