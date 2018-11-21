@@ -264,25 +264,7 @@ class ProfileRoute extends PolymerElement {
           <div class="input-area">
             <div class="section-name">Address</div>
             <div class="form-inputs">
-              <label>Building Number</label>
-              <input id="addressNumber" value="{{addressNumber::input}}" name="addressNumber" type="number" class="text">
-              <small class="comment error">[[addressNumberError]]</small>
-              <label>Street</label>
-              <input id="addressOne" value="{{addressOne::input}}" name="addressOne" type="text" class="text">
-              <small class="comment error">[[addressOneError]]</small>
-              <label></label>
-              <input id="addressTwo" value="{{addressTwo::input}}" ame="addressTwo" type="text" class="text">
-              <small class="comment error">[[addressTwoError]]</small>
-              <label>City</label>
-              <input id="addressCity" value="{{addressCity::input}}" ame="addressCity" type="text" class="text">
-              <small class="comment error">[[addressCityError]]</small>
-              <label>State / Province / Region</label>
-              <input id="addressRegion" value="{{addressRegion::input}}" ame="addressRegion" type="text" class="text">
-              <small class="comment error">[[addressRegionError]]</small>
-              <label>Zip / Postal Code</label>
-              <input id="addressZip" value="{{addressZip::input}}" ame="addressZip" type="text" class="text upper">
-              <small class="comment error">[[addressZipError]]</small>
-              <label>Country</label>
+            <label>Country</label>
               <select class="dropdown" id="addressCountry" value="{{addressCountry::input}}">
                 <option value="">Select...</option>
                 <option value="AFG">Afghanistan</option>
@@ -451,6 +433,30 @@ class ProfileRoute extends PolymerElement {
                 <option value="ZWE">Zimbabwe</option>
               </select>
               <small class="comment error">[[addressCountryError]]</small>
+              <label>Flat Number</label>
+              <input id="addressFlatNumber" value="{{addressFlatNumber::input}}" name="addressFlatNumber" type="number" class="text">
+              <small class="comment error">[[addressFlatNumberError]]</small>
+              <label>Building Name</label>
+              <input id="addressBuildingName" value="{{addressBuildingName::input}}" name="addressBuildingName" type="number" class="text">
+              <small class="comment error">[[addressBuildingNameError]]</small>
+              <label>Building Number</label>
+              <input id="addressBuildingNumber" value="{{addressBuildingNumber::input}}" name="addressBuildingNumber" type="number" class="text">
+              <small class="comment error">[[addressBuildingNumberError]]</small>
+              <label>Street</label>
+              <input id="addressOne" value="{{addressOne::input}}" name="addressOne" type="text" class="text">
+              <small class="comment error">[[addressOneError]]</small>
+              <label>Sub Street</label>
+              <input id="addressTwo" value="{{addressTwo::input}}" ame="addressTwo" type="text" class="text">
+              <small class="comment error">[[addressTwoError]]</small>
+              <label>State (US only)</label>
+              <input id="addressState" value="{{addressState::input}}" ame="addressState" type="text" class="text">
+              <small class="comment error">[[addressStateError]]</small>
+              <label>Town</label>
+              <input id="addressTown" value="{{addressTown::input}}" ame="addressTown" type="text" class="text">
+              <small class="comment error">[[addressTownError]]</small>
+              <label>Zip / Postal Code</label>
+              <input id="addressZip" value="{{addressZip::input}}" ame="addressZip" type="text" class="text upper">
+              <small class="comment error">[[addressZipError]]</small>
             </div>
           </div>
           <hr>
@@ -905,12 +911,17 @@ class ProfileRoute extends PolymerElement {
           this.nameFirst = response.profile.name_first || "";
           this.nameMiddle = response.profile.name_middle || "";
           this.nameLast = response.profile.name_last || "";
-          this.addressNumber = response.profile.address_number || "";
+
+          this.addressCountry = response.profile.address_country || "";
+          this.addressFlatNumber = response.profile.address_flat_number || "";
+          this.addressBuildingName = response.profile.address_building_name || "";
+          this.addressBuildingNumber = response.profile.address_building_number || "";
           this.addressOne = response.profile.address_one || "";
           this.addressTwo = response.profile.address_two || "";
-          this.addressCity = response.profile.address_city || "";
-          this.addressRegion = response.profile.address_region || "";
+          this.addressState = response.profile.address_state || "";
+          this.addressTown = response.profile.address_town || "";
           this.addressZip = response.profile.address_zip || "";
+          
           this.phoneCode = response.profile.phone_code || "";
           this.phoneMobile = response.profile.phone_mobile || "";
           this.dobYear = response.profile.date_birth_year || "";
@@ -931,52 +942,57 @@ class ProfileRoute extends PolymerElement {
     const name_first = this.nameFirst;
     const name_middle = this.nameMiddle;
     const name_last = this.nameLast;
-    const address_number = this.addressNumber;
-    const address_one = this.addressOne;
-    let address_two = this.addressTwo;
-    const address_city = this.addressCity;
-    const address_region = this.addressRegion;
-    const address_zip = this.addressZip.replace(/\s/g,'');
+
     const address_country = this.addressCountry;
+    const address_flat_number = this.addressFlatNumber;
+    const address_building_name = this.addressBuildingName;
+    const address_building_number =  this.addressBuildingNumber;
+    const address_one = this.addressOne;
+    const address_two = this.addressTwo;
+    const address_state = this.addressState;
+    const address_town = this.addressTown;
+    const address_zip = this.addressZip.replace(/\s/g,'');
+
     const phone_code = this.phoneCode;
     const phone_mobile = this.phoneMobile.replace(/-|\s/g,'');
     const date_birth_year = this.dobYear;
     const date_birth_month = this.dobMonth;
     const date_birth_day = this.dobDay;
     const gender = this.gender;
+    
     this.addressNumberError = "";
     this.nameFirstError = "";
     this.nameMiddleError = "";
     this.nameLastError = "";
+    
+    this.addressCountryError = "";
+    this.addressFlatNumberError = "";
+    this.addressBuildingNameError = "";
     this.addressOneError = "";
     this.addressTwoError = "";
-    this.addressCityError = "";
-    this.addressRegionError = "";
-    this.addressRegionError = "";
+    this.addressStateError = "";
+    this.addressTownError = ""
     this.addressZipError = "";
-    this.addressCountryError = "";
+    
     this.phoneCodeError = "";
     this.phoneMobileError = "";
     this.dobError = "";
     this.genderError = "";
+    
     if(name_first === undefined || name_first === ""){check = false; this.nameFirstError = "Please enter a first name"};
     if(name_first && name_first.length > 35){check = false; this.nameFirstError = "Name too long"};
     if(name_middle && name_middle.length > 35){check = false; this.nameMiddleError = "Name too long"};
     if(name_last === undefined || name_last === ""){check = false; this.nameLastError = "Please enter a family name"};
     if(name_last && name_last.length > 35){check = false; this.nameLastError = "Name too long"};
-    if(address_one === undefined || address_one === ""){check = false; this.addressOneError = "Please enter an address"};
-    if(address_one && address_one.length > 255){check = false; this.addressOneError = "Address too long"};
-    if(address_two && address_two.length > 150){check = false; this.addressTwoError = "Address too long"};
-    if(address_number === undefined || address_number === ""){check = false; this.addressNumberError = "Please enter a building number"};
-    if(address_city === undefined || address_city === ""){check = false; this.addressCityError = "Please enter a city"};
-    if(address_city && address_city.length > 50){check = false; this.addressCityError = "City too long"};
-    if(address_region === undefined || address_region === ""){check = false; this.addressRegionError = "Please enter a region"};
-    if(address_region && address_region.length > 50){check = false; this.addressRegionError = "City too long"};
-    if(address_zip === undefined || address_zip === ""){check = false; this.addressZipError = "Please enter a zip or postal code"};
-    if(address_zip && address_zip.length > 15){check = false; this.addressZipError = "Zip too long"};
+    
     if(address_country === undefined || address_country === ""){check = false; this.addressCountryError = "Please enter a country"};
     if(address_country && address_country.length > 3){check = false; this.addressCountryError = "Country too long"};
     if(address_country && address_country.length < 3){check = false; this.addressCountryError = "Country too short"};
+    if(address_zip === undefined || address_zip === ""){check = false; this.addressZipError = "Please enter a zip or postal code"};
+    if(address_zip && address_zip.length > 15){check = false; this.addressZipError = "Zip too long"};
+    if(address_town === undefined || address_town === ""){check = false; this.addressCityError = "Please enter a city"};
+    if(address_town && address_town.length > 50){check = false; this.addressCityError = "City too long"};
+    
     if(phone_code === undefined || phone_code === ""){check = false; this.phoneCodeError = "Please select a dialing code"};
     if(phone_code && phone_code.length < 1){check = false; this.phoneCodeError = "Phone code too short"};
     if(phone_code && phone_code.length > 4){check = false; this.phoneCodeError = "Phone code too long"};
@@ -988,7 +1004,25 @@ class ProfileRoute extends PolymerElement {
     if(date_birth_day === undefined || date_birth_day === ""){check = false; this.dobError = "Please select a day"};
     if(gender === undefined || gender === ""){check = false; this.genderError = "Please select a gender"};
     if(check === true){
-      const data = {name_first, name_middle, name_last, address_one, address_two, address_city, address_region, address_zip, address_country, phone_code, phone_mobile, date_birth_day, date_birth_month, date_birth_year, gender, address_number}
+      const data = {
+        name_first, 
+        name_middle, 
+        name_last, 
+        address_country, 
+        address_flat_number,
+        address_building_name,
+        address_building_number,
+        address_one, 
+        address_two, 
+        address_state, 
+        address_town, 
+        address_zip, 
+        phone_code, 
+        phone_mobile, 
+        date_birth_day, 
+        date_birth_month, 
+        date_birth_year, 
+        gender}
       this._save(data);
     }
   }
