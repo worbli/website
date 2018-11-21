@@ -298,7 +298,7 @@ class StatusRoute extends PolymerElement {
           </div>
         
             <div class="footer">
-              <button type="button" on-click="_checkStatus">Check Status</button>
+              <button type="button" on-click="_checkStatus">[[btnText]]</button>
             </div>
 
         </div>
@@ -330,13 +330,16 @@ class StatusRoute extends PolymerElement {
       showIframe: {
         type: Boolean,
         value: false,
+      },
+      btnText: {
+        type: Text,
+        value: 'Check Status'
       }
     };
   }
 
-
-
   _checkStatus(){
+    this.btnText = 'Checking';
     const token = localStorage.getItem("token");
     if(token) {
       const url = `${this.apiPath}/kyc/status/`;
@@ -347,7 +350,9 @@ class StatusRoute extends PolymerElement {
       .then((response) => {return response.json()})
       .then(response => {
         if(response.data === true){
-          // TODO: get status
+          this.btnText = 'Check Status';
+          localStorage.setItem("token", response.token);
+          this.set('route.path', '/dashboard/account')
         }
       })
       .catch(error => {
