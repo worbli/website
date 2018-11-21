@@ -237,6 +237,23 @@ class StatusRoute extends PolymerElement {
         .upper {
           text-transform: uppercase;
         }
+        @media only screen and (max-width: 600px){
+          .split {
+            margin-top: 40px;
+          }
+          .section-name{
+            width:0px;
+            height:0px;
+          }
+          .section-name {
+            display: none;
+          }
+          .side {
+             width: 100vw;
+             padding-right: 0px;
+             margin-top: 63px;
+          }
+        }
 
       </style>
       
@@ -263,6 +280,7 @@ class StatusRoute extends PolymerElement {
 
         <div class="main">
           <h1>Status</h1>
+          <p class="intro">Thank you for your submission! We are processing your application, please check back in 48hrs.</p>
           <div class="input-area">
             <div class="section-name">Document Report</div>
             <div class="form-inputs">
@@ -352,7 +370,7 @@ class StatusRoute extends PolymerElement {
         if(response.data === true){
           this.btnText = 'Check Status';
           localStorage.setItem("token", response.token);
-          this.set('route.path', '/dashboard/account')
+          // this.set('route.path', '/dashboard/account')
         }
       })
       .catch(error => {

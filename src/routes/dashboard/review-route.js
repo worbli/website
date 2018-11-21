@@ -238,6 +238,26 @@ class ReviewRoute extends PolymerElement {
           text-transform: uppercase;
         }
 
+        @media only screen and (max-width: 600px){
+          .split {
+            margin-top: 40px;
+          }
+          .section-name{
+            width:0px;
+            height:0px;
+          }
+          .section-name {
+            display: none;
+          }
+          .container {
+             width: 100vw;
+          }
+          .side {
+            width: 100vw;
+            padding-right: 0px;
+          }
+        }
+
       </style>
       
       <!-- Google Tag Manager (noscript) -->

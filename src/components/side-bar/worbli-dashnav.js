@@ -215,12 +215,30 @@ class WorbliDashnav extends PolymerElement {
     this.approved = false;
     this.named = false;
     this.credited = false;
-    if(this.onfidoStatus === 'default'){this.default = true};
-    if(this.onfidoStatus === 'started'){this.started = true};
-    if(this.onfidoStatus === 'review'){this.review = true};
-    if(this.onfidoStatus === 'approved'){this.approved = true};
-    if(this.onfidoStatus === 'named'){this.named = true};
-    if(this.onfidoStatus === 'credited'){this.credited = true};
+    if(this.onfidoStatus === 'default'){
+      this.default = true;
+      localStorage.setItem("loc", "default");
+    };
+    if(this.onfidoStatus === 'started'){
+      this.started = true;
+      localStorage.setItem("loc", "started");
+    };
+    if(this.onfidoStatus === 'review'){
+      this.review = true;
+      localStorage.setItem("loc", "review");
+    };
+    if(this.onfidoStatus === 'approved'){
+      this.approved = true;
+      localStorage.setItem("loc", "approved");
+    };
+    if(this.onfidoStatus === 'named'){
+      this.named = true;
+      localStorage.setItem("loc", "named");
+    };
+    if(this.onfidoStatus === 'credited'){
+      this.credited = true;
+      localStorage.setItem("loc", "credited");
+    };
     this._bounce();
   }
 

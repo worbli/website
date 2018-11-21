@@ -233,6 +233,25 @@ class ProfileRoute extends PolymerElement {
         .upper {
           text-transform: uppercase;
         }
+        .warn{
+          font-weight: 800;
+        }
+
+        @media only screen and (max-width: 600px){
+          .split {
+            margin-top: 40px;
+          }
+          .section-name{
+            width:0px;
+            height:0px;
+          }
+          .section-name {
+            display: none;
+          }
+          .container {
+             width: 100vw;
+          }
+        }
 
       </style>
       
@@ -245,6 +264,17 @@ class ProfileRoute extends PolymerElement {
 
         <div class="main">
           <h1>Application</h1>
+
+          <div class="input-area">
+              <div class="section-name">Documents</div>
+              <div class="form-inputs">
+                <a href="https://kyc.dac.city?kyc_token=[[kycToken2]]" target="_blank" class="button">Submit Documents</a>
+                <small class="comment warn">After submitting documents make sure you return </br>here to complete this application</small>
+              </div>
+            </div>
+          <hr>
+
+
           <div class="input-area">
             <div class="section-name">Name</div>
             <div class="form-inputs">
@@ -263,7 +293,9 @@ class ProfileRoute extends PolymerElement {
 
           <div class="input-area">
             <div class="section-name">Address</div>
+            
             <div class="form-inputs">
+            <p class="comment warn">Depending on your jurisdiction fill in the</br> appropriate form fields.</p>
             <label>Country</label>
               <select class="dropdown" id="addressCountry" value="{{addressCountry::input}}">
                 <option value="">Select...</option>
@@ -433,7 +465,7 @@ class ProfileRoute extends PolymerElement {
                 <option value="ZWE">Zimbabwe</option>
               </select>
               <small class="comment error">[[addressCountryError]]</small>
-              <label>Flat Number</label>
+              <label>Appartment / Flat Number</label>
               <input id="addressFlatNumber" value="{{addressFlatNumber::input}}" name="addressFlatNumber" type="number" class="text">
               <small class="comment error">[[addressFlatNumberError]]</small>
               <label>Building Name</label>
@@ -445,13 +477,13 @@ class ProfileRoute extends PolymerElement {
               <label>Street</label>
               <input id="addressOne" value="{{addressOne::input}}" name="addressOne" type="text" class="text">
               <small class="comment error">[[addressOneError]]</small>
-              <label>Sub Street</label>
+              <label>Address Line 2</label>
               <input id="addressTwo" value="{{addressTwo::input}}" ame="addressTwo" type="text" class="text">
               <small class="comment error">[[addressTwoError]]</small>
               <label>State (US only)</label>
               <input id="addressState" value="{{addressState::input}}" ame="addressState" type="text" class="text">
               <small class="comment error">[[addressStateError]]</small>
-              <label>Town</label>
+              <label>City / Town</label>
               <input id="addressTown" value="{{addressTown::input}}" ame="addressTown" type="text" class="text">
               <small class="comment error">[[addressTownError]]</small>
               <label>Zip / Postal Code</label>
@@ -821,19 +853,6 @@ class ProfileRoute extends PolymerElement {
               <small class="comment error">[[genderError]]</small>
             </div>
           </div>
-          <hr>
-            <div class="input-area">
-            <div class="section-name">Documents</div>
-            <div class="form-inputs">
-              <!-- <div on-click="_onfidoJwt">Start</div> -->
-              
-              <!-- <template is="dom-if" if="{{showIframe}}"> -->
-              <a href="https://kyc.dac.city?kyc_token=[[kycToken2]]" target="_blank" class="button">Upload in new tab</a>
-              <!-- <iframe src="https://kyc.dac.city?kyc_token=[[kycToken2]]" height="700" width="500"></iframe> -->
-              <!-- </template> -->
-            </div>
-          </div>
-         
             <div class="footer">
               <button type="button" on-click="_saveProfile">[[btnText]]</button>
             </div>
@@ -957,9 +976,9 @@ class ProfileRoute extends PolymerElement {
     const address_state = this.addressState;
     const address_town = this.addressTown;
     const address_zip = this.addressZip.replace(/\s/g,'');
-
+//.replace(/-|\s/g,'')
     const phone_code = this.phoneCode;
-    const phone_mobile = this.phoneMobile.replace(/-|\s/g,'');
+    const phone_mobile = this.phoneMobile;
     const date_birth_year = this.dobYear;
     const date_birth_month = this.dobMonth;
     const date_birth_day = this.dobDay;
