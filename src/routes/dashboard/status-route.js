@@ -266,7 +266,7 @@ class StatusRoute extends PolymerElement {
           <div class="input-area">
             <div class="section-name">Document Report</div>
             <div class="form-inputs">
-              <p class="label">Verified</p>
+              <p class="label">Reviewing</p>
             </div>
           </div>
 
@@ -275,7 +275,7 @@ class StatusRoute extends PolymerElement {
           <div class="input-area">
             <div class="section-name">Facial Similarity Report</div>
                 <div class="form-inputs">
-                    <p class="label">Failed</p>
+                    <p class="label">Reviewing</p>
                 </div>
             </div>
 

@@ -314,7 +314,7 @@ class ReviewRoute extends PolymerElement {
                 </div>
             </div>
             <div class="footer">
-              <button type="button" on-click="_submitApplication">Submit Application</button>
+              <button type="button" on-click="_submitApplication">[[btnText]]</button>
             </div>
 
         </div>
@@ -350,11 +350,16 @@ class ReviewRoute extends PolymerElement {
       route: {
         type: Object,
         observer: '_routeChanged'
+      },
+      btnText: {
+        type: Text,
+        value: 'Submit Application'
       }
     };
   }
 
   _submitApplication(){
+    this.btnText = "Submitting...";
     if(this.documentCount >= 2){
       const token = localStorage.getItem("token");
       const url = `${this.apiPath}/kyc/check/`;
@@ -368,6 +373,7 @@ class ReviewRoute extends PolymerElement {
           const token = response.token;
           localStorage.setItem("token", token);
           this.set('route.path', '/dashboard/status');
+          this.btnText = 'Submit Application'
         }
       })
     } else {
@@ -396,6 +402,7 @@ class ReviewRoute extends PolymerElement {
           this.nameFirst = response.profile.name_first || "";
           this.nameMiddle = response.profile.name_middle || "";
           this.nameLast = response.profile.name_last || "";
+
           this.addressNumber = response.profile.address_number || "";
           this.addressOne = response.profile.address_one || "";
           this.addressTwo = response.profile.address_two || "";
@@ -403,6 +410,7 @@ class ReviewRoute extends PolymerElement {
           this.addressRegion = response.profile.address_region || "";
           this.addressZip = response.profile.address_zip || "";
           this.addressCountry = response.profile.address_country || "";
+
           this.phoneCode = response.profile.phone_code || "";
           this.phoneMobile = response.profile.phone_mobile || "";
           this.dobYear = response.profile.date_birth_year || "";

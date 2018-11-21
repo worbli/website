@@ -835,7 +835,7 @@ class ProfileRoute extends PolymerElement {
           </div>
          
             <div class="footer">
-              <button type="button" on-click="_saveProfile">Save Application Form</button>
+              <button type="button" on-click="_saveProfile">[[btnText]]</button>
             </div>
         <!-- </template> -->
         </div>
@@ -867,6 +867,10 @@ class ProfileRoute extends PolymerElement {
       showIframe: {
         type: Boolean,
         value: false,
+      },
+      btnText:{
+        type: Text,
+        value: 'Save Application Form',
       }
     };
   }
@@ -938,6 +942,7 @@ class ProfileRoute extends PolymerElement {
   }
 
   _saveProfile(){
+    this.btnText = 'Saving..';
     let check = true
     const name_first = this.nameFirst;
     const name_middle = this.nameMiddle;
@@ -1042,7 +1047,8 @@ _save(data){
     if(response.data === true){
       const token = response.newjwt;
       localStorage.setItem("token", token);
-      this.set('route.path', '/dashboard/review/')
+      this.set('route.path', '/dashboard/review/');
+      this.btnText = 'Save Application Form';
     } else {
       console.log(error)
     }
