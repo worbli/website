@@ -137,7 +137,7 @@ class WorbliSnapshot extends PolymerElement {
       })
       .then((response) => {
           if(response.total){
-            let total = (response.total * 0.8);
+            let total = response.total;
             let fifth = total / 5;
             let timeToShow = 400
             this.wbitotal = fifth.toFixed(4)
