@@ -285,14 +285,7 @@ class AccountRoute extends PolymerElement {
               <input id="publicKeyOwner" value="{{publicKeyOwner::input}}" name="publicKeyOwner" type="text" class="text">
               <small class="comment error">[[publicKeyOwnerError]]</small>
               <p>
-              1. Download Scatter desktop.</br>
-              2. Log in.</br>
-              3. Click the vault button in the top right corner.</br>
-              4. Click new.</br>
-              5. Choose create new.</br>
-              6. Done! You can click on "Show Public Keys" to reveal the new key you created. Note that you have to use the EOSIO shareable key until WORBLI support is implemented in Scatter.</br>
-              IMPORTANT: Only share your public key. The private key, which can be exported from Scatter, should never be shared with a third party.</br>
-              Don't have keys? You can generate Owner and active keys by clicking <a href="https://get-scatter.com/" targer="_blank">HERE</a></br>
+              <a href="https://worbli.zendesk.com/hc/en-us/articles/360019917571-How-can-I-generate-my-Owner-or-Active-key-using-Scatter-" targer="_blank">How can I generate my Owner or Active key using Scatter?</a></br>
               </p>
             </div>
           </div>
@@ -347,7 +340,7 @@ _applyAccount(data){
   let check = true;
   this.publicKeyActiveError = "";
   this.publicKeyOwnerError = "";
-  this.worbliAccountNameError = ""
+  this.worbliAccountNameError = "";
   const worbli_account_name = this.worbliAccountName;
   const public_key_active = this.publicKeyActive;
   const public_key_owner = this.publicKeyOwner;
@@ -356,7 +349,7 @@ _applyAccount(data){
   const ownerConfirmed = this._validatePublicKey(public_key_owner);
   if(!activeConfirmed){this.publicKeyActiveError = "Wrong public key format. Make sure you are not pasting your private key."; check = false}
   if(!ownerConfirmed){this.publicKeyOwnerError = "Wrong public key format. Make sure you are not pasting your private key."; check = false}
-  if(!nameConfirmed){this.worbliAccountNameError = "Account name must be between 6 and 12 characters, must start with a letter and can contain only lowercase letters and numbers 1-5."; check = false;} 
+  if(!nameConfirmed){this.worbliAccountNameError = "Account name must be between 6 and 12 characters, must start with a letter and can contain only lowercase letters and numbers 1-5. And must not contain the word worbli"; check = false;} 
   if(check === true){
     const data = {worbli_account_name, public_key_active, public_key_owner}
     const token = localStorage.getItem("token");
@@ -372,6 +365,8 @@ _applyAccount(data){
         this.worbliAccountNameError = response.error
       } else {
         this.complete = true;
+        localStorage.setItem("token", response.newjwt);
+        this.set('route.path', '/dashboard/sharedrop');
       }
     })
     .catch(error => {
@@ -381,8 +376,10 @@ _applyAccount(data){
   }
 }
 
+
+
 _validateAccountName(name){
-  var re = /^[a-z](?=[a-z1-5]{5,11}$)/;
+  var re = /^(?!.*?worbli)[a-z][a-z1-5]{5,11}$/;
   return re.test(name);
 }
 

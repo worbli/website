@@ -259,33 +259,20 @@ class SharedropRoute extends PolymerElement {
 
         <div class="main">
           <h1>Claim Sharedrop</h1>
-
-        <!-- <template is="dom-if" if="{{!started}}">
-          <p class="intro">Completing the verification process will grant you complete access to the the myriad of financial services and applications on the WORBLI network.</p>
-          <div class="footer">
-              <button type="button" on-click="_startVerificatoin">Start Verification</button>
-            </div>
-        </template> -->
-        <!-- <template is="dom-if" if="{{started}}"> -->
-          <div class="input-area">
-            <div class="section-name">Name</div>
-            <div class="form-inputs">
-              <label>Main Net Account Name </label>
-              <input id="nameFirst" value="{{nameFirst::input}}" name="nameFirst" type="text" class="text" disabled="{{complete}}">
-              <small class="comment error">[[nameFirstError]]</small>
-              <a href="https://kyc.dac.city?kyc_token=[[kycToken2]]" target="_blank" class="button">Lookup Snapshot</a>
-            </div>
-          </div>
-      
-            <div class="footer">
+          <p class="intro">
+          You are going to be using Scatter make sure you have the Scatter desktop application open.</br>
+          Login to Worbli with scatter</br>
+          Sign main net transaction.</br>
+          </p>
+     
             <template is="dom-if" if="{{!scatterConnected}}">
-              <button type="button" on-click="_connectScatter">Login to Worbli with Scatter</button>
+              <button type="button" on-click="_startVerificatoin">Login to Worbli with Scatter</button>
             </template>
             <template is="dom-if" if="{{scatterConnected}}">
-              <button type="button" on-click="_signScatter">Sign Transaction with Scatter</button>
-            </template>
-            </div>
-        <!-- </template> -->
+              <button type="button" on-click="_signScatter">Sign MainNet Transaction with Scatter</button>
+
+    
+        </template>
         </div>
       </div>
       </br></br>
@@ -325,12 +312,28 @@ class SharedropRoute extends PolymerElement {
       },
       scatter: {
         type: Object,
-      }
+      },
+      securityCode: {
+        type: Text,
+      },
     };
   }
 
-  ready() {
-    super.ready();
+  _startVerificatoin(){
+    const token = localStorage.getItem("token");
+    const url = `${this.apiPath}/user/sharedrop/`;
+    fetch(url, {
+      method: 'GET',
+      headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
+    })
+    .then((response) => {return response.json()})
+    .then((response) => {
+      if(response && response.data === true && response.security_code){
+        this.securityCode = response.security_code;
+        this.started = true;
+        this._connectScatter();
+      }
+    })
   }
 
   _connectScatter(){
@@ -361,6 +364,7 @@ class SharedropRoute extends PolymerElement {
         });
     })
     .catch(error => console.log(error));
+
   }
 
   _signScatter(){
@@ -369,7 +373,7 @@ class SharedropRoute extends PolymerElement {
       const contractAccount = 'worbliworbli';
       const functionName = 'reg';
       const owner = account.name;
-      const securitycode = localStorage.getItem("security_code");
+      const securitycode = this.securityCode;
       const args = {owner, securitycode}
       this.eos.transaction([contractAccount], sendTx => {
           sendTx[contractAccount][functionName](args, options)
