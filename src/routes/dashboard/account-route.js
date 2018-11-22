@@ -233,6 +233,9 @@ class AccountRoute extends PolymerElement {
         .upper {
           text-transform: uppercase;
         }
+        .lower {
+          text-transform: lowercase;
+        }
 
       </style>
       
@@ -268,7 +271,7 @@ class AccountRoute extends PolymerElement {
             <div class="section-name">Name</div>
             <div class="form-inputs">
               <label>Account Name </label>
-              <input id="worbliAccountName" value="{{worbliAccountName::input}}" name="worbliAccountName" type="text" class="text">
+              <input id="worbliAccountName" value="{{worbliAccountName::input}}" name="worbliAccountName" type="text" class="lower">
               <small class="comment error">[[worbliAccountNameError]]</small>
             </div>
           </div>
@@ -285,6 +288,7 @@ class AccountRoute extends PolymerElement {
               <input id="publicKeyOwner" value="{{publicKeyOwner::input}}" name="publicKeyOwner" type="text" class="text">
               <small class="comment error">[[publicKeyOwnerError]]</small>
               <p>
+              </br></br>
               <a href="https://worbli.zendesk.com/hc/en-us/articles/360019917571-How-can-I-generate-my-Owner-or-Active-key-using-Scatter-" targer="_blank">How can I generate my Owner or Active key using Scatter?</a></br>
               </p>
             </div>
