@@ -524,13 +524,13 @@ class ProfileRoute extends PolymerElement {
               </template>
               <small class="comment error">[[addressStateError]]</small>
               <label>Appartment / Flat Number</label>
-              <input id="addressFlatNumber" value="{{addressFlatNumber::input}}" name="addressFlatNumber" type="number" class="text">
+              <input id="addressFlatNumber" value="{{addressFlatNumber::input}}" name="addressFlatNumber" type="text" class="text">
               <small class="comment error">[[addressFlatNumberError]]</small>
               <label>Building Name</label>
               <input id="addressBuildingName" value="{{addressBuildingName::input}}" name="addressBuildingName" type="text" class="text">
               <small class="comment error">[[addressBuildingNameError]]</small>
               <label>Building Number</label>
-              <input id="addressBuildingNumber" value="{{addressBuildingNumber::input}}" name="addressBuildingNumber" type="number" class="text">
+              <input id="addressBuildingNumber" value="{{addressBuildingNumber::input}}" name="addressBuildingNumber" type="text" class="text">
               <small class="comment error">[[addressBuildingNumberError]]</small>
               <label>Street</label>
               <input id="addressOne" value="{{addressOne::input}}" name="addressOne" type="text" class="text">
@@ -1029,7 +1029,11 @@ class ProfileRoute extends PolymerElement {
     const address_country = this.addressCountry;
     const address_flat_number = this.addressFlatNumber;
     const address_building_name = this.addressBuildingName;
-    const address_building_number =  this.addressBuildingNumber;
+    const address_building_number =  this.addressBuildingNumber
+ 
+    console.log("address_building_number");
+    console.log(address_building_number);
+
     const address_one = this.addressOne;
     const address_two = this.addressTwo;
     const address_state = this.addressState;

@@ -109,7 +109,11 @@ class WorbliHeader extends PolymerElement {
         }
       }
     </style>
-    <div class="menu-togglee" on-click="_toggleMenu"></div>
+
+    <template is="dom-if" if="{{!logedIn}}"></template>
+      <div class="menu-togglee" on-click="_toggleMenu"></div>
+    </template>
+
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <div class="container-header">
         <div class="logo">
@@ -119,7 +123,7 @@ class WorbliHeader extends PolymerElement {
         </div>
 		    
         <div class="navigation">
-        
+          <template is="dom-if" if="{{!logedIn}}">
             <ul>
               <li><a href="/about/" tabindex="1">ABOUT</a></li>
               <li><a href="/vision/" tabindex="1">VISION</a></li>
@@ -127,6 +131,7 @@ class WorbliHeader extends PolymerElement {
               <li><a href="/roadmap/" tabindex="3">ROADMAP</a></li>
               <li><a href="/network/" tabindex="4">NETWORK</a></li>
             </ul>
+          </template>
         </div>
 
       <template is="dom-if" if="{{!logedIn}}">

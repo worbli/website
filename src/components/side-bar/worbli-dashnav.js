@@ -272,7 +272,7 @@ class WorbliDashnav extends PolymerElement {
   }
 
   _goHome(){
-   this.set('route.path', '/')
+   // this.set('route.path', '/')
   }
 
 } window.customElements.define('worbli-dashnav', WorbliDashnav);

@@ -278,11 +278,22 @@ class AccountRoute extends PolymerElement {
             <div class="section-name">Keys</div>
             <div class="form-inputs">
               <label>Active Public Key</label>
+              <small class="comment">You can put your shareable/active keys in both fields.</small>
               <input id="publicKeyActive" value="{{publicKeyActive::input}}" name="publicKeyActive" type="text" class="text">
               <small class="comment error">[[publicKeyActiveError]]</small>
               <label>Owner Public Key</label>
               <input id="publicKeyOwner" value="{{publicKeyOwner::input}}" name="publicKeyOwner" type="text" class="text">
               <small class="comment error">[[publicKeyOwnerError]]</small>
+              <p>
+              1. Download Scatter desktop.</br>
+              2. Log in.</br>
+              3. Click the vault button in the top right corner.</br>
+              4. Click new.</br>
+              5. Choose create new.</br>
+              6. Done! You can click on "Show Public Keys" to reveal the new key you created. Note that you have to use the EOSIO shareable key until WORBLI support is implemented in Scatter.</br>
+              IMPORTANT: Only share your public key. The private key, which can be exported from Scatter, should never be shared with a third party.</br>
+              Don't have keys? You can generate Owner and active keys by clicking <a href="https://get-scatter.com/" targer="_blank">HERE</a></br>
+              </p>
             </div>
           </div>
           </template>
@@ -292,10 +303,11 @@ class AccountRoute extends PolymerElement {
           </template>
 
 
-     
-            <div class="footer">
-              <button type="button" on-click="_applyAccount">Apply for Account</button>
-            </div>
+            <template is="dom-if" if="{{!complete}}"></template>
+              <div class="footer">
+                <button type="button" on-click="_applyAccount">Apply for Account</button>
+              </div>
+            </template>
 
         </div>
       </div>
