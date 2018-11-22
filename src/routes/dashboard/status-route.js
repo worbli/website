@@ -366,15 +366,18 @@ class StatusRoute extends PolymerElement {
         headers: {'Authorization': `Bearer ${token}`},
       })
       .then((response) => {return response.json()})
-      .then(response => {
+      .then((response) => {
         if(response.data === true){
           this.btnText = 'Check Status';
           localStorage.setItem("token", response.token);
           this.set('route.path', '/dashboard/account')
         }
       })
-      .catch(error => {
-        console.log(error)
+      .catch((err) => {
+        this.btnText = 'Not complete check again in 10min';
+        setTimeout(() => {
+          this.btnText = 'Check Status';
+         }, 3000);
       });
     } else {this.set('route.path', '/')}
   }
