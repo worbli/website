@@ -909,7 +909,9 @@ class ProfileRoute extends PolymerElement {
             </div>
           </div>
             <div class="footer">
-              <button type="button" on-click="_saveProfile">[[btnText]]</button>
+              <button type="button" on-click="_saveProfile">
+                <template is="dom-if" if="{{btnImage}}"><img src="./images/loading-button.gif"></template>
+                [[btnText]]</button>
             </div>
         <!-- </template> -->
         </div>
@@ -947,6 +949,10 @@ class ProfileRoute extends PolymerElement {
         value: 'Save Application Form',
       },
       showState: {
+        type: Boolean,
+        value: false,
+      },
+      btnImage: {
         type: Boolean,
         value: false,
       }
@@ -1021,6 +1027,7 @@ class ProfileRoute extends PolymerElement {
 
   _saveProfile(){
     this.btnText = 'Saving..';
+    this.btnImage = true;
     let check = true
     const name_first = this.nameFirst;
     const name_middle = this.nameMiddle;
@@ -1135,8 +1142,9 @@ _save(data){
     if(response.data === true){
       const token = response.newjwt;
       localStorage.setItem("token", token);
-      this.set('route.path', '/dashboard/review/');
+      this.set('route.path', '/dashboard/review');
       this.btnText = 'Save Application Form';
+      this.btnImage = false;
     } else {
       console.log(error)
     }

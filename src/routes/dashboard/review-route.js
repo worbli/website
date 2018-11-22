@@ -335,7 +335,9 @@ class ReviewRoute extends PolymerElement {
             </div>
             <div class="footer">
               
-              <button type="button" on-click="_submitApplication">[[btnText]]</button>
+              <button type="button" on-click="_submitApplication">
+              <template is="dom-if" if="{{btnImage}}"><img src="./images/loading-button.gif"></template>  
+              [[btnText]]</button>
               <small class="comment">[[patient]]</small>
             </div>
 
@@ -379,6 +381,10 @@ class ReviewRoute extends PolymerElement {
       },
       patient: {
         type: Text,
+      },
+      btnImage: {
+        type: Boolean,
+        value: false,
       }
     };
   }
@@ -386,6 +392,7 @@ class ReviewRoute extends PolymerElement {
   _submitApplication(){
     this.patient = "Please be patient";
     this.btnText = "Submitting...";
+    this.btnImage = true;
     if(this.documentCount >= 2){
       const token = localStorage.getItem("token");
       const url = `${this.apiPath}/kyc/check/`;
@@ -399,7 +406,8 @@ class ReviewRoute extends PolymerElement {
           const token = response.token;
           localStorage.setItem("token", token);
           this.set('route.path', '/dashboard/status');
-          this.btnText = 'Submit Application'
+          this.btnText = 'Submit Application';
+          this.btnImage = false;
         }
       })
     } else {
