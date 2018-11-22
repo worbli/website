@@ -89,15 +89,6 @@ class WorbliDashnav extends PolymerElement {
             <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
           </template>
 
-          <template is="dom-if" if="{{approved}}">
-            <a href="/dashboard/profile" class="link"><div class="nav">Application</div></a>
-            <a href="/dashboard/review" class="link"><div class="nav">Review</div></a>
-            <a href="/dashboard/status" class="link"><div class="nav">Status</div></a>
-            <a href="/dashboard/account" class="link active"><div class="nav selected">Account</div></a>
-            <a href="/dashboard/sharedrop" class="link"><div class="nav">Sharedrop</div></a>
-            <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
-          </template>
-
           <template is="dom-if" if="{{named}}">
             <a href="/dashboard/profile" class="link"><div class="nav">Application</div></a>
             <a href="/dashboard/review" class="link"><div class="nav">Review</div></a>
