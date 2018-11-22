@@ -303,7 +303,7 @@ class AccountRoute extends PolymerElement {
           </template>
 
 
-            <template is="dom-if" if="{{!complete}}"></template>
+            <template is="dom-if" if="{{!complete}}">
               <div class="footer">
                 <button type="button" on-click="_applyAccount">Apply for Account</button>
               </div>
