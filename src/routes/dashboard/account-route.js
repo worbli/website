@@ -366,7 +366,9 @@ _applyAccount(data){
 
 
 _validateAccountName(name){
+  console.log(name)
   var re = /^(?!.*?worbli)[a-z][a-z1-5]{5,11}$/;
+  console.log(re.test(name))
   return re.test(name);
 }
 
