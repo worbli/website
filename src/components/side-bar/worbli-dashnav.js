@@ -47,6 +47,9 @@ class WorbliDashnav extends PolymerElement {
         pointer-events: unset;
         cursor: pointer;
       }
+      .hidden{
+        display: none;
+      }
       </style>
 
         <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
@@ -55,55 +58,55 @@ class WorbliDashnav extends PolymerElement {
 
           <template is="dom-if" if="{{default}}">
             <a href="/dashboard/profile" class="link active"><div class="nav selected">Application</div></a>
-            <a href="/dashboard/review" class="link"><div class="nav">Review</div></a>
-            <a href="/dashboard/status" class="link"><div class="nav">Status</div></a>
-            <a href="/dashboard/account" class="link"><div class="nav">Account</div></a>
-            <a href="/dashboard/sharedrop" class="link"><div class="nav">Sharedrop</div></a>
+            <a href="/dashboard/review" class="link hidden"><div class="nav">Review</div></a>
+            <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
+            <a href="/dashboard/account" class="link hidden"><div class="nav">Account</div></a>
+            <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
             <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
           </template>
 
           <template is="dom-if" if="{{started}}">
             <a href="/dashboard/profile" class="link active"><div class="nav selected">Application</div></a>
             <a href="/dashboard/review" class="link active"><div class="nav selected">Review</div></a>
-            <a href="/dashboard/status" class="link"><div class="nav">Status</div></a>
-            <a href="/dashboard/account" class="link"><div class="nav">Account</div></a>
-            <a href="/dashboard/sharedrop" class="link"><div class="nav">Sharedrop</div></a>
+            <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
+            <a href="/dashboard/account" class="link hidden"><div class="nav">Account</div></a>
+            <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
             <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
           </template>
 
           <template is="dom-if" if="{{review}}">
-            <a href="/dashboard/profile" class="link"><div class="nav">Application</div></a>
-            <a href="/dashboard/review" class="link"><div class="nav">Review</div></a>
+            <a href="/dashboard/profile" class="link hidden"><div class="nav">Application</div></a>
+            <a href="/dashboard/review" class="link hidden"><div class="nav">Review</div></a>
             <a href="/dashboard/status" class="link active"><div class="nav selected">Status</div></a>
-            <a href="/dashboard/account" class="link"><div class="nav">Account</div></a>
-            <a href="/dashboard/sharedrop" class="link"><div class="nav">Sharedrop</div></a>
+            <a href="/dashboard/account" class="link hidden"><div class="nav">Account</div></a>
+            <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
             <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
           </template>
 
           <template is="dom-if" if="{{approved}}">
-            <a href="/dashboard/profile" class="link"><div class="nav">Application</div></a>
-            <a href="/dashboard/review" class="link"><div class="nav">Review</div></a>
-            <a href="/dashboard/status" class="link"><div class="nav">Status</div></a>
+            <a href="/dashboard/profile" class="link hidden"><div class="nav">Application</div></a>
+            <a href="/dashboard/review" class="link hidden"><div class="nav">Review</div></a>
+            <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
             <a href="/dashboard/account" class="link active"><div class="nav selected">Account</div></a>
-            <a href="/dashboard/sharedrop" class="link"><div class="nav">Sharedrop</div></a>
+            <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
             <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
           </template>
 
           <template is="dom-if" if="{{named}}">
-            <a href="/dashboard/profile" class="link"><div class="nav">Application</div></a>
-            <a href="/dashboard/review" class="link"><div class="nav">Review</div></a>
-            <a href="/dashboard/status" class="link"><div class="nav">Status</div></a>
-            <a href="/dashboard/account" class="link"><div class="nav">Account</div></a>
+            <a href="/dashboard/profile" class="link hidden"><div class="nav">Application</div></a>
+            <a href="/dashboard/review" class="link hidden"><div class="nav">Review</div></a>
+            <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
+            <a href="/dashboard/account" class="link hidden"><div class="nav">Account</div></a>
             <a href="/dashboard/sharedrop" class="link active"><div class="nav selected">Sharedrop</div></a>
             <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
           </template>
 
           <template is="dom-if" if="{{credited}}">
-            <a href="/dashboard/profile" class="link"><div class="nav">Application</div></a>
-            <a href="/dashboard/review" class="link"><div class="nav">Review</div></a>
-            <a href="/dashboard/status" class="link"><div class="nav">Status</div></a>
-            <a href="/dashboard/account" class="link"><div class="nav">Account</div></a>
-            <a href="/dashboard/sharedrop" class="link"><div class="nav">Sharedrop</div></a>
+            <a href="/dashboard/profile" class="link hidden"><div class="nav">Application</div></a>
+            <a href="/dashboard/review" class="link hidden"><div class="nav">Review</div></a>
+            <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
+            <a href="/dashboard/account" class="link hidden"><div class="nav">Account</div></a>
+            <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
             <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
           </template>
 

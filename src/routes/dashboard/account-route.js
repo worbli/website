@@ -238,20 +238,6 @@ class AccountRoute extends PolymerElement {
         }
 
       </style>
-      
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <worbli-env api-path="{{apiPath}}""></worbli-env>
@@ -259,9 +245,6 @@ class AccountRoute extends PolymerElement {
         <div class="side">
           <worbli-dashnav></worbli-dashnav>
         </div>
-
-
-
 
         <div class="main">
           <h1>Worbli Account</h1>
@@ -281,7 +264,7 @@ class AccountRoute extends PolymerElement {
             <div class="section-name">Keys</div>
             <div class="form-inputs">
               <label>Active Public Key</label>
-              <small class="comment">You can put your shareable/active keys in both fields.</small>
+              <small class="comment">You can put your shareable/active keys in both fields.</small></br>
               <input id="publicKeyActive" value="{{publicKeyActive::input}}" name="publicKeyActive" type="text" class="text">
               <small class="comment error">[[publicKeyActiveError]]</small>
               <label>Owner Public Key</label>

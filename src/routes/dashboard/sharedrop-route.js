@@ -236,20 +236,6 @@ class SharedropRoute extends PolymerElement {
 
       </style>
       
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
-
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <worbli-env api-path="{{apiPath}}""></worbli-env>
       <div class="split">
@@ -261,11 +247,29 @@ class SharedropRoute extends PolymerElement {
           <h1>Claim Sharedrop</h1>
           <p class="intro">
           You are going to be using Scatter make sure you have the Scatter desktop application open.</br>
-          Login to Worbli with scatter</br>
+          Login to Worbli with scatter.</br>
           Sign main net transaction.</br>
           Make sure you have scatter open.</br>
-          Wait a few seconds for it </br>
-          Click the tick</br>
+          Wait a few seconds for it.</br>
+          Click the tick.</br></br>
+
+          1. Download Scatter - v9.6.0 (desktop only):</br>
+          <a href="https://github.com/GetScatter/ScatterDesktop/releases/download/9.6.0/win-scatter-9.6.0.exe" target="_blank">-WINDOWS</a> </br>
+          <a href="https://github.com/GetScatter/ScatterDesktop/releases/download/9.6.0/mac-scatter-9.6.0.dmg" target="_blank">-MAC</a></br>
+          <a href="https://github.com/GetScatter/ScatterDesktop/releases/download/9.6.0/linux-scatter-9.6.0-x86_64.AppImage" target="_blank">-LINUX</a></br></br>
+
+          2. Choose your desired Scatter password, and type it in the *password* and *confirm password* boxes. Then click - “Create New Scatter”.</br>
+          *Make sure you save the 12 word phrase Scatter gives you in a safe place</br></br>
+
+          3. On the Scatter Menu Bar, click on the ‘Vault’ button</br>
+          4. In the top left corner of the Vault window, click on “New”</br>
+          5. Create a name: i.e. Worbli Account </br>
+          6. Click on “Create New” (please wait for your ‘keys’ to generate) </br>
+          7. Click on “EOSIO” </br>
+          8. Click on your EOSIO “Shareable Key” to *copy* it. Then, *paste* this into both fields on the account page.</br>
+          9. You can use the same key for both fields, but we recommend using two separate keys. To generate two separate keys just repeat the process.</br>
+          * Please Note that you have to use the EOSIO shareable key until WORBLI support is implemented in Scatter.</br></br>
+          IMPORTANT: DO NOT share your *private key* which can be exported from Scatter. This private key should never be shared with any third party or person, and should be kept in a very safe and trusted place.
           </p>
      
             <template is="dom-if" if="{{!scatterConnected}}">

@@ -268,7 +268,7 @@ class ProfileRoute extends PolymerElement {
           <div class="input-area">
               <div class="section-name">Documents</div>
               <div class="form-inputs">
-              <small>You have to submit documents for KYC to proceed with application, remember to take off glasses and photos in good lighting.</small>
+              <small class="comment warn">You have to submit documents for KYC to proceed with application. </br>Remember to take off any glasses and take photos in good lighting</small></br>
                 <a href="https://portal-kyc.worbli.io?kyc_token=[[kycToken2]]" target="_blank" class="button">Submit Documents</a>
                 <small class="comment warn">After submitting documents make sure you return </br>here to complete this application</small>
               </div>

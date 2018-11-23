@@ -257,20 +257,6 @@ class StatusRoute extends PolymerElement {
 
       </style>
       
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
-
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <worbli-env api-path="{{apiPath}}""></worbli-env>
       <div class="split">
@@ -356,6 +342,17 @@ class StatusRoute extends PolymerElement {
     };
   }
 
+  ready() {
+    super.ready();
+    const x = 0;
+    const intervalID = setInterval(() => {
+      this._checkStatus();
+       if (++x === 10) {
+           clearInterval(intervalID);
+       }
+    }, 30000);
+  }
+
   _checkStatus(){
     this.btnText = 'Checking';
     const token = localStorage.getItem("token");
@@ -377,7 +374,7 @@ class StatusRoute extends PolymerElement {
         this.btnText = 'Not complete check again in 10min';
         setTimeout(() => {
           this.btnText = 'Check Status';
-         }, 3000);
+         }, 60000);
       });
     } else {this.set('route.path', '/')}
   }
