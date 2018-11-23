@@ -270,7 +270,7 @@ class AccountRoute extends PolymerElement {
           <div class="input-area">
             <div class="section-name">Name</div>
             <div class="form-inputs">
-              <label>Account Name </label>
+              <label>Worbli Account Name </label>
               <input id="worbliAccountName" value="{{worbliAccountName::input}}" name="worbliAccountName" type="text" class="lower">
               <small class="comment error">[[worbliAccountNameError]]</small>
             </div>

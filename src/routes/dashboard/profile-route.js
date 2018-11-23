@@ -268,7 +268,8 @@ class ProfileRoute extends PolymerElement {
           <div class="input-area">
               <div class="section-name">Documents</div>
               <div class="form-inputs">
-                <a href="https://kyc.dac.city?kyc_token=[[kycToken2]]" target="_blank" class="button">Submit Documents</a>
+              <small>You have to submit documents for KYC to proceed with application, remember to take off glasses and photos in good lighting.</small>
+                <a href="https://portal-kyc.worbli.io?kyc_token=[[kycToken2]]" target="_blank" class="button">Submit Documents</a>
                 <small class="comment warn">After submitting documents make sure you return </br>here to complete this application</small>
               </div>
             </div>
@@ -464,6 +465,7 @@ class ProfileRoute extends PolymerElement {
                 <option value="ZMB">Zambia</option>
                 <option value="ZWE">Zimbabwe</option>
               </select>
+              <small class="comment">If your country is not included in this drop down we don't currently support it.</small>
               <small class="comment error">[[addressCountryError]]</small>
               <template is="dom-if" if="{{showState}}">
               <label>State</label>
@@ -522,11 +524,12 @@ class ProfileRoute extends PolymerElement {
                   <option value="WY">Wyoming</option>
                 </select>	
               </template>
+              
               <small class="comment error">[[addressStateError]]</small>
-              <label>Appartment / Flat Number</label>
+              <label>Apartment / Flat Number</label>
               <input id="addressFlatNumber" value="{{addressFlatNumber::input}}" name="addressFlatNumber" type="text" class="text">
               <small class="comment error">[[addressFlatNumberError]]</small>
-              <label>Building Name</label>
+              <label>House / Building Name</label>
               <input id="addressBuildingName" value="{{addressBuildingName::input}}" name="addressBuildingName" type="text" class="text">
               <small class="comment error">[[addressBuildingNameError]]</small>
               <label>Building Number</label>

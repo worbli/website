@@ -263,6 +263,9 @@ class SharedropRoute extends PolymerElement {
           You are going to be using Scatter make sure you have the Scatter desktop application open.</br>
           Login to Worbli with scatter</br>
           Sign main net transaction.</br>
+          Make sure you have scatter open.</br>
+          Wait a few seconds for it </br>
+          Click the tick</br>
           </p>
      
             <template is="dom-if" if="{{!scatterConnected}}">

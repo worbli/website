@@ -19,6 +19,7 @@ class AboutRoute extends PolymerElement {
         .main {
           flex-grow: 1;
           max-width: 850px;
+          margin-top: -32px;
         }
         h1 {
           color: var(--blue-text);

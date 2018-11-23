@@ -210,6 +210,18 @@ class PasswordRoute extends PolymerElement {
         .dropdown-short{
           width:100px;
         }
+        @media only screen and (max-width: 600px){
+          .section-name {
+            display: none;
+          }
+          .split{
+            margin-top:40px;
+          }
+          .side {
+            width: 100vw;
+            padding-right: 0;
+          }
+        }
       </style>
       
       <!-- Google Tag Manager (noscript) -->
@@ -247,7 +259,7 @@ class PasswordRoute extends PolymerElement {
           </div>
          
             <div class="footer">
-              <button type="button" on-click="_savePassword">Set Password</button>
+              <button type="button" on-click="_savePassword">Set Password & Login</button>
             </div>
   
         </div>
