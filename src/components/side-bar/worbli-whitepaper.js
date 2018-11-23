@@ -52,10 +52,10 @@ class WorbliWhitepaper extends PolymerElement {
       </style>
         <div class="container-paper">
             <div class="title">Download Papers</div>
-            <a href="https://d1r0t58ow9lja0.cloudfront.net/worbli-whitepaper.pdf">
+            <a href="https://d1r0t58ow9lja0.cloudfront.net/worbli-short-paper.pdf">
               <img src="./images/shortpaper.png" alt="white paper" class="white-paper top">
             </a>
-            <a href="https://d1r0t58ow9lja0.cloudfront.net/worbli-short-paper.pdf">
+            <a href="https://d1r0t58ow9lja0.cloudfront.net/worbli-whitepaper.pdf">
               <img src="./images/whitepaper.png" alt="white paper" class="white-paper">
             </a>
 
