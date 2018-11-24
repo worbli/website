@@ -1,5 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@polymer/app-route/app-location.js';
+import '../../components/worbli-logger.js';
 import '../../css/shared-styles.js';
 import '../../worbli-env.js';
 
@@ -54,6 +55,7 @@ class WorbliDashnav extends PolymerElement {
 
         <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
         <worbli-env api-path="{{apiPath}}""></worbli-env>
+        <worbli-logger id="logger"></worbli-logger>
         <div class="container">
 
           <template is="dom-if" if="{{default}}">
@@ -162,15 +164,16 @@ class WorbliDashnav extends PolymerElement {
   }
 
   _routeChanged(){
-      const location = this.route.path.split("/")[1];
-      this.page = this.route.path.split("/")[2];
-      if(this.page === 'password' && this.route && this.route.__queryParams && this.route.__queryParams.token){
-        const token = this.route.__queryParams.token;
-        localStorage.setItem("token", token);
-      }
-      if(location === 'dashboard'){
+    this.path = this.route.path.split("/")[1];  
+    this.page = this.route.path.split("/")[2];
+    if(this.page === 'password' && this.route && this.route.__queryParams && this.route.__queryParams.token){
+      const token = this.route.__queryParams.token;
+      localStorage.setItem("token", token)
+      this.$.logger.log('email clicked');
+      this._auth();
+    } else if (this.path == 'dashboard'){
         this._auth();
-      }
+    }
   }
 
   _auth(){

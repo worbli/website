@@ -3,6 +3,7 @@ import { updateStyles } from '@polymer/polymer/lib/mixins/element-mixin.js';
 import '@polymer/app-route/app-location.js';
 import '../css/shared-styles.js';
 import '../worbli-env.js';
+import './worbli-logger.js';
 class WorbliJoin extends PolymerElement {
   static get template() {
     return html`
@@ -132,6 +133,7 @@ class WorbliJoin extends PolymerElement {
       </style>
             <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
             <worbli-env api-path="{{apiPath}}""></worbli-env>
+            <worbli-logger id="logger"></worbli-logger>
             <template is="dom-if" if="{{!complete}}">
                 <h2>Join WORBLI</h2>
                 <p>WORBLI is the place to access smarter financial services</p>
@@ -192,7 +194,7 @@ _reset(){
         setTimeout(() => {
             this.complete = false;
             this.resetJoin = false;
-        }, 2000);
+        }, 500);
     } 
 }
 
@@ -200,6 +202,7 @@ _confirmEmail(){
     this.confirmedEmail = this._validateEmail(this.email);
     this._buttonActive()
 }
+
 _termsCheckbox(){
     if(this.termsCheckbox === undefined && this.termsCheckboxValue === undefined){
         this.termsCheckboxValue = true
@@ -230,6 +233,7 @@ _marketingCheckbox(){
 _sendEmail(){
     if (this.email && this._validateEmail(this.email)){
         const email = this.email;
+        this.$.logger.log('request email', {email});
         let agreed_terms = this.termsCheckboxValue;
         let agreed_marketing = this.marketingCheckboxValue;
         if(agreed_terms === undefined){agreed_terms = false};

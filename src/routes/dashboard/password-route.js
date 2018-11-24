@@ -5,6 +5,7 @@ import '../../components/side-bar/worbli-snapshot.js';
 import '../../components/side-bar/worbli-dashnav.js';
 import '@polymer/app-route/app-location.js';
 import '../../worbli-env.js';
+import '../../components/worbli-logger.js';
 
 class PasswordRoute extends PolymerElement {
   static get template() {
@@ -226,6 +227,7 @@ class PasswordRoute extends PolymerElement {
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <worbli-env api-path="{{apiPath}}""></worbli-env>
+      <worbli-logger id="logger"></worbli-logger>
       <div class="split">
         <div class="side">
           <worbli-dashnav></worbli-dashnav>
@@ -272,24 +274,24 @@ class PasswordRoute extends PolymerElement {
 
 
 
-  _savePassword(){
-    this.passwordError = ""
-    this.passwordTwoError = ""
-    const password = this.password;
-    const passwordTwo = this.passwordTwo;
-    if (password != passwordTwo){
-        this.passwordTwoError = "Passwords are not the same"
-    } else if (this._validatePassword()){
-        this._save({password});
-    } else {
-        this.passwordTwoError = "Password must be at least 8 characters long and must include uppercase and lowercase letters and a digit or a special character"
-    }
+_savePassword(){
+  this.passwordError = ""
+  this.passwordTwoError = ""
+  const password = this.password;
+  const passwordTwo = this.passwordTwo;
+  if (password != passwordTwo){
+      this.passwordTwoError = "Passwords are not the same"
+  } else if (this._validatePassword()){
+      this._save({password});
+  } else {
+      this.passwordTwoError = "Password must be at least 8 characters long and must include uppercase and lowercase letters and a digit or a special character"
   }
+}
 
-  _validatePassword(){
-    const password = this.password;
-    var re = /^(?=.*[a-z])(?=.*\d|.*[!@#\$%\^&\*])(?=.*[A-Z])(?:.{8,})$/;
-    return re.test(password);
+_validatePassword(){
+  const password = this.password;
+  var re = /^(?=.*[a-z])(?=.*\d|.*[!@#\$%\^&\*])(?=.*[A-Z])(?:.{8,})$/;
+  return re.test(password);
 }
 
 _save(data){
