@@ -296,11 +296,12 @@ class ReviewRoute extends PolymerElement {
             <div class="section-name">Address</div>
                 <div class="form-inputs">
                     <p class="label">[[addressBuildingNumber]] [[addressFlatNumber]] [[addressBuildingName]] </p>
-                    <p class="label">[[addressOne]] </p>
-                    <p class="label">[[addressTwo]] </p>
-                    <p class="label">[[addressTown]][[addressState]]</p>
-                    <p class="label upper">[[addressZip]] </p>
-                    <p class="label upper">[[addressCountry]] </p>
+                    <p class="label">[[addressOne]]</p>
+                    <p class="label">[[addressTwo]]</p>
+                    <p class="label">[[addressTown]]</p>
+                    <p class="label">[[addressState]]</p>
+                    <p class="label upper">[[addressZip]]</p>
+                    <p class="label upper">[[addressCountry]]</p>
                 </div>
             </div>
             <hr>
