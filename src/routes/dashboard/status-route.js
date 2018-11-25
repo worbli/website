@@ -344,7 +344,7 @@ class StatusRoute extends PolymerElement {
 
   ready() {
     super.ready();
-    const x = 0;
+    let x = 0;
     const intervalID = setInterval(() => {
       this._checkStatus();
        if (++x === 10) {
