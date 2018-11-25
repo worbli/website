@@ -246,12 +246,10 @@ class SharedropRoute extends PolymerElement {
         <div class="main">
           <h1>Claim Sharedrop</h1>
           <p class="intro">
-          You are going to be using Scatter make sure you have the Scatter desktop application open.</br>
-          Login to Worbli with scatter.</br>
-          Sign main net transaction.</br>
-          Make sure you have scatter open.</br>
-          Wait a few seconds for it.</br>
-          Click the tick.</br></br>
+          1. You are going to be using Scatter in order to claim your sharedrop.  Make sure you have the Scatter desktop application open.</br>
+          2. Click on the "Login to Worbli with scatter" button.</br>
+          3. A pop-up window will appear, select "Sign main net transaction" on this window.</br>
+          4. Ensuring you scatter open, wait a few seconds for this process to initiate and then click on the tick</br></br>
 
           1. Download Scatter - v9.6.0 (desktop only):</br>
           <a href="https://github.com/GetScatter/ScatterDesktop/releases/download/9.6.0/win-scatter-9.6.0.exe" target="_blank">-WINDOWS</a> </br>
