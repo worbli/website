@@ -342,16 +342,16 @@ class StatusRoute extends PolymerElement {
     };
   }
 
-  ready() {
-    super.ready();
-    let x = 0;
-    const intervalID = setInterval(() => {
-      this._checkStatus();
-       if (++x === 10) {
-           clearInterval(intervalID);
-       }
-    }, 30000);
-  }
+  // ready() {
+  //   super.ready();
+  //   let x = 0;
+  //   const intervalID = setInterval(() => {
+  //     this._checkStatus();
+  //      if (++x === 10) {
+  //          clearInterval(intervalID);
+  //      }
+  //   }, 30000);
+  // }
 
   _checkStatus(){
     this.btnText = 'Checking';
