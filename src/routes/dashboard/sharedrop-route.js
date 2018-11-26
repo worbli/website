@@ -304,12 +304,69 @@ class SharedropRoute extends PolymerElement {
       securityCode: {
         type: Text,
       },
+      route: {
+        type: Object,
+        observer: "_routeChanged"
+      },
+      onPage: {
+        type: Boolean,
+        value: false, 
+      },
+      interval: {
+        type: Number,
+        value: 3000
+      },
+      refreshIntervalId:{
+        type: Object
+      },
     };
+  }
+
+  // ready() {
+  //   super.ready();
+  //   this._routeChanged();
+  // }
+
+
+  _routeChanged(){
+    console.log('changed')
+    const location = this.route.path.split("/");
+
+    if(location[2] === 'sharedrop'){
+      this.onPage = true;
+      this._checkShareDrop();
+    } else {
+        clearInterval(this.refreshIntervalId);
+        this.onPage = false; 
+    }
+  }
+
+
+  _checkShareDrop(){ 
+    if(this.onPage){
+        this.refreshIntervalId = setInterval(()=>{
+          const token = localStorage.getItem("token");
+          const url = `${this.apiPath}/user/sharedrop/`;
+          fetch(url, {
+            method: 'GET',
+            headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
+          })
+          .then((response) => {return response.json()})
+          .then((response) => {
+            if(response && response.data === true){
+              const newjwt = response.newjwt;
+              localStorage.setItem("token", newjwt);
+              this.set('route.path', '/dashboard/account')
+              clearInterval(this.refreshIntervalId);
+            }
+          })
+        }, this.interval)
+    }
   }
 
   _startVerificatoin(){
     const token = localStorage.getItem("token");
-    const url = `${this.apiPath}/user/sharedrop/`;
+    const url = `${this.apiPath}/user/security/`;
     fetch(url, {
       method: 'GET',
       headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
