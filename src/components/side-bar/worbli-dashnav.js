@@ -253,7 +253,6 @@ class WorbliDashnav extends PolymerElement {
     if(status === 'started'   && page === 'sharedrop' ) { this._goHome() }
 
     if(status === 'review'    && page === 'profile' )   { this._goHome() }
-    if(status === 'review'    && page === 'review' )    { this._goHome() }
     if(status === 'review'    && page === 'account' )   { this._goHome() }
     if(status === 'review'    && page === 'sharedrop' ) { this._goHome() }
 
