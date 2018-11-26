@@ -246,38 +246,20 @@ class SharedropRoute extends PolymerElement {
         <div class="main">
           <h1>Claim Sharedrop</h1>
           <p class="intro">
-          1. You are going to be using Scatter in order to claim your sharedrop.  Make sure you have the Scatter desktop application open.</br>
-          2. Click on the "Login to Worbli with scatter" button.</br>
-          3. A pop-up window will appear, select "Sign main net transaction" on this window.</br>
-          4. Ensuring you scatter open, wait a few seconds for this process to initiate and then click on the tick</br></br>
-
-          1. Download Scatter - v9.6.0 (desktop only):</br>
-          <a href="https://github.com/GetScatter/ScatterDesktop/releases/download/9.6.0/win-scatter-9.6.0.exe" target="_blank">-WINDOWS</a> </br>
-          <a href="https://github.com/GetScatter/ScatterDesktop/releases/download/9.6.0/mac-scatter-9.6.0.dmg" target="_blank">-MAC</a></br>
-          <a href="https://github.com/GetScatter/ScatterDesktop/releases/download/9.6.0/linux-scatter-9.6.0-x86_64.AppImage" target="_blank">-LINUX</a></br></br>
-
-          2. Choose your desired Scatter password, and type it in the *password* and *confirm password* boxes. Then click - “Create New Scatter”.</br>
-          *Make sure you save the 12 word phrase Scatter gives you in a safe place</br></br>
-
-          3. On the Scatter Menu Bar, click on the ‘Vault’ button</br>
-          4. In the top left corner of the Vault window, click on “New”</br>
-          5. Create a name: i.e. Worbli Account </br>
-          6. Click on “Create New” (please wait for your ‘keys’ to generate) </br>
-          7. Click on “EOSIO” </br>
-          8. Click on your EOSIO “Shareable Key” to *copy* it. Then, *paste* this into both fields on the account page.</br>
-          9. You can use the same key for both fields, but we recommend using two separate keys. To generate two separate keys just repeat the process.</br>
-          * Please Note that you have to use the EOSIO shareable key until WORBLI support is implemented in Scatter.</br></br>
-          IMPORTANT: DO NOT share your *private key* which can be exported from Scatter. This private key should never be shared with any third party or person, and should be kept in a very safe and trusted place.
+          1. You are going to be using Scatter in order to claim your sharedrop. Make sure you have the Scatter Desktop application open.</br>
+          2. Click on the "Attach Scatter to EOS" button.</br>
+          3. A pop-up window will appear, select "Claim Sharedrop" on this window.</br>
+          4. Ensuring you scatter open, wait a few seconds for this process to initiate and then click on the tick.</br></br>
           </p>
      
-            <template is="dom-if" if="{{!scatterConnected}}">
-              <button type="button" on-click="_startVerificatoin">Login to Worbli with Scatter</button>
-            </template>
-            <template is="dom-if" if="{{scatterConnected}}">
-              <button type="button" on-click="_signScatter">Sign MainNet Transaction with Scatter</button>
-
-    
+        <template is="dom-if" if="{{!scatterConnected}}">
+          <button type="button" on-click="_startVerificatoin">Attach Scatter to EOS</button>
         </template>
+        
+        <template is="dom-if" if="{{scatterConnected}}">
+          <button type="button" on-click="_signScatter">Claim Sharedrop</button>
+        </template>
+
         </div>
       </div>
       </br></br>
