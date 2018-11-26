@@ -247,21 +247,26 @@ class WorbliDashnav extends PolymerElement {
     if(status === 'default'   && page === 'status' )    { this._goHome() }
     if(status === 'default'   && page === 'account' )   { this._goHome() }
     if(status === 'default'   && page === 'sharedrop' ) { this._goHome() }
+    
     if(status === 'started'   && page === 'status' )    { this._goHome() }
     if(status === 'started'   && page === 'account' )   { this._goHome() }
     if(status === 'started'   && page === 'sharedrop' ) { this._goHome() }
+
     if(status === 'review'    && page === 'profile' )   { this._goHome() }
     if(status === 'review'    && page === 'review' )    { this._goHome() }
     if(status === 'review'    && page === 'account' )   { this._goHome() }
     if(status === 'review'    && page === 'sharedrop' ) { this._goHome() }
+
     if(status === 'approved'  && page === 'profile' )   { this._goHome() }
     if(status === 'approved'  && page === 'review' )    { this._goHome() }
     if(status === 'approved'  && page === 'status' )    { this._goHome() }
     if(status === 'approved'  && page === 'sharedrop' ) { this._goHome() }
+
     if(status === 'named'     && page === 'profile' )   { this._goHome() }
     if(status === 'named'     && page === 'review' )    { this._goHome() }
     if(status === 'named'     && page === 'status' )    { this._goHome() }
     if(status === 'named'     && page === 'account' )   { this._goHome() }
+
     if(status === 'credited'  && page === 'profile' )   { this._goHome() }
     if(status === 'credited'  && page === 'review' )    { this._goHome() }
     if(status === 'credited'  && page === 'status' )    { this._goHome() }

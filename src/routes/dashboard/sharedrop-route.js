@@ -248,8 +248,9 @@ class SharedropRoute extends PolymerElement {
           <p class="intro">
           1. You are going to be using Scatter in order to claim your sharedrop. Make sure you have the Scatter Desktop application open.</br>
           2. Click on the "Attach Scatter to EOS" button.</br>
-          3. A pop-up window will appear, select "Claim Sharedrop" on this window.</br>
-          4. Ensuring you scatter open, wait a few seconds for this process to initiate and then click on the tick.</br></br>
+          3. A pop-up window may appear, choose “Login” and then choose your EOS identity.</br>
+          4. Click on the “Claim Sharedrop” button.</br>
+          5. A pop-up window will appear, click on the tick to sign the transaction on the EOS network.</br></br>
           </p>
      
         <template is="dom-if" if="{{!scatterConnected}}">
