@@ -197,8 +197,8 @@ class WorbliDashnav extends PolymerElement {
                 localStorage.setItem("token", token);
             }
         })
-        .catch(error => {
-            this._goHome()
+        .catch(err => {
+            this._auth();
         });
     } else {
         this._goHome()
@@ -270,7 +270,6 @@ class WorbliDashnav extends PolymerElement {
     if(status === 'credited'  && page === 'profile' )   { this._goHome() }
     if(status === 'credited'  && page === 'review' )    { this._goHome() }
     if(status === 'credited'  && page === 'status' )    { this._goHome() }
-    if(status === 'credited'  && page === 'account' )   { this._goHome() }
     if(status === 'credited'  && page === 'sharedrop' ) { this._goHome() }
   }
 
