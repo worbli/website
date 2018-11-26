@@ -98,7 +98,7 @@ class WorbliDashnav extends PolymerElement {
             <a href="/dashboard/profile" class="link hidden"><div class="nav">Application</div></a>
             <a href="/dashboard/review" class="link hidden"><div class="nav">Review</div></a>
             <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
-            <a href="/dashboard/account" class="link hidden"><div class="nav">Account</div></a>
+            <a href="/dashboard/account" class="link active"><div class="nav selected">Account</div></a>
             <a href="/dashboard/sharedrop" class="link active"><div class="nav selected">Sharedrop</div></a>
             <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
           </template>
@@ -107,7 +107,7 @@ class WorbliDashnav extends PolymerElement {
             <a href="/dashboard/profile" class="link hidden"><div class="nav">Application</div></a>
             <a href="/dashboard/review" class="link hidden"><div class="nav">Review</div></a>
             <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
-            <a href="/dashboard/account" class="link hidden"><div class="nav">Account</div></a>
+            <a href="/dashboard/account" class="link active"><div class="nav selected">Account</div></a>
             <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
             <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
           </template>
