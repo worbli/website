@@ -236,6 +236,9 @@ class AccountRoute extends PolymerElement {
         .lower {
           text-transform: lowercase;
         }
+        .info {
+          margin: 12px;
+        }
 
       </style>
 
@@ -248,6 +251,9 @@ class AccountRoute extends PolymerElement {
 
         <div class="main">
           <h1>Worbli Account</h1>
+
+
+<template is="dom-if" if="{{viewApproved}}">
 
           <template is="dom-if" if="{{!complete}}">
           <div class="input-area">
@@ -289,6 +295,26 @@ class AccountRoute extends PolymerElement {
               </div>
             </template>
 
+
+</template>
+
+<template is="dom-if" if="{{viewNamed}}">
+<p class="info">
+Your WROBLI blockchain acocunt has been created. Account name %NAME%</br></br>
+Check it out at <a href="worbli.blocks.io/name">worbli.blocks.io</a></br></br>
+If you had an EOS account on September 7th, you can <a href="./dasboard/sharedrop">Claim your Sharedrop</a>
+</p>
+</template>
+
+<template is="dom-if" if="{{viewCredited}}">
+<p class="info">
+Your WROBLI blockchain acocunt has been created. Account name %NAME%</br></br>
+Check it out at <a href="worbli.blocks.io/name">worbli.blocks.io</a></br></br>
+Congratulations you have successfully claimed your sharedrop!
+</p>
+</template>
+
+
         </div>
       </div>
       </br></br>
@@ -318,10 +344,42 @@ class AccountRoute extends PolymerElement {
       showIframe: {
         type: Boolean,
         value: false,
+      },
+      route: {
+        type: Boolean,
+        observer: '_routeChanged'
+      },
+      viewApproved: {
+        type: Boolean,
+        value: false,
+      },
+      viewNamed: {
+        type: Boolean,
+        value: false,
+      },
+      viewCredited: {
+        type: Boolean,
+        value: false,
       }
     };
   }
 
+  _routeChanged(){
+    const loc = localStorage.getItem("loc");
+    this.viewApproved = false;
+    this.viewNamed = false;
+    this.viewCredited = false;
+    if(loc =='approved'){
+      this.viewApproved = true;
+    }
+    if(loc =='named'){
+      this.viewNamed = true;
+    }
+    if(loc =='credited'){
+      this.viewCredited = true;
+    }
+    console.log(`---------${loc}`)
+  }
 
 _applyAccount(data){
   let check = true;
