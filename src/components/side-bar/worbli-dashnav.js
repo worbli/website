@@ -212,27 +212,27 @@ class WorbliDashnav extends PolymerElement {
     this.approved = false;
     this.named = false;
     this.credited = false;
-    if(this.onfidoStatus === 'default'){
+    if(this.onfidoStatus === 'default'){ // The user has not saved an application form form => Profile
       this.default = true;
       localStorage.setItem("loc", "default");
     };
-    if(this.onfidoStatus === 'started'){
+    if(this.onfidoStatus === 'started'){ // The user has saved an application form => Profile
       this.started = true;
       localStorage.setItem("loc", "started");
     };
-    if(this.onfidoStatus === 'review'){
+    if(this.onfidoStatus === 'review'){ // the user has Submited the application => Review
       this.review = true;
       localStorage.setItem("loc", "review");
     };
-    if(this.onfidoStatus === 'approved'){
+    if(this.onfidoStatus === 'approved'){ // the user has been approved => Account
       this.approved = true;
       localStorage.setItem("loc", "approved");
     };
-    if(this.onfidoStatus === 'named'){
+    if(this.onfidoStatus === 'named'){ // the has claimed an acocunt = > Sharedrop
       this.named = true;
       localStorage.setItem("loc", "named");
     };
-    if(this.onfidoStatus === 'credited'){
+    if(this.onfidoStatus === 'credited'){ // the has claimed their share drop => Account(second state) <---??
       this.credited = true;
       localStorage.setItem("loc", "credited");
     };
@@ -242,30 +242,31 @@ class WorbliDashnav extends PolymerElement {
   _bounce(){
     const status = this.onfidoStatus;
     const page = this.page;
-    if(status === 'default' && page === 'review' ){this._goHome()}
-    if(status === 'default' && page === 'status' ){this._goHome()}
-    if(status === 'default' && page === 'account' ){this._goHome()}
-    if(status === 'default' && page === 'sharedrop' ){this._goHome()}
-    if(status === 'started' && page === 'status' ){this._goHome()}
-    if(status === 'started' && page === 'account' ){this._goHome()}
-    if(status === 'started' && page === 'sharedrop' ){this._goHome()}
-    if(status === 'review' && page === 'profile' ){this._goHome()}
-    if(status === 'review' && page === 'review' ){this._goHome()}
-    if(status === 'review' && page === 'account' ){this._goHome()}
-    if(status === 'review' && page === 'sharedrop' ){this._goHome()}
-    if(status === 'approved' && page === 'profile' ){this._goHome()}
-    if(status === 'approved' && page === 'review' ){this._goHome()}
-    if(status === 'approved' && page === 'status' ){this._goHome()}
-    if(status === 'approved' && page === 'sharedrop' ){this._goHome()}
-    if(status === 'named' && page === 'profile' ){this._goHome()}
-    if(status === 'named' && page === 'review' ){this._goHome()}
-    if(status === 'named' && page === 'status' ){this._goHome()}
-    if(status === 'named' && page === 'account' ){this._goHome()}
-    if(status === 'credited' && page === 'profile' ){this._goHome()}
-    if(status === 'credited' && page === 'review' ){this._goHome()}
-    if(status === 'credited' && page === 'status' ){this._goHome()}
-    if(status === 'credited' && page === 'account' ){this._goHome()}
-    if(status === 'credited' && page === 'sharedrop' ){this._goHome()}
+    // TODO: consider to change this to a switch statement
+    if(status === 'default'   && page === 'review' )    { this._goHome() }
+    if(status === 'default'   && page === 'status' )    { this._goHome() }
+    if(status === 'default'   && page === 'account' )   { this._goHome() }
+    if(status === 'default'   && page === 'sharedrop' ) { this._goHome() }
+    if(status === 'started'   && page === 'status' )    { this._goHome() }
+    if(status === 'started'   && page === 'account' )   { this._goHome() }
+    if(status === 'started'   && page === 'sharedrop' ) { this._goHome() }
+    if(status === 'review'    && page === 'profile' )   { this._goHome() }
+    if(status === 'review'    && page === 'review' )    { this._goHome() }
+    if(status === 'review'    && page === 'account' )   { this._goHome() }
+    if(status === 'review'    && page === 'sharedrop' ) { this._goHome() }
+    if(status === 'approved'  && page === 'profile' )   { this._goHome() }
+    if(status === 'approved'  && page === 'review' )    { this._goHome() }
+    if(status === 'approved'  && page === 'status' )    { this._goHome() }
+    if(status === 'approved'  && page === 'sharedrop' ) { this._goHome() }
+    if(status === 'named'     && page === 'profile' )   { this._goHome() }
+    if(status === 'named'     && page === 'review' )    { this._goHome() }
+    if(status === 'named'     && page === 'status' )    { this._goHome() }
+    if(status === 'named'     && page === 'account' )   { this._goHome() }
+    if(status === 'credited'  && page === 'profile' )   { this._goHome() }
+    if(status === 'credited'  && page === 'review' )    { this._goHome() }
+    if(status === 'credited'  && page === 'status' )    { this._goHome() }
+    if(status === 'credited'  && page === 'account' )   { this._goHome() }
+    if(status === 'credited'  && page === 'sharedrop' ) { this._goHome() }
   }
 
   _goHome(){
