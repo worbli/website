@@ -250,8 +250,11 @@ class AccountRoute extends PolymerElement {
         </div>
         <div class="main">
           <h1>Worbli Account</h1>
+          <p>load test A</p>
           <template is="dom-if" if="{{viewApproved}}">
+          <p>load test B</p>
             <template is="dom-if" if="{{!complete}}">
+            <p>load test C</p>
               <div class="input-area">
                 <div class="section-name">Name</div>
                 <div class="form-inputs">
@@ -289,14 +292,14 @@ class AccountRoute extends PolymerElement {
           </template>
           <template is="dom-if" if="{{viewNamed}}">
             <p class="info">
-              Your WORBLI blockchain acocunt has been created. Account name %NAME%</br></br>
+              Your WORBLI blockchain acocunt has been created. Account name [[worbliAccountName]]</br></br>
               Check it out at <a href="worbli.blocks.io/name">worbli.blocks.io</a></br></br>
               If you had an EOS account on September 7th, you can <a href="./dasboard/sharedrop">Claim your Sharedrop</a>
             </p>
           </template>
           <template is="dom-if" if="{{viewCredited}}">
             <p class="info">
-              Your WROBLI blockchain acocunt has been created. Account name %NAME%</br></br>
+              Your WROBLI blockchain acocunt has been created. Account name [[worbliAccountName]]</br></br>
               Check it out at <a href="worbli.blocks.io/name">worbli.blocks.io</a></br></br>
               Congratulations you have successfully claimed your sharedrop!
             </p>
@@ -337,7 +340,7 @@ class AccountRoute extends PolymerElement {
       },
       viewApproved: {
         type: Boolean,
-        value: false,
+        value: true,
       },
       viewNamed: {
         type: Boolean,
@@ -346,25 +349,31 @@ class AccountRoute extends PolymerElement {
       viewCredited: {
         type: Boolean,
         value: false,
+      },
+      worbliAccountName: {
+        type: Text,
       }
     };
   }
 
   _routeChanged(){
     const loc = localStorage.getItem("loc");
-    this.viewApproved = false;
-    this.viewNamed = false;
-    this.viewCredited = false;
     if(loc =='approved'){
       this.viewApproved = true;
+      this.viewNamed = false;
+      this.viewCredited = false;
     }
     if(loc =='named'){
+      this.viewApproved = false;
       this.viewNamed = true;
+      this.viewCredited = false;
     }
     if(loc =='credited'){
+      this.viewApproved = false;
+      this.viewNamed = false;
       this.viewCredited = true;
     }
-    console.log(`---------${loc}`)
+    this._getName();
   }
 
 _applyAccount(data){
@@ -407,7 +416,19 @@ _applyAccount(data){
   }
 }
 
-
+_getName(){
+  const token = localStorage.getItem("token");
+  const url = `${this.apiPath}/user/name/`;
+  fetch(url, {
+    method: 'GET',
+    body: JSON.stringify(data), 
+    headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
+  })
+  .then((response) => {return response.json()})
+  .then((response) => {
+    this.worbliAccountName = response.worbli_account_name;
+  })
+}
 
 _validateAccountName(name){
   console.log(name)
