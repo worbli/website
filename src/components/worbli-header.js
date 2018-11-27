@@ -182,7 +182,7 @@ _dashboard(){
   const loc = localStorage.getItem("loc");
   if(loc === 'default')   {this.set('route.path', `/dashboard/profile`)};
   if(loc === 'started')   {this.set('route.path', `/dashboard/profile`)};
-  if(loc === 'review')    {this.set('route.path', `/dashboard/review`)};
+  if(loc === 'review')    {this.set('route.path', `/dashboard/status`)};
   if(loc === 'approved')  {this.set('route.path', `/dashboard/account`)};
   if(loc === 'named')     {this.set('route.path', `/dashboard/sharedrop`)};
   if(loc === 'credited')  {this.set('route.path', `/dashboard/account`)}; 
