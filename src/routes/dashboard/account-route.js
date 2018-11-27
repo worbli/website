@@ -427,6 +427,7 @@ _getName(){
   .then((response) => {return response.json()})
   .then((response) => {
     this.worbliAccountName = response.worbli_account_name;
+    const loc = localStorage.getItem("loc");
     if(loc =='approved'){
       this.viewApproved = true;
       this.viewNamed = false;
