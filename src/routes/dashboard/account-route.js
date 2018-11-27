@@ -277,7 +277,7 @@ class AccountRoute extends PolymerElement {
                   <small class="comment error">[[publicKeyOwnerError]]</small>
                   <p>
                   </br></br>
-                  <a href="https://worbli.zendesk.com/hc/en-us/articles/360019917571-How-can-I-generate-my-Owner-or-Active-key-using-Scatter-" targer="_blank">How can I generate my Owner or Active key using Scatter?</a></br>
+                  <a href="https://worbli.zendesk.com/hc/en-us/articles/360019917571-How-can-I-generate-my-Owner-or-Active-key-using-Scatter-" target="_blank">How can I generate my Owner or Active key using Scatter?</a></br>
                   </p>
                 </div>
               </div>
@@ -293,15 +293,15 @@ class AccountRoute extends PolymerElement {
           </template>
           <template is="dom-if" if="{{viewNamed}}">
             <p class="info">
-              Your WORBLI blockchain acocunt has been created. Account name <b>[[worbliAccountName]]</b></br></br>
-              Check it out at <a href="https://worbli.bloks.io/account/[[worbliAccountName]]">worbli.blocks.io</a></br></br>
-              If you had an EOS account on September 7th, you can <a href="/dasboard/sharedrop">Claim your Sharedrop</a>
+              Your WORBLI blockchain account has been created. Account name <b>[[worbliAccountName]]</b></br></br>
+              Check it out at <a href="https://worbli.bloks.io/account/[[worbliAccountName]]" target="_blank">worbli.bloks.io</a></br></br>
+              If you had an EOS account on September 7th, you can <a href="/dashboard/sharedrop">Claim your Sharedrop</a>
             </p>
           </template>
           <template is="dom-if" if="{{viewCredited}}">
             <p class="info">
-              Your WORBLI blockchain acocunt has been created. Account name <b>[[worbliAccountName]]</b></br></br>
-              Check it out at <a href="https://worbli.bloks.io/account/[[worbliAccountName]]">worbli.blocks.io</a></br></br>
+              Your WORBLI blockchain account has been created. Account name <b>[[worbliAccountName]]</b></br></br>
+              Check it out at <a href="https://worbli.bloks.io/account/[[worbliAccountName]]" target="_blank">worbli.bloks.io</a></br></br>
               Congratulations you have successfully claimed your sharedrop!
             </p>
           </template>
