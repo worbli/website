@@ -286,13 +286,6 @@ class StatusRoute extends PolymerElement {
                 <p class="label">Reviewing</p>
             </div>
           </div>
-          <hr>
-          <div class="input-area">
-            <div class="section-name">Identity Report</div>
-                <div class="form-inputs">
-                <p class="label">Reviewing</p>
-            </div>
-          </div>
           <div class="footer">
             <button type="button" on-click="_checkStatus">[[btnText]]</button>
           </div>
