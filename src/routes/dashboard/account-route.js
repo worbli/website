@@ -239,6 +239,10 @@ class AccountRoute extends PolymerElement {
         .info {
           margin: 12px;
         }
+        a {
+          color: #6681B5;
+          text-decoration: none;
+        }
 
       </style>
 
@@ -250,11 +254,8 @@ class AccountRoute extends PolymerElement {
         </div>
         <div class="main">
           <h1>Worbli Account</h1>
-          <p>load test A</p>
           <template is="dom-if" if="{{viewApproved}}">
-          <p>load test B</p>
             <template is="dom-if" if="{{!complete}}">
-            <p>load test C</p>
               <div class="input-area">
                 <div class="section-name">Name</div>
                 <div class="form-inputs">
@@ -292,15 +293,15 @@ class AccountRoute extends PolymerElement {
           </template>
           <template is="dom-if" if="{{viewNamed}}">
             <p class="info">
-              Your WORBLI blockchain acocunt has been created. Account name [[worbliAccountName]]</br></br>
-              Check it out at <a href="worbli.blocks.io/name">worbli.blocks.io</a></br></br>
+              Your WORBLI blockchain acocunt has been created. Account name <b>[[worbliAccountName]]</b></br></br>
+              Check it out at <a href="https://worbli.bloks.io/account/[[worbliAccountName]]">worbli.blocks.io</a></br></br>
               If you had an EOS account on September 7th, you can <a href="./dasboard/sharedrop">Claim your Sharedrop</a>
             </p>
           </template>
           <template is="dom-if" if="{{viewCredited}}">
             <p class="info">
-              Your WROBLI blockchain acocunt has been created. Account name [[worbliAccountName]]</br></br>
-              Check it out at <a href="worbli.blocks.io/name">worbli.blocks.io</a></br></br>
+              Your WORBLI blockchain acocunt has been created. Account name <b>[[worbliAccountName]]</b></br></br>
+              Check it out at <a href="https://worbli.bloks.io/account/[[worbliAccountName]]">worbli.blocks.io</a></br></br>
               Congratulations you have successfully claimed your sharedrop!
             </p>
           </template>
@@ -421,7 +422,6 @@ _getName(){
   const url = `${this.apiPath}/user/name/`;
   fetch(url, {
     method: 'GET',
-    body: JSON.stringify(data), 
     headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
   })
   .then((response) => {return response.json()})
