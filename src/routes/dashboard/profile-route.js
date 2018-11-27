@@ -746,9 +746,9 @@ class ProfileRoute extends PolymerElement {
                   <option data-countryCode="TC" value="1649">Turks &amp; Caicos Islands (+1649)</option>
                   <option data-countryCode="TV" value="688">Tuvalu (+688)</option>
                   <option data-countryCode="UG" value="256">Uganda (+256)</option>
-                  <option data-countryCode="GB" value="44">UK (+44)</option>
                   <option data-countryCode="UA" value="380">Ukraine (+380)</option>
                   <option data-countryCode="AE" value="971">United Arab Emirates (+971)</option>
+                  <option data-countryCode="GB" value="44">United Kingdom (+44)</option>
                   <option data-countryCode="UY" value="598">Uruguay (+598)</option>
                   <option data-countryCode="US" value="1">USA (+1)</option>
                   <option data-countryCode="UZ" value="7">Uzbekistan (+7)</option>
