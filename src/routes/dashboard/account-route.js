@@ -427,6 +427,21 @@ _getName(){
   .then((response) => {return response.json()})
   .then((response) => {
     this.worbliAccountName = response.worbli_account_name;
+    if(loc =='approved'){
+      this.viewApproved = true;
+      this.viewNamed = false;
+      this.viewCredited = false;
+    }
+    if(loc =='named'){
+      this.viewApproved = false;
+      this.viewNamed = true;
+      this.viewCredited = false;
+    }
+    if(loc =='credited'){
+      this.viewApproved = false;
+      this.viewNamed = false;
+      this.viewCredited = true;
+    }
   })
 }
 
