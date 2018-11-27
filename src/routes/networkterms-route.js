@@ -73,23 +73,19 @@ class NetworkTermsRoute extends PolymerElement {
 				  margin: 0;
 				  padding: 0;
 				}
-				
 				ol > li {
 				  display: table;
 				  counter-increment: item;
 				  margin-bottom: 0.6em;
 				}
-				
 				ol > li:before {
 				  content: counters(item, ".") ". ";
 				  display: table-cell;
 				  padding-right: 0.6em;    
 				}
-				
 				li ol > li {
 				  margin: 0;
 				}
-				
 				li ol > li:before {
 				  content: counters(item, ".") " ";
 				}

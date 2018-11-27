@@ -4,8 +4,6 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
-
-
 class DeveloperTermsRoute extends PolymerElement {
   static get template() {
     return html`

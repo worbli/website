@@ -9,7 +9,7 @@ import '../../worbli-env.js';
 class StatusRoute extends PolymerElement {
   static get template() {
     return html`
-          <style include="shared-styles">
+      <style include="shared-styles">
         :host {
           display: block;
         }
@@ -126,10 +126,10 @@ class StatusRoute extends PolymerElement {
           width: 340px;
         }
         .label{
-            font-size: 12px;
-            color: #393d4d;
-            font-weight: 600; 
-            text-transform: capitalize; 
+          font-size: 12px;
+          color: #393d4d;
+          font-weight: 600; 
+          text-transform: capitalize; 
         }
         input {
           width: 307px;
@@ -249,9 +249,9 @@ class StatusRoute extends PolymerElement {
             display: none;
           }
           .side {
-             width: 100vw;
-             padding-right: 0px;
-             margin-top: 63px;
+            width: 100vw;
+            padding-right: 0px;
+            margin-top: 63px;
           }
         }
 
@@ -263,7 +263,6 @@ class StatusRoute extends PolymerElement {
         <div class="side">
           <worbli-dashnav></worbli-dashnav>
         </div>
-
         <div class="main">
           <h1>Status</h1>
           <p class="intro">Thank you for your submission! We are processing your application, please check back in 48hrs.</p>
@@ -273,38 +272,30 @@ class StatusRoute extends PolymerElement {
               <p class="label">Reviewing</p>
             </div>
           </div>
-
           <hr>
-
           <div class="input-area">
             <div class="section-name">Facial Similarity Report</div>
                 <div class="form-inputs">
                     <p class="label">Reviewing</p>
                 </div>
             </div>
-
             <hr>
-
           <div class="input-area">
             <div class="section-name">Watchlist Report</div>
                 <div class="form-inputs">
                 <p class="label">Reviewing</p>
             </div>
           </div>
-
           <hr>
-
           <div class="input-area">
             <div class="section-name">Identity Report</div>
                 <div class="form-inputs">
                 <p class="label">Reviewing</p>
             </div>
           </div>
-        
-            <div class="footer">
-              <button type="button" on-click="_checkStatus">[[btnText]]</button>
-            </div>
-
+          <div class="footer">
+            <button type="button" on-click="_checkStatus">[[btnText]]</button>
+          </div>
         </div>
       </div>
       </br></br>
@@ -342,17 +333,6 @@ class StatusRoute extends PolymerElement {
     };
   }
 
-  // ready() {
-  //   super.ready();
-  //   let x = 0;
-  //   const intervalID = setInterval(() => {
-  //     this._checkStatus();
-  //      if (++x === 10) {
-  //          clearInterval(intervalID);
-  //      }
-  //   }, 30000);
-  // }
-
   _checkStatus(){
     this.btnText = 'Checking';
     const token = localStorage.getItem("token");
@@ -378,6 +358,5 @@ class StatusRoute extends PolymerElement {
       });
     } else {this.set('route.path', '/')}
   }
-
 
 } window.customElements.define('status-route', StatusRoute);

@@ -28,6 +28,7 @@ class WorbliOnfido extends PolymerElement {
       </div>
     `;
   }
+
   static get properties() {
     return {
       init: {
@@ -69,9 +70,9 @@ class WorbliOnfido extends PolymerElement {
     const firstName = this.firstName;
     const lastName = this.lastname;
     const params = {
-        headers: {"content-type":"application/json; charset=UTF-8"},
-        body: {firstName,lastName},
-        method: "POST"
+      headers: {"content-type":"application/json; charset=UTF-8"},
+      body: {firstName,lastName},
+      method: "POST"
     }
     fetch('http://yourAPI.com', params)
     .then((jwt) => {
@@ -98,14 +99,14 @@ class WorbliOnfido extends PolymerElement {
       headers: {"content-type":"application/json; charset=UTF-8"},
       body: {data},
       method: "POST"
-  }
-  fetch('http://yourAPI.com', params)
-  .then((done) => {
-    this.complete = true;
-  })
-  .catch((error) => {
-      console.log(error);
-  })
+    }
+    fetch('http://yourAPI.com', params)
+    .then((done) => {
+      this.complete = true;
+    })
+    .catch((error) => {
+        console.log(error);
+    })
   }
 
 

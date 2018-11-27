@@ -6,9 +6,9 @@ class WorbliProducers extends PolymerElement {
     return html`
       <style include="shared-styles">
         div {
-            flex-grow: 1;
-            color: var(--grey-text);
-            font-size: 12px;
+          flex-grow: 1;
+          color: var(--grey-text);
+          font-size: 12px;
         }
         .bp {
           width: 45px;
@@ -31,9 +31,9 @@ class WorbliProducers extends PolymerElement {
         }
       </style>
 
-<div class="container">
-    <div class="title">Block Producers</div>
-        <div class="bps">
+      <div class="container">
+        <div class="title">Block Producers</div>
+          <div class="bps">
             <a href="https://www.dunenode.com/" target="_blank"><div class="bp topline"><img width="45px" src="./images/bp-logos/blue/dune.png"></div></a>
             <a href="https://eosblocksmith.io/" target="_blank"><div class="bp topline"><img width="45px" src="./images/bp-logos/blue/eos-blocksmith.png"></div></a>
             <a href="https://www.eoscafeblock.com/" target="_blank"><div class="bp topline"><img width="45px" src="./images/bp-logos/blue/eos-cafe-block.png"></div></a>
@@ -59,11 +59,10 @@ class WorbliProducers extends PolymerElement {
             <a href="https://www.infinitybloc.io" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/infinity-bloc.png"></div></a>
             <a href="https://www.chainrift.com/" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/chain-rift.png"></div></a>
             <a href="https://octagonlabs.org/" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/octagon-labs.png"></div></a>
+          </div>
         </div>
-    </div>
-</div>
-        
-    `;
+      </div>  
+  `;
   }
   static get properties() {
     return {

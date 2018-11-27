@@ -9,7 +9,7 @@ import '../../worbli-env.js';
 class ReviewRoute extends PolymerElement {
   static get template() {
     return html`
-          <style include="shared-styles">
+      <style include="shared-styles">
         :host {
           display: block;
         }
@@ -126,10 +126,10 @@ class ReviewRoute extends PolymerElement {
           width: 340px;
         }
         .label{
-            font-size: 12px;
-            color: #393d4d;
-            font-weight: 600; 
-            text-transform: capitalize; 
+          font-size: 12px;
+          color: #393d4d;
+          font-weight: 600; 
+          text-transform: capitalize; 
         }
         input {
           width: 307px;
@@ -259,20 +259,6 @@ class ReviewRoute extends PolymerElement {
         }
 
       </style>
-      
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <worbli-env api-path="{{apiPath}}""></worbli-env>
@@ -280,7 +266,6 @@ class ReviewRoute extends PolymerElement {
         <div class="side">
           <worbli-dashnav></worbli-dashnav>
         </div>
-
         <div class="main">
           <h1>Review</h1>
           <p class="intro">Please review your applicant data and make sure that it is correct before submitting the application. We will be checking the validity of your identity against public record databases based on the documents you submitted. Thank you!</p>
@@ -294,54 +279,49 @@ class ReviewRoute extends PolymerElement {
           <hr>
           <div class="input-area">
             <div class="section-name">Address</div>
-                <div class="form-inputs">
-                    <p class="label">[[addressBuildingNumber]] [[addressFlatNumber]] [[addressBuildingName]] </p>
-                    <p class="label">[[addressOne]]</p>
-                    <p class="label">[[addressTwo]]</p>
-                    <p class="label">[[addressTown]]</p>
-                    <p class="label">[[addressState]]</p>
-                    <p class="label upper">[[addressZip]]</p>
-                    <p class="label upper">[[addressCountry]]</p>
-                </div>
+              <div class="form-inputs">
+                <p class="label">[[addressBuildingNumber]] [[addressFlatNumber]] [[addressBuildingName]] </p>
+                <p class="label">[[addressOne]]</p>
+                <p class="label">[[addressTwo]]</p>
+                <p class="label">[[addressTown]]</p>
+                <p class="label">[[addressState]]</p>
+                <p class="label upper">[[addressZip]]</p>
+                <p class="label upper">[[addressCountry]]</p>
+              </div>
             </div>
             <hr>
             <div class="input-area">
-                <div class="section-name">Phone</div>
-                <div class="form-inputs">
-                    <p class="label">+ [[phoneCode]] [[phoneMobile]] </p>
-                </div>
+              <div class="section-name">Phone</div>
+              <div class="form-inputs">
+                <p class="label">+ [[phoneCode]] [[phoneMobile]] </p>
+              </div>
             </div>
             <hr>
             <div class="input-area">
-                <div class="section-name">Date Of Birth</div>
-                <div class="form-inputs">
-                    <p class="label"> [[dobDay]]/[[dobMonth]]/[[dobYear]] </p>
-                </div>
+              <div class="section-name">Date Of Birth</div>
+              <div class="form-inputs">
+                <p class="label"> [[dobDay]]/[[dobMonth]]/[[dobYear]] </p>
+              </div>
             </div>
             <hr>
             <div class="input-area">
-                <div class="section-name">Gender</div>
-                <div class="form-inputs">
-                    <p class="label"> [[gender]] </p>
-                </div>
+              <div class="section-name">Gender</div>
+              <div class="form-inputs">
+                <p class="label"> [[gender]] </p>
+              </div>
             </div>
             <hr>
             <div class="input-area">
-                <div class="section-name">Documents</div>
-                <div class="form-inputs">
-                    <p class="label"> [[documentCount]] </p>
-                    <small class="comment error">[[documentCountError]]</small>
-                    
-                </div>
+              <div class="section-name">Documents</div>
+              <div class="form-inputs">
+                <p class="label"> [[documentCount]] </p>
+                <small class="comment error">[[documentCountError]]</small>
+              </div>
             </div>
             <div class="footer">
-              
-              <button type="button" on-click="_submitApplication">
-              <template is="dom-if" if="{{btnImage}}"><img src="./images/loading-button.gif"></template>  
-              [[btnText]]</button>
+              <button type="button" on-click="_submitApplication">[[btnText]]</button>
               <small class="comment">[[patient]]</small>
             </div>
-
         </div>
       </div>
       </br></br>
@@ -437,7 +417,6 @@ class ReviewRoute extends PolymerElement {
           this.nameFirst = response.profile.name_first || "";
           this.nameMiddle = response.profile.name_middle || "";
           this.nameLast = response.profile.name_last || "";
-
           this.addressCountry = response.profile.address_country || "";
           this.addressFlatNumber = response.profile.address_flat_number || "";
           this.addressBuildingName = response.profile.address_building_name || "";
@@ -447,8 +426,6 @@ class ReviewRoute extends PolymerElement {
           this.addressState = response.profile.address_state || "";
           this.addressTown = response.profile.address_town || "";
           this.addressZip = response.profile.address_zip || "";
-
-
           this.phoneCode = response.profile.phone_code || "";
           this.phoneMobile = response.profile.phone_mobile || "";
           this.dobYear = response.profile.date_birth_year || "";
@@ -462,6 +439,5 @@ class ReviewRoute extends PolymerElement {
       });
     } else {this.set('route.path', '/')}
   }
-
 
 } window.customElements.define('review-route', ReviewRoute);

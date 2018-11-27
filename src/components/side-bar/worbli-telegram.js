@@ -47,16 +47,15 @@ class WorbliTelegram extends PolymerElement {
         .top {
           margin-top: 12px;
         }
-
       </style>
         <div class="container-paper">
-            <div class="title">Social</div>
-            <a href="https://t.me/worblicommunity" target="_blank">
-              <img class="image top" src="./images/telegramlink.png" alt="Telegram">
-            </a>
-            <a href="https://medium.com/@WORBLI" target="_blank">
-              <img class="image-two" src="./images/mediumlink.png" alt="Medium">
-            </a>
+          <div class="title">Social</div>
+          <a href="https://t.me/worblicommunity" target="_blank">
+            <img class="image top" src="./images/telegramlink.png" alt="Telegram">
+          </a>
+          <a href="https://medium.com/@WORBLI" target="_blank">
+            <img class="image-two" src="./images/mediumlink.png" alt="Medium">
+          </a>
         </div>
     `;
   }

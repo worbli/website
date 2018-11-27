@@ -75,9 +75,6 @@ class VisionRoute extends PolymerElement {
               left: -5px;
               opacity: 0.2;
           }
-          /* .features p {
-              height:80px;
-          } */
         @media only screen and (max-width: 600px){
            p, h2{
             margin: 12px;
@@ -131,7 +128,7 @@ class VisionRoute extends PolymerElement {
             </div>
           </div>
           <iframe width="840" height="472" src="https://www.youtube.com/embed/ideiyhAlvOQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-               </div>
+          </div>
         <div class="side">
           <worbli-whitepaper></worbli-whitepaper>
           <worbli-partners></worbli-partners>

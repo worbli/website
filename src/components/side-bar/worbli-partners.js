@@ -6,9 +6,9 @@ class WorbliPartners extends PolymerElement {
     return html`
       <style include="shared-styles">
         div {
-            flex-grow: 1;
-            color: var(--grey-text);
-            font-size: 12px;
+          flex-grow: 1;
+          color: var(--grey-text);
+          font-size: 12px;
         }
         .bp {
           width: 88px;
@@ -25,7 +25,6 @@ class WorbliPartners extends PolymerElement {
           max-width: 252px;
           margin: auto;
         }
- 
        .bps a:nth-child(1) div {background: url('./images/strategic-partners.png') 513px -73px; margin-right:12px;}
        .bps a:nth-child(2) div {background: url('./images/strategic-partners.png') 1036px -73px;}
        .bps a:nth-child(3) div {background: url('./images/strategic-partners.png') 776px -70px; margin-right:12px;}
@@ -38,22 +37,21 @@ class WorbliPartners extends PolymerElement {
        .bps a:nth-child(10) div {background: url('./images/strategic-partners.png') -92px -71px; margin-bottom:0px;}
       </style>
 
-        <div class="container">
-            <div class="title">Strategic Partners</div>
-            <div class="bps">
-            <a href="http://www.pinsentmasons.com" target="_blank"><div class="bp pinsentmasons"></div></a>
-            <a href="http://hklaw.com/" target="_blank"><div class="bp"></div></a>
-            <a href="http://onfido.com/" target="_blank"><div class="bp"></div></a>
-            <a href="http://interblockchain.io/" target="_blank"><div class="bp"></div></a>
-            <a href="http://webprofits.com.au/" target="_blank"><div class="bp"></div></a>
-            <a href="http://www.trybe.one" target="_blank"><div class="bp"></div></a>
-            <a href="http://eosdetroit.io/" target="_blank"><div class="bp"></div></a>
-            <a href="http://www.eosgermany.one" target="_blank"><div class="bp"></div></a>
-            <a href="http://genereos.io/" target="_blank"><div class="bp"></div></a>
-            <a href="https://www.chintai.io/" target="_blank"><div class="bp"></div></a>
-            </div>
+      <div class="container">
+        <div class="title">Strategic Partners</div>
+        <div class="bps">
+          <a href="http://www.pinsentmasons.com" target="_blank"><div class="bp pinsentmasons"></div></a>
+          <a href="http://hklaw.com/" target="_blank"><div class="bp"></div></a>
+          <a href="http://onfido.com/" target="_blank"><div class="bp"></div></a>
+          <a href="http://interblockchain.io/" target="_blank"><div class="bp"></div></a>
+          <a href="http://webprofits.com.au/" target="_blank"><div class="bp"></div></a>
+          <a href="http://www.trybe.one" target="_blank"><div class="bp"></div></a>
+          <a href="http://eosdetroit.io/" target="_blank"><div class="bp"></div></a>
+          <a href="http://www.eosgermany.one" target="_blank"><div class="bp"></div></a>
+          <a href="http://genereos.io/" target="_blank"><div class="bp"></div></a>
+          <a href="https://www.chintai.io/" target="_blank"><div class="bp"></div></a>
         </div>
-        
+      </div>
     `;
   }
   static get properties() {

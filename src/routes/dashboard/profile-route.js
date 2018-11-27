@@ -9,7 +9,7 @@ import '../../worbli-env.js';
 class ProfileRoute extends PolymerElement {
   static get template() {
     return html`
-          <style include="shared-styles">
+      <style include="shared-styles">
         :host {
           display: block;
         }
@@ -261,10 +261,8 @@ class ProfileRoute extends PolymerElement {
         <div class="side">
           <worbli-dashnav></worbli-dashnav>
         </div>
-
         <div class="main">
           <h1>Application</h1>
-
           <div class="input-area">
               <div class="section-name">Documents</div>
               <div class="form-inputs">
@@ -274,8 +272,6 @@ class ProfileRoute extends PolymerElement {
               </div>
             </div>
           <hr>
-
-
           <div class="input-area">
             <div class="section-name">Name</div>
             <div class="form-inputs">
@@ -291,10 +287,8 @@ class ProfileRoute extends PolymerElement {
             </div>
           </div>
           <hr>
-
           <div class="input-area">
             <div class="section-name">Address</div>
-            
             <div class="form-inputs">
             <p class="comment warn">Depending on your jurisdiction fill in the</br> appropriate form fields.</p>
             <label>Country</label>
@@ -524,7 +518,6 @@ class ProfileRoute extends PolymerElement {
                   <option value="WY">Wyoming</option>
                 </select>	
               </template>
-              
               <small class="comment error">[[addressStateError]]</small>
               <label>Apartment / Flat Number</label>
               <input id="addressFlatNumber" value="{{addressFlatNumber::input}}" name="addressFlatNumber" type="text" class="text">
@@ -550,7 +543,6 @@ class ProfileRoute extends PolymerElement {
             </div>
           </div>
           <hr>
-
           <div class="input-area">
             <div class="section-name">Phone</div>
               <div class="form-inputs">
@@ -779,15 +771,12 @@ class ProfileRoute extends PolymerElement {
               <small class="comment error">[[phoneMobileError]]</small>
             </div>
           </div>
-
-
           <hr>
           <div class="input-area">
             <div class="section-name">About</div>
             <div class="form-inputs">
               <label>Date Of Birth</label>
               <select class="dropdown dropdown-short" id="dobDay" value="{{dobDay::input}}">
-
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -898,10 +887,8 @@ class ProfileRoute extends PolymerElement {
                 <option value="1942">1942</option>
                 <option value="1941">1941</option>
                 <option value="1940">1940</option>
-
               </select>
               <small class="comment error">[[dobError]]</small>
-              
               <label>Gender</label>
               <select class="dropdown" id="addressCountry" value="{{gender::input}}">
                 <option value="">Select...</option>
@@ -916,7 +903,6 @@ class ProfileRoute extends PolymerElement {
                 <template is="dom-if" if="{{btnImage}}"><img src="./images/loading-button.gif"></template>
                 [[btnText]]</button>
             </div>
-        <!-- </template> -->
         </div>
       </div>
       </br></br>
@@ -962,31 +948,30 @@ class ProfileRoute extends PolymerElement {
     };
   }
 
-  ready() {
-    super.ready();
-    this._getData();
-    this._onfidoJwt();
+ready() {
+  super.ready();
+  this._getData();
+  this._onfidoJwt();
+}
 
+_onfidoJwt(){
+  const token = localStorage.getItem("token");
+  if(token) {
+    const url = `${this.apiPath}/kyc/applicant`;
+    fetch(url, {
+      method: 'POST',
+      headers: {'Authorization': `Bearer ${token}`},
+    })
+    .then((response) => {return response.json()})
+    .then(response => {
+      this.kycToken2 = response.kyc_token;
+      this.showIframe = true;
+    })
+    .catch(error => {this.set('route.path', '/')});
+  } else {
+    this.set('route.path', '/')
   }
-
-  _onfidoJwt(){
-    const token = localStorage.getItem("token");
-    if(token) {
-      const url = `${this.apiPath}/kyc/applicant`;
-      fetch(url, {
-        method: 'POST',
-        headers: {'Authorization': `Bearer ${token}`},
-      })
-      .then((response) => {return response.json()})
-      .then(response => {
-        this.kycToken2 = response.kyc_token;
-        this.showIframe = true;
-      })
-      .catch(error => {this.set('route.path', '/')});
-    } else {
-      this.set('route.path', '/')
-    }
-  }
+}
 
   _getData(){
     const token = localStorage.getItem("token");
@@ -1002,7 +987,6 @@ class ProfileRoute extends PolymerElement {
           this.nameFirst = response.profile.name_first || "";
           this.nameMiddle = response.profile.name_middle || "";
           this.nameLast = response.profile.name_last || "";
-
           this.addressCountry = response.profile.address_country || "";
           this.addressFlatNumber = response.profile.address_flat_number || "";
           this.addressBuildingName = response.profile.address_building_name || "";
@@ -1012,7 +996,6 @@ class ProfileRoute extends PolymerElement {
           this.addressState = response.profile.address_state || "";
           this.addressTown = response.profile.address_town || "";
           this.addressZip = response.profile.address_zip || "";
-          
           this.phoneCode = response.profile.phone_code || "";
           this.phoneMobile = response.profile.phone_mobile || "";
           this.dobYear = response.profile.date_birth_year || "";
@@ -1035,33 +1018,27 @@ class ProfileRoute extends PolymerElement {
     const name_first = this.nameFirst;
     const name_middle = this.nameMiddle;
     const name_last = this.nameLast;
-
     const address_country = this.addressCountry;
     const address_flat_number = this.addressFlatNumber;
     const address_building_name = this.addressBuildingName;
     const address_building_number =  this.addressBuildingNumber
- 
     console.log("address_building_number");
     console.log(address_building_number);
-
     const address_one = this.addressOne;
     const address_two = this.addressTwo;
     const address_state = this.addressState;
     const address_town = this.addressTown;
     const address_zip = this.addressZip.replace(/\s/g,'');
-//.replace(/-|\s/g,'')
     const phone_code = this.phoneCode;
     const phone_mobile = this.phoneMobile;
     const date_birth_year = this.dobYear;
     const date_birth_month = this.dobMonth;
     const date_birth_day = this.dobDay;
     const gender = this.gender;
-    
     this.addressNumberError = "";
     this.nameFirstError = "";
     this.nameMiddleError = "";
     this.nameLastError = "";
-    
     this.addressCountryError = "";
     this.addressFlatNumberError = "";
     this.addressBuildingNameError = "";
@@ -1070,7 +1047,6 @@ class ProfileRoute extends PolymerElement {
     this.addressStateError = "";
     this.addressTownError = ""
     this.addressZipError = "";
-    
     this.phoneCodeError = "";
     this.phoneMobileError = "";
     this.dobError = "";
@@ -1081,7 +1057,6 @@ class ProfileRoute extends PolymerElement {
     if(name_middle && name_middle.length > 35){check = false; this.nameMiddleError = "Name too long"};
     if(name_last === undefined || name_last === ""){check = false; this.nameLastError = "Please enter a family name"};
     if(name_last && name_last.length > 35){check = false; this.nameLastError = "Name too long"};
-    
     if(address_country === undefined || address_country === ""){check = false; this.addressCountryError = "Please enter a country"};
     if(address_country && address_country.length > 3){check = false; this.addressCountryError = "Country too long"};
     if(address_country && address_country.length < 3){check = false; this.addressCountryError = "Country too short"};
@@ -1089,7 +1064,6 @@ class ProfileRoute extends PolymerElement {
     if(address_zip && address_zip.length > 15){check = false; this.addressZipError = "Zip too long"};
     if(address_town === undefined || address_town === ""){check = false; this.addressCityError = "Please enter a city"};
     if(address_town && address_town.length > 50){check = false; this.addressCityError = "City too long"};
-    
     if(phone_code === undefined || phone_code === ""){check = false; this.phoneCodeError = "Please select a dialing code"};
     if(phone_code && phone_code.length < 1){check = false; this.phoneCodeError = "Phone code too short"};
     if(phone_code && phone_code.length > 4){check = false; this.phoneCodeError = "Phone code too long"};
@@ -1105,7 +1079,6 @@ class ProfileRoute extends PolymerElement {
         name_first, 
         name_middle, 
         name_last, 
-        
         address_country, 
         address_zip, 
         address_town, 
@@ -1115,7 +1088,6 @@ class ProfileRoute extends PolymerElement {
         address_one, 
         address_two, 
         address_state, 
-        
         phone_code, 
         phone_mobile, 
         date_birth_day, 
@@ -1155,6 +1127,5 @@ _save(data){
   })
   .catch(error => console.log('Error:', error));
 }
-
 
 } window.customElements.define('profile-route', ProfileRoute);

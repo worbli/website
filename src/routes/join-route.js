@@ -12,7 +12,6 @@ class JoinRoute extends PolymerElement {
           display: block;
         }
       </style>
-      
       <worbli-join></worbli-join>
       <worbli-footer name="footer"></worbli-footer>
     `;

@@ -86,8 +86,7 @@ class AboutRoute extends PolymerElement {
           <p>WORBLI’s platform is powered by EOSIO, allowing WORBLI to deliver, fast, compliant and secure applications, products and services to the world.</p></br>
           <p>WORBLI is in the process of creating new technology that enables the financial services and technology sectors to benefit from offering their customers instant transactions.</p>
           <iframe width="840" height="472" src="https://www.youtube.com/embed/3tcVg279HLg?start=788" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          
-               </div>
+        </div>
         <div class="side">
           <worbli-whitepaper></worbli-whitepaper>
           <worbli-partners></worbli-partners>

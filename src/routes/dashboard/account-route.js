@@ -248,73 +248,59 @@ class AccountRoute extends PolymerElement {
         <div class="side">
           <worbli-dashnav></worbli-dashnav>
         </div>
-
         <div class="main">
           <h1>Worbli Account</h1>
-
-
-<template is="dom-if" if="{{viewApproved}}">
-
-          <template is="dom-if" if="{{!complete}}">
-          <div class="input-area">
-            <div class="section-name">Name</div>
-            <div class="form-inputs">
-              <label>Worbli Account Name </label>
-              <input id="worbliAccountName" value="{{worbliAccountName::input}}" name="worbliAccountName" type="text" class="lower">
-              <small class="comment error">[[worbliAccountNameError]]</small>
-            </div>
-          </div>
-          <hr>
-
-          <div class="input-area">
-            <div class="section-name">Keys</div>
-            <div class="form-inputs">
-              <label>Active Public Key</label>
-              <small class="comment">You can put your shareable/active keys in both fields.</small></br>
-              <input id="publicKeyActive" value="{{publicKeyActive::input}}" name="publicKeyActive" type="text" class="text">
-              <small class="comment error">[[publicKeyActiveError]]</small>
-              <label>Owner Public Key</label>
-              <input id="publicKeyOwner" value="{{publicKeyOwner::input}}" name="publicKeyOwner" type="text" class="text">
-              <small class="comment error">[[publicKeyOwnerError]]</small>
-              <p>
-              </br></br>
-              <a href="https://worbli.zendesk.com/hc/en-us/articles/360019917571-How-can-I-generate-my-Owner-or-Active-key-using-Scatter-" targer="_blank">How can I generate my Owner or Active key using Scatter?</a></br>
-              </p>
-            </div>
-          </div>
-          </template>
-
-          <template is="dom-if" if="{{complete}}">
-          <p class="intro">Your account has been successfully created!</p>
-          </template>
-
-
+          <template is="dom-if" if="{{viewApproved}}">
+            <template is="dom-if" if="{{!complete}}">
+              <div class="input-area">
+                <div class="section-name">Name</div>
+                <div class="form-inputs">
+                  <label>Worbli Account Name </label>
+                  <input id="worbliAccountName" value="{{worbliAccountName::input}}" name="worbliAccountName" type="text" class="lower">
+                  <small class="comment error">[[worbliAccountNameError]]</small>
+                </div>
+              </div>
+              <hr>
+              <div class="input-area">
+                <div class="section-name">Keys</div>
+                <div class="form-inputs">
+                  <label>Active Public Key</label>
+                  <small class="comment">You can put your shareable/active keys in both fields.</small></br>
+                  <input id="publicKeyActive" value="{{publicKeyActive::input}}" name="publicKeyActive" type="text" class="text">
+                  <small class="comment error">[[publicKeyActiveError]]</small>
+                  <label>Owner Public Key</label>
+                  <input id="publicKeyOwner" value="{{publicKeyOwner::input}}" name="publicKeyOwner" type="text" class="text">
+                  <small class="comment error">[[publicKeyOwnerError]]</small>
+                  <p>
+                  </br></br>
+                  <a href="https://worbli.zendesk.com/hc/en-us/articles/360019917571-How-can-I-generate-my-Owner-or-Active-key-using-Scatter-" targer="_blank">How can I generate my Owner or Active key using Scatter?</a></br>
+                  </p>
+                </div>
+              </div>
+            </template>
+            <template is="dom-if" if="{{complete}}">
+              <p class="intro">Your account has been successfully created!</p>
+            </template>
             <template is="dom-if" if="{{!complete}}">
               <div class="footer">
                 <button type="button" on-click="_applyAccount">Apply for Account</button>
               </div>
             </template>
-
-
-</template>
-
-<template is="dom-if" if="{{viewNamed}}">
-<p class="info">
-Your WORBLI blockchain acocunt has been created. Account name %NAME%</br></br>
-Check it out at <a href="worbli.blocks.io/name">worbli.blocks.io</a></br></br>
-If you had an EOS account on September 7th, you can <a href="./dasboard/sharedrop">Claim your Sharedrop</a>
-</p>
-</template>
-
-<template is="dom-if" if="{{viewCredited}}">
-<p class="info">
-Your WROBLI blockchain acocunt has been created. Account name %NAME%</br></br>
-Check it out at <a href="worbli.blocks.io/name">worbli.blocks.io</a></br></br>
-Congratulations you have successfully claimed your sharedrop!
-</p>
-</template>
-
-
+          </template>
+          <template is="dom-if" if="{{viewNamed}}">
+            <p class="info">
+              Your WORBLI blockchain acocunt has been created. Account name %NAME%</br></br>
+              Check it out at <a href="worbli.blocks.io/name">worbli.blocks.io</a></br></br>
+              If you had an EOS account on September 7th, you can <a href="./dasboard/sharedrop">Claim your Sharedrop</a>
+            </p>
+          </template>
+          <template is="dom-if" if="{{viewCredited}}">
+            <p class="info">
+              Your WROBLI blockchain acocunt has been created. Account name %NAME%</br></br>
+              Check it out at <a href="worbli.blocks.io/name">worbli.blocks.io</a></br></br>
+              Congratulations you have successfully claimed your sharedrop!
+            </p>
+          </template>
         </div>
       </div>
       </br></br>

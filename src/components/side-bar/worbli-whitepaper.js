@@ -9,16 +9,14 @@ class WorbliWhitepaper extends PolymerElement {
           display:block;
         }
         div {
-            /* flex-grow: 1; */
-            color: var(--grey-text);
-            font-size: 12px;
+          color: var(--grey-text);
+          font-size: 12px;
         }
         .bottom a:hover {
           display: block;
           color: var(--green-text);
           text-decoration: underline;
         }
-
         .button{
           margin-bottom: 12px;
         }
@@ -50,17 +48,15 @@ class WorbliWhitepaper extends PolymerElement {
           margin-top:12px;
         }
       </style>
-        <div class="container-paper">
-            <div class="title">Download Papers</div>
-            <a href="https://d1r0t58ow9lja0.cloudfront.net/worbli-short-paper.pdf">
-              <img src="./images/shortpaper.png" alt="white paper" class="white-paper top">
-            </a>
-            <a href="https://d1r0t58ow9lja0.cloudfront.net/worbli-whitepaper.pdf">
-              <img src="./images/whitepaper.png" alt="white paper" class="white-paper">
-            </a>
-
-   
-        </div>
+      <div class="container-paper">
+        <div class="title">Download Papers</div>
+        <a href="https://d1r0t58ow9lja0.cloudfront.net/worbli-short-paper.pdf">
+          <img src="./images/shortpaper.png" alt="white paper" class="white-paper top">
+        </a>
+        <a href="https://d1r0t58ow9lja0.cloudfront.net/worbli-whitepaper.pdf">
+          <img src="./images/whitepaper.png" alt="white paper" class="white-paper">
+        </a>
+      </div>
     `;
   }
   static get properties() {

@@ -9,7 +9,7 @@ import '../../components/side-bar/worbli-dashnav.js';
 class SharedropRoute extends PolymerElement {
   static get template() {
     return html`
-          <style include="shared-styles">
+      <style include="shared-styles">
         :host {
           display: block;
         }
@@ -242,25 +242,21 @@ class SharedropRoute extends PolymerElement {
         <div class="side">
           <worbli-dashnav></worbli-dashnav>
         </div>
-
         <div class="main">
           <h1>Claim Sharedrop</h1>
           <p class="intro">
-          1. You are going to be using Scatter in order to claim your sharedrop. Make sure you have the Scatter Desktop application open.</br>
-          2. Click on the "Attach Scatter to EOS" button.</br>
-          3. A pop-up window may appear, choose “Login” and then choose your EOS identity.</br>
-          4. Click on the “Claim Sharedrop” button.</br>
-          5. A pop-up window will appear, click on the tick to sign the transaction on the EOS network.</br></br>
+            1. You are going to be using Scatter in order to claim your sharedrop. Make sure you have the Scatter Desktop application open.</br>
+            2. Click on the "Attach Scatter to EOS" button.</br>
+            3. A pop-up window may appear, choose “Login” and then choose your EOS identity.</br>
+            4. Click on the “Claim Sharedrop” button.</br>
+            5. A pop-up window will appear, click on the tick to sign the transaction on the EOS network.</br></br>
           </p>
-     
-        <template is="dom-if" if="{{!scatterConnected}}">
-          <button type="button" on-click="_startVerificatoin">Attach Scatter to EOS</button>
-        </template>
-        
-        <template is="dom-if" if="{{scatterConnected}}">
-          <button type="button" on-click="_signScatter">Claim Sharedrop</button>
-        </template>
-
+          <template is="dom-if" if="{{!scatterConnected}}">
+            <button type="button" on-click="_startVerificatoin">Attach Scatter to EOS</button>
+          </template>
+          <template is="dom-if" if="{{scatterConnected}}">
+            <button type="button" on-click="_signScatter">Claim Sharedrop</button>
+          </template>
         </div>
       </div>
       </br></br>
@@ -322,16 +318,9 @@ class SharedropRoute extends PolymerElement {
     };
   }
 
-  // ready() {
-  //   super.ready();
-  //   this._routeChanged();
-  // }
-
-
   _routeChanged(){
     console.log('changed')
     const location = this.route.path.split("/");
-
     if(location[2] === 'sharedrop'){
       this.onPage = true;
       this._checkShareDrop();
@@ -344,23 +333,23 @@ class SharedropRoute extends PolymerElement {
 
   _checkShareDrop(){ 
     if(this.onPage){
-        this.refreshIntervalId = setInterval(()=>{
-          const token = localStorage.getItem("token");
-          const url = `${this.apiPath}/user/sharedrop/`;
-          fetch(url, {
-            method: 'GET',
-            headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
-          })
-          .then((response) => {return response.json()})
-          .then((response) => {
-            if(response && response.data === true){
-              const newjwt = response.newjwt;
-              localStorage.setItem("token", newjwt);
-              this.set('route.path', '/dashboard/account')
-              clearInterval(this.refreshIntervalId);
-            }
-          })
-        }, this.interval)
+      this.refreshIntervalId = setInterval(()=>{
+        const token = localStorage.getItem("token");
+        const url = `${this.apiPath}/user/sharedrop/`;
+        fetch(url, {
+          method: 'GET',
+          headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
+        })
+        .then((response) => {return response.json()})
+        .then((response) => {
+          if(response && response.data === true){
+            const newjwt = response.newjwt;
+            localStorage.setItem("token", newjwt);
+            this.set('route.path', '/dashboard/account')
+            clearInterval(this.refreshIntervalId);
+          }
+        })
+      }, this.interval)
     }
   }
 
@@ -395,36 +384,36 @@ class SharedropRoute extends PolymerElement {
     ScatterJS.plugins(new ScatterEOS());
     ScatterJS.scatter.connect("worbli")
     .then(connected => {
-        if (!connected) return false;
-        scatter = ScatterJS.scatter;
-        scatter.getIdentity(reqFields)
-        .then(() => {
-          eos = scatter.eos(network, Eos, options) 
-          this.scatterConnected = true;
-          this.eos = eos;
-          this.scatter = scatter; 
-        })
-        .catch((error) => {
-          alert('Scatter not found, Open it and try again');
-        });
+      if (!connected) return false;
+      scatter = ScatterJS.scatter;
+      scatter.getIdentity(reqFields)
+      .then(() => {
+        eos = scatter.eos(network, Eos, options) 
+        this.scatterConnected = true;
+        this.eos = eos;
+        this.scatter = scatter; 
+      })
+      .catch((error) => {
+        alert('Scatter not found, Open it and try again');
+      });
     })
     .catch(error => console.log(error));
 
   }
 
   _signScatter(){
-      const account = this.scatter.identity.accounts.find(x => x.blockchain === 'eos');
-      const options = { authorization:[`${account.name}@${account.authority}`]};
-      const contractAccount = 'worbliworbli';
-      const functionName = 'reg';
-      const owner = account.name;
-      const securitycode = this.securityCode;
-      const args = {owner, securitycode}
-      this.eos.transaction([contractAccount], sendTx => {
-          sendTx[contractAccount][functionName](args, options)
-      })
-      .then(trx => console.log('trx', trx))
-      .catch(err => console.error(err));
+    const account = this.scatter.identity.accounts.find(x => x.blockchain === 'eos');
+    const options = { authorization:[`${account.name}@${account.authority}`]};
+    const contractAccount = 'worbliworbli';
+    const functionName = 'reg';
+    const owner = account.name;
+    const securitycode = this.securityCode;
+    const args = {owner, securitycode}
+    this.eos.transaction([contractAccount], sendTx => {
+      sendTx[contractAccount][functionName](args, options)
+    })
+    .then(trx => console.log('trx', trx))
+    .catch(err => console.error(err));
   }
 
 } window.customElements.define('sharedrop-route', SharedropRoute);

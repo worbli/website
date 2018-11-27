@@ -131,80 +131,73 @@ class MainRoute extends PolymerElement {
         }
 	    	@media only screen and (max-width: 600px){
           worbli-snapshot{
-          margin-top:0px;
-        }
-			  .mobile-signup-buttons{
-				  display:block;
-          margin: 12px;
-			  }
-        :host {
-          margin-top:50px;
-        }
-        h1 {
-          font-size: 20px;
-          margin: 12px 12px 0 12px;
-          line-height: 2;
-        }
-        .tag{
-          margin: 0 11px 20px 12px;
-          line-height: 1.5;
-        }
-        .square {
-          width: 100vw;
-          margin-right: 0px;
-        }
-        .side {
-          width: 100vw;
-          padding-left: 0px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-        p {
-          font-size: 11px;
-        }
-        .container {
-          border-radius:0px;
-        }
-        .pic1{
-          border-top-left-radius: 0px;
-          border-top-right-radius: 0px;
-        }
-        .pic2{
-          border-top-left-radius: 0px;
-          border-top-right-radius: 0px;
-        }
-        .pic3,{
-          border-top-left-radius: 0px;
-          border-top-right-radius: 0px;
-        }
-        .pic4{
-          border-top-left-radius: 0px;
-          border-top-right-radius: 0px;
-        }
-        .pic {
-          height: 218px;
-        }
-		}
+            margin-top:0px;
+          }
+          .mobile-signup-buttons{
+            display:block;
+            margin: 12px;
+          }
+          :host {
+            margin-top:50px;
+          }
+          h1 {
+            font-size: 20px;
+            margin: 12px 12px 0 12px;
+            line-height: 2;
+          }
+          .tag{
+            margin: 0 11px 20px 12px;
+            line-height: 1.5;
+          }
+          .square {
+            width: 100vw;
+            margin-right: 0px;
+          }
+          .side {
+            width: 100vw;
+            padding-left: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+          p {
+            font-size: 11px;
+          }
+          .container {
+            border-radius:0px;
+          }
+          .pic1{
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+          }
+          .pic2{
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+          }
+          .pic3,{
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+          }
+          .pic4{
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+          }
+          .pic {
+            height: 218px;
+          }
+		    }
       </style>
-
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <div class="split">
         <div class="main">
-
-
           <h1>Where Fintech & Blockchain Meet</h1>
           <p class="tag">The future is near and we’re ready to take you there.</p>
-
           <div class="mobile-signup-buttons">
             <button class="btn-critical" on-click="_signIn">Sign In</button>
             <button class="btn-critical" on-click="_joinNow">Join Now</button>
           </div>
-
-
           <worbli-subscribe></worbli-subscribe>
           <div class="tile-holder">
-
           <a href="/about/" class="box-link">
             <div class="container square">
               <div class="pic pic1"></div>
@@ -215,7 +208,6 @@ class MainRoute extends PolymerElement {
               </div>
             </div>
           </a>
-        
           <a href="/network/" class="box-link">
           <div class="container square no-right">
             <div class="pic pic2"></div>
@@ -226,7 +218,6 @@ class MainRoute extends PolymerElement {
             </div>
           </div>
           </a>
-
             <a href="/team/" class="box-link">
               <div class="container square">
                 <div class="pic pic3"></div>
@@ -237,7 +228,6 @@ class MainRoute extends PolymerElement {
                 </div>
               </div>
             </a>
-
             <a href="/profservices/" class="box-link ">
               <div class="container square no-right ">
                 <div class="pic pic4"></div>
@@ -246,22 +236,17 @@ class MainRoute extends PolymerElement {
                 </div>
               </div>
             </a>
-
         </div>
-        
         <div class="side">
           <worbli-snapshot></worbli-snapshot>
           <worbli-support></worbli-support>
           <worbli-whitepaper></worbli-whitepaper>
           <worbli-telegram></worbli-telegram>
         </div>
-
       </div>
       <worbli-footer name="footer"></worbli-footer>
     `;
   }
-
-
   _joinNow(){
     this.set('route.path', '/join');
   }
@@ -271,9 +256,5 @@ class MainRoute extends PolymerElement {
   _join() {
     this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'join'}}));
   }
-
-
-
-
 
 } window.customElements.define('main-route', MainRoute);

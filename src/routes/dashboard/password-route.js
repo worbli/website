@@ -10,7 +10,7 @@ import '../../components/worbli-logger.js';
 class PasswordRoute extends PolymerElement {
   static get template() {
     return html`
-          <style include="shared-styles">
+      <style include="shared-styles">
         :host {
           display: block;
         }
@@ -245,11 +245,9 @@ class PasswordRoute extends PolymerElement {
               <small class="comment error">[[passwordTwoError]]</small>
             </div>
           </div>
-         
-            <div class="footer">
-              <button type="button" on-click="_savePassword">Set Password & Login</button>
-            </div>
-  
+          <div class="footer">
+            <button type="button" on-click="_savePassword">Set Password & Login</button>
+          </div>
         </div>
       </div>
       </br></br>
@@ -271,8 +269,6 @@ class PasswordRoute extends PolymerElement {
       },
     };
   }
-
-
 
 _savePassword(){
   this.passwordError = ""
@@ -314,6 +310,5 @@ _save(data){
   })
   .catch(error => console.error('Error:', error));
 }
-
 
 } window.customElements.define('password-route', PasswordRoute);

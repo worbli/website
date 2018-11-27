@@ -8,30 +8,31 @@ class WorbliRpc extends PolymerElement {
   }
   static get properties() {
     return {
-        connect: {
-            type: Boolean,
-            value: false,
-            observer: '_connect',
-        },
-        connected: {
-            type: Boolean,
-            value: false,
-        },
-        endpoint: {
-            type: String,
-        },
-        jsonrpc: {
-            type: Object,
-            notify: true,
-            reflectToAttribute: true
-        },
+      connect: {
+        type: Boolean,
+        value: false,
+        observer: '_connect',
+      },
+      connected: {
+        type: Boolean,
+        value: false,
+      },
+      endpoint: {
+        type: String,
+      },
+      jsonrpc: {
+        type: Object,
+        notify: true,
+        reflectToAttribute: true
+      },
     };
   }
 
   _connect(){
     if(this.endpoint){
-        const eosrpc = jsonrpc_connect();
-        this.jsonrpc = new eosrpc.JsonRpc(this.endpoint);
+      const eosrpc = jsonrpc_connect();
+      this.jsonrpc = new eosrpc.JsonRpc(this.endpoint);
     }    
   }
+  
 } window.customElements.define('worbli-rpc', WorbliRpc);

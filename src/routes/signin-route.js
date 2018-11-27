@@ -13,7 +13,6 @@ class SigninRoute extends PolymerElement {
       </style>
       
       <worbli-signin></worbli-signin>
-
       <worbli-footer name="footer"></worbli-footer>
     `;
   }

@@ -33,8 +33,8 @@ class ProfservicesRoute extends PolymerElement {
         }
         iframe {
           margin-top: 50px;
-		  margin-bottom: 50px;
-		  width:100%;
+		      margin-bottom: 50px;
+		      width:100%;
         }
         .side {
           width: 280px;
@@ -97,9 +97,9 @@ class ProfservicesRoute extends PolymerElement {
           <p>We want you to feel secure in knowing what you are releasing can only be used as it’s intended.</p>
         </div>
         <div class="side">
-            <worbli-partners></worbli-partners>
-            <worbli-producers></worbli-producers>
-            <worbli-telegram></worbli-telegram>
+          <worbli-partners></worbli-partners>
+          <worbli-producers></worbli-producers>
+          <worbli-telegram></worbli-telegram>
         </div>
       </div>
       <worbli-footer name="footer"></worbli-footer>

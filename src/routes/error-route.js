@@ -1,5 +1,4 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-
 class ErrorRoute extends PolymerElement {
   static get template() {
     return html`
@@ -8,8 +7,6 @@ class ErrorRoute extends PolymerElement {
           display: block;
         }
       </style>
-
-
       Oops you hit a 404. <a href="[[rootPath]]">Head back to home.</a>
     `;
   }

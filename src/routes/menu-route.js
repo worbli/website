@@ -81,8 +81,8 @@ class MenuRoute extends PolymerElement {
         }
       </style>
       
-        <img src="./images/logo.svg">
-        <ul>
+      <img src="./images/logo.svg">
+      <ul>
         <a href="/"><li>Home</li></a>
         <a href="/about"><li>About</li></a>
         <a href="/vision"><li>Vision</li></a>
@@ -90,9 +90,7 @@ class MenuRoute extends PolymerElement {
         <a href="/roadmap"><li>Roadmap</li></a>
         <a href="/network"><li>Network</li></a>
         <a href="https://worbli.zendesk.com/hc/en-us"><li>Support</li></a>
-
-        </ul>
-   
+      </ul>
     `;
   }
 } window.customElements.define('menu-route', MenuRoute);

@@ -1,8 +1,6 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
-
-
 class SharedropRoute extends PolymerElement {
   static get template() {
     return html`
@@ -64,21 +62,19 @@ class SharedropRoute extends PolymerElement {
         <div class="main">
           <h1>5 Steps to claim your Share Drop</h1>
           <p>
-
             1. Click Join Now and Enter an email<br>
             2. Verify your email<br>
             3. Complete Registration by following the link in your email <br>
             4. Complete Itentity Verification<br>
             5. Select a Worbli Username and provide a public key to recieve the share drop<br>
- 
-</p>
+        </p>
         </div>
         <div class="side">
         <div class="container">
-            <div class="title">White Paper</div>
+          <div class="title">White Paper</div>
         </div>
         <div class="container">
-            <div class="title">Our Partners</div>
+          <div class="title">Our Partners</div>
         </div>
         </div>
       </div>

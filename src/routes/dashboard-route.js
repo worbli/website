@@ -20,7 +20,6 @@ class DasboardRoute extends PolymerElement {
           margin: 0 auto;
         }
       </style>
-
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <app-route route="{{route}}" pattern="[[rootPath]]dashboard/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main" class="center">
@@ -31,7 +30,6 @@ class DasboardRoute extends PolymerElement {
         <account-route name="account"></account-route>   
         <sharedrop-route name="sharedrop"></sharedrop-route>        
       </iron-pages>
-      
     `;
   }
 

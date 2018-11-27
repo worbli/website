@@ -7,7 +7,6 @@ import '@polymer/iron-pages/iron-pages.js';
 import './components/worbli-header.js';
 import './components/worbli-overlay.js';
 
-
 setPassiveTouchGestures(true);
 setRootPath(WorbliPortalGlobals.rootPath);
 
@@ -24,11 +23,11 @@ class WorbliPortal extends PolymerElement {
           margin: 0 auto;
         }
         .header {
-            position: fixed;
-            top: 0; 
-            width: 100%; 
-            z-index:100;
-          }
+          position: fixed;
+          top: 0; 
+          width: 100%; 
+          z-index:100;
+        }
         iron-pages {
           padding-top: 80px;
         }
@@ -47,7 +46,6 @@ class WorbliPortal extends PolymerElement {
       <template is="dom-if" if="{{!hide}}">
         <worbli-header name="header" class="header"></worbli-header>
       </template>
-
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main" class="center">
         <main-route name="main"></main-route>
         <network-route name="network"></network-route>
@@ -70,7 +68,6 @@ class WorbliPortal extends PolymerElement {
         <join-route name="join"></join-route>
         <menu-route name="menu"></menu-route>
       </iron-pages>
-      
     `;
   }
 

@@ -41,11 +41,9 @@ class NetworkRoute extends PolymerElement {
             display: none;
           }
         }
-  
       </style>
 
       <worbli-rpc connect endpoint="https://endpoint-1.worbli.io" jsonrpc="{{jsonrpc}}"></worbli-rpc>
-
       <div class="split">
         <div class="main">
           <block-producers class="main" jsonrpc="[[jsonrpc]]" producer="[[producer]]" interval="500"></block-producers>
