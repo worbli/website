@@ -295,7 +295,7 @@ class AccountRoute extends PolymerElement {
             <p class="info">
               Your WORBLI blockchain acocunt has been created. Account name <b>[[worbliAccountName]]</b></br></br>
               Check it out at <a href="https://worbli.bloks.io/account/[[worbliAccountName]]">worbli.blocks.io</a></br></br>
-              If you had an EOS account on September 7th, you can <a href="./dasboard/sharedrop">Claim your Sharedrop</a>
+              If you had an EOS account on September 7th, you can <a href="/dasboard/sharedrop">Claim your Sharedrop</a>
             </p>
           </template>
           <template is="dom-if" if="{{viewCredited}}">
