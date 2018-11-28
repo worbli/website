@@ -4,6 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-producers.js';
 import '../components/side-bar/worbli-partners.js';
 import '../components/side-bar/worbli-telegram.js';
+import '../components/worbli-title.js';
 class ProfservicesRoute extends PolymerElement {
   static get template() {
     return html`
@@ -67,10 +68,9 @@ class ProfservicesRoute extends PolymerElement {
           font-weight: 600;
         }
       </style>
-
+      <worbli-title title="Professional Services"></worbli-title>
       <div class="split">
         <div class="main">
-          <h1>Professional Services</h1>
           <b>WORBLI Professional Services brings blockchain expertise and innovation into the heart of every industry.</b></br></br>
           <h2>Fintech</h2>
           <p>Fintech, (or financial technology), is revolutionizing how businesses move money. Whether it is consumer transactions, investments or paying for business expenses, more and more organizations are doing all of these things from their smartphones and computers. Utilizing the Blockchain, Worbli is helping developers work from a compliant, secure platform to create applications that improve and automate the use of financial services. ​​​</p>

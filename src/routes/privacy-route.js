@@ -4,7 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
-
+import '../components/worbli-title.js';
 
 class PrivacyRoute extends PolymerElement {
   static get template() {
@@ -100,10 +100,9 @@ class PrivacyRoute extends PolymerElement {
 					margin-top: 20px;
         }
       </style>
-      
+      <worbli-title title="Privacy Policy"></worbli-title>  
       <div class="split">
         <div class="main">
-          <h1>Privacy Policy</h1>
 						<ol>
 							<li><strong>Introduction</strong>
 							<ol>

@@ -4,7 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
-
+import '../components/worbli-title.js';
 
 class NetworkTermsRoute extends PolymerElement {
   static get template() {
@@ -96,7 +96,7 @@ class NetworkTermsRoute extends PolymerElement {
 					margin-top: 20px;
         }
       </style>
-      
+      <worbli-title title="Network Terms"></worbli-title>  
       <div class="split">
         <div class="main">
           <h1>Network Terms</h1>

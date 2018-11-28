@@ -5,6 +5,7 @@ import '../components/worbli-rpc.js';
 import '../components/network-monitor/block-info.js';
 import '../components/network-monitor/block-producers.js';
 import '../components/side-bar/worbli-snapshot.js';
+import '../components/worbli-title.js';
 
 class NetworkRoute extends PolymerElement {
   static get template() {
@@ -44,6 +45,7 @@ class NetworkRoute extends PolymerElement {
       </style>
 
       <worbli-rpc connect endpoint="https://endpoint-1.worbli.io" jsonrpc="{{jsonrpc}}"></worbli-rpc>
+      <worbli-title title="Network"></worbli-title>
       <div class="split">
         <div class="main">
           <block-producers class="main" jsonrpc="[[jsonrpc]]" producer="[[producer]]" interval="500"></block-producers>

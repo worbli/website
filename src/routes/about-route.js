@@ -4,6 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-partners.js';
 import '../components/side-bar/worbli-telegram.js';
+import '../components/worbli-title.js';
 class AboutRoute extends PolymerElement {
   static get template() {
     return html`
@@ -76,9 +77,9 @@ class AboutRoute extends PolymerElement {
 
         }
       </style>
+      <worbli-title title="About"></worbli-title>
       <div class="split">
         <div class="main">
-          <h1>About WORBLI</h1>
           <b>Here at WORBLI we are on a mission to develop the world’s most cost-effective and developer-friendly, consumer and enterprise blockchain platform.</b></br></br>
           <p>To do this WORBLI is offering a user-friendly financial services ecosystem where users, developers, and businesses can access a huge range of powerful applications with limitless possibilities.<p></br>
           <iframe width="840" height="472" src="https://www.youtube.com/embed/QKAPbJbOdnU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

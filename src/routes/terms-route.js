@@ -4,6 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
+import '../components/worbli-title.js';
 
 class TermsRoute extends PolymerElement {
   static get template() {
@@ -69,10 +70,10 @@ class TermsRoute extends PolymerElement {
         strong {
           color: var(--blue-text);
         }
-      </style>      
+      </style>   
+      <worbli-title title="User Terms"></worbli-title>   
       <div class="split">
         <div class="main">
-        <h1>WORBLI User Terms</h1></br>
         <p>As a user of the WORBLI ecosystem, you will be subject to certain terms of use based on your status and activities. These are:</p></br>
         <ul>
           <li><strong>Platform User</strong> – all users will sign up to the WORBLI Platform. This is essentially the first step in your WORBLI journey. This is where you find out about the WORBLI Network, WORBLI Developer Support and WORBLI Tokens, etc. Here you can read and post content, interact with other WORBLI users and ask questions of WORBLI directly. In order to be a Platform User, you are only required to provide us with your name and contact details. Your use of the WORBLI Platform is governed by the <a href="/platformterms">Platform Terms</a>, which <em>only</em> set out standard rights and obligations around your use of the WORBLI Platform. At this stage, apart from your name and email, we are not seeking to collect any further identification information nor will we use it for any purpose other than the limited purpose stated in our <a href="/platformterms">Platform Terms</a> and <a href="/privacy">Privacy Policy</a> (both set out below).</li></br>

@@ -5,6 +5,7 @@ import '../components/worbli-roadmap.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-partners.js';
 import '../components/side-bar/worbli-telegram.js';
+import '../components/worbli-title.js';
 
 class RoadmapRoute extends PolymerElement {
   static get template() {
@@ -79,10 +80,9 @@ class RoadmapRoute extends PolymerElement {
           }
         }
       </style>
-
+      <worbli-title title="Roadmap"></worbli-title>
       <div class="split">
       <div class="main">
-          <h1>Roadmap</h1>
           <div class="center">
             <h2>Product</h2>
               <div class="roadmap-container">
