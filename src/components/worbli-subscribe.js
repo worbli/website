@@ -91,6 +91,9 @@ class WorbliSubscribe extends PolymerElement {
           color: #9BE2F9;
           opacity: 1; 
         }
+        .label{
+          display:none;
+        }
         </style>
         <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
         <worbli-env api-path={{apiPath}}></worbli-env>
@@ -100,7 +103,8 @@ class WorbliSubscribe extends PolymerElement {
               <div class="right">
                 <template is="dom-if" if="{{!complete}}">
                   <div>
-                    <input type="email" name="email" class="email" value="{{email::input}}" placeholder="[[placeholder]]">
+                    <label for="email" class="label">Email:</label>
+                    <input type="email" name="email" class="email" id="email" value="{{email::input}}" placeholder="[[placeholder]]">
                     <input type="submit" value="Subscribe" class="submit" on-click="_subscribe">
                   </div>
                   <div class="tagline">By subscribing to this mailing list you opt in to marketing communications.</div>

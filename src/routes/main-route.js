@@ -198,41 +198,41 @@ class MainRoute extends PolymerElement {
           </div>
           <worbli-subscribe></worbli-subscribe>
           <div class="tile-holder">
-          <a href="/about/" class="box-link">
+          <a href="/about/" class="box-link" nmae="WORBLI Financial District">
             <div class="container square">
               <div class="pic pic1"></div>
               <div class="footer">
               <h4>WORBLI Financial District</h4>
               <div class="description">Learn about the next generation of financial services...</div>
-              <img src="./images/next.svg" class="next"> 
+              <img src="./images/next.svg" class="next" alt="select button"> 
               </div>
             </div>
           </a>
-          <a href="/network/" class="box-link">
+          <a href="/network/" class="box-link" name="WORBLI Developer Resources">
           <div class="container square no-right">
             <div class="pic pic2"></div>
             <div class="footer">
             <h4>WORBLI Developer Resources</h4>
             <div class="description">Check out which BP produced the last block...</div>
-            <img src="./images/next.svg" class="next"> 
+            <img src="./images/next.svg" class="next" alt="select button"> 
             </div>
           </div>
           </a>
-            <a href="/team/" class="box-link">
+            <a href="/team/" class="box-link" name="WORBLI Team & Partners">
               <div class="container square">
                 <div class="pic pic3"></div>
                 <div class="footer">
                   <h4>WORBLI Team & Partners</h4>
                   <div class="description">Discover who’s building the WORBLI ecosystem...</div>
-                  <img src="./images/next.svg" class="next"> 
+                  <img src="./images/next.svg" class="next" alt="select button"> 
                 </div>
               </div>
             </a>
-            <a href="/profservices/" class="box-link ">
+            <a href="/profservices/" class="box-link" name="WORBLI Professional Services">
               <div class="container square no-right ">
                 <div class="pic pic4"></div>
                   <div class="footer"><h4>WORBLI Professional Services</h4><div class="description">Launch your dApp in safe hands</div></div>
-                  <img src="./images/next.svg" class="next"> 
+                  <img src="./images/next.svg" class="next" alt="select button"> 
                 </div>
               </div>
             </a>
