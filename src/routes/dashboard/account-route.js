@@ -23,6 +23,7 @@ class AccountRoute extends PolymerElement {
           padding-right: 30px;
         }
         .main {
+          max-width: 850px;
           flex-grow: 1;
           background: #FFF;
           border-radius: 3px;
