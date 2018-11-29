@@ -1,8 +1,8 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@polymer/app-route/app-location.js';
 import '../../css/shared-styles.js';
 import '../../components/worbli-footer.js';
 import '../../components/side-bar/worbli-snapshot.js';
-import '@polymer/app-route/app-location.js';
 import '../../components/side-bar/worbli-dashnav.js';
 import '../../worbli-env.js';
 
@@ -12,10 +12,6 @@ class AccountRoute extends PolymerElement {
           <style include="shared-styles">
         :host {
           display: block;
-        }
-        iframe {
-          margin-top: 50px;
-          margin-bottom: 50px;
         }
         .split {
           display: flex;
@@ -28,38 +24,11 @@ class AccountRoute extends PolymerElement {
         }
         .main {
           flex-grow: 1;
-          max-width: 830px;
           background: #FFF;
           border-radius: 3px;
           box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
           -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
           -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-        }
-        .container {
-          position: relative;
-          background: #FFF;
-          border-radius: 3px;
-          box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          margin-bottom: 18px;
-            }
-        .navigation {
-          color: #3a3e46;
-          font-size: 11px;
-          font-weight: 600;
-          line-height: 16px;
-          padding: 13px 12px;
-          border-bottom: 1px solid #f5f5f5;
-          background: none;
-          text-shadow: none;
-        }
-        .navigation:hover {
-          background-color: #F6F6F7;
-        }
-        .selected {
-          color: black;
-          background-color: #F6F6F7;
         }
         .footer {
           margin-top: 24px;
@@ -75,16 +44,6 @@ class AccountRoute extends PolymerElement {
           font-size: 13px;
           border-bottom: 1px solid #f5f5f5;
           padding: 12px;
-        }
-        h2 {
-          color: var(--blue-text);
-          font-size: 21px;
-          font-weight: 600;
-          margin-top: 12px;
-          margin-bottom: 12px;
-        }
-        .container a {
-          text-decoration: none;
         }
         button {
           display: inline-block;
@@ -155,59 +114,8 @@ class AccountRoute extends PolymerElement {
           display: block;
           border-top: 1px solid #f5f5f5;
         }
-        .dropdown {
-          background-color: #f8f8f8;
-          border-color: #d1d5d7;
-          -webkit-appearance: none;
-          appearance: none;
-          -moz-appearance: none;
-          -moz-appearance: none;
-          line-height: 15px;
-          padding: 5px 5px 5px 7px;
-          -webkit-padding-end: 20px;
-          height: 31px;
-          font-size: 13px;
-          border: 1px solid #D9DBDE;
-          border-radius: 3px;
-          background: url(./images/dropdown.gif) no-repeat;
-          background-size: 18px 22px;
-          background-position: 100% 50%;
-          width: 320px;
-        }
         .error{
           color: #E54D53;
-        }
-        .notReady{
-          cursor: not-allowed;
-          opacity: 0.3;
-        }
-        .steps{
-
-          margin-left: 40px;
-        }
-        .step-text {
-          margin-left: 17px;
-          color: #D8D8D8;
-          font-weight:600;
-        }
-        .step-text div {
-          text-align: center;
-          display:inline-block;
-          width:78px;
-        }
-        .step{
-          color:#272727;
-        }
-        .sidebar{
-          padding-bottom: 12px;
-          background: #FFF;
-          border-radius: 3px;
-          box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-        }
-        .dropdown-short{
-          width:100px;
         }
         .intro{
           padding: 12px;
@@ -229,9 +137,6 @@ class AccountRoute extends PolymerElement {
         }
         .text{
           text-transform: capitalize;
-        }
-        .upper {
-          text-transform: uppercase;
         }
         .lower {
           text-transform: lowercase;

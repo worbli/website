@@ -13,10 +13,6 @@ class StatusRoute extends PolymerElement {
         :host {
           display: block;
         }
-        iframe {
-          margin-top: 50px;
-          margin-bottom: 50px;
-        }
         .split {
           display: flex;
           flex-direction: row;
@@ -28,22 +24,12 @@ class StatusRoute extends PolymerElement {
         }
         .main {
           flex-grow: 1;
-          max-width: 830px;
           background: #FFF;
           border-radius: 3px;
           box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
           -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
           -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
         }
-        .container {
-          position: relative;
-          background: #FFF;
-          border-radius: 3px;
-          box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          margin-bottom: 18px;
-            }
         .navigation {
           color: #3a3e46;
           font-size: 11px;
@@ -55,10 +41,6 @@ class StatusRoute extends PolymerElement {
           text-shadow: none;
         }
         .navigation:hover {
-          background-color: #F6F6F7;
-        }
-        .selected {
-          color: black;
           background-color: #F6F6F7;
         }
         .footer {
@@ -75,16 +57,7 @@ class StatusRoute extends PolymerElement {
           border-bottom: 1px solid #f5f5f5;
           padding: 12px;
         }
-        h2 {
-          color: var(--blue-text);
-          font-size: 21px;
-          font-weight: 600;
-          margin-top: 12px;
-          margin-bottom: 12px;
-        }
-        .container a {
-          text-decoration: none;
-        }
+
         button {
           display: inline-block;
           vertical-align: middle;
@@ -178,65 +151,11 @@ class StatusRoute extends PolymerElement {
           background-position: 100% 50%;
           width: 320px;
         }
-        .error{
-          color: #E54D53;
-        }
-        .notReady{
-          cursor: not-allowed;
-          opacity: 0.3;
-        }
-        .steps{
 
-          margin-left: 40px;
-        }
-        .step-text {
-          margin-left: 17px;
-          color: #D8D8D8;
-          font-weight:600;
-        }
-        .step-text div {
-          text-align: center;
-          display:inline-block;
-          width:78px;
-        }
-        .step{
-          color:#272727;
-        }
-        .sidebar{
-          padding-bottom: 12px;
-          background: #FFF;
-          border-radius: 3px;
-          box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-        }
-        .dropdown-short{
-          width:100px;
-        }
         .intro{
           padding: 12px;
         }
-        .button {
-          display: block;
-          box-shadow: inset 0 0 0 1px #c8d6e8;
-          padding: 6px;
-          border-radius: 3px;
-          text-align: center;
-          padding-top: 12px;
-          height: 25px;
-          margin: 0 12px 0 12px;
-          text-decoration: none;
-          color: #4978b3;
-          font-size: 12px;
-          font-weight: 600;
-          width: 290px;
-        }
-        .text{
-          text-transform: capitalize;
-        }
-        .upper {
-          text-transform: uppercase;
-        }
+
         @media only screen and (max-width: 600px){
           .split {
             margin-top: 40px;
@@ -244,8 +163,6 @@ class StatusRoute extends PolymerElement {
           .section-name{
             width:0px;
             height:0px;
-          }
-          .section-name {
             display: none;
           }
           .side {

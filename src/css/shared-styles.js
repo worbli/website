@@ -16,6 +16,10 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         display: block;
       }
       :host {
+        --blue-title-text: rgba(75,79,93, 1);
+        --grey-subtitle-text: rgba(157,161,171 1);
+
+
         --grey-keyline: rgba(220, 226, 239, 1);
         --grey-text: rgba(120, 131, 145, 1);
         --blue-navigation: rgba(38, 40, 88, 1);

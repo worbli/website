@@ -58,16 +58,16 @@ class MainRoute extends PolymerElement {
           :host {
             margin-top:50px;
           }
-          .mobile-signup-buttons{
-            display:block;
-            margin: 12px;
-          }
           .side {
             width: 100vw;
             padding-left: 0px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+          }
+          .mobile-signup-buttons{
+            display:block;
+            margin: 12px;
           }
 		    }
       </style>

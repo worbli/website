@@ -19,6 +19,9 @@ class DasboardRoute extends PolymerElement {
           max-width: 1160px;
           margin: 0 auto;
         }
+        iron-pages {
+          padding-top: 25px;
+        }
       </style>
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <app-route route="{{route}}" pattern="[[rootPath]]dashboard/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>

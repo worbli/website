@@ -7,16 +7,16 @@ class WorbliTitle extends PolymerElement {
         :host {
           display: block;
         }
-        .page-title {
+        div {
           margin: 18px 0 18px 0; 
         }
-        .page-title h1 {
-          color: var(--blue-text);
+        h1 {
+          color: var(--blue-title-text);
           font-size: 33px;
           font-weight: 500; 
         }
-        .page-title p {
-          color: var(--blue-text);
+        p {
+          color: var(--grey-subtitle-text);
           font-size: 14px;
         }
         @media only screen and (max-width: 600px){
@@ -25,14 +25,14 @@ class WorbliTitle extends PolymerElement {
             margin: 12px 12px 0 12px;
             line-height: 2;
           }
-          .page-title p {
+          p {
             margin: 0 11px 20px 12px;
             line-height: 1.5;
-            font-size: 11px;
+            font-size: 12px;
           }
         }
         </style>
-        <div class="page-title">
+        <div>
           <h1>[[title]]</h1>
           <p>[[subTitle]]</p>
         </div>
