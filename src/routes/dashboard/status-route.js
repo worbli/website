@@ -23,6 +23,7 @@ class StatusRoute extends PolymerElement {
           padding-right: 30px;
         }
         .main {
+          max-width: 850px;
           flex-grow: 1;
           background: #FFF;
           border-radius: 3px;
@@ -180,34 +181,50 @@ class StatusRoute extends PolymerElement {
         <div class="side">
           <worbli-dashnav></worbli-dashnav>
         </div>
-        <div class="main">
-          <h1>Status</h1>
-          <p class="intro">Thank you for your submission! We are processing your application, please check back in 48hrs.</p>
-          <div class="input-area">
-            <div class="section-name">Document Report</div>
-            <div class="form-inputs">
-              <p class="label">Reviewing</p>
-            </div>
-          </div>
-          <hr>
-          <div class="input-area">
-            <div class="section-name">Facial Similarity Report</div>
-                <div class="form-inputs">
-                    <p class="label">Reviewing</p>
-                </div>
+
+
+        <template is="dom-if" if="{{!showSupport}}">
+          <div class="main">
+            <h1>Status</h1>
+            <p class="intro">Thank you for your submission! We are processing your application, please check back in 48hrs.</p>
+            <div class="input-area">
+              <div class="section-name">Document Report</div>
+              <div class="form-inputs">
+                <p class="label">Reviewing</p>
+              </div>
             </div>
             <hr>
-          <div class="input-area">
-            <div class="section-name">Watchlist Report</div>
-                <div class="form-inputs">
-                <p class="label">Reviewing</p>
+            <div class="input-area">
+              <div class="section-name">Facial Similarity Report</div>
+                  <div class="form-inputs">
+                      <p class="label">Reviewing</p>
+                  </div>
+              </div>
+              <hr>
+            <div class="input-area">
+              <div class="section-name">Watchlist Report</div>
+                  <div class="form-inputs">
+                  <p class="label">Reviewing</p>
+              </div>
+            </div>
+            <div class="footer">
+              <button type="button" on-click="_checkStatus">[[btnText]]</button>
             </div>
           </div>
-          <div class="footer">
-            <button type="button" on-click="_checkStatus">[[btnText]]</button>
+       
+      </template>
+
+      <template is="dom-if" if="{{showSupport}}">
+          <div class="main">
+            <h1>Status</h1>
+            <p class="intro">Unfortunately, we failed to verify your identity. If you believe this is due to an error, please <a href="https://worbli.zendesk.com" target="_blank">contact support.</a></p>
           </div>
-        </div>
-      </div>
+     
+      </template>
+
+
+ </div>
+
       </br></br>
       <worbli-footer name="footer"></worbli-footer>
     `;
@@ -239,11 +256,27 @@ class StatusRoute extends PolymerElement {
       btnText: {
         type: Text,
         value: 'Check Status'
+      },
+      showSupport: {
+        type: Boolean,
+        value: false,
+      },
+      route: {
+        type: Text,
+        observer: '_routeChanged'
       }
     };
   }
 
+  _routeChanged(){
+    if(this.route.path === '/dashboard/status'){
+      console.log('route changed')
+      this._checkStatus();
+    }
+  }
+
   _checkStatus(){
+    console.log('checking')
     this.btnText = 'Checking';
     const token = localStorage.getItem("token");
     if(token) {
@@ -254,10 +287,17 @@ class StatusRoute extends PolymerElement {
       })
       .then((response) => {return response.json()})
       .then((response) => {
-        if(response.data === true){
+        console.log(response)
+        if(response.data === true && response.action === 'redirect'){
+          console.log('redirect')
           this.btnText = 'Check Status';
           localStorage.setItem("token", response.token);
           this.set('route.path', '/dashboard/account')
+        } else if(response.data === true && response.action === 'support'){
+          console.log('support')
+          this.showSupport = true;
+        } else {
+          this.btnText = 'Check Status';
         }
       })
       .catch((err) => {
