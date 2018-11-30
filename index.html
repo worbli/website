@@ -37,17 +37,15 @@
         });
       }
     </script>
-    <script src="https://cdn.scattercdn.com/file/scatter-cdn/js/latest/scatterjs-core.min.js"></script>
-    <script src="https://cdn.scattercdn.com/file/scatter-cdn/js/latest/scatterjs-plugin-eosjs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/eosjs@16.0.0/lib/eos.min.js"></script>
+
+
     <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script type="module" src="src/worbli-portal.js"></script>
     <style>
       @import url('https://fonts.googleapis.com/css?family=Montserrat:300,600,800');
       body {
-        font-size: 14px;
+        font-size: 100%;
         margin: 0;
-
         font-family: "Montserrat", "Noto", sans-serif;
         line-height: 1.5;
         min-height: 100vh;
@@ -60,15 +58,16 @@
         height:0px;
       }
     </style>
-    <script type="text/javascript">(function(o){var b="https://api.autopilothq.com/anywhere/",t="501ed4441acd4101aeeb9f3ce0c8674d770b4596f02c430384010e1f7cba6c9f",a=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments);}},c=encodeURIComponent,s="SCRIPT",d=document,l=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||"")+"&gdpr=1",j="text/javascript",z,y;if(!window.Autopilot) window.Autopilot=a;if(o.app) p="devmode=true&"+p;z=function(src,asy){var e=d.createElement(s);e.src=src;e.type=j;e.async=asy;l.parentNode.insertBefore(e,l);};y=function(){z(b+t+'?'+p,true);};window.Autopilot.GDPRCookieOptIn=function(){z(b+t+'?'+p+'&optin=1',false);window.Autopilot.GDPROptedIn=true;};window.Autopilot.GDPRCookieOptOut=function(){z(b+t+'?'+p+'&optout=1',false);window.Autopilot.GDPROptedIn=false;};if(window.attachEvent){window.attachEvent("onload",y);}else{window.addEventListener("load",y,false);}})({});</script>
-
   </head>
   <body>
-      <img src="./images/checkbox.svg" class="load">
-      <img src="./images/checkbox-selected.svg" class="load">
+      <img src="./images/checkbox.svg" class="load" alt="preload checkbox">
+      <img src="./images/checkbox-selected.svg" class="load" alt="preload checkbox selected">
     <worbli-portal></worbli-portal>
     <noscript>
       Please enable JavaScript.
     </noscript>
+    <script src="https://cdn.scattercdn.com/file/scatter-cdn/js/latest/scatterjs-core.min.js"></script>
+    <script src="https://cdn.scattercdn.com/file/scatter-cdn/js/latest/scatterjs-plugin-eosjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/eosjs@16.0.0/lib/eos.min.js"></script>
   </body>
 </html>

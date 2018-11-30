@@ -7,7 +7,6 @@ import '@polymer/iron-pages/iron-pages.js';
 import './components/worbli-header.js';
 import './components/worbli-overlay.js';
 
-
 setPassiveTouchGestures(true);
 setRootPath(WorbliPortalGlobals.rootPath);
 
@@ -24,13 +23,13 @@ class WorbliPortal extends PolymerElement {
           margin: 0 auto;
         }
         .header {
-            position: fixed;
-            top: 0; 
-            width: 100%; 
-            z-index:100;
-          }
+          position: fixed;
+          top: 0; 
+          width: 100%; 
+          z-index:100;
+        }
         iron-pages {
-          padding-top: 80px;
+          padding-top: 40px;
         }
         img {
           opacity: 0;
@@ -47,7 +46,6 @@ class WorbliPortal extends PolymerElement {
       <template is="dom-if" if="{{!hide}}">
         <worbli-header name="header" class="header"></worbli-header>
       </template>
-
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main" class="center">
         <main-route name="main"></main-route>
         <network-route name="network"></network-route>
@@ -57,8 +55,6 @@ class WorbliPortal extends PolymerElement {
         <roadmap-route name="roadmap"></roadmap-route>
         <error-route name="error"></error-route>
         <register-route name="register"></register-route>
-        <sharedrop-route name="sharedrop"></sharedrop-route>
-        <support-route name="support"></support-route>
         <terms-route name="terms"></terms-route>
         <privacy-route name="privacy"></privacy-route>
         <dashboard-route name="dashboard"></dashboard-route>
@@ -70,7 +66,6 @@ class WorbliPortal extends PolymerElement {
         <join-route name="join"></join-route>
         <menu-route name="menu"></menu-route>
       </iron-pages>
-      
     `;
   }
 
@@ -105,7 +100,7 @@ class WorbliPortal extends PolymerElement {
     }
     if (!page) {
       this.page = 'main';
-    } else if (['signin', 'join', 'main', 'network', 'about', 'vision', 'team', 'roadmap', 'register', 'sharedrop', 'support', 'terms', 'privacy', 'profservices', 'networkterms', 'developerterms', 'platformterms', 'menu', 'dashboard'].indexOf(page) !== -1) {
+    } else if (['signin', 'join', 'main', 'network', 'about', 'vision', 'team', 'roadmap', 'register', 'terms', 'privacy', 'profservices', 'networkterms', 'developerterms', 'platformterms', 'menu', 'dashboard'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -134,12 +129,6 @@ class WorbliPortal extends PolymerElement {
         break;
       case 'register':
         import('./routes/register-route.js');
-        break;
-      case 'sharedrop':
-        import('./routes/sharedrop-route.js');
-        break;
-      case 'support':
-        import('./routes/support-route.js');
         break;
       case 'terms':
         import('./routes/terms-route.js');

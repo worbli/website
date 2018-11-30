@@ -4,7 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
-
+import '../components/worbli-title.js';
 
 class PlatformTermsRoute extends PolymerElement {
   static get template() {
@@ -100,26 +100,13 @@ class PlatformTermsRoute extends PolymerElement {
 					margin-top: 20px;
         }
       </style>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
-      
+      <worbli-title title="Platform Terms"></worbli-title>  
       <div class="split">
         <div class="main">
-          <h1>Platform Terms</h1>
             <ol>
               <li><strong>THE PLATFORM</strong>
               <ol>
-                <li>World Blockchain Initiative, LLC or any other entity that directly or indirectly controls, is controlled by, or is under common control with World Blockchain Initiative, LLC (collectively "WORBLI") created the WORBLI online platform at the URL https://portal.worbli.io (the "Platform"), which includes other websites added to the Platform from time to time to provide a medium where you ("You" or "Your") and other users and other interested parties (each, a "User" and collectively, "Users") may sign up to a WORBLI account, obtain information, post comments, provide reviews, and engage in conversation threads around WORBLI and the WORBLI blockchain network (the "Network").</li>
+                <li>World Blockchain Initiative, LLC or any other entity that directly or indirectly controls, is controlled by, or is under common control with World Blockchain Initiative, LLC (collectively "WORBLI") created the WORBLI online platform at the URL https://www.worbli.io (the "Platform"), which includes other websites added to the Platform from time to time to provide a medium where you ("You" or "Your") and other users and other interested parties (each, a "User" and collectively, "Users") may sign up to a WORBLI account, obtain information, post comments, provide reviews, and engage in conversation threads around WORBLI and the WORBLI blockchain network (the "Network").</li>
                 <li>If You are accessing and/or using the Platform on behalf of Your employer or as a consultant or agent of a third party (collectively "Your Company"), You represent and warrant that You have the authority to act on behalf of and bind Your Company to these Platform terms and conditions (the "Platform Terms") and everywhere in these Platform Terms that refers to You or Your, shall also include Your Company.</li>
               </ol></li>
       

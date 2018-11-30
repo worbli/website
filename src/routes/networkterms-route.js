@@ -4,7 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
-
+import '../components/worbli-title.js';
 
 class NetworkTermsRoute extends PolymerElement {
   static get template() {
@@ -73,23 +73,19 @@ class NetworkTermsRoute extends PolymerElement {
 				  margin: 0;
 				  padding: 0;
 				}
-				
 				ol > li {
 				  display: table;
 				  counter-increment: item;
 				  margin-bottom: 0.6em;
 				}
-				
 				ol > li:before {
 				  content: counters(item, ".") ". ";
 				  display: table-cell;
 				  padding-right: 0.6em;    
 				}
-				
 				li ol > li {
 				  margin: 0;
 				}
-				
 				li ol > li:before {
 				  content: counters(item, ".") " ";
 				}
@@ -100,19 +96,7 @@ class NetworkTermsRoute extends PolymerElement {
 					margin-top: 20px;
         }
       </style>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
-      
+      <worbli-title title="Network Terms"></worbli-title>  
       <div class="split">
         <div class="main">
           <h1>Network Terms</h1>

@@ -4,6 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-partners.js';
 import '../components/side-bar/worbli-telegram.js';
+import '../components/worbli-title.js';
 class AboutRoute extends PolymerElement {
   static get template() {
     return html`
@@ -19,6 +20,7 @@ class AboutRoute extends PolymerElement {
         .main {
           flex-grow: 1;
           max-width: 850px;
+          margin-top: -32px;
         }
         h1 {
           color: var(--blue-text);
@@ -75,22 +77,9 @@ class AboutRoute extends PolymerElement {
 
         }
       </style>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
+      <worbli-title title="About"></worbli-title>
       <div class="split">
         <div class="main">
-          <h1>About WORBLI</h1>
           <b>Here at WORBLI we are on a mission to develop the world’s most cost-effective and developer-friendly, consumer and enterprise blockchain platform.</b></br></br>
           <p>To do this WORBLI is offering a user-friendly financial services ecosystem where users, developers, and businesses can access a huge range of powerful applications with limitless possibilities.<p></br>
           <iframe width="840" height="472" src="https://www.youtube.com/embed/QKAPbJbOdnU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -98,8 +87,7 @@ class AboutRoute extends PolymerElement {
           <p>WORBLI’s platform is powered by EOSIO, allowing WORBLI to deliver, fast, compliant and secure applications, products and services to the world.</p></br>
           <p>WORBLI is in the process of creating new technology that enables the financial services and technology sectors to benefit from offering their customers instant transactions.</p>
           <iframe width="840" height="472" src="https://www.youtube.com/embed/3tcVg279HLg?start=788" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          
-               </div>
+        </div>
         <div class="side">
           <worbli-whitepaper></worbli-whitepaper>
           <worbli-partners></worbli-partners>

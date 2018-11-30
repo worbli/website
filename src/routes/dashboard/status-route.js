@@ -9,13 +9,9 @@ import '../../worbli-env.js';
 class StatusRoute extends PolymerElement {
   static get template() {
     return html`
-          <style include="shared-styles">
+      <style include="shared-styles">
         :host {
           display: block;
-        }
-        iframe {
-          margin-top: 50px;
-          margin-bottom: 50px;
         }
         .split {
           display: flex;
@@ -27,23 +23,14 @@ class StatusRoute extends PolymerElement {
           padding-right: 30px;
         }
         .main {
+          max-width: 850px;
           flex-grow: 1;
-          max-width: 830px;
           background: #FFF;
           border-radius: 3px;
           box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
           -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
           -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
         }
-        .container {
-          position: relative;
-          background: #FFF;
-          border-radius: 3px;
-          box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          margin-bottom: 18px;
-            }
         .navigation {
           color: #3a3e46;
           font-size: 11px;
@@ -55,10 +42,6 @@ class StatusRoute extends PolymerElement {
           text-shadow: none;
         }
         .navigation:hover {
-          background-color: #F6F6F7;
-        }
-        .selected {
-          color: black;
           background-color: #F6F6F7;
         }
         .footer {
@@ -75,16 +58,7 @@ class StatusRoute extends PolymerElement {
           border-bottom: 1px solid #f5f5f5;
           padding: 12px;
         }
-        h2 {
-          color: var(--blue-text);
-          font-size: 21px;
-          font-weight: 600;
-          margin-top: 12px;
-          margin-bottom: 12px;
-        }
-        .container a {
-          text-decoration: none;
-        }
+
         button {
           display: inline-block;
           vertical-align: middle;
@@ -126,10 +100,10 @@ class StatusRoute extends PolymerElement {
           width: 340px;
         }
         .label{
-            font-size: 12px;
-            color: #393d4d;
-            font-weight: 600; 
-            text-transform: capitalize; 
+          font-size: 12px;
+          color: #393d4d;
+          font-weight: 600; 
+          text-transform: capitalize; 
         }
         input {
           width: 307px;
@@ -178,65 +152,11 @@ class StatusRoute extends PolymerElement {
           background-position: 100% 50%;
           width: 320px;
         }
-        .error{
-          color: #E54D53;
-        }
-        .notReady{
-          cursor: not-allowed;
-          opacity: 0.3;
-        }
-        .steps{
 
-          margin-left: 40px;
-        }
-        .step-text {
-          margin-left: 17px;
-          color: #D8D8D8;
-          font-weight:600;
-        }
-        .step-text div {
-          text-align: center;
-          display:inline-block;
-          width:78px;
-        }
-        .step{
-          color:#272727;
-        }
-        .sidebar{
-          padding-bottom: 12px;
-          background: #FFF;
-          border-radius: 3px;
-          box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-        }
-        .dropdown-short{
-          width:100px;
-        }
         .intro{
           padding: 12px;
         }
-        .button {
-          display: block;
-          box-shadow: inset 0 0 0 1px #c8d6e8;
-          padding: 6px;
-          border-radius: 3px;
-          text-align: center;
-          padding-top: 12px;
-          height: 25px;
-          margin: 0 12px 0 12px;
-          text-decoration: none;
-          color: #4978b3;
-          font-size: 12px;
-          font-weight: 600;
-          width: 290px;
-        }
-        .text{
-          text-transform: capitalize;
-        }
-        .upper {
-          text-transform: uppercase;
-        }
+
         @media only screen and (max-width: 600px){
           .split {
             margin-top: 40px;
@@ -244,33 +164,17 @@ class StatusRoute extends PolymerElement {
           .section-name{
             width:0px;
             height:0px;
-          }
-          .section-name {
             display: none;
           }
           .side {
-             width: 100vw;
-             padding-right: 0px;
-             margin-top: 63px;
+            width: 100vw;
+            padding-right: 0px;
+            margin-top: 63px;
           }
         }
 
       </style>
       
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
-
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <worbli-env api-path="{{apiPath}}""></worbli-env>
       <div class="split">
@@ -278,49 +182,49 @@ class StatusRoute extends PolymerElement {
           <worbli-dashnav></worbli-dashnav>
         </div>
 
-        <div class="main">
-          <h1>Status</h1>
-          <p class="intro">Thank you for your submission! We are processing your application, please check back in 48hrs.</p>
-          <div class="input-area">
-            <div class="section-name">Document Report</div>
-            <div class="form-inputs">
-              <p class="label">Reviewing</p>
+
+        <template is="dom-if" if="{{!showSupport}}">
+          <div class="main">
+            <h1>Status</h1>
+            <p class="intro">Thank you for your submission! We are processing your application, please check back in 48hrs.</p>
+            <div class="input-area">
+              <div class="section-name">Document Report</div>
+              <div class="form-inputs">
+                <p class="label">Reviewing</p>
+              </div>
             </div>
-          </div>
-
-          <hr>
-
-          <div class="input-area">
-            <div class="section-name">Facial Similarity Report</div>
-                <div class="form-inputs">
-                    <p class="label">Reviewing</p>
-                </div>
-            </div>
-
             <hr>
-
-          <div class="input-area">
-            <div class="section-name">Watchlist Report</div>
-                <div class="form-inputs">
-                <p class="label">Reviewing</p>
+            <div class="input-area">
+              <div class="section-name">Facial Similarity Report</div>
+                  <div class="form-inputs">
+                      <p class="label">Reviewing</p>
+                  </div>
+              </div>
+              <hr>
+            <div class="input-area">
+              <div class="section-name">Watchlist Report</div>
+                  <div class="form-inputs">
+                  <p class="label">Reviewing</p>
+              </div>
             </div>
-          </div>
-
-          <hr>
-
-          <div class="input-area">
-            <div class="section-name">Identity Report</div>
-                <div class="form-inputs">
-                <p class="label">Reviewing</p>
-            </div>
-          </div>
-        
             <div class="footer">
               <button type="button" on-click="_checkStatus">[[btnText]]</button>
             </div>
+          </div>
+       
+      </template>
 
-        </div>
-      </div>
+      <template is="dom-if" if="{{showSupport}}">
+          <div class="main">
+            <h1>Status</h1>
+            <p class="intro">Unfortunately, we failed to verify your identity. If you believe this is due to an error, please <a href="https://worbli.zendesk.com" target="_blank">contact support.</a></p>
+          </div>
+     
+      </template>
+
+
+ </div>
+
       </br></br>
       <worbli-footer name="footer"></worbli-footer>
     `;
@@ -352,11 +256,27 @@ class StatusRoute extends PolymerElement {
       btnText: {
         type: Text,
         value: 'Check Status'
+      },
+      showSupport: {
+        type: Boolean,
+        value: false,
+      },
+      route: {
+        type: Text,
+        observer: '_routeChanged'
       }
     };
   }
 
+  _routeChanged(){
+    if(this.route.path === '/dashboard/status'){
+      console.log('route changed')
+      this._checkStatus();
+    }
+  }
+
   _checkStatus(){
+    console.log('checking')
     this.btnText = 'Checking';
     const token = localStorage.getItem("token");
     if(token) {
@@ -366,18 +286,27 @@ class StatusRoute extends PolymerElement {
         headers: {'Authorization': `Bearer ${token}`},
       })
       .then((response) => {return response.json()})
-      .then(response => {
-        if(response.data === true){
+      .then((response) => {
+        console.log(response)
+        if(response.data === true && response.action === 'redirect'){
+          console.log('redirect')
           this.btnText = 'Check Status';
           localStorage.setItem("token", response.token);
-          // this.set('route.path', '/dashboard/account')
+          this.set('route.path', '/dashboard/account')
+        } else if(response.data === true && response.action === 'support'){
+          console.log('support')
+          this.showSupport = true;
+        } else {
+          this.btnText = 'Check Status';
         }
       })
-      .catch(error => {
-        console.log(error)
+      .catch((err) => {
+        this.btnText = 'Not complete check again in 10min';
+        setTimeout(() => {
+          this.btnText = 'Check Status';
+         }, 60000);
       });
     } else {this.set('route.path', '/')}
   }
-
 
 } window.customElements.define('status-route', StatusRoute);

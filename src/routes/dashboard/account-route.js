@@ -1,8 +1,8 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@polymer/app-route/app-location.js';
 import '../../css/shared-styles.js';
 import '../../components/worbli-footer.js';
 import '../../components/side-bar/worbli-snapshot.js';
-import '@polymer/app-route/app-location.js';
 import '../../components/side-bar/worbli-dashnav.js';
 import '../../worbli-env.js';
 
@@ -12,10 +12,6 @@ class AccountRoute extends PolymerElement {
           <style include="shared-styles">
         :host {
           display: block;
-        }
-        iframe {
-          margin-top: 50px;
-          margin-bottom: 50px;
         }
         .split {
           display: flex;
@@ -27,39 +23,13 @@ class AccountRoute extends PolymerElement {
           padding-right: 30px;
         }
         .main {
+          max-width: 850px;
           flex-grow: 1;
-          max-width: 830px;
           background: #FFF;
           border-radius: 3px;
           box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
           -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
           -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-        }
-        .container {
-          position: relative;
-          background: #FFF;
-          border-radius: 3px;
-          box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          margin-bottom: 18px;
-            }
-        .navigation {
-          color: #3a3e46;
-          font-size: 11px;
-          font-weight: 600;
-          line-height: 16px;
-          padding: 13px 12px;
-          border-bottom: 1px solid #f5f5f5;
-          background: none;
-          text-shadow: none;
-        }
-        .navigation:hover {
-          background-color: #F6F6F7;
-        }
-        .selected {
-          color: black;
-          background-color: #F6F6F7;
         }
         .footer {
           margin-top: 24px;
@@ -75,16 +45,6 @@ class AccountRoute extends PolymerElement {
           font-size: 13px;
           border-bottom: 1px solid #f5f5f5;
           padding: 12px;
-        }
-        h2 {
-          color: var(--blue-text);
-          font-size: 21px;
-          font-weight: 600;
-          margin-top: 12px;
-          margin-bottom: 12px;
-        }
-        .container a {
-          text-decoration: none;
         }
         button {
           display: inline-block;
@@ -155,59 +115,8 @@ class AccountRoute extends PolymerElement {
           display: block;
           border-top: 1px solid #f5f5f5;
         }
-        .dropdown {
-          background-color: #f8f8f8;
-          border-color: #d1d5d7;
-          -webkit-appearance: none;
-          appearance: none;
-          -moz-appearance: none;
-          -moz-appearance: none;
-          line-height: 15px;
-          padding: 5px 5px 5px 7px;
-          -webkit-padding-end: 20px;
-          height: 31px;
-          font-size: 13px;
-          border: 1px solid #D9DBDE;
-          border-radius: 3px;
-          background: url(./images/dropdown.gif) no-repeat;
-          background-size: 18px 22px;
-          background-position: 100% 50%;
-          width: 320px;
-        }
         .error{
           color: #E54D53;
-        }
-        .notReady{
-          cursor: not-allowed;
-          opacity: 0.3;
-        }
-        .steps{
-
-          margin-left: 40px;
-        }
-        .step-text {
-          margin-left: 17px;
-          color: #D8D8D8;
-          font-weight:600;
-        }
-        .step-text div {
-          text-align: center;
-          display:inline-block;
-          width:78px;
-        }
-        .step{
-          color:#272727;
-        }
-        .sidebar{
-          padding-bottom: 12px;
-          background: #FFF;
-          border-radius: 3px;
-          box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-        }
-        .dropdown-short{
-          width:100px;
         }
         .intro{
           padding: 12px;
@@ -230,25 +139,18 @@ class AccountRoute extends PolymerElement {
         .text{
           text-transform: capitalize;
         }
-        .upper {
-          text-transform: uppercase;
+        .lower {
+          text-transform: lowercase;
+        }
+        .info {
+          margin: 12px;
+        }
+        a {
+          color: #6681B5;
+          text-decoration: none;
         }
 
       </style>
-      
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <worbli-env api-path="{{apiPath}}""></worbli-env>
@@ -256,47 +158,60 @@ class AccountRoute extends PolymerElement {
         <div class="side">
           <worbli-dashnav></worbli-dashnav>
         </div>
-
-
-
-
         <div class="main">
           <h1>Worbli Account</h1>
-
-          <template is="dom-if" if="{{!complete}}">
-          <div class="input-area">
-            <div class="section-name">Name</div>
-            <div class="form-inputs">
-              <label>Account Name </label>
-              <input id="worbliAccountName" value="{{worbliAccountName::input}}" name="worbliAccountName" type="text" class="text">
-              <small class="comment error">[[worbliAccountNameError]]</small>
-            </div>
-          </div>
-          <hr>
-
-          <div class="input-area">
-            <div class="section-name">Keys</div>
-            <div class="form-inputs">
-              <label>Active Public Key</label>
-              <input id="publicKeyActive" value="{{publicKeyActive::input}}" name="publicKeyActive" type="text" class="text">
-              <small class="comment error">[[publicKeyActiveError]]</small>
-              <label>Owner Public Key</label>
-              <input id="publicKeyOwner" value="{{publicKeyOwner::input}}" name="publicKeyOwner" type="text" class="text">
-              <small class="comment error">[[publicKeyOwnerError]]</small>
-            </div>
-          </div>
+          <template is="dom-if" if="{{viewApproved}}">
+            <template is="dom-if" if="{{!complete}}">
+              <div class="input-area">
+                <div class="section-name">Name</div>
+                <div class="form-inputs">
+                  <label>Worbli Account Name </label>
+                  <input id="worbliAccountName" value="{{worbliAccountName::input}}" name="worbliAccountName" type="text" class="lower">
+                  <small class="comment">Choose your desired Worbli account name (6-12 characters, must start with a letter and can only contain letters and numbers 1-5). Note: high profile trademarked names such as "google", "facebook", etc. are not allowed and accounts that have chosen such names will be frozen.</small></br>
+                  <small class="comment error">[[worbliAccountNameError]]</small>
+                </div>
+              </div>
+              <hr>
+              <div class="input-area">
+                <div class="section-name">Keys</div>
+                <div class="form-inputs">
+                  <label>Active Public Key</label>
+                  <small class="comment">You can put your shareable/active keys in both fields.</small></br>
+                  <input id="publicKeyActive" value="{{publicKeyActive::input}}" name="publicKeyActive" type="text" class="text">
+                  <small class="comment error">[[publicKeyActiveError]]</small>
+                  <label>Owner Public Key</label>
+                  <input id="publicKeyOwner" value="{{publicKeyOwner::input}}" name="publicKeyOwner" type="text" class="text">
+                  <small class="comment error">[[publicKeyOwnerError]]</small>
+                  <p>
+                  </br></br>
+                  <a href="https://worbli.zendesk.com/hc/en-us/articles/360019917571-How-can-I-generate-my-Owner-or-Active-key-using-Scatter-" target="_blank">How can I generate my Owner or Active key using Scatter?</a></br>
+                  </p>
+                </div>
+              </div>
+            </template>
+            <template is="dom-if" if="{{complete}}">
+              <p class="intro">Your account has been successfully created!</p>
+            </template>
+            <template is="dom-if" if="{{!complete}}">
+              <div class="footer">
+                <button type="button" on-click="_applyAccount">Apply for Account</button>
+              </div>
+            </template>
           </template>
-
-          <template is="dom-if" if="{{complete}}">
-          <p class="intro">Your account has been successfully created!</p>
+          <template is="dom-if" if="{{viewNamed}}">
+            <p class="info">
+              Your WORBLI blockchain account has been created. Account name <b>[[worbliAccountName]]</b></br></br>
+              Check it out at <a href="https://worbli.bloks.io/account/[[worbliAccountName]]" target="_blank">worbli.bloks.io</a></br></br>
+              If you had an EOS account on September 7th, you can <a href="/dashboard/sharedrop">Claim your Sharedrop</a>
+            </p>
           </template>
-
-
-     
-            <div class="footer">
-              <button type="button" on-click="_applyAccount">Apply for Account</button>
-            </div>
-
+          <template is="dom-if" if="{{viewCredited}}">
+            <p class="info">
+              Your WORBLI blockchain account has been created. Account name <b>[[worbliAccountName]]</b></br></br>
+              Check it out at <a href="https://worbli.bloks.io/account/[[worbliAccountName]]" target="_blank">worbli.bloks.io</a></br></br>
+              Congratulations you have successfully claimed your sharedrop!
+            </p>
+          </template>
         </div>
       </div>
       </br></br>
@@ -326,16 +241,54 @@ class AccountRoute extends PolymerElement {
       showIframe: {
         type: Boolean,
         value: false,
+      },
+      route: {
+        type: Boolean,
+        observer: '_routeChanged'
+      },
+      viewApproved: {
+        type: Boolean,
+        value: true,
+      },
+      viewNamed: {
+        type: Boolean,
+        value: false,
+      },
+      viewCredited: {
+        type: Boolean,
+        value: false,
+      },
+      worbliAccountName: {
+        type: Text,
       }
     };
   }
 
+  _routeChanged(){
+    const loc = localStorage.getItem("loc");
+    if(loc =='approved'){
+      this.viewApproved = true;
+      this.viewNamed = false;
+      this.viewCredited = false;
+    }
+    if(loc =='named'){
+      this.viewApproved = false;
+      this.viewNamed = true;
+      this.viewCredited = false;
+    }
+    if(loc =='credited'){
+      this.viewApproved = false;
+      this.viewNamed = false;
+      this.viewCredited = true;
+    }
+    this._getName();
+  }
 
 _applyAccount(data){
   let check = true;
   this.publicKeyActiveError = "";
   this.publicKeyOwnerError = "";
-  this.worbliAccountNameError = ""
+  this.worbliAccountNameError = "";
   const worbli_account_name = this.worbliAccountName;
   const public_key_active = this.publicKeyActive;
   const public_key_owner = this.publicKeyOwner;
@@ -344,7 +297,7 @@ _applyAccount(data){
   const ownerConfirmed = this._validatePublicKey(public_key_owner);
   if(!activeConfirmed){this.publicKeyActiveError = "Wrong public key format. Make sure you are not pasting your private key."; check = false}
   if(!ownerConfirmed){this.publicKeyOwnerError = "Wrong public key format. Make sure you are not pasting your private key."; check = false}
-  if(!nameConfirmed){this.worbliAccountNameError = "Account name must be between 6 and 12 characters, must start with a letter and can contain only lowercase letters and numbers 1-5."; check = false;} 
+  if(!nameConfirmed){this.worbliAccountNameError = "Account name must be between 6 and 12 characters, must start with a letter and can contain only lowercase letters and numbers 1-5. And must not contain the word worbli"; check = false;} 
   if(check === true){
     const data = {worbli_account_name, public_key_active, public_key_owner}
     const token = localStorage.getItem("token");
@@ -360,6 +313,8 @@ _applyAccount(data){
         this.worbliAccountNameError = response.error
       } else {
         this.complete = true;
+        localStorage.setItem("token", response.newjwt);
+        this.set('route.path', '/dashboard/sharedrop');
       }
     })
     .catch(error => {
@@ -369,8 +324,39 @@ _applyAccount(data){
   }
 }
 
+_getName(){
+  const token = localStorage.getItem("token");
+  const url = `${this.apiPath}/user/name/`;
+  fetch(url, {
+    method: 'GET',
+    headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
+  })
+  .then((response) => {return response.json()})
+  .then((response) => {
+    this.worbliAccountName = response.worbli_account_name;
+    const loc = localStorage.getItem("loc");
+    if(loc =='approved'){
+      this.viewApproved = true;
+      this.viewNamed = false;
+      this.viewCredited = false;
+    }
+    if(loc =='named'){
+      this.viewApproved = false;
+      this.viewNamed = true;
+      this.viewCredited = false;
+    }
+    if(loc =='credited'){
+      this.viewApproved = false;
+      this.viewNamed = false;
+      this.viewCredited = true;
+    }
+  })
+}
+
 _validateAccountName(name){
-  var re = /^[a-z](?=[a-z1-5]{5,11}$)/;
+  console.log(name)
+  var re = /^(?!.*?worbli)[a-z][a-z1-5]{5,11}$/;
+  console.log(re.test(name))
   return re.test(name);
 }
 

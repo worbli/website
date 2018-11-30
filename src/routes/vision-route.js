@@ -4,6 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-partners.js';
 import '../components/side-bar/worbli-telegram.js';
+import '../components/worbli-title.js';
 class VisionRoute extends PolymerElement {
   static get template() {
     return html`
@@ -75,9 +76,6 @@ class VisionRoute extends PolymerElement {
               left: -5px;
               opacity: 0.2;
           }
-          /* .features p {
-              height:80px;
-          } */
         @media only screen and (max-width: 600px){
            p, h2{
             margin: 12px;
@@ -87,22 +85,9 @@ class VisionRoute extends PolymerElement {
           }
         }
       </style>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
+      <worbli-title title="Vision"></worbli-title>
       <div class="split">
         <div class="main">
-         <h1>WORBLI’s Vision</h1>
           <p>Through blockchain technology, WORBLI will be at the forefront of a technological revolution that spans the financial services sector, cloud computing, data analysis, security and storage, supply chain logistics, social networking, voting, healthcare, income inequality, accounting, contractual arrangements and so much more.</p></br>
           <p>WORBLI exists to remove all obstacles and to foster a positive environment that allows developers to design and build applications for users knowing the associated financial/ transactional services are preconfigured; and merchant processing is available for businesses to instantly convert digital and fiat currencies into any payment form they desire (GBP, USD or BTC, EOS, WBI, ETH, LTC, XRP, etc).</p><br>
           <p>Our vision stems from one simple reality. We envision a day in the near future, whereby everybody is able to pay for a product or service in any currency or cryptocurrency of their choice. Now, that would be amazing, and that's the world that WORBLI is bringing to you..</p></br></br>
@@ -144,7 +129,7 @@ class VisionRoute extends PolymerElement {
             </div>
           </div>
           <iframe width="840" height="472" src="https://www.youtube.com/embed/ideiyhAlvOQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-               </div>
+          </div>
         <div class="side">
           <worbli-whitepaper></worbli-whitepaper>
           <worbli-partners></worbli-partners>

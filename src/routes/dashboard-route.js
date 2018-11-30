@@ -19,8 +19,10 @@ class DasboardRoute extends PolymerElement {
           max-width: 1160px;
           margin: 0 auto;
         }
+        iron-pages {
+          padding-top: 25px;
+        }
       </style>
-
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
       <app-route route="{{route}}" pattern="[[rootPath]]dashboard/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main" class="center">
@@ -28,10 +30,9 @@ class DasboardRoute extends PolymerElement {
         <password-route name="password"></password-route>  
         <review-route name="review"></review-route>  
         <status-route name="status"></status-route> 
-        <!-- <account-route name="account"></account-route>   
-        <sharedrop-route name="sharedrop"></sharedrop-route>         -->
+        <account-route name="account"></account-route>   
+        <sharedrop-route name="sharedrop"></sharedrop-route>        
       </iron-pages>
-      
     `;
   }
 
@@ -57,7 +58,7 @@ class DasboardRoute extends PolymerElement {
   _routePageChanged(page) {
     if (!page) {
       this.page = 'profile';
-    } else if (['profile', 'password', 'review', 'status'].indexOf(page) !== -1) {
+    } else if (['sharedrop', 'profile', 'account', 'password', 'review', 'status'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -75,12 +76,12 @@ class DasboardRoute extends PolymerElement {
         case 'status':
             import('./dashboard/status-route.js');
             break;
-        // case 'account':
-        //     import('./dashboard/account-route.js');
-        //     break;
-        // case 'sharedrop':
-        //     import('./dashboard/sharedrop-route.js');
-        //     break;
+        case 'account':
+            import('./dashboard/account-route.js');
+            break;
+        case 'sharedrop':
+            import('./dashboard/sharedrop-route.js');
+            break;
         case 'password':
             import('./dashboard/password-route.js');
             break;

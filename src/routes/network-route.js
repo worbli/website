@@ -5,6 +5,7 @@ import '../components/worbli-rpc.js';
 import '../components/network-monitor/block-info.js';
 import '../components/network-monitor/block-producers.js';
 import '../components/side-bar/worbli-snapshot.js';
+import '../components/worbli-title.js';
 
 class NetworkRoute extends PolymerElement {
   static get template() {
@@ -41,25 +42,10 @@ class NetworkRoute extends PolymerElement {
             display: none;
           }
         }
-  
       </style>
 
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
-
       <worbli-rpc connect endpoint="https://endpoint-1.worbli.io" jsonrpc="{{jsonrpc}}"></worbli-rpc>
-
+      <worbli-title title="Network"></worbli-title>
       <div class="split">
         <div class="main">
           <block-producers class="main" jsonrpc="[[jsonrpc]]" producer="[[producer]]" interval="500"></block-producers>

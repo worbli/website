@@ -9,9 +9,9 @@ class WorbliProfservices extends PolymerElement {
           display:block;
         }
         div {
-            flex-grow: 1;
-            color: var(--grey-text);
-            font-size: 12px;
+          flex-grow: 1;
+          color: var(--grey-text);
+          font-size: 12px;
         }
         .faq-text {
           font-size: 13px;
@@ -37,11 +37,11 @@ class WorbliProfservices extends PolymerElement {
           margin-bottom: 12px
         }
       </style>
-        <div class="container-paper">
-            <div class="title">Professional Services</div>
-            <p class="faq-text">Leveraging our deep talent pool, launch your dApp in safe hands</p>
-            <a href="/profservices/" class="button">Enquire Now</a>
-        </div>
+      <div class="container-paper">
+        <div class="title">Professional Services</div>
+        <p class="faq-text">Leveraging our deep talent pool, launch your dApp in safe hands</p>
+        <a href="/profservices/" class="button">Enquire Now</a>
+      </div>
     `;
   }
   static get properties() {

@@ -4,8 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
-
-
+import '../components/worbli-title.js';
 class DeveloperTermsRoute extends PolymerElement {
   static get template() {
     return html`
@@ -96,48 +95,44 @@ class DeveloperTermsRoute extends PolymerElement {
 					margin-top: 20px;
         }
       </style>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
-      
+      <worbli-title title="Schedule - Developer Terms"></worbli-title>  
       <div class="split">
-        <div class="main">
-          <h1>Schedule - Developer Terms</h1>
+      <div class="main">
 			<ol>
-				<li><strong>DEFINITIONS</strong>
+
+			<li><strong>DEFINITIONS</strong>
 				<ol>
 					<li>The following capitalized terms used in the Developer Terms will have the following meanings:
-					<ol>
-						<li>“Authorized Developers” means Your employees and contractors, members of Your organization who (a) each have an active and valid Account with WORBLI, (b) have a demonstrable need to use the Network in order to develop and test Your dApp, and (c) to the extent such individuals will have access to Confidential Information, each have written and binding agreements with You to protect the unauthorized use and disclosure of such Confidential Information.</li>
-						<li>"Documentation” means any technical or other specifications or documentation that WORBLI may provide to You for use in connection with the development of dApps on the Network.</li>
-						<li>“WORBLI Development Support” means the WORBLI development support that WORBLI may provide or make available through the Network, Foundation or WORBLI Platform for use with the development and maintenance of your dApp, including any Updates thereto (if any) that may be provided to You by WORBLI.</li>
-					</ol></li>
-				</ol></li>
-				<li><strong>LICENCE; ACCOUNT OPENING</strong>
+						<ol>
+							<li>“Authorized Developers” means Your employees and contractors, members of Your organization who (a) each have an active and valid Account with WORBLI, (b) have a demonstrable need to use the Network in order to develop and test Your dApp, and (c) to the extent such individuals will have access to Confidential Information, each have written and binding agreements with You to protect the unauthorized use and disclosure of such Confidential Information.</li>
+							<li>"Documentation” means any technical or other specifications or documentation that WORBLI may provide to You for use in connection with the development of dApps on the Network.</li>
+							<li>“WORBLI Development Support” means the WORBLI development support that WORBLI may provide or make available through the Network, Foundation or WORBLI Platform for use with the development and maintenance of your dApp, including any Updates thereto (if any) that may be provided to You by WORBLI.</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+
+			<li><strong>LICENCE; ACCOUNT OPENING</strong>
 				<ol>
 					<li>Subject to the terms and conditions of the Network Terms and in addition to the licence granted to you pursuant to clause 4 of the Network Terms, WORBLI hereby grants You during the Term, a limited, non-exclusive, personal, revocable, non-sublicensable and non-transferable license to:
-					<ol>
-						<li>access and use to the Network and WORBLI Development Support to be used by You or Your Authorized Developers for the purpose of developing or testing Your dApp designed to operate on the Network;</li>
-						<li>the Documentation for Your internal use only and for the sole purpose of developing or testing the dApp, except as otherwise expressly permitted in the Network Terms.</li>
-					</ol></li>
+						<ol>
+							<li>access and use to the Network and WORBLI Development Support to be used by You or Your Authorized Developers for the purpose of developing or testing Your dApp designed to operate on the Network;</li>
+							<li>the Documentation for Your internal use only and for the sole purpose of developing or testing the dApp, except as otherwise expressly permitted in the Network Terms.</li>
+						</ol>
+					</li>
 					<li>You agree not to create or attempt to create a substitute or similar service through use of or access to the WORBLI Development Support provided by or through the WORBLI Portal.</li>
 					<li>Except as otherwise expressly permitted herein, You agree not to share, sell, resell, rent, lease, lend, or otherwise provide access to any WORBLI Development Support provided therewith, in whole or in part, to anyone who is not an Authorized Developer on Your team, and acknowledge that WORBLI may require each team member must have their own WORBLI ID to access Your account.</li>
-				</ol></li>
-				<li><strong>OWNERSHIP</strong>
+				</ol>
+			</li>
+
+			<li><strong>OWNERSHIP</strong>
 				<ol>
 					<li>WORBLI retains all rights, title, and interest in the WORBLI Development Support, and any Updates it may make available to You under the Network Terms. You agree to cooperate with WORBLI to maintain WORBLI's ownership of the WORBLI Development Support, and, to the extent that You become aware of any claims relating to the WORBLI Development Support, You agree to use reasonable efforts to promptly provide notice of any such claims to WORBLI.</li>
 					<li>The parties acknowledge that the Network Terms does not give WORBLI any ownership interest in Your dApp.</li>
-				</ol></li>
-				<li><strong>NO OTHER PERMITTED USES</strong>
+				</ol>
+			</li>
+			
+			<li><strong>NO OTHER PERMITTED USES</strong>
 				<ol>
 					<li>Except as otherwise set forth in the Network Terms, You agree not to rent, lease, lend, upload to or host on any website or server, sell, redistribute, or sublicense the WORBLI Development Support, in whole or in part, or to enable others to do so. You may not use the WORBLI Development Support provided hereunder for any purpose not expressly permitted by the Network Terms.</li>
 					<li>You agree not to exploit any WORBLI Development Support provided hereunder in any unauthorized way whatsoever. Any attempt to do so is a violation of the rights of WORBLI and its licensors of the WORBLI Development Support. If You breach any of the foregoing restrictions, You may be subject to prosecution and damages.</li>
@@ -146,21 +141,28 @@ class DeveloperTermsRoute extends PolymerElement {
 					<li>You agree not to fraudulently create any end-user accounts or induce any end-user to violate the terms of their applicable end-user terms or service agreement with WORBLI or to violate any WORBLI usage policies for such end-user WORBLI Development Support.</li>
 					<li>WORBLI reserves the right to change, suspend, deprecate, limit, or disable access to the WORBLI Development Support, or any part thereof, at any time without notice. In no event will WORBLI be liable for the removal of or disabling of access to any of the foregoing. WORBLI may also impose limits and restrictions on the use of or access to the WORBLI Development Support, may remove the WORBLI Development Support for indefinite time periods, may revoke Your access to the WORBLI Development Support, or may cancel the WORBLI Development Support (or any part thereof) at any time without notice or liability to You and in its sole discretion.</li>
 					<li>WORBLI does not guarantee the availability, accuracy, completeness, reliability, or timeliness of any data or information displayed by any WORBLI Development Support. To the extent You choose to use the WORBLI Development Support with Your dApp, You are responsible for Your reliance on any such data or information. You are responsible for Your use of the Network and WORBLI Development Support, and if You use such WORBLI Development Support, then it is Your responsibility to maintain appropriate alternate backup of all Your content, information and data, including but not limited to any content that You may provide to WORBLI for hosting as part of Your use of the WORBLI Development Support.</li>
-				</ol></li>
-				<li><strong>THIRD-PARTY SERVICE PROVIDERS</strong>
+				</ol>
+			</li>
+
+			<li><strong>THIRD-PARTY SERVICE PROVIDERS</strong>
 				<ol>
 					<li>Unless otherwise prohibited by WORBLI in the Documentation, You are permitted to employ or retain a third party (“ Service Provider”) to assist You in using the Network and WORBLI Development Support provided pursuant to the Network Terms, including, but not limited to, engaging any such Service Provider to maintain and administer Your dApp/s’ servers on Your behalf, provided that any such Service Provider’s use of the Network and WORBLI Development Support or any materials associated therewith is done solely on Your behalf and only in accordance with these terms. In the event of any actions or inactions by the Service Provider that would constitute a violation of the Network Terms or otherwise cause any harm, WORBLI reserves the right to require You to cease using such Service Provider.</li>
-				</ol></li>
-				<li><strong>WARRANTIES AND REPRESENTATIONS</strong>
+				</ol>
+			</li>
+			
+			<li><strong>WARRANTIES AND REPRESENTATIONS</strong>
 				<ol>
 					<li>You warrant and represent to WORBLI that:
 					<ol>
 						<li>All information provided by You to WORBLI or Your end-users in connection with the Network Terms or Your dApp  will be current, true, accurate, supportable and complete and, with regard to  information You provide to WORBLI, You will promptly notify WORBLI of any changes to such information.</li>
 						<li>You will comply with the terms of and fulfill Your obligations under the Network Terms, including obtaining any required consents for Your Authorized Developers’ use of the Network and WORBLI Development Support, and You agree to monitor and be fully responsible for all such use by Your Authorized Developers and their compliance with the terms of the Network Terms;</li>
 						<li>You will be solely responsible for all costs, expenses, losses and liabilities incurred, and activities undertaken by You and Your Authorized Developers in connection with the Network and WORBLI Development Support, Your dApp and Your related development and distribution efforts, including, but not limited to, any related development efforts, network and server equipment or any other hardware, software or WORBLI Development Support used by You in connection with Your use of any WORBLI Development Support; and</li>
-					</ol></li>
-				</ol></li>
-				<li><strong>TERMS APPLICABLE TO YOUR RECEIPT AND USE OF THE TOKENS</strong>
+					</ol>
+				</li>
+				</ol>
+			</li>
+			
+			<li><strong>TERMS APPLICABLE TO YOUR RECEIPT AND USE OF THE TOKENS</strong>
 				<ol>
 					<li>Your receiving, holding and/or using of the Tokens is subject to your acknowledgement, understanding and agreement to the following:
 					<ol>
@@ -175,8 +177,10 @@ class DeveloperTermsRoute extends PolymerElement {
 						<li>You are not, nor are you an agent of, (i) a citizen or resident of a country or territory in which access to or use of the Tokens or the Network is prohibited by applicable law, decree, regulation, treaty, or administrative act, (ii) a citizen or resident of, or located in, a country or territory that is subject to sanctions or embargoes imposed by the United States or any other country, or (iii) an individual or entity, nor an individual or entity employed by, acting on behalf of, or affiliated with an entity, identified on the U.S. Department of Commerce's Denied Persons or Entity List, the U.S. Department of Treasury's Specially Designated Nationals and Blocked Persons Lists, or the U.S. Department of State's Debarred Parties List (collectively, "Restricted Party Lists"). You further agree that you will not use the Tokens or Services in connection with transactions (i) in any country or territory that is subject to U.S. or other sanctions or embargoes, (ii) with any individual or entity that is identified on the Restricted Party Lists, nor (iii) otherwise prohibited by U.S. sanctions and export control laws and regulations including the sanctions regulations administered by the U.S. Department of the Treasury Office of Foreign Assets Control, 31 C.F.R. §§ 500-599, and the Export Administration Regulations, 15 C.F.R. §§ 730-774. You agree that if your country of residence or any other circumstances change such that the above representations are no longer accurate, then you will immediately cease using the Services and notify the WORBLI. If you are registering to use the Services on behalf of a legal entity, you further represent and warrant that (i) such legal entity is duly organized and validly existing under the applicable laws of the jurisdiction of its organization, and (ii) you are duly authorized by such legal entity to act on its behalf; and</li>
 						<li><strong>to the fullest extent permitted by applicable law and except as otherwise specified in a writing by us, (a) the Tokens are provided on an "as is" and "as available" basis without warranties of any kind, and we expressly disclaim all implied warranties as to the Tokens, including, without limitation, implied warranties of merchantability, fitness for a particular purpose, title and non-infringement; (b) we do not represent or warrant that the Tokens are reliable, current or error-free, meet your requirements, or that defects in the Tokens will be corrected; and (c) we cannot and do not represent or warrant that the Tokens or the delivery mechanism for the Tokens are free of viruses or other harmful components.</strong></li>
 					</ol></li>
-				</ol></li>
-				<li><strong>USE OF THE NETWORK AND DEVELOPMENT SUPPORT</strong>
+				</ol>
+			</li>
+			
+			<li><strong>USE OF THE NETWORK AND DEVELOPMENT SUPPORT</strong>
 				<ol>
 					<li>As a condition precedent to using the Network and any WORBLI Development Support, You agree that:
 					<ol>
@@ -193,13 +197,17 @@ class DeveloperTermsRoute extends PolymerElement {
 							<li>You and the dApp/s must comply with all applicable privacy and data collection laws and regulations with respect to any collection, use or disclosure of user or device data;</li>
 							<li>dApps may not be designed or marketed for the purpose of harassing, abusing, spamming, stalking, threatening or otherwise violating the legal rights (such as the rights of privacy and publicity) of others;</li>
 							<li>Neither You nor Your dApp/s may perform any functions or link to any content, WORBLI Development Support, information or data or use any robot, spider, site search or other retrieval application or device to scrape, mine, retrieve, cache, analyze or index software, data or WORBLI Development Support provided by WORBLI or its licensors, or obtain (or try to obtain) any such data, except the data that WORBLI expressly provides or makes available to You in connection with such WORBLI Development Support. You agree that You will not collect, disseminate or use any such data for any unauthorized purpose; and</li>
-						</ol></li>
+						</ol>
+					</li>
 						<li>If Your dApp/s includes or will include any other content, You must either own all such content or have permission from the content owner to use it in Your dApp/s.</li>
 						<li>dApp/s may be rejected if they contain content or materials of any kind (text, graphics, images, photographs, sounds, etc.) that in WORBLI’s reasonable judgment may be found objectionable or inappropriate, for example, materials that may be considered obscene, pornographic, or defamatory.</li>
 						<li>dApp/s must not contain any malware, malicious or harmful code, program, or other internal component which could damage, destroy, or adversely affect the Network, WORBLI Development Support.</li>
-					</ol></li>
-				</ol></li>
-				<li><strong>REGULATORY COMPLIANCE</strong>
+					</ol>
+				</li>
+				</ol>
+			</li>
+				
+			<li><strong>REGULATORY COMPLIANCE</strong>
 				<ol>
 					<li>You will fulfill any applicable regulatory requirements, including full compliance with all applicable laws, regulations, and policies related to the manufacturing, marketing, sale and distribution of Your dApp/s in any countries in which it is made available in, and in particular the requirements of applicable regulatory bodies in any countries or territories where You use or make Your dApp/s available.</li>
 					<li>You agree that You will not seek any regulatory marketing permissions or make any determinations that may result in WORBLI being deemed regulated or that may impose any obligations or limitations on WORBLI.</li>

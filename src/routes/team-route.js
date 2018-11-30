@@ -5,6 +5,7 @@ import '../components/worbli-profile.js';
 import '../components/side-bar/worbli-partners.js';
 import '../components/side-bar/worbli-producers.js';
 import '../components/side-bar/worbli-telegram.js';
+import '../components/worbli-title.js';
 
 class TeamRoute extends PolymerElement {
   static get template() {
@@ -99,24 +100,9 @@ class TeamRoute extends PolymerElement {
         }
 
       </style>
-
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
-
+      <worbli-title title="Team"></worbli-title>
       <div class="split">
         <div class="main">
-          <h1>Team</h1>
           <div class="team-holder">
               <worbli-profile name="domenic-thomas" title="Co-Founder + CEO" linkedin="domenic-thomas-5403676" profile="Domenic Thomas has an MBA from Johns Hopkins Carey Business School, and also has degrees from the University of Southern California in Environmental Studies and Political Science. Domenic has been consulting in Blockchain Technology since 2016 and is part of the EOS Community governance committee. Domenic has a particular interest in solutions to improve financial services efficiency."></worbli-profile>
               <worbli-profile name="craig-kellogg" title="Co-Founder + COO" linkedin="ckellogg" profile="Craig Kellogg has been a leader in banking technology and fintech firms for almost 20 years. He has led strategic initiatives for companies including Wells Fargo, US Bank, and GE Capital, with whom he was the Vice President of Technology. Craig has an MBA, BS in Information Technology, and is a certified IT Auditor and Project Manager."></worbli-profile>

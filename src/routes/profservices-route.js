@@ -4,6 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-producers.js';
 import '../components/side-bar/worbli-partners.js';
 import '../components/side-bar/worbli-telegram.js';
+import '../components/worbli-title.js';
 class ProfservicesRoute extends PolymerElement {
   static get template() {
     return html`
@@ -33,8 +34,8 @@ class ProfservicesRoute extends PolymerElement {
         }
         iframe {
           margin-top: 50px;
-		  margin-bottom: 50px;
-		  width:100%;
+		      margin-bottom: 50px;
+		      width:100%;
         }
         .side {
           width: 280px;
@@ -67,23 +68,9 @@ class ProfservicesRoute extends PolymerElement {
           font-weight: 600;
         }
       </style>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
-
+      <worbli-title title="Professional Services"></worbli-title>
       <div class="split">
         <div class="main">
-          <h1>Professional Services</h1>
           <b>WORBLI Professional Services brings blockchain expertise and innovation into the heart of every industry.</b></br></br>
           <h2>Fintech</h2>
           <p>Fintech, (or financial technology), is revolutionizing how businesses move money. Whether it is consumer transactions, investments or paying for business expenses, more and more organizations are doing all of these things from their smartphones and computers. Utilizing the Blockchain, Worbli is helping developers work from a compliant, secure platform to create applications that improve and automate the use of financial services. ​​​</p>
@@ -110,9 +97,9 @@ class ProfservicesRoute extends PolymerElement {
           <p>We want you to feel secure in knowing what you are releasing can only be used as it’s intended.</p>
         </div>
         <div class="side">
-            <worbli-partners></worbli-partners>
-            <worbli-producers></worbli-producers>
-            <worbli-telegram></worbli-telegram>
+          <worbli-partners></worbli-partners>
+          <worbli-producers></worbli-producers>
+          <worbli-telegram></worbli-telegram>
         </div>
       </div>
       <worbli-footer name="footer"></worbli-footer>

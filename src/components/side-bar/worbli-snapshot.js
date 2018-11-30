@@ -7,9 +7,9 @@ class WorbliSnapshot extends PolymerElement {
     return html`
       <style include="shared-styles">
         div {
-            flex-grow: 1;
-            color: var(--grey-text);
-            font-size: 12px;
+          flex-grow: 1;
+          color: var(--grey-text);
+          font-size: 12px;
         }
         .bp {
           width: 60px;
@@ -79,23 +79,21 @@ class WorbliSnapshot extends PolymerElement {
         }
 
       </style>
-
-        <worbli-env api-path="{{apiPath}}""></worbli-env>
-        <div class="container">
-            <div class="title">Check Snapshot</div>
-            <template is="dom-if" if="{{!complete}}">
-              <label for="accountName">Mainnet Account Name:</label>
-              <input id="accountName" value="{{accountName::input}}" name="first-name" type="text" class="text lowercase" on-keyup="_confirmAccountName">
-              <button type="button" class="btn-critical" on-click="_checkSnapshot">Check Snapshot</button>
-            </template>
-            <template is="dom-if" if="{{complete}}">
-              <div on-click="_clear" class="return">
-                <p>Your snapshot balance is:</p>
-                <h1>[[wbitotal]] WBI</h1>
-              </div
-            </template>
-        </div>
-        
+      <worbli-env api-path="{{apiPath}}""></worbli-env>
+      <div class="container">
+          <div class="title">Check Snapshot</div>
+          <template is="dom-if" if="{{!complete}}">
+            <label for="accountName">Mainnet Account Name:</label>
+            <input id="accountName" value="{{accountName::input}}" name="first-name" type="text" class="text lowercase" on-keyup="_confirmAccountName">
+            <button type="button" class="btn-critical" on-click="_checkSnapshot">Check Snapshot</button>
+          </template>
+          <template is="dom-if" if="{{complete}}">
+            <div on-click="_clear" class="return">
+              <p>Your snapshot balance is:</p>
+              <h1>[[wbitotal]] WBI</h1>
+            </div>
+          </template>
+      </div>
     `;
   }
   static get properties() {
@@ -117,43 +115,45 @@ class WorbliSnapshot extends PolymerElement {
     };
   }
 
-  _clear(){
-    this.complete = false;
-    this.accountName = "";
-  }
+_clear(){
+  this.complete = false;
+  this.accountName = "";
+}
 
-  _confirmAccountName(){
-    if(this.accountName.length >= 6){
-      this.updateStyles({'--btnOpacity': 1});
-      this.updateStyles({'--btnCursor': 'pointer'});
-    } else {
-      this.updateStyles({'--btnOpacity': 0.3});
-      this.updateStyles({'--btnCursor': 'not-allowed)'});
-    }
+_confirmAccountName(){
+  if(this.accountName.length >= 6){
+    this.updateStyles({'--btnOpacity': 1});
+    this.updateStyles({'--btnCursor': 'pointer'});
+  } else {
+    this.updateStyles({'--btnOpacity': 0.3});
+    this.updateStyles({'--btnCursor': 'not-allowed)'});
   }
-  _checkSnapshot(){
-    this.complete = true;
-    if (this.accountName){
-      const accountName = this.accountName;
-      const lowerName = accountName.toLowerCase();
-      fetch(`${this.apiPath}/user/snapshot?account=${lowerName}`)
-      .then((response) => {
-          return response.json()
-      })
-      .then((response) => {
-          if(response.total){
-            let total = response.total;
-            let fifth = total / 5;
-            let timeToShow = 400
-            this.wbitotal = fifth.toFixed(4)
-            setTimeout(() => { this.wbitotal = (fifth*2).toFixed(4) }, timeToShow);
-            setTimeout(() => { this.wbitotal = (fifth*3).toFixed(4) }, timeToShow * 2);
-            setTimeout(() => { this.wbitotal = (fifth*4).toFixed(4) }, timeToShow * 3);
-            setTimeout(() => { this.wbitotal = (total).toFixed(4) }, timeToShow * 4);
-          } else {
-            this.complete = false;
-          }
-      })
-    }
+}
+
+_checkSnapshot(){
+  this.complete = true;
+  if (this.accountName){
+    const accountName = this.accountName;
+    const lowerName = accountName.toLowerCase();
+    fetch(`${this.apiPath}/user/snapshot?account=${lowerName}`)
+    .then((response) => {
+        return response.json()
+    })
+    .then((response) => {
+      if(response.total){
+        let total = response.total;
+        let fifth = total / 5;
+        let timeToShow = 400
+        this.wbitotal = fifth.toFixed(4)
+        setTimeout(() => { this.wbitotal = (fifth*2).toFixed(4) }, timeToShow);
+        setTimeout(() => { this.wbitotal = (fifth*3).toFixed(4) }, timeToShow * 2);
+        setTimeout(() => { this.wbitotal = (fifth*4).toFixed(4) }, timeToShow * 3);
+        setTimeout(() => { this.wbitotal = (total).toFixed(4) }, timeToShow * 4);
+      } else {
+        this.complete = false;
+      }
+    })
   }
+}
+
 } window.customElements.define('worbli-snapshot', WorbliSnapshot);

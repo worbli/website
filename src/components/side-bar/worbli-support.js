@@ -6,9 +6,9 @@ class WorbliSupport extends PolymerElement {
     return html`
       <style include="shared-styles">
         div {
-            flex-grow: 1;
-            color: var(--grey-text);
-            font-size: 12px;
+          flex-grow: 1;
+          color: var(--grey-text);
+          font-size: 12px;
         }
         .faq-text {
           font-size: 13px;
@@ -25,11 +25,10 @@ class WorbliSupport extends PolymerElement {
 
       </style>
         <div class="container">
-            <div class="title">Support Center</div>
-            <p class="faq-text">Find out the answers to all of your questions</p>
-            <!-- <img src="./images/home-page/support-icon.png" width="230px" class="support-icon"> -->
-            <a href="https://worbli.zendesk.com" class="button">Take me there...</a>
-            <p class="bottom-space"></p>
+          <div class="title">Support Center</div>
+          <p class="faq-text">Find out the answers to all of your questions</p>
+          <a href="https://worbli.zendesk.com" class="button">Take me there...</a>
+          <p class="bottom-space"></p>
         </div>
     `;
   }

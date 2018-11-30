@@ -16,6 +16,10 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         display: block;
       }
       :host {
+        --blue-title-text: rgba(75,79,93, 1);
+        --grey-subtitle-text: rgba(157,161,171 1);
+
+
         --grey-keyline: rgba(220, 226, 239, 1);
         --grey-text: rgba(120, 131, 145, 1);
         --blue-navigation: rgba(38, 40, 88, 1);
@@ -83,16 +87,15 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         endColorstr='#f9f9f9');
         margin-bottom: 12px;
     }
-
     .btn-critical:hover {
-        text-decoration: none;
-        border-color: #CCCED2 #C7C8C9 #B6B7B9;
-        background: rgb(255,255,255);
-        background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(249,250,250,1) 100%);
-        background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(249,250,250,1) 100%);
-        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(249,250,250,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', 
-        endColorstr='#f9fafa',GradientType=0 );
+      text-decoration: none;
+      border-color: #CCCED2 #C7C8C9 #B6B7B9;
+      background: rgb(255,255,255);
+      background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(249,250,250,1) 100%);
+      background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(249,250,250,1) 100%);
+      background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(249,250,250,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', 
+      endColorstr='#f9fafa',GradientType=0 );
     }
     </style>
   </template>

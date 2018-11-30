@@ -81,23 +81,8 @@ class MenuRoute extends PolymerElement {
         }
       </style>
       
-
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
-
-        <img src="./images/logo.svg">
-        <ul>
+      <img src="./images/logo.svg">
+      <ul>
         <a href="/"><li>Home</li></a>
         <a href="/about"><li>About</li></a>
         <a href="/vision"><li>Vision</li></a>
@@ -105,9 +90,7 @@ class MenuRoute extends PolymerElement {
         <a href="/roadmap"><li>Roadmap</li></a>
         <a href="/network"><li>Network</li></a>
         <a href="https://worbli.zendesk.com/hc/en-us"><li>Support</li></a>
-
-        </ul>
-   
+      </ul>
     `;
   }
 } window.customElements.define('menu-route', MenuRoute);

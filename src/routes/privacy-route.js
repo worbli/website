@@ -4,7 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
-
+import '../components/worbli-title.js';
 
 class PrivacyRoute extends PolymerElement {
   static get template() {
@@ -100,27 +100,14 @@ class PrivacyRoute extends PolymerElement {
 					margin-top: 20px;
         }
       </style>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
-      
+      <worbli-title title="Privacy Policy"></worbli-title>  
       <div class="split">
         <div class="main">
-          <h1>Privacy Policy</h1>
 						<ol>
 							<li><strong>Introduction</strong>
 							<ol>
 								<li>This privacy notice ("Privacy Notice") applies to all personal information process activities undertaken by World Blockchain Initiative, LLC or any other entity that directly or indirectly controls, is controlled by, or is under common control with World Blockchain Initiative, LLC (“WORBLI”, "we", "us").</li>
-								<li>WORBLI is a data controller for personal information that we process in connection with the WORBLI network, WORBLI website at https://portal.worbli.io, issuance of WORBLI Tokens and/or any services we provide from time to time that necessitates the collection of personal information.</li>
+								<li>WORBLI is a data controller for personal information that we process in connection with the WORBLI network, WORBLI website at https://www.worbli.io, issuance of WORBLI Tokens and/or any services we provide from time to time that necessitates the collection of personal information.</li>
 								<li>This policy sets out how we collect, use and store your personal data as well as explaining your rights in respect of the personal data we hold about you.</li>
 								<li>Please contact us at support@worbli.io should you require more information on our privacy policy.</li>
 							</ol>

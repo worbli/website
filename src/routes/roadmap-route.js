@@ -5,6 +5,7 @@ import '../components/worbli-roadmap.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-partners.js';
 import '../components/side-bar/worbli-telegram.js';
+import '../components/worbli-title.js';
 
 class RoadmapRoute extends PolymerElement {
   static get template() {
@@ -79,24 +80,9 @@ class RoadmapRoute extends PolymerElement {
           }
         }
       </style>
-
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVQG5T"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117118714-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-117118714-1');
-      </script>
-
+      <worbli-title title="Roadmap"></worbli-title>
       <div class="split">
       <div class="main">
-          <h1>Roadmap</h1>
           <div class="center">
             <h2>Product</h2>
               <div class="roadmap-container">

@@ -9,13 +9,9 @@ import '../../worbli-env.js';
 class ProfileRoute extends PolymerElement {
   static get template() {
     return html`
-          <style include="shared-styles">
+      <style include="shared-styles">
         :host {
           display: block;
-        }
-        iframe {
-          margin-top: 50px;
-          margin-bottom: 50px;
         }
         .split {
           display: flex;
@@ -28,38 +24,11 @@ class ProfileRoute extends PolymerElement {
         }
         .main {
           flex-grow: 1;
-          max-width: 830px;
           background: #FFF;
           border-radius: 3px;
           box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
           -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
           -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-        }
-        .container {
-          position: relative;
-          background: #FFF;
-          border-radius: 3px;
-          box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          margin-bottom: 18px;
-            }
-        .navigation {
-          color: #3a3e46;
-          font-size: 11px;
-          font-weight: 600;
-          line-height: 16px;
-          padding: 13px 12px;
-          border-bottom: 1px solid #f5f5f5;
-          background: none;
-          text-shadow: none;
-        }
-        .navigation:hover {
-          background-color: #F6F6F7;
-        }
-        .selected {
-          color: black;
-          background-color: #F6F6F7;
         }
         .footer {
           margin-top: 24px;
@@ -75,16 +44,6 @@ class ProfileRoute extends PolymerElement {
           font-size: 13px;
           border-bottom: 1px solid #f5f5f5;
           padding: 12px;
-        }
-        h2 {
-          color: var(--blue-text);
-          font-size: 21px;
-          font-weight: 600;
-          margin-top: 12px;
-          margin-bottom: 12px;
-        }
-        .container a {
-          text-decoration: none;
         }
         button {
           display: inline-block;
@@ -177,40 +136,8 @@ class ProfileRoute extends PolymerElement {
         .error{
           color: #E54D53;
         }
-        .notReady{
-          cursor: not-allowed;
-          opacity: 0.3;
-        }
-        .steps{
-
-          margin-left: 40px;
-        }
-        .step-text {
-          margin-left: 17px;
-          color: #D8D8D8;
-          font-weight:600;
-        }
-        .step-text div {
-          text-align: center;
-          display:inline-block;
-          width:78px;
-        }
-        .step{
-          color:#272727;
-        }
-        .sidebar{
-          padding-bottom: 12px;
-          background: #FFF;
-          border-radius: 3px;
-          box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -webkit-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-          -moz-box-shadow: 0 1px 0px 0px rgba(208, 209, 213, 0.5), 0 0px 0px 1px rgba(220, 221, 224, 0.4);
-        }
         .dropdown-short{
           width:100px;
-        }
-        .intro{
-          padding: 12px;
         }
         .button {
           display: block;
@@ -248,9 +175,6 @@ class ProfileRoute extends PolymerElement {
           .section-name {
             display: none;
           }
-          .container {
-             width: 100vw;
-          }
         }
 
       </style>
@@ -261,20 +185,19 @@ class ProfileRoute extends PolymerElement {
         <div class="side">
           <worbli-dashnav></worbli-dashnav>
         </div>
-
         <div class="main">
           <h1>Application</h1>
-
           <div class="input-area">
               <div class="section-name">Documents</div>
               <div class="form-inputs">
-                <a href="https://kyc.dac.city?kyc_token=[[kycToken2]]" target="_blank" class="button">Submit Documents</a>
+                <small class="comment warn">You have to submit documents for KYC to proceed with application. </br>Remember to take off any glasses and take photos in good lighting</small></br>
+                <template is="dom-if" if="{{kycToken2}}">
+                  <a href="https://portal-kyc.worbli.io?kyc_token=[[kycToken2]]" target="_blank" class="button">Submit Documents</a>
+                </template>
                 <small class="comment warn">After submitting documents make sure you return </br>here to complete this application</small>
-              </div>
+                </div>
             </div>
           <hr>
-
-
           <div class="input-area">
             <div class="section-name">Name</div>
             <div class="form-inputs">
@@ -290,14 +213,12 @@ class ProfileRoute extends PolymerElement {
             </div>
           </div>
           <hr>
-
           <div class="input-area">
             <div class="section-name">Address</div>
-            
             <div class="form-inputs">
             <p class="comment warn">Depending on your jurisdiction fill in the</br> appropriate form fields.</p>
             <label>Country</label>
-              <select class="dropdown" id="addressCountry" value="{{addressCountry::input}}">
+              <select class="dropdown" id="addressCountry" value="{{addressCountry::input}}" on-change="_countryChanged">
                 <option value="">Select...</option>
                 <option value="AFG">Afghanistan</option>
                 <option value="ALA">Åland Islands</option>
@@ -464,15 +385,74 @@ class ProfileRoute extends PolymerElement {
                 <option value="ZMB">Zambia</option>
                 <option value="ZWE">Zimbabwe</option>
               </select>
+              <small class="comment">If your country is not included in this drop down we don't currently support it.</small>
               <small class="comment error">[[addressCountryError]]</small>
-              <label>Appartment / Flat Number</label>
-              <input id="addressFlatNumber" value="{{addressFlatNumber::input}}" name="addressFlatNumber" type="number" class="text">
+              <template is="dom-if" if="{{showState}}">
+              <label>State</label>
+                <select class="dropdown" id="addressState" value="{{addressState::input}}">
+                  <option value="">Select...</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>	
+              </template>
+              <small class="comment error">[[addressStateError]]</small>
+              <label>Apartment / Flat Number</label>
+              <input id="addressFlatNumber" value="{{addressFlatNumber::input}}" name="addressFlatNumber" type="text" class="text">
               <small class="comment error">[[addressFlatNumberError]]</small>
-              <label>Building Name</label>
+              <label>House / Building Name</label>
               <input id="addressBuildingName" value="{{addressBuildingName::input}}" name="addressBuildingName" type="text" class="text">
               <small class="comment error">[[addressBuildingNameError]]</small>
               <label>Building Number</label>
-              <input id="addressBuildingNumber" value="{{addressBuildingNumber::input}}" name="addressBuildingNumber" type="number" class="text">
+              <input id="addressBuildingNumber" value="{{addressBuildingNumber::input}}" name="addressBuildingNumber" type="text" class="text">
               <small class="comment error">[[addressBuildingNumberError]]</small>
               <label>Street</label>
               <input id="addressOne" value="{{addressOne::input}}" name="addressOne" type="text" class="text">
@@ -480,9 +460,6 @@ class ProfileRoute extends PolymerElement {
               <label>Address Line 2</label>
               <input id="addressTwo" value="{{addressTwo::input}}" ame="addressTwo" type="text" class="text">
               <small class="comment error">[[addressTwoError]]</small>
-              <label>State (US only)</label>
-              <input id="addressState" value="{{addressState::input}}" ame="addressState" type="text" class="text">
-              <small class="comment error">[[addressStateError]]</small>
               <label>City / Town</label>
               <input id="addressTown" value="{{addressTown::input}}" ame="addressTown" type="text" class="text">
               <small class="comment error">[[addressTownError]]</small>
@@ -492,7 +469,6 @@ class ProfileRoute extends PolymerElement {
             </div>
           </div>
           <hr>
-
           <div class="input-area">
             <div class="section-name">Phone</div>
               <div class="form-inputs">
@@ -696,9 +672,9 @@ class ProfileRoute extends PolymerElement {
                   <option data-countryCode="TC" value="1649">Turks &amp; Caicos Islands (+1649)</option>
                   <option data-countryCode="TV" value="688">Tuvalu (+688)</option>
                   <option data-countryCode="UG" value="256">Uganda (+256)</option>
-                  <option data-countryCode="GB" value="44">UK (+44)</option>
                   <option data-countryCode="UA" value="380">Ukraine (+380)</option>
                   <option data-countryCode="AE" value="971">United Arab Emirates (+971)</option>
+                  <option data-countryCode="GB" value="44">United Kingdom (+44)</option>
                   <option data-countryCode="UY" value="598">Uruguay (+598)</option>
                   <option data-countryCode="US" value="1">USA (+1)</option>
                   <option data-countryCode="UZ" value="7">Uzbekistan (+7)</option>
@@ -721,15 +697,12 @@ class ProfileRoute extends PolymerElement {
               <small class="comment error">[[phoneMobileError]]</small>
             </div>
           </div>
-
-
           <hr>
           <div class="input-area">
             <div class="section-name">About</div>
             <div class="form-inputs">
               <label>Date Of Birth</label>
               <select class="dropdown dropdown-short" id="dobDay" value="{{dobDay::input}}">
-
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -840,10 +813,8 @@ class ProfileRoute extends PolymerElement {
                 <option value="1942">1942</option>
                 <option value="1941">1941</option>
                 <option value="1940">1940</option>
-
               </select>
               <small class="comment error">[[dobError]]</small>
-              
               <label>Gender</label>
               <select class="dropdown" id="addressCountry" value="{{gender::input}}">
                 <option value="">Select...</option>
@@ -854,9 +825,10 @@ class ProfileRoute extends PolymerElement {
             </div>
           </div>
             <div class="footer">
-              <button type="button" on-click="_saveProfile">[[btnText]]</button>
+              <button type="button" on-click="_saveProfile">
+                <template is="dom-if" if="{{btnImage}}"><img src="./images/loading-button.gif"></template>
+                [[btnText]]</button>
             </div>
-        <!-- </template> -->
         </div>
       </div>
       </br></br>
@@ -890,35 +862,42 @@ class ProfileRoute extends PolymerElement {
       btnText:{
         type: Text,
         value: 'Save Application Form',
+      },
+      showState: {
+        type: Boolean,
+        value: false,
+      },
+      btnImage: {
+        type: Boolean,
+        value: false,
       }
     };
   }
 
-  ready() {
-    super.ready();
-    this._getData();
-    this._onfidoJwt();
+ready() {
+  super.ready();
+  this._getData();
+  this._onfidoJwt();
+}
 
+_onfidoJwt(){
+  const token = localStorage.getItem("token");
+  if(token) {
+    const url = `${this.apiPath}/kyc/applicant`;
+    fetch(url, {
+      method: 'POST',
+      headers: {'Authorization': `Bearer ${token}`},
+    })
+    .then((response) => {return response.json()})
+    .then(response => {
+      this.kycToken2 = response.kyc_token;
+      this.showIframe = true;
+    })
+    .catch(error => {this.set('route.path', '/')});
+  } else {
+    this.set('route.path', '/')
   }
-
-  _onfidoJwt(){
-    const token = localStorage.getItem("token");
-    if(token) {
-      const url = `${this.apiPath}/kyc/applicant`;
-      fetch(url, {
-        method: 'POST',
-        headers: {'Authorization': `Bearer ${token}`},
-      })
-      .then((response) => {return response.json()})
-      .then(response => {
-        this.kycToken2 = response.kyc_token;
-        this.showIframe = true;
-      })
-      .catch(error => {this.set('route.path', '/')});
-    } else {
-      this.set('route.path', '/')
-    }
-  }
+}
 
   _getData(){
     const token = localStorage.getItem("token");
@@ -934,7 +913,6 @@ class ProfileRoute extends PolymerElement {
           this.nameFirst = response.profile.name_first || "";
           this.nameMiddle = response.profile.name_middle || "";
           this.nameLast = response.profile.name_last || "";
-
           this.addressCountry = response.profile.address_country || "";
           this.addressFlatNumber = response.profile.address_flat_number || "";
           this.addressBuildingName = response.profile.address_building_name || "";
@@ -944,7 +922,6 @@ class ProfileRoute extends PolymerElement {
           this.addressState = response.profile.address_state || "";
           this.addressTown = response.profile.address_town || "";
           this.addressZip = response.profile.address_zip || "";
-          
           this.phoneCode = response.profile.phone_code || "";
           this.phoneMobile = response.profile.phone_mobile || "";
           this.dobYear = response.profile.date_birth_year || "";
@@ -962,33 +939,32 @@ class ProfileRoute extends PolymerElement {
 
   _saveProfile(){
     this.btnText = 'Saving..';
+    this.btnImage = true;
     let check = true
     const name_first = this.nameFirst;
     const name_middle = this.nameMiddle;
     const name_last = this.nameLast;
-
     const address_country = this.addressCountry;
     const address_flat_number = this.addressFlatNumber;
     const address_building_name = this.addressBuildingName;
-    const address_building_number =  this.addressBuildingNumber;
+    const address_building_number =  this.addressBuildingNumber
+    console.log("address_building_number");
+    console.log(address_building_number);
     const address_one = this.addressOne;
     const address_two = this.addressTwo;
     const address_state = this.addressState;
     const address_town = this.addressTown;
     const address_zip = this.addressZip.replace(/\s/g,'');
-//.replace(/-|\s/g,'')
     const phone_code = this.phoneCode;
     const phone_mobile = this.phoneMobile;
     const date_birth_year = this.dobYear;
     const date_birth_month = this.dobMonth;
     const date_birth_day = this.dobDay;
     const gender = this.gender;
-    
     this.addressNumberError = "";
     this.nameFirstError = "";
     this.nameMiddleError = "";
     this.nameLastError = "";
-    
     this.addressCountryError = "";
     this.addressFlatNumberError = "";
     this.addressBuildingNameError = "";
@@ -997,7 +973,6 @@ class ProfileRoute extends PolymerElement {
     this.addressStateError = "";
     this.addressTownError = ""
     this.addressZipError = "";
-    
     this.phoneCodeError = "";
     this.phoneMobileError = "";
     this.dobError = "";
@@ -1008,7 +983,6 @@ class ProfileRoute extends PolymerElement {
     if(name_middle && name_middle.length > 35){check = false; this.nameMiddleError = "Name too long"};
     if(name_last === undefined || name_last === ""){check = false; this.nameLastError = "Please enter a family name"};
     if(name_last && name_last.length > 35){check = false; this.nameLastError = "Name too long"};
-    
     if(address_country === undefined || address_country === ""){check = false; this.addressCountryError = "Please enter a country"};
     if(address_country && address_country.length > 3){check = false; this.addressCountryError = "Country too long"};
     if(address_country && address_country.length < 3){check = false; this.addressCountryError = "Country too short"};
@@ -1016,7 +990,6 @@ class ProfileRoute extends PolymerElement {
     if(address_zip && address_zip.length > 15){check = false; this.addressZipError = "Zip too long"};
     if(address_town === undefined || address_town === ""){check = false; this.addressCityError = "Please enter a city"};
     if(address_town && address_town.length > 50){check = false; this.addressCityError = "City too long"};
-    
     if(phone_code === undefined || phone_code === ""){check = false; this.phoneCodeError = "Please select a dialing code"};
     if(phone_code && phone_code.length < 1){check = false; this.phoneCodeError = "Phone code too short"};
     if(phone_code && phone_code.length > 4){check = false; this.phoneCodeError = "Phone code too long"};
@@ -1032,7 +1005,6 @@ class ProfileRoute extends PolymerElement {
         name_first, 
         name_middle, 
         name_last, 
-        
         address_country, 
         address_zip, 
         address_town, 
@@ -1042,7 +1014,6 @@ class ProfileRoute extends PolymerElement {
         address_one, 
         address_two, 
         address_state, 
-        
         phone_code, 
         phone_mobile, 
         date_birth_day, 
@@ -1050,6 +1021,12 @@ class ProfileRoute extends PolymerElement {
         date_birth_year, 
         gender}
       this._save(data);
+    }
+  }
+
+  _countryChanged(){
+    if (this.addressCountry == 'USA') {
+      this.showState = true;
     }
   }
 
@@ -1066,8 +1043,9 @@ _save(data){
     if(response.data === true){
       const token = response.newjwt;
       localStorage.setItem("token", token);
-      this.set('route.path', '/dashboard/review/');
+      this.set('route.path', '/dashboard/review');
       this.btnText = 'Save Application Form';
+      this.btnImage = false;
     } else {
       console.log(error)
     }
@@ -1075,6 +1053,5 @@ _save(data){
   })
   .catch(error => console.log('Error:', error));
 }
-
 
 } window.customElements.define('profile-route', ProfileRoute);
