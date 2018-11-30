@@ -105,8 +105,8 @@ class AccountRoute extends PolymerElement {
         .comment {
           display: block;
           line-height: 18px;
-          color: #9da1ab;
-          padding: 9px 0 0;
+          color: #9D9FA9;
+          padding: 11px 0 0;
           margin: 0 0 -2px 0;
           font-size: 12px;
         }
@@ -149,6 +149,11 @@ class AccountRoute extends PolymerElement {
           color: #6681B5;
           text-decoration: none;
         }
+        .blue-info {
+          font-size: 12px;
+          color: #607DB4;
+          font-weight: 600;
+        }
 
       </style>
 
@@ -167,7 +172,9 @@ class AccountRoute extends PolymerElement {
                 <div class="form-inputs">
                   <label>Worbli Account Name </label>
                   <input id="worbliAccountName" value="{{worbliAccountName::input}}" name="worbliAccountName" type="text" class="lower">
-                  <small class="comment">Choose your desired Worbli account name (6-12 characters, must start with a letter and can only contain letters and numbers 1-5). Note: high profile trademarked names such as "google", "facebook", etc. are not allowed and accounts that have chosen such names will be frozen.</small></br>
+                  <small class="comment">Choose your desired Worbli account name</br>  
+                  <i>(6-12 characters, must start with a letter and can only contain letters and numbers 1-5).</br> </br> </i>
+                  <b>Note:</b> high profile trademarked names such as "google", "facebook", etc. are not allowed and accounts that have chosen such names will be frozen.</small></br>
                   <small class="comment error">[[worbliAccountNameError]]</small>
                 </div>
               </div>
@@ -175,17 +182,28 @@ class AccountRoute extends PolymerElement {
               <div class="input-area">
                 <div class="section-name">Keys</div>
                 <div class="form-inputs">
-                  <label>Active Public Key</label>
-                  <small class="comment">You can put your shareable/active keys in both fields.</small></br>
-                  <input id="publicKeyActive" value="{{publicKeyActive::input}}" name="publicKeyActive" type="text" class="text">
-                  <small class="comment error">[[publicKeyActiveError]]</small>
-                  <label>Owner Public Key</label>
+                
+    
+                <div class="split" style="margin-bottom: 12px;">
+                  <div style="margin-right: 12px;">
+                    <img src="./images/question.png" style="margin-top: 3px;">
+                  </div>
+                  <div>
+                  <a href="https://worbli.zendesk.com/hc/en-us/articles/360019917571-How-can-I-generate-my-Owner-or-Active-key-using-Scatter-">
+                    <p class="blue-info">
+                      Not sure what public keys are? </br> 
+                      <u>Check out our FAQ on how to generate a public key with Scatter.</u>
+                    </p>
+                    </a>
+                  </div>
+                </div>
+
+                <label>Owner Public Key</label>
                   <input id="publicKeyOwner" value="{{publicKeyOwner::input}}" name="publicKeyOwner" type="text" class="text">
                   <small class="comment error">[[publicKeyOwnerError]]</small>
-                  <p>
-                  </br></br>
-                  <a href="https://worbli.zendesk.com/hc/en-us/articles/360019917571-How-can-I-generate-my-Owner-or-Active-key-using-Scatter-" target="_blank">How can I generate my Owner or Active key using Scatter?</a></br>
-                  </p>
+                  <label>Active Public Key</label>
+                  <input id="publicKeyActive" value="{{publicKeyActive::input}}" name="publicKeyActive" type="text" class="text">
+                  <small class="comment error">[[publicKeyActiveError]]</small>
                 </div>
               </div>
             </template>
