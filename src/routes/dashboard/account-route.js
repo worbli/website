@@ -172,7 +172,7 @@ class AccountRoute extends PolymerElement {
                 <div class="form-inputs">
                   <label>Worbli Account Name </label>
                   <input id="worbliAccountName" value="{{worbliAccountName::input}}" name="worbliAccountName" type="text" class="lower">
-                  <small class="comment">Choose your desired Worbli account name</br>  
+                  <small class="comment">Choose your desired Worbli account name.</br>  
                   <i>(6-12 characters, must start with a letter and can only contain letters and numbers 1-5).</br> </br> </i>
                   <b>Note:</b> high profile trademarked names such as "google", "facebook", etc. are not allowed and accounts that have chosen such names will be frozen.</small></br>
                   <small class="comment error">[[worbliAccountNameError]]</small>
@@ -189,7 +189,7 @@ class AccountRoute extends PolymerElement {
                     <img src="./images/question.png" style="margin-top: 3px;">
                   </div>
                   <div>
-                  <a href="https://worbli.zendesk.com/hc/en-us/articles/360019917571-How-can-I-generate-my-Owner-or-Active-key-using-Scatter-">
+                  <a href="https://worbli.zendesk.com/hc/en-us/articles/360019917571-How-can-I-generate-my-Owner-or-Active-key-using-Scatter-" target="_blank">
                     <p class="blue-info">
                       Not sure what public keys are? </br> 
                       <u>Check out our FAQ on how to generate a public key with Scatter.</u>
@@ -315,7 +315,7 @@ _applyAccount(data){
   const ownerConfirmed = this._validatePublicKey(public_key_owner);
   if(!activeConfirmed){this.publicKeyActiveError = "Wrong public key format. Make sure you are not pasting your private key."; check = false}
   if(!ownerConfirmed){this.publicKeyOwnerError = "Wrong public key format. Make sure you are not pasting your private key."; check = false}
-  if(!nameConfirmed){this.worbliAccountNameError = "Account name must be between 6 and 12 characters, must start with a letter and can contain only lowercase letters and numbers 1-5. And must not contain the word worbli"; check = false;} 
+  if(!nameConfirmed){this.worbliAccountNameError = "Account name must be between 6 and 12 characters, must start with a letter, can contain only lowercase letters and numbers 1-5, and cannot contain the word worbli"; check = false;} 
   if(check === true){
     const data = {worbli_account_name, public_key_active, public_key_owner}
     const token = localStorage.getItem("token");
