@@ -86,11 +86,12 @@ class WorbliSignin extends PolymerElement {
       </style>
     <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
     <worbli-env api-path="{{apiPath}}""></worbli-env>
+
     <template is="dom-if" if="{{!forgotPassword}}">
       <h2>Sign In</h2>
       <p>Welcome back to WORBLI!</p>
       <input type="text" class="text" name="email" placeholder="Email" id="email" value="{{email::input}}" on-keyup="_confirmEmail">
-      <input type="password" class="text" name="password" placeholder="Password" id="password" value="{{password::input}}">
+      <input type="password" class="text" name="password" placeholder="Password" id="password" value="{{password::input}}" on-keydown="_checkEnter">
       <small class="comment error" on-click="_toggle">[[error]]</small>
       <button class="btn-critical" on-click="_login">Sign In</button>
     </template>
@@ -212,6 +213,16 @@ _buttonActive(){
 _validateEmail(email){
   var re = /\S+@\S+\.\S+/;
   return re.test(email);
+}
+
+
+_checkEnter() {
+    document.addEventListener('keypress', (event) => {
+        const keyCode = event.charCode;
+        if (keyCode === 13) {
+            this._login();
+        }
+    });
 }
 
 } window.customElements.define('worbli-signin', WorbliSignin);
