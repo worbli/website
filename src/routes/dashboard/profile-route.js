@@ -190,10 +190,12 @@ class ProfileRoute extends PolymerElement {
           <div class="input-area">
               <div class="section-name">Documents</div>
               <div class="form-inputs">
-              <small class="comment warn">You have to submit documents for KYC to proceed with application. </br>Remember to take off any glasses and take photos in good lighting</small></br>
-                <a href="https://portal-kyc.worbli.io?kyc_token=[[kycToken2]]" target="_blank" class="button">Submit Documents</a>
+                <small class="comment warn">You have to submit documents for KYC to proceed with application. </br>Remember to take off any glasses and take photos in good lighting</small></br>
+                <template is="dom-if" if="{{kycToken2}}">
+                  <a href="https://portal-kyc.worbli.io?kyc_token=[[kycToken2]]" target="_blank" class="button">Submit Documents</a>
+                </template>
                 <small class="comment warn">After submitting documents make sure you return </br>here to complete this application</small>
-              </div>
+                </div>
             </div>
           <hr>
           <div class="input-area">
