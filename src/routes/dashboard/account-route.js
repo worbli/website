@@ -167,6 +167,7 @@ class AccountRoute extends PolymerElement {
                 <div class="form-inputs">
                   <label>Worbli Account Name </label>
                   <input id="worbliAccountName" value="{{worbliAccountName::input}}" name="worbliAccountName" type="text" class="lower">
+                  <small class="comment">Choose your desired Worbli account name (6-12 characters, must start with a letter and can only contain letters and numbers 1-5). Note: high profile trademarked names such as "google", "facebook", etc. are not allowed and accounts that have chosen such names will be frozen.</small></br>
                   <small class="comment error">[[worbliAccountNameError]]</small>
                 </div>
               </div>
