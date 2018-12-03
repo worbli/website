@@ -56,12 +56,65 @@ class SharedropRoute extends PolymerElement {
           margin: 16px;
           cursor: pointer;
         }
+        .secondary{
+          background: white;
+          color: #62656F;
+          border: 0px solid #EBEBEC;
+          margin-right: 0;
+          font-weight: 200;
+        }
         .input-area {
           display: flex;
         }
         .intro{
           padding: 12px;
+          display: block;
         }
+        ol {
+          width: 92%;
+          margin: auto;
+        }
+        li {
+          margin-bottom: 20px;
+        }
+        .footer {
+          margin-top: 24px;
+          display: block;
+          height: 63px;
+          border-top: 1px solid #f5f5f5;
+          text-align: right;
+        }
+        b {
+          color: #62656F;
+          font-weight: 700;
+        }
+        pre {
+          background-color: #EBEBEC;
+          overflow: auto;
+          font-family: 'Monaco', monospace;
+          padding: 0 1em;
+        }
+        code {
+            font-family: Monaco, monospace;
+            font-size: $base-font-size;
+            line-height: 100%;
+            background-color: #eee;
+            padding: 0.2em;
+            letter-spacing: -0.05em;
+            word-break: normal;
+            border-radius: 5px;
+            display: block;
+            padding: 25px;
+            line-height: 25px;
+        }
+        pre code {
+            border: none;
+            background: none;
+            font-size: $base-font-size * 0.875;
+            line-height: 1em;
+            letter-spacing: normal;
+            word-break: break-all;
+          }
       </style>
       
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
@@ -71,22 +124,42 @@ class SharedropRoute extends PolymerElement {
           <worbli-dashnav></worbli-dashnav>
         </div>
         <div class="main">
+
           <h1>Claim Sharedrop</h1>
           <p class="intro">
-          1. You are going to be using Scatter in order to claim your sharedrop. Make sure you have the Scatter Desktop application open.</br>
-          2. Click on the "Attach Scatter to EOS" button.</br>
-          3. A pop-up window may appear, choose “Link”.</br>
-          4. Click on the “Claim Sharedrop” button.</br>
-          5. A pop-up window will appear, click on the tick to sign the transaction on the EOS network.</br>
+            <ol>
+              <li>You are going to be using Scatter in order to claim your sharedrop. Make sure you have the <b>Scatter Desktop</b> application open.</li>
+              <li>Click on the "<b>Attach Scatter to EOS</b>" button.</li>
+              <li>A pop-up window may appear, choose “<b>Link</b>”.</li>
+              <li>Click on the “<b>Claim Sharedrop</b>” button.</li>
+              <li>A pop-up window will appear, click on the tick to sign the transaction on the EOS network.</li>
+            </ol>
           </p>
-          <template is="dom-if" if="{{!scatterConnected}}">
-            <button type="button" on-click="_startVerificatoin">Attach Scatter to EOS</button>
+          <br /><br />
+          <template is="dom-if" if="{{advanced}}">
+          <h1>Advanced: Claim sharedrop manually</h1>
+          <p class="intro">
+          You can use cleos or another third-party client that allows you to sign custom transactions by executing the following action to the '<b>worbliworbli</b>' contract on EOS Mainnet:<br /><br />
+      <code>
+      cleos push action worbliworbli reg '["YOUR_EOS_ACCOUNT_NAME", "{{securityCode}}"]' -p YOUR_EOS_ACCOUNT_NAME@active
+      </code>
+          </p>
           </template>
-          <template is="dom-if" if="{{scatterConnected}}">
-            <button type="button" on-click="_signScatter">Claim Sharedrop</button>
-          </template>
+
+          <div class="footer">
+            <template is="dom-if" if="{{!scatterConnected}}">
+              <template is="dom-if" if="{{!advanced}}">
+                <button type="button" class="secondary" on-click="_startAdvanved">Advanced: Claim sharedrop manually</button>
+              </template>
+              <button type="button" on-click="_startVerificatoin">Attach Scatter to EOS</button>
+            </template>
+            <template is="dom-if" if="{{scatterConnected}}">
+              <button type="button" on-click="_signScatter">Claim Sharedrop</button>
+            </template>
+          </div>
         </div>
       </div>
+
       </br></br>
       <worbli-footer name="footer"></worbli-footer>
     `;
@@ -143,6 +216,10 @@ class SharedropRoute extends PolymerElement {
       refreshIntervalId:{
         type: Object
       },
+      advanced: {
+        type: Boolean,
+        value: false, 
+      }
     };
   }
 
@@ -194,6 +271,22 @@ class SharedropRoute extends PolymerElement {
         this.securityCode = response.security_code;
         this.started = true;
         this._connectScatter();
+      }
+    })
+  }
+
+  _startAdvanved(){
+    this.advanced = true;
+    const token = localStorage.getItem("token");
+    const url = `${this.apiPath}/user/security/`;
+    fetch(url, {
+      method: 'GET',
+      headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
+    })
+    .then((response) => {return response.json()})
+    .then((response) => {
+      if(response && response.data === true && response.security_code){
+        this.securityCode = response.security_code;
       }
     })
   }
