@@ -225,6 +225,7 @@ class SharedropRoute extends PolymerElement {
 
   _routeChanged(){
     this.securityCode = "";
+    this._getCode();
     this.advanced = false;
     this.started = false;
     const location = this.route.path.split("/");
