@@ -224,7 +224,8 @@ class SharedropRoute extends PolymerElement {
   }
 
   _routeChanged(){
-    console.log('changed')
+    this.advanced = false;
+    this.started = false;
     const location = this.route.path.split("/");
     if(location[2] === 'sharedrop'){
       this.onPage = true;
@@ -290,6 +291,7 @@ class SharedropRoute extends PolymerElement {
       }
     })
   }
+
 
   _connectScatter(){
     let scatter, eos;
