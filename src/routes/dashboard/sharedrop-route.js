@@ -1,6 +1,7 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../../css/shared-styles.js';
 import '../../components/worbli-footer.js';
+import '../../components/worbli-tabs.js';
 import '../../components/side-bar/worbli-snapshot.js';
 import '@polymer/app-route/app-location.js';
 import '../../worbli-env.js';
@@ -106,6 +107,7 @@ class SharedropRoute extends PolymerElement {
             display: block;
             padding: 25px;
             line-height: 25px;
+            margin: 0 24px 24px 24px;
         }
         pre code {
             border: none;
@@ -115,6 +117,43 @@ class SharedropRoute extends PolymerElement {
             letter-spacing: normal;
             word-break: break-all;
           }
+          label {
+          display: block;
+          font-size: 12px;
+          color: #393d4d;
+          font-weight: 600;
+          padding: 17px 0 7px;
+          width: 340px;
+        }
+        input {
+          width: 307px;
+          background: #f8f8f8;
+          border: 1px solid #d1d5d7;
+          border-radius: 2px;
+          margin: 0;
+          padding: 5px 7px;
+          line-height: 19px;
+          border: 1px solid #D9DBDE;
+          border-radius: 3px;
+          font-size: 13px;
+          color: #393D4D;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.02), 0 1px 0 rgba(255, 255, 255, 0.075);
+          -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.02), 0 1px 0 rgba(255, 255, 255, 0.075);
+          -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.02),0 1px 0 rgba(255, 255, 255, 0.075);
+        }
+        .inline-form{
+          margin-left: 12px;
+        }
+        hr {
+          margin-top: 24px;
+          display: block;
+          border-top: 1px solid #f5f5f5;
+        }
+        .code-label{
+          margin-left: 24px;
+          margin-top: 12px;
+          font-size: 13px;
+        }
       </style>
       
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
@@ -124,39 +163,41 @@ class SharedropRoute extends PolymerElement {
           <worbli-dashnav></worbli-dashnav>
         </div>
         <div class="main">
-
-          <h1>Claim Sharedrop</h1>
-          <p class="intro">
-            <ol>
-              <li>You are going to be using Scatter in order to claim your sharedrop. Make sure you have the <b>Scatter Desktop</b> application open.</li>
-              <li>Click on the "<b>Attach Scatter to EOS</b>" button.</li>
-              <li>A pop-up window may appear, choose “<b>Link</b>”.</li>
-              <li>Click on the “<b>Claim Sharedrop</b>” button.</li>
-              <li>A pop-up window will appear, click on the tick to sign the transaction on the EOS network.</li>
-            </ol>
-          </p>
-          <br /><br />
-          <template is="dom-if" if="{{advanced}}">
-          <h1>Advanced: Claim sharedrop manually</h1>
-          <p class="intro">
-          You can use cleos or another third-party client that allows you to sign custom transactions by executing the following action to the '<b>worbliworbli</b>' contract on EOS Mainnet:<br /><br />
-      <code>
-      cleos push action worbliworbli reg '["YOUR_EOS_ACCOUNT_NAME", "{{securityCode}}"]' -p YOUR_EOS_ACCOUNT_NAME@active
-      </code>
-          </p>
-          </template>
-
-          <div class="footer">
-            <template is="dom-if" if="{{!scatterConnected}}">
-              <template is="dom-if" if="{{!advanced}}">
-                <button type="button" class="secondary" on-click="_startAdvanved">Advanced: Claim sharedrop manually</button>
-              </template>
+        <worbli-tabs tabs="Claim With Scatter, Advanced" tab-selected="{{tabChosen}}"></worbli-tabs>
+          <template is="dom-if" if="{{!advanced}}">
+            <p class="intro">
+              <ol>
+                <li>You are going to be using Scatter in order to claim your sharedrop. Make sure you have the <b>Scatter Desktop</b> application open.</li>
+                <li>Click on the "<b>Attach Scatter to EOS</b>" button.</li>
+                <li>A pop-up window may appear, choose “<b>Link</b>”.</li>
+                <li>Click on the “<b>Claim Sharedrop</b>” button.</li>
+                <li>A pop-up window will appear, click on the tick to sign the transaction on the EOS network.</li>
+              </ol>
+              <template is="dom-if" if="{{!scatterConnected}}">
               <button type="button" on-click="_startVerificatoin">Attach Scatter to EOS</button>
             </template>
             <template is="dom-if" if="{{scatterConnected}}">
               <button type="button" on-click="_signScatter">Claim Sharedrop</button>
             </template>
-          </div>
+            </p>
+          </template>
+          
+            <template is="dom-if" if="{{advanced}}">
+            <div class="inline-form">
+            <label>Enter your EOS account to claim the sharedrop:</label>
+            <input id="eosAccountName" value="{{eosAccountName::input}}" name="eosAccountName" type="text" class="text">
+            </div>
+            <hr>
+            <br />
+            <p class="intro">You can use cleos or another third-party client that allows you to sign custom transactions by executing the following action to the '<b>worbliworbli</b>' contract on EOS Mainnet:<br /><br />
+            Action: <b>reg</b><br />
+            Parameter 1: <b>{{eosAccountName}}</b><br />
+            Parameter 2: <b>{{securityCode}}</b><br />
+
+            </p>
+            <p class="code-label">Example using cleos:</p>
+            <code>cleos push action worbliworbli reg '["{{eosAccountName}}", "{{securityCode}}"]' -p {{eosAccountName}}@active</code>
+          </template>
         </div>
       </div>
 
@@ -219,8 +260,24 @@ class SharedropRoute extends PolymerElement {
       advanced: {
         type: Boolean,
         value: false, 
+      },
+      tabChosen: {
+        type: Text,
+        value: 'Claim With Scatter',
+        observer: '_tabChanged'
       }
+
     };
+  }
+
+
+  _tabChanged(){
+    console.log(this.tabChosen)
+    if(this.tabChosen === 'Claim With Scatter'){
+      this.advanced = false;
+    } else if(this.tabChosen === 'Advanced') {
+      this.advanced = true;
+    }
   }
 
   _routeChanged(){
