@@ -283,7 +283,6 @@ class SharedropRoute extends PolymerElement {
   _routeChanged(){
     this.securityCode = "";
     this._getCode();
-    this.advanced = false;
     this.started = false;
     const location = this.route.path.split("/");
     if(location[2] === 'sharedrop'){
@@ -335,21 +334,7 @@ class SharedropRoute extends PolymerElement {
     })
   }
 
-  _startAdvanved(){
-    this.advanced = true;
-    const token = localStorage.getItem("token");
-    const url = `${this.apiPath}/user/security/`;
-    fetch(url, {
-      method: 'GET',
-      headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
-    })
-    .then((response) => {return response.json()})
-    .then((response) => {
-      if(response && response.data === true && response.security_code){
-        this.securityCode = response.security_code;
-      }
-    })
-  }
+
 
   _getCode(){
     const token = localStorage.getItem("token");
