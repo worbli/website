@@ -736,18 +736,18 @@ class ProfileRoute extends PolymerElement {
                 <option value="31">31</option>
               </select>
               <select class="dropdown dropdown-short" id="dobMonth" value="{{dobMonth::input}}">
-                <option value="1">1 - Jan</option>
-                <option value="2">2 - Feb</option>
-                <option value="3">3 - Mar</option>
-                <option value="4">4 - Apr</option>
-                <option value="5">5 - May</option>
-                <option value="6">6 - Jun</option>
-                <option value="7">7 - Jul</option>
-                <option value="8">8 - Aug</option>
-                <option value="9">9 - Sep</option>
-                <option value="10">10 - Oct</option>
-                <option value="11">11 - Nov</option>
-                <option value="12">12 - Dec</option>
+                <option value="1">January</option>
+                <option value="2">Febuary</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
               </select>
               <select class="dropdown dropdown-short" id="dobYear" value="{{dobYear::input}}">
                 <option value="2002">2002</option>
