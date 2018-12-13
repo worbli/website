@@ -332,7 +332,6 @@ _applyAccount(data){
       } else {
         this.complete = true;
         localStorage.setItem("token", response.newjwt);
-        this.set('route.path', '/dashboard/sharedrop');
       }
     })
     .catch(error => {
