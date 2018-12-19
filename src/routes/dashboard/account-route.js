@@ -165,8 +165,8 @@ class AccountRoute extends PolymerElement {
         </div>
         <div class="main">
           <h1>Worbli Account</h1>
+          <!-- IF VIEW APPROVED-->
           <template is="dom-if" if="{{viewApproved}}">
-            <template is="dom-if" if="{{!complete}}">
               <div class="input-area">
                 <div class="section-name">Name</div>
                 <div class="form-inputs">
@@ -182,8 +182,6 @@ class AccountRoute extends PolymerElement {
               <div class="input-area">
                 <div class="section-name">Keys</div>
                 <div class="form-inputs">
-                
-    
                 <div class="split" style="margin-bottom: 12px;">
                   <div style="margin-right: 12px;">
                     <img src="./images/question.png" style="margin-top: 3px;">
@@ -206,16 +204,13 @@ class AccountRoute extends PolymerElement {
                   <small class="comment error">[[publicKeyActiveError]]</small>
                 </div>
               </div>
-            </template>
-            <template is="dom-if" if="{{complete}}">
-              <p class="intro">Your account has been successfully created!</p>
-            </template>
-            <template is="dom-if" if="{{!complete}}">
               <div class="footer">
                 <button type="button" on-click="_applyAccount">Apply for Account</button>
               </div>
-            </template>
           </template>
+          <!-- END IF VIEW APPROVED -->
+
+          <!-- IF VIEW NAMED-->
           <template is="dom-if" if="{{viewNamed}}">
             <p class="info">
               Your WORBLI blockchain account has been created. Account name <b>[[worbliAccountName]]</b></br></br>
@@ -223,6 +218,9 @@ class AccountRoute extends PolymerElement {
               If you had an EOS account on September 7th, you can <a href="/dashboard/sharedrop">Claim your Sharedrop</a>
             </p>
           </template>
+          <!-- END IF VIEW NAMED-->
+
+          <!-- IF VIEW CREDITED-->
           <template is="dom-if" if="{{viewCredited}}">
             <p class="info">
               Your WORBLI blockchain account has been created. Account name <b>[[worbliAccountName]]</b></br></br>
@@ -230,6 +228,8 @@ class AccountRoute extends PolymerElement {
               Congratulations you have successfully claimed your sharedrop!
             </p>
           </template>
+          <!-- END IF VIEW CREDITED-->
+
         </div>
       </div>
       </br></br>
@@ -239,26 +239,8 @@ class AccountRoute extends PolymerElement {
 
   static get properties() {
     return {
-      complete: {
-        type: Boolean,
-        value: false,
-      },
-      started: {
-        type: Boolean,
-        value: false,
-      },
-      readonly: {
-        type: Text,
-      },
       apiPath: {
         type: Text,
-      },
-      kycToken2: {
-        type: Text,
-      },
-      showIframe: {
-        type: Boolean,
-        value: false,
       },
       route: {
         type: Boolean,
@@ -266,7 +248,7 @@ class AccountRoute extends PolymerElement {
       },
       viewApproved: {
         type: Boolean,
-        value: true,
+        value: false,
       },
       viewNamed: {
         type: Boolean,
@@ -284,6 +266,9 @@ class AccountRoute extends PolymerElement {
 
   _routeChanged(){
     const loc = localStorage.getItem("loc");
+    if (!loc) {
+      console.log('NO LOC for account-route.js _routeChanged')
+    }
     if(loc =='approved'){
       this.viewApproved = true;
       this.viewNamed = false;
@@ -304,19 +289,24 @@ class AccountRoute extends PolymerElement {
 
 _applyAccount(data){
   let check = true;
+  // remove any errors
   this.publicKeyActiveError = "";
   this.publicKeyOwnerError = "";
   this.worbliAccountNameError = "";
+  // get values from the form
   const worbli_account_name = this.worbliAccountName;
   const public_key_active = this.publicKeyActive;
   const public_key_owner = this.publicKeyOwner;
+  // validate the values
   const nameConfirmed = this._validateAccountName(worbli_account_name);
   const activeConfirmed = this._validatePublicKey(public_key_active);
   const ownerConfirmed = this._validatePublicKey(public_key_owner);
+  // if values are not valid show error
   if(!activeConfirmed){this.publicKeyActiveError = "Wrong public key format. Make sure you are not pasting your private key."; check = false}
   if(!ownerConfirmed){this.publicKeyOwnerError = "Wrong public key format. Make sure you are not pasting your private key."; check = false}
   if(!nameConfirmed){this.worbliAccountNameError = "Account name must be between 6 and 12 characters, must start with a letter, can contain only lowercase letters and numbers 1-5, and cannot contain the word worbli"; check = false;} 
-  if(check === true){
+  // if all values are valid
+  if (check === true) {
     const data = {worbli_account_name, public_key_active, public_key_owner}
     const token = localStorage.getItem("token");
     const url = `${this.apiPath}/user/account/`;
@@ -327,16 +317,24 @@ _applyAccount(data){
     })
     .then((response) => {return response.json()})
     .then((response) => {
-      if(response.data === false){
+      if (response.data === false) {
+        console.log(' Response.data is false for account-route.js _applyAccount');
         this.worbliAccountNameError = response.error
       } else {
-        this.complete = true;
-        localStorage.setItem("token", response.newjwt);
+        if (!response.newjwt) {
+          console.log('NO jwt was recieved for account-route.js _applyAccount');
+        } else {
+          localStorage.setItem("token", response.newjwt);
+          this.viewApproved = false;
+          this.viewNamed = true;
+          this.viewCredited = false;
+          console.log('new jwt recieved for account-route.js _applyAccount');
+        }
       }
     })
-    .catch(error => {
-      console.log("response");
-      this.worbliAccountNameError = "Account name is already taken"
+    .catch((error) => {
+      console.log('/user/account cant be reached for account-route.js _applyAccount');
+      console.log(error);
     });
   }
 }
@@ -352,22 +350,29 @@ _getName(){
   .then((response) => {
     this.worbliAccountName = response.worbli_account_name;
     const loc = localStorage.getItem("loc");
-    if(loc =='approved'){
+    if (!loc) {
+      console.log('NO LOC for account-route.js _getName')
+    }
+    if(loc === 'approved'){
       this.viewApproved = true;
       this.viewNamed = false;
       this.viewCredited = false;
     }
-    if(loc =='named'){
+    if(loc === 'named'){
       this.viewApproved = false;
       this.viewNamed = true;
       this.viewCredited = false;
     }
-    if(loc =='credited'){
+    if(loc === 'credited'){
       this.viewApproved = false;
       this.viewNamed = false;
       this.viewCredited = true;
     }
   })
+  .catch((error) => {
+    console.log('/user/account cant be reached for account-route.js _getName');
+    console.log(error);
+  });
 }
 
 _validateAccountName(name){
