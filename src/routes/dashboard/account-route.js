@@ -319,6 +319,7 @@ _applyAccount(data){
     .then((response) => {
       if (response.data === false) {
         console.log(' Response.data is false for account-route.js _applyAccount');
+        console.log(response.logerror)
         this.worbliAccountNameError = response.error
       } else {
         if (!response.newjwt) {
