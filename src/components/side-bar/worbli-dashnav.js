@@ -149,6 +149,10 @@ class WorbliDashnav extends PolymerElement {
         type: Boolean,
         value: false,
       },
+      rejected: {
+        type: Boolean,
+        value: false,
+      },
       page: {
         type: Text,
       }
@@ -204,6 +208,7 @@ _statusChanged(){
   this.approved = false;
   this.named = false;
   this.credited = false;
+  this.rejected = false;
   if(this.onfidoStatus === 'default'){ // The user has not saved an application form form => Profile
     this.default = true;
     localStorage.setItem("loc", "default");
@@ -212,7 +217,7 @@ _statusChanged(){
     this.started = true;
     localStorage.setItem("loc", "started");
   };
-  if(this.onfidoStatus === 'review'){ // the user has Submited the application => Review
+  if(this.onfidoStatus === 'review' || this.onfidoStatus === 'rejected'){ // the user has Submited the application => Review
     this.review = true;
     localStorage.setItem("loc", "review");
   };
