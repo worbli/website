@@ -165,6 +165,9 @@ class PasswordRoute extends PolymerElement {
       apiPath: {
         type: Text,
       },
+      apiEnd: {
+        type: Text,
+      },
     };
   }
 
@@ -189,8 +192,13 @@ _validatePassword(){
 }
 
 _save(data){
+  if (this.route && this.route.__queryParams && this.route.__queryParams.token) {
+    this.apiEnd = 'password';
+  } else {
+    this.apiEnd = 'updatePassword';
+  }
   const token = localStorage.getItem("token");
-  const url = `${this.apiPath}/user/password/`;
+  const url = `${this.apiPath}/user/${apiEnd}/`;
   fetch(url, {
     method: 'POST',
     body: JSON.stringify(data), 
