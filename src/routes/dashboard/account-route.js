@@ -269,17 +269,17 @@ class AccountRoute extends PolymerElement {
     if (!loc) {
       console.log('NO LOC for account-route.js _routeChanged')
     }
-    if(loc =='approved'){
+    if (loc =='approved') {
       this.viewApproved = true;
       this.viewNamed = false;
       this.viewCredited = false;
     }
-    if(loc =='named'){
+    if (loc =='named') {
       this.viewApproved = false;
       this.viewNamed = true;
       this.viewCredited = false;
     }
-    if(loc =='credited'){
+    if (loc =='credited') {
       this.viewApproved = false;
       this.viewNamed = false;
       this.viewCredited = true;
