@@ -2,7 +2,6 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../../css/shared-styles.js';
 import '../../components/worbli-footer.js';
 import '../../components/side-bar/worbli-snapshot.js';
-import '../../components/side-bar/worbli-dashnav.js';
 import '@polymer/app-route/app-location.js';
 import '../../worbli-env.js';
 import '../../components/worbli-logger.js';
@@ -127,9 +126,6 @@ class PasswordRoute extends PolymerElement {
       <worbli-env api-path="{{apiPath}}""></worbli-env>
       <worbli-logger id="logger"></worbli-logger>
       <div class="split">
-        <div class="side">
-          <worbli-dashnav></worbli-dashnav>
-        </div>
         <div class="main">
           <h1>Set Password</h1>
           <div class="input-area">
@@ -192,22 +188,17 @@ _validatePassword(){
 }
 
 _save(data){
-  if (this.route && this.route.__queryParams && this.route.__queryParams.token) {
-    this.apiEnd = 'password';
-  } else {
-    this.apiEnd = 'updatePassword';
-  }
-  const token = localStorage.getItem("token");
-  const url = `${this.apiPath}/user/${this.apiEnd}/`;
+  const token = this.route.__queryParams.token;
+  data.token = token;
+  const url = `${this.apiPath}/visitor/password/`;
   fetch(url, {
     method: 'POST',
     body: JSON.stringify(data), 
-    headers:{'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
+    headers:{'Content-Type': 'application/json'}
   })
   .then((response) => {return response.json()})
   .then((response) => {
      if(response.data){
-        localStorage.removeItem("token");
         this.set('route.path', '/')
         this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'signin'}}));
      } else {
