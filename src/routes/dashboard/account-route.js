@@ -248,7 +248,7 @@ class AccountRoute extends PolymerElement {
       },
       viewApproved: {
         type: Boolean,
-        value: false,
+        value: true,
       },
       viewNamed: {
         type: Boolean,
@@ -377,6 +377,9 @@ _getName(){
 }
 
 _validateAccountName(name){
+  if(!name)
+    return false;
+    
   console.log(name)
   var re = /^(?!.*?worbli)[a-z][a-z1-5]{5,11}$/;
   console.log(re.test(name))
