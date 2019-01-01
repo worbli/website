@@ -968,6 +968,7 @@ _onfidoJwt(){
           this.dobMonth = response.profile.date_birth_month || "";
           this.dobDay = response.profile.date_birth_day || "";
           this.gender = response.profile.gender || "";
+          this._countryChanged();
           if(response.profile && response.profile.address_country){this.addressCountry = response.profile.address_country.toUpperCase() || ""}
         }
       })
@@ -1067,6 +1068,8 @@ _onfidoJwt(){
   _countryChanged(){
     if (this.addressCountry == 'USA') {
       this.showState = true;
+    } else {
+      this.showState = false;
     }
   }
 
