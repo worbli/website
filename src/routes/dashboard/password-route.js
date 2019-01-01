@@ -198,7 +198,7 @@ _save(data){
     this.apiEnd = 'updatePassword';
   }
   const token = localStorage.getItem("token");
-  const url = `${this.apiPath}/user/${apiEnd}/`;
+  const url = `${this.apiPath}/user/${this.apiEnd}/`;
   fetch(url, {
     method: 'POST',
     body: JSON.stringify(data), 
