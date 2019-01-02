@@ -58,6 +58,7 @@ class WorbliPortal extends PolymerElement {
         <terms-route name="terms"></terms-route>
         <privacy-route name="privacy"></privacy-route>
         <dashboard-route name="dashboard"></dashboard-route>
+        <visitor-route name="visitor"></visitor-route>
         <profservices-route name="profservices"></profservices-route>
         <networkterms-route name="networkterms"></networkterms-route>
         <developerterms-route name="developerterms"></developerterms-route>
@@ -100,7 +101,7 @@ class WorbliPortal extends PolymerElement {
     }
     if (!page) {
       this.page = 'main';
-    } else if (['signin', 'join', 'main', 'network', 'about', 'vision', 'team', 'roadmap', 'register', 'terms', 'privacy', 'profservices', 'networkterms', 'developerterms', 'platformterms', 'menu', 'dashboard'].indexOf(page) !== -1) {
+    } else if (['signin', 'join', 'main', 'network', 'about', 'vision', 'team', 'roadmap', 'register', 'terms', 'privacy', 'profservices', 'networkterms', 'developerterms', 'platformterms', 'menu', 'dashboard','visitor'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -159,6 +160,9 @@ class WorbliPortal extends PolymerElement {
         break;
       case 'dashboard':
         import('./routes/dashboard-route.js');
+        break;
+      case 'visitor':
+        import('./routes/visitor-route.js');
         break;
       case 'error':
         import('./routes/error-route.js');

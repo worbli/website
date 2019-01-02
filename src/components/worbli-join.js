@@ -235,7 +235,7 @@ _sendEmail(){
     this.complete = true;
     this.error = ""
     const data = {email, agreed_terms, agreed_marketing}
-    const url = `${this.apiPath}/email/authorize/`;
+    const url = `${this.apiPath}/visitor/register/`;
     fetch(url, {
         method: 'POST',
         body: JSON.stringify(data), 
