@@ -253,7 +253,7 @@ class AccountRoute extends PolymerElement {
       },
       viewApproved: {
         type: Boolean,
-        value: false,
+        value: true,
       },
       viewNamed: {
         type: Boolean,

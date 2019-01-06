@@ -813,46 +813,46 @@ class ProfileRoute extends PolymerElement {
                 <option value="1942">1942</option>
                 <option value="1941">1941</option>
                 <option value="1940">1940</option>
-                <option value="1949">1939</option>
-                <option value="1948">1938</option>
-                <option value="1947">1937</option>
-                <option value="1946">1936</option>
-                <option value="1945">1935</option>
-                <option value="1944">1934</option>
-                <option value="1943">1933</option>
-                <option value="1942">1932</option>
-                <option value="1941">1931</option>
-                <option value="1940">1930</option>
-                <option value="1949">1929</option>
-                <option value="1948">1928</option>
-                <option value="1947">1927</option>
-                <option value="1946">1926</option>
-                <option value="1945">1925</option>
-                <option value="1944">1924</option>
-                <option value="1943">1923</option>
-                <option value="1942">1922</option>
-                <option value="1941">1921</option>
-                <option value="1940">1920</option>
-                <option value="1949">1919</option>
-                <option value="1948">1918</option>
-                <option value="1947">1917</option>
-                <option value="1946">1916</option>
-                <option value="1945">1915</option>
-                <option value="1944">1914</option>
-                <option value="1943">1913</option>
-                <option value="1942">1912</option>
-                <option value="1941">1911</option>
-                <option value="1940">1910</option>
-                <option value="1949">1909</option>
-                <option value="1948">1908</option>
-                <option value="1947">1907</option>
-                <option value="1946">1906</option>
-                <option value="1945">1905</option>
-                <option value="1944">1904</option>
-                <option value="1943">1903</option>
-                <option value="1942">1902</option>
-                <option value="1941">1901</option>
-                <option value="1940">1900</option>
+                <option value="1939">1939</option>
+                <option value="1938">1938</option>
+                <option value="1937">1937</option>
+                <option value="1936">1936</option>
+                <option value="1935">1935</option>
+                <option value="1934">1934</option>
+                <option value="1933">1933</option>
+                <option value="1932">1932</option>
+                <option value="1931">1931</option>
+                <option value="1930">1930</option>
+                <option value="1929">1929</option>
+                <option value="1928">1928</option>
+                <option value="1927">1927</option>
+                <option value="1926">1926</option>
+                <option value="1925">1925</option>
+                <option value="1924">1924</option>
+                <option value="1923">1923</option>
+                <option value="1922">1922</option>
+                <option value="1921">1921</option>
+                <option value="1920">1920</option>
+                <option value="1919">1919</option>
+                <option value="1918">1918</option>
+                <option value="1917">1917</option>
+                <option value="1916">1916</option>
+                <option value="1915">1915</option>
+                <option value="1914">1914</option>
+                <option value="1913">1913</option>
+                <option value="1912">1912</option>
+                <option value="1911">1911</option>
+                <option value="1910">1910</option>
+                <option value="1909">1909</option>
+                <option value="1908">1908</option>
+                <option value="1907">1907</option>
+                <option value="1906">1906</option>
+                <option value="1905">1905</option>
+                <option value="1904">1904</option>
+                <option value="1903">1903</option>
+                <option value="1902">1902</option>
+                <option value="1901">1901</option>
+                <option value="1900">1900</option>
               </select>
               <small class="comment error">[[dobError]]</small>
               <label>Gender</label>
@@ -968,6 +968,7 @@ _onfidoJwt(){
           this.dobMonth = response.profile.date_birth_month || "";
           this.dobDay = response.profile.date_birth_day || "";
           this.gender = response.profile.gender || "";
+          this._countryChanged();
           if(response.profile && response.profile.address_country){this.addressCountry = response.profile.address_country.toUpperCase() || ""}
         }
       })
@@ -1067,6 +1068,8 @@ _onfidoJwt(){
   _countryChanged(){
     if (this.addressCountry == 'USA') {
       this.showState = true;
+    } else {
+      this.showState = false;
     }
   }
 
