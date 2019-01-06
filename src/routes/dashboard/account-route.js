@@ -237,6 +237,11 @@ class AccountRoute extends PolymerElement {
     `;
   }
 
+  ready() {
+    super.ready();
+    this._routeChanged();
+  }
+
   static get properties() {
     return {
       apiPath: {
@@ -377,7 +382,7 @@ _getName(){
 }
 
 _validateAccountName(name){
-  console.log(name)
+  if (!name) return false;  
   var re = /^(?!.*?worbli)[a-z][a-z1-5]{5,11}$/;
   console.log(re.test(name))
   return re.test(name);
