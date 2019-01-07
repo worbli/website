@@ -1029,8 +1029,8 @@ _onfidoJwt(){
     if(address_country && address_country.length < 3){check = false; this.addressCountryError = "Country too short"};
     if(address_zip === undefined || address_zip === ""){check = false; this.addressZipError = "Please enter a zip or postal code"};
     if(address_zip && address_zip.length > 15){check = false; this.addressZipError = "Zip too long"};
-    if(address_town === undefined || address_town === ""){check = false; this.addressCityError = "Please enter a city"};
-    if(address_town && address_town.length > 50){check = false; this.addressCityError = "City too long"};
+    if(address_town === undefined || address_town === ""){check = false; this.addressTownError = "Please enter a city"};
+    if(address_town && address_town.length > 50){check = false; this.addressTownError = "City too long"};
     if(phone_code === undefined || phone_code === ""){check = false; this.phoneCodeError = "Please select a dialing code"};
     if(phone_code && phone_code.length < 1){check = false; this.phoneCodeError = "Phone code too short"};
     if(phone_code && phone_code.length > 4){check = false; this.phoneCodeError = "Phone code too long"};
