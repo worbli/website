@@ -210,9 +210,7 @@ _save(data){
       })
       .then((response) => {return response.json()})
       .then((response) => {
-        console.log(response.token)
         localStorage.setItem("token", response.token);
-        console.log('redirecting')
         this.set('route.path', '/dashboard/profile')
       })
         // this.set('route.path', '/')
