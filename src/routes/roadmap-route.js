@@ -86,20 +86,20 @@ class RoadmapRoute extends PolymerElement {
           <div class="center">
             <h2>Product</h2>
               <div class="roadmap-container">
-                <worbli-roadmap title="AML/KYC to WORBLI Accounts" status="testing"></worbli-roadmap>
+                <worbli-roadmap title="AML/KYC to WORBLI Accounts" status="complete"></worbli-roadmap>
                 <worbli-roadmap title="Facilitate Ongoing dApp Launches" status="inprogress"></worbli-roadmap>
                 <worbli-roadmap title="dApp 1 - Recruit Lead BP Dev Team" status="complete"></worbli-roadmap>
                 <worbli-roadmap title="dApp 2 - Recruit Lead BP Dev Team" status="complete"></worbli-roadmap>
                 <worbli-roadmap title="dApp 1 - Spec For Development" status="complete"></worbli-roadmap>
                 <worbli-roadmap title="dApp 2 - Spec For Development" status="inprogress"></worbli-roadmap>
                 <worbli-roadmap title="Portal - Launch Block Explorer" status="inprogress"></worbli-roadmap>
-                <worbli-roadmap title="Portal - Refine Signup Process" status="testing"></worbli-roadmap>
+                <worbli-roadmap title="Portal - Refine Signup Process" status="complete"></worbli-roadmap>
                 <worbli-roadmap title="Portal - FAQ’s & Support Desk" status="complete"></worbli-roadmap>
                 <worbli-roadmap title="Portal - Launch WBI Bounty" status="inprogress"></worbli-roadmap>
                 <worbli-roadmap title="Portal - Dashboard News Feed" status="testing"></worbli-roadmap>
                 <worbli-roadmap title="Portal - Community Chat Box" status="inprogress"></worbli-roadmap>
                 <worbli-roadmap title="Portal - Engagement Hub" status="inprogress"></worbli-roadmap>
-                <worbli-roadmap title="Portal - UI/UX Updates" status="inprogress"></worbli-roadmap>
+                <worbli-roadmap title="Portal - UI/UX Updates" status="complete"></worbli-roadmap>
                 <worbli-roadmap title="Portal - Launch Friend Get Friend" status="inprogress"></worbli-roadmap>
                 <worbli-roadmap title="WORBLI Wallet - V1" status="inprogress"></worbli-roadmap>
                 <worbli-roadmap title="WORBLI Wallet - Insured Multi Asset Wallet" status="inprogress"></worbli-roadmap>
@@ -122,9 +122,9 @@ class RoadmapRoute extends PolymerElement {
               <worbli-roadmap title="List WORBLI (WBI) on Exchanges" status="inprogress"></worbli-roadmap>
               <worbli-roadmap title="Partner Development Network" status="inprogress"></worbli-roadmap>
               <worbli-roadmap title="Blockchain Education Hub" status="inprogress"></worbli-roadmap>
-              <worbli-roadmap title="Launch WORBLI" status="testing"></worbli-roadmap>
-              <worbli-roadmap title="Launch Sharedrop" status="testing"></worbli-roadmap>
-              <worbli-roadmap title="Integrate Onfido" status="testing"></worbli-roadmap>
+              <worbli-roadmap title="Launch WORBLI" status="complete"></worbli-roadmap>
+              <worbli-roadmap title="Launch Sharedrop" status="complete"></worbli-roadmap>
+              <worbli-roadmap title="Integrate Onfido" status="complete"></worbli-roadmap>
               <worbli-roadmap title="Add Reserve Block Producers" status="inprogress"></worbli-roadmap>
               <worbli-roadmap title="Enable Support For Chintai" status="inprogress"></worbli-roadmap>
               <worbli-roadmap title="Enable Support For Scatter Wallet" status="complete"></worbli-roadmap>
