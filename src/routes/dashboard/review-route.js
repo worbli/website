@@ -238,7 +238,7 @@ class ReviewRoute extends PolymerElement {
     this.patient = "Please be patient";
     this.btnText = "Submitting...";
     this.btnImage = true;
-    if(this.documentCount >= 2){
+    if(this.documentCount >= 1){
       const token = localStorage.getItem("token");
       const url = `${this.apiPath}/kyc/check/`;
       fetch(url, {
