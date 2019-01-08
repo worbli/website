@@ -260,6 +260,7 @@ class ReviewRoute extends PolymerElement {
     }
   }
   _routeChanged(){
+    window.scrollTo(0,0);
     if(this.route.path === '/dashboard/review/' || this.route.path === '/dashboard/review')
     this._getData();
   }
