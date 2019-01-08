@@ -199,8 +199,24 @@ _save(data){
   .then((response) => {return response.json()})
   .then((response) => {
      if(response.data){
-        this.set('route.path', '/')
-        this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'signin'}}));
+      const email = response.email;
+      const password = data.password;
+      const data2 = {email, password};
+      const url = `${this.apiPath}/user/login/`;
+      fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data2), 
+        headers:{'Content-Type': 'application/json'}
+      })
+      .then((response) => {return response.json()})
+      .then((response) => {
+        console.log(response.token)
+        localStorage.setItem("token", response.token);
+        console.log('redirecting')
+        this.set('route.path', '/dashboard/profile')
+      })
+        // this.set('route.path', '/')
+        // this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'signin'}}));
      } else {
         this.passwordTwoError = "Click the email link again"
      }
