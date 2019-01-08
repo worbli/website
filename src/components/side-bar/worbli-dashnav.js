@@ -62,7 +62,7 @@ class WorbliDashnav extends PolymerElement {
           <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
           <a href="/dashboard/account" class="link hidden"><div class="nav">Account</div></a>
           <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
-          <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
+          <a href="/dashboard/editpassword" class="link active"><div class="nav selected">Password</div></a>
         </template>
         <template is="dom-if" if="{{started}}">
           <a href="/dashboard/profile" class="link active"><div class="nav selected">Application</div></a>
@@ -70,7 +70,7 @@ class WorbliDashnav extends PolymerElement {
           <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
           <a href="/dashboard/account" class="link hidden"><div class="nav">Account</div></a>
           <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
-          <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
+          <a href="/dashboard/editpassword" class="link active"><div class="nav selected">Password</div></a>
         </template>
         <template is="dom-if" if="{{review}}">
           <a href="/dashboard/profile" class="link hidden"><div class="nav">Application</div></a>
@@ -78,7 +78,7 @@ class WorbliDashnav extends PolymerElement {
           <a href="/dashboard/status" class="link active"><div class="nav selected">Status</div></a>
           <a href="/dashboard/account" class="link hidden"><div class="nav">Account</div></a>
           <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
-          <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
+          <a href="/dashboard/editpassword" class="link active"><div class="nav selected">Password</div></a>
         </template>
         <template is="dom-if" if="{{approved}}">
           <a href="/dashboard/profile" class="link hidden"><div class="nav">Application</div></a>
@@ -86,7 +86,7 @@ class WorbliDashnav extends PolymerElement {
           <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
           <a href="/dashboard/account" class="link active"><div class="nav selected">Account</div></a>
           <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
-          <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
+          <a href="/dashboard/editpassword" class="link active"><div class="nav selected">Password</div></a>
         </template>
         <template is="dom-if" if="{{named}}">
           <a href="/dashboard/profile" class="link hidden"><div class="nav">Application</div></a>
@@ -94,7 +94,7 @@ class WorbliDashnav extends PolymerElement {
           <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
           <a href="/dashboard/account" class="link active"><div class="nav selected">Account</div></a>
           <a href="/dashboard/sharedrop" class="link active"><div class="nav selected">Sharedrop</div></a>
-          <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
+          <a href="/dashboard/editpassword" class="link active"><div class="nav selected">Password</div></a>
         </template>
         <template is="dom-if" if="{{credited}}">
           <a href="/dashboard/profile" class="link hidden"><div class="nav">Application</div></a>
@@ -102,7 +102,7 @@ class WorbliDashnav extends PolymerElement {
           <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
           <a href="/dashboard/account" class="link active"><div class="nav selected">Account</div></a>
           <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
-          <a href="/dashboard/password" class="link active"><div class="nav selected">Password</div></a>
+          <a href="/dashboard/editpassword" class="link active"><div class="nav selected">Password</div></a>
         </template>
       </div>
     `;

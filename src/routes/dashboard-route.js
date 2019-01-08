@@ -28,6 +28,7 @@ class DasboardRoute extends PolymerElement {
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main" class="center">
         <profile-route name="profile"></profile-route>
         <password-route name="password"></password-route>  
+        <editpassword-route name="editpassword"></editpassword-route>  
         <review-route name="review"></review-route>  
         <status-route name="status"></status-route> 
         <account-route name="account"></account-route>   
@@ -58,7 +59,7 @@ class DasboardRoute extends PolymerElement {
   _routePageChanged(page) {
     if (!page) {
       this.page = 'profile';
-    } else if (['sharedrop', 'profile', 'account', 'password', 'review', 'status'].indexOf(page) !== -1) {
+    } else if (['sharedrop', 'profile', 'account', 'password', 'review', 'status', 'editpassword'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -84,6 +85,9 @@ class DasboardRoute extends PolymerElement {
             break;
         case 'password':
             import('./dashboard/password-route.js');
+            break;
+        case 'editpassword':
+            import('./dashboard/editpassword-route.js');
             break;
     }
   }
