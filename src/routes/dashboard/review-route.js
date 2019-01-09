@@ -137,27 +137,14 @@ class ReviewRoute extends PolymerElement {
           <div class="input-area">
             <div class="section-name">Applicant</div>
             <div class="form-inputs">
-              <p class="label">{{nameFirst}} {{nameMiddle}} {{nameLast}} </p>
+              <p class="label">{{nameFirst}} {{nameLast}} </p>
             </div>
           </div>
           <hr>
           <div class="input-area">
-            <div class="section-name">Address</div>
+            <div class="section-name">Location</div>
               <div class="form-inputs">
-                <p class="label">[[addressBuildingNumber]] [[addressFlatNumber]] [[addressBuildingName]] </p>
-                <p class="label">[[addressOne]]</p>
-                <p class="label">[[addressTwo]]</p>
-                <p class="label">[[addressTown]]</p>
-                <p class="label">[[addressState]]</p>
-                <p class="label upper">[[addressZip]]</p>
                 <p class="label upper">[[addressCountry]]</p>
-              </div>
-            </div>
-            <hr>
-            <div class="input-area">
-              <div class="section-name">Phone</div>
-              <div class="form-inputs">
-                <p class="label">+ [[phoneCode]] [[phoneMobile]] </p>
               </div>
             </div>
             <hr>
@@ -281,19 +268,8 @@ class ReviewRoute extends PolymerElement {
         this.documentCount = response.image_count;
         if(response.data === true){
           this.nameFirst = response.profile.name_first || "";
-          this.nameMiddle = response.profile.name_middle || "";
           this.nameLast = response.profile.name_last || "";
           this.addressCountry = response.profile.address_country || "";
-          this.addressFlatNumber = response.profile.address_flat_number || "";
-          this.addressBuildingName = response.profile.address_building_name || "";
-          this.addressBuildingNumber = response.profile.address_building_number || "";
-          this.addressOne = response.profile.address_one || "";
-          this.addressTwo = response.profile.address_two || "";
-          this.addressState = response.profile.address_state || "";
-          this.addressTown = response.profile.address_town || "";
-          this.addressZip = response.profile.address_zip || "";
-          this.phoneCode = response.profile.phone_code || "";
-          this.phoneMobile = response.profile.phone_mobile || "";
           this.dobYear = response.profile.date_birth_year || "";
           this.dobMonth = response.profile.date_birth_month || "";
           this.dobDay = response.profile.date_birth_day || "";
