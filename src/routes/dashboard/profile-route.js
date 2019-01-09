@@ -550,7 +550,7 @@ class ProfileRoute extends PolymerElement {
               <div class="section-name">Documents</div>
               <div class="form-inputs">
               <template is="dom-if" if="{{kycToken2}}"></template>
-              <iframe allow="camera" width="500" height="600" src="https://portal-kyc.worbli.io?kyc_token=[[kycToken2]]"></iframe></template>
+              <iframe allow="camera" width="500" height="650" src="https://portal-kyc.worbli.io?kyc_token=[[kycToken2]]"></iframe></template>
                 </div>
             </div>
             <div class="footer">
