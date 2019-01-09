@@ -865,9 +865,7 @@ class ProfileRoute extends PolymerElement {
             </div>
           </div>
             <div class="footer">
-              <button type="button" on-click="_saveProfile">
-                <template is="dom-if" if="{{btnImage}}"><img src="./images/loading-button.gif"></template>
-                [[btnText]]</button>
+              <button type="button" on-click="_saveProfile">[[btnText]]</button>
             </div>
         </div>
       </div>
@@ -901,7 +899,7 @@ class ProfileRoute extends PolymerElement {
       },
       btnText:{
         type: Text,
-        value: 'Save Application Form',
+        value: 'Save Application',
       },
       showState: {
         type: Boolean,
@@ -979,7 +977,7 @@ _onfidoJwt(){
   }
 
   _saveProfile(){
-    this.btnText = 'Saving..';
+    this.btnText = 'Saving...';
     this.btnImage = true;
     let check = true
     const name_first = this.nameFirst;
@@ -989,8 +987,6 @@ _onfidoJwt(){
     const address_flat_number = this.addressFlatNumber;
     const address_building_name = this.addressBuildingName;
     const address_building_number =  this.addressBuildingNumber
-    console.log("address_building_number");
-    console.log(address_building_number);
     const address_one = this.addressOne;
     const address_two = this.addressTwo;
     const address_state = this.addressState;
@@ -1062,6 +1058,8 @@ _onfidoJwt(){
         date_birth_year, 
         gender}
       this._save(data);
+    } else {
+      this.btnText = 'Save Application';
     }
   }
 
@@ -1087,7 +1085,7 @@ _save(data){
       const token = response.newjwt;
       localStorage.setItem("token", token);
       this.set('route.path', '/dashboard/review');
-      this.btnText = 'Save Application Form';
+      this.btnText = 'Save Application';
       this.btnImage = false;
     } else {
       console.log(error)

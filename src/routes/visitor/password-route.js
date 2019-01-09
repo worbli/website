@@ -140,7 +140,7 @@ class PasswordRoute extends PolymerElement {
             </div>
           </div>
           <div class="footer">
-            <button type="button" on-click="_savePassword">Set Password & Login</button>
+            <button type="button" on-click="_savePassword">[[buttonText]]</button>
           </div>
         </div>
       </div>
@@ -164,19 +164,26 @@ class PasswordRoute extends PolymerElement {
       apiEnd: {
         type: Text,
       },
+      buttonText: {
+        type: Text,
+        value: 'Set Password & Login',
+      },
     };
   }
 
 _savePassword(){
+  this.buttonText = 'Saving...';
   this.passwordError = ""
   this.passwordTwoError = ""
   const password = this.password;
   const passwordTwo = this.passwordTwo;
   if (password != passwordTwo){
-      this.passwordTwoError = "Passwords are not the same"
+    this.buttonText = 'Set Password & Login';
+    this.passwordTwoError = "Passwords are not the same"
   } else if (this._validatePassword()){
       this._save({password});
   } else {
+      this.buttonText = 'Set Password & Login';
       this.passwordTwoError = "Password must be at least 8 characters long and must include uppercase and lowercase letters and a digit or a special character"
   }
 }
@@ -211,12 +218,11 @@ _save(data){
       .then((response) => {return response.json()})
       .then((response) => {
         localStorage.setItem("token", response.token);
+        this.buttonText = 'Set Password & Login';
         this.set('route.path', '/dashboard/profile')
       })
-        // this.set('route.path', '/')
-        // this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'signin'}}));
      } else {
-        this.passwordTwoError = "Click the email link again"
+        this.passwordTwoError = "This email link has expired, please check your email again."
      }
   })
   .catch(error => console.error('Error:', error));
