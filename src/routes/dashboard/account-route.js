@@ -205,7 +205,7 @@ class AccountRoute extends PolymerElement {
                 </div>
               </div>
               <div class="footer">
-                <button type="button" on-click="_applyAccount">Apply for Account</button>
+                <button type="button" on-click="_applyAccount">[[btnText]]</button>
               </div>
           </template>
           <!-- END IF VIEW APPROVED -->
@@ -265,6 +265,10 @@ class AccountRoute extends PolymerElement {
       },
       worbliAccountName: {
         type: Text,
+      },
+      btnText: {
+        type: Text,
+        value: 'Apply for Account',
       }
     };
   }
@@ -293,6 +297,7 @@ class AccountRoute extends PolymerElement {
   }
 
 _applyAccount(data){
+  this.btnText = 'Applying...'
   let check = true;
   // remove any errors
   this.publicKeyActiveError = "";
@@ -323,25 +328,24 @@ _applyAccount(data){
     .then((response) => {return response.json()})
     .then((response) => {
       if (response.data === false) {
-        console.log(' Response.data is false for account-route.js _applyAccount');
-        console.log(response.logerror)
+        this.btnText = 'Apply for Account'
         this.worbliAccountNameError = response.error
       } else {
+        this.btnText = 'Apply for Account'
         if (!response.newjwt) {
-          console.log('NO jwt was recieved for account-route.js _applyAccount');
         } else {
           localStorage.setItem("token", response.newjwt);
           this.viewApproved = false;
           this.viewNamed = true;
           this.viewCredited = false;
-          console.log('new jwt recieved for account-route.js _applyAccount');
         }
       }
     })
     .catch((error) => {
-      console.log('/user/account cant be reached for account-route.js _applyAccount');
-      console.log(error);
+      this.btnText = 'Apply for Account'
     });
+  } else {
+    this.btnText = 'Apply for Account'
   }
 }
 
