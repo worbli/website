@@ -256,6 +256,7 @@ class ReviewRoute extends PolymerElement {
         }
       })
     } else {
+      this.btnText = 'Submit Application';
       this.documentCountError = "Return to your application and add your documents"
     }
   }
@@ -300,6 +301,7 @@ class ReviewRoute extends PolymerElement {
         }
       })
       .catch(error => {
+        this.btnText = 'Submit Application';
         console.log(error)
       });
     } else {this.set('route.path', '/')}
