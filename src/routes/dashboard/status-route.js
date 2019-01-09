@@ -270,14 +270,12 @@ class StatusRoute extends PolymerElement {
 
   _routeChanged(){
     if(this.route.path === '/dashboard/status'){
-      console.log('route changed')
       this._checkStatus();
     }
   }
 
   _checkStatus(){
-    console.log('checking')
-    this.btnText = 'Checking';
+    this.btnText = 'Checking...';
     const token = localStorage.getItem("token");
     if(token) {
       const url = `${this.apiPath}/kyc/status/`;
@@ -287,24 +285,18 @@ class StatusRoute extends PolymerElement {
       })
       .then((response) => {return response.json()})
       .then((response) => {
-        console.log(response)
         if(response.data === true && response.action === 'redirect'){
-          console.log('redirect')
           this.btnText = 'Check Status';
           localStorage.setItem("token", response.token);
           this.set('route.path', '/dashboard/account')
         } else if(response.data === true && response.action === 'support'){
-          console.log('support')
           this.showSupport = true;
         } else {
           this.btnText = 'Check Status';
         }
       })
       .catch((err) => {
-        this.btnText = 'Not complete check again in 10min';
-        setTimeout(() => {
-          this.btnText = 'Check Status';
-         }, 60000);
+        this.btnText = 'Check Status';
       });
     } else {this.set('route.path', '/')}
   }
