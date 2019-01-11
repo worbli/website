@@ -195,10 +195,10 @@ class ProfileRoute extends PolymerElement {
             <div class="section-name">Name</div>
             <div class="form-inputs">
               <label>First Name </label>
-              <input id="nameFirst" value="{{nameFirst::input}}" name="nameFirst" type="text" class="text"">
+              <input id="nameFirst" value="{{nameFirst::input}}" name="nameFirst" type="text" class="text" on-keyup="_isComplete">
               <small class="comment error">[[nameFirstError]]</small>
               <label>Family Name </label>
-              <input id="nameLast" value="{{nameLast::input}}" ame="nameLast" type="text" class="text"">
+              <input id="nameLast" value="{{nameLast::input}}" ame="nameLast" type="text" class="text" on-keyup="_isComplete">
               <small class="comment error">[[nameLastError]]</small>
             </div>
           </div>
@@ -207,7 +207,7 @@ class ProfileRoute extends PolymerElement {
             <div class="section-name">Location</div>
             <div class="form-inputs">
             <label>Country</label>
-              <select class="dropdown" id="addressCountry" value="{{addressCountry::input}}">
+              <select class="dropdown" id="addressCountry" value="{{addressCountry::input}}" on-change="_isComplete">
                 <option value="">Select...</option>
                 <option value="AFG">Afghanistan</option>
                 <option value="ALA">Åland Islands</option>
@@ -383,7 +383,7 @@ class ProfileRoute extends PolymerElement {
             <div class="section-name">About</div>
             <div class="form-inputs">
               <label>Date Of Birth</label>
-              <select class="dropdown dropdown-short" id="dobDay" value="{{dobDay::input}}">
+              <select class="dropdown dropdown-short" id="dobDay" value="{{dobDay::input}}" on-change="_isComplete">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -416,7 +416,7 @@ class ProfileRoute extends PolymerElement {
                 <option value="30">30</option>
                 <option value="31">31</option>
               </select>
-              <select class="dropdown dropdown-short" id="dobMonth" value="{{dobMonth::input}}">
+              <select class="dropdown dropdown-short" id="dobMonth" value="{{dobMonth::input}}" on-change="_isComplete">
                 <option value="1">January</option>
                 <option value="2">Febuary</option>
                 <option value="3">March</option>
@@ -430,7 +430,7 @@ class ProfileRoute extends PolymerElement {
                 <option value="11">November</option>
                 <option value="12">December</option>
               </select>
-              <select class="dropdown dropdown-short" id="dobYear" value="{{dobYear::input}}">
+              <select class="dropdown dropdown-short" id="dobYear" value="{{dobYear::input}}" on-change="_isComplete">
                 <option value="2002">2002</option>
                 <option value="2001">2001</option>
                 <option value="2000">2000</option>
@@ -537,7 +537,7 @@ class ProfileRoute extends PolymerElement {
               </select>
               <small class="comment error">[[dobError]]</small>
               <label>Gender</label>
-              <select class="dropdown" id="addressCountry" value="{{gender::input}}">
+              <select class="dropdown" id="addressCountry" value="{{gender::input}}" on-change="_isComplete">
                 <option value="">Select...</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -546,16 +546,19 @@ class ProfileRoute extends PolymerElement {
             </div>
           </div>
           <hr>
-          <div class="input-area">
-              <div class="section-name">Documents</div>
-              <div class="form-inputs">
-              <template is="dom-if" if="{{kycToken2}}"></template>
-              <iframe allow="camera" width="500" height="650" src="https://portal-kyc.worbli.io?kyc_token=[[kycToken2]]"></iframe></template>
-                </div>
-            </div>
-            <div class="footer">
-              <button type="button" on-click="_saveProfile">[[btnText]]</button>
-            </div>
+
+          <template is="dom-if" if="[[documents]]">
+            <div class="input-area">
+                <div class="section-name">Documents</div>
+                <div class="form-inputs">
+                  <iframe allow="camera" width="500" height="650" src="https://portal-kyc.worbli.io?kyc_token=[[kycToken2]]"></iframe>
+                  </div>
+              </div>
+              <div class="footer">
+                <button type="button" on-click="_saveProfile">[[btnText]]</button>
+              </div>
+            </template>
+
         </div>
       </div>
       </br></br>
@@ -594,6 +597,14 @@ class ProfileRoute extends PolymerElement {
         type: Boolean,
         value: false,
       },
+      route: {
+        type: Object,
+        observer: '_routeChanged'
+      },
+      documents: {
+        type: Boolean,
+      }
+
     };
   }
 
@@ -601,6 +612,27 @@ ready() {
   super.ready();
   this._getData();
   this._onfidoJwt();
+}
+
+_isComplete(){
+  if (this.nameFirst &&
+  this.nameLast &&
+  this.addressCountry &&
+  this.dobDay &&
+  this.dobMonth &&
+  this.dobYear &&
+  this.gender) {
+    this.documents = true;
+  } else {
+    this.documents = false;
+  }
+}
+
+_routeChanged(){
+  if (this.route.path === '/dashboard/profile') {
+    this.kycToken2 = false
+    this._onfidoJwt();
+  }
 }
 
 _onfidoJwt(){
