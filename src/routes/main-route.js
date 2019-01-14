@@ -90,7 +90,6 @@ class MainRoute extends PolymerElement {
         <div class="side">
           <worbli-snapshot api="/email/add"></worbli-snapshot>
           <worbli-support url="https://worbli.zendesk.com"></worbli-support>
-          <worbli-whitepaper whitepaper="https://d1r0t58ow9lja0.cloudfront.net/worbli-whitepaper.pdf" shortpaper="https://d1r0t58ow9lja0.cloudfront.net/worbli-short-paper.pdf"></worbli-whitepaper>
           <worbli-telegram telegram="https://t.me/worblicommunity" medium="https://medium.com/@WORBLI"></worbli-telegram>
         </div>
       </div>

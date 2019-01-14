@@ -37,21 +37,17 @@ class WorbliFooter extends PolymerElement {
         }
 
         li:nth-child(1) a {background: url('./images/sprite.png') 0 -120px;}
-        li:nth-child(2) a {background: url('./images/sprite.png') -35px -120px;}
-        li:nth-child(3) a {background: url('./images/sprite.png') -72px -120px;}
-        li:nth-child(4) a {background: url('./images/sprite.png') -112px -120px;}
-        li:nth-child(5) a {background: url('./images/sprite.png') -149px -120px;}
-        li:nth-child(6) a {background: url('./images/sprite.png') -184px -120px;}
-        li:nth-child(7) a {background: url('./images/sprite.png') -218px -120px;}
-        li:nth-child(8) a {background: url('./images/sprite.png') -250px -120px;}
+        li:nth-child(2) a {background: url('./images/sprite.png') -72px -120px;}
+        li:nth-child(3) a {background: url('./images/sprite.png') -112px -120px;}
+        li:nth-child(4) a {background: url('./images/sprite.png') -149px -120px;}
+        li:nth-child(5) a {background: url('./images/sprite.png') -184px -120px;}
+        li:nth-child(6) a {background: url('./images/sprite.png') -250px -120px;}
         li:nth-child(1) a:hover {background: url('./images/sprite.png') 0 -80px;}
-        li:nth-child(2) a:hover {background: url('./images/sprite.png') -35px -80px;}
-        li:nth-child(3) a:hover {background: url('./images/sprite.png') -72px -80px;}
-        li:nth-child(4) a:hover {background: url('./images/sprite.png') -112px -80px;}
-        li:nth-child(5) a:hover {background: url('./images/sprite.png') -149px -80px;}
-        li:nth-child(6) a:hover {background: url('./images/sprite.png') -184px -80px;}
-        li:nth-child(7) a:hover {background: url('./images/sprite.png') -218px -80px;}
-		    li:nth-child(8) a:hover {background: url('./images/sprite.png') -250px -80px;}
+        li:nth-child(2) a:hover {background: url('./images/sprite.png') -72px -80px;}
+        li:nth-child(3) a:hover {background: url('./images/sprite.png') -112px -80px;}
+        li:nth-child(4) a:hover {background: url('./images/sprite.png') -149px -80px;}
+        li:nth-child(5) a:hover {background: url('./images/sprite.png') -184px -80px;}
+		    li:nth-child(6) a:hover {background: url('./images/sprite.png') -250px -80px;}
 		
         .social {
           line-height: 0; 
@@ -94,12 +90,10 @@ class WorbliFooter extends PolymerElement {
         <div class="social-links">
           <ul>
             <li><a class="social" href="https://www.facebook.com/worbli" target=”_blank”>Facebook</a></li>
-            <li><a class="social" href="https://www.instagram.com/worbli.io/" target=”_blank”>Instagram</a></li>
             <li><a class="social" href="https://www.twitter.com/WORBLI" target=”_blank”>Twitter</a></li>
             <li><a class="social" href="https://www.linkedin.com/company/worbli" target=”_blank”>Linkedin</a></li>
             <li><a class="social" href="https://t.me/worblicommunity" target=”_blank”>Telegram</a></li>
             <li><a class="social" href="https://www.medium.com/@WORBLI" target=”_blank”>Medium</a></li>
-            <li><a class="social" href="https://steemit.com/@worbli" target=”_blank”>Steemit</a></li>
             <li><a class="social" href="https://www.youtube.com/channel/UCzJHGK-1utdhj623VYHSprA" target=”_blank”>YouTube</a></li>
           </ul>
         </div>
