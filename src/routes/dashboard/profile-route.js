@@ -632,6 +632,7 @@ _routeChanged(){
   if (this.route.path === '/dashboard/profile') {
     this.kycToken2 = false
     this._onfidoJwt();
+    this._isComplete;
   }
 }
 
