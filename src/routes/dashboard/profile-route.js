@@ -632,7 +632,7 @@ _routeChanged(){
   if (this.route.path === '/dashboard/profile') {
     this.kycToken2 = false
     this._onfidoJwt();
-    this._isComplete;
+    this._isComplete();
   }
 }
 
@@ -674,6 +674,7 @@ _onfidoJwt(){
           this.dobDay = response.profile.date_birth_day || "";
           this.gender = response.profile.gender || "";
           if(response.profile && response.profile.address_country){this.addressCountry = response.profile.address_country.toUpperCase() || ""}
+          this._isComplete();
         }
       })
       .catch(error => {
