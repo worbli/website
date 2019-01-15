@@ -185,7 +185,7 @@ _login(){
       if (onfido_status === 'review'){this.set('route.path', '/dashboard/status')}
       if (onfido_status === 'approved'){this.set('route.path', '/dashboard/account')}
       if (onfido_status === 'named'){this.set('route.path', '/dashboard/sharedrop')}
-      if (onfido_status === 'credited'){this.set('route.path', '/dashboard/password')}
+      if (onfido_status === 'credited'){this.set('route.path', '/dashboard/editpassword')}
       this.dispatchEvent(new CustomEvent('hideOverlay',{bubbles: true, composed: true, detail: {action: 'hide'}}));
     } else {
       this.error = "Forgot password? Click here to reset your password.";
