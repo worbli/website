@@ -144,7 +144,7 @@ class ReviewRoute extends PolymerElement {
           <div class="input-area">
             <div class="section-name">Location</div>
               <div class="form-inputs">
-                <p class="label upper">[[addressCountry]]</p>
+                <p class="label">[[addressCountry]]</p>
               </div>
             </div>
             <hr>
@@ -217,6 +217,10 @@ class ReviewRoute extends PolymerElement {
       btnImage: {
         type: Boolean,
         value: false,
+      },
+      addressCountryCode: {
+        type: Text,
+        observer: '_addressCountry'
       }
     };
   }
@@ -269,7 +273,7 @@ class ReviewRoute extends PolymerElement {
         if(response.data === true){
           this.nameFirst = response.profile.name_first || "";
           this.nameLast = response.profile.name_last || "";
-          this.addressCountry = response.profile.address_country || "";
+          this.addressCountryCode = response.profile.address_country || "";
           this.dobYear = response.profile.date_birth_year || "";
           this.dobMonth = response.profile.date_birth_month || "";
           this.dobDay = response.profile.date_birth_day || "";
@@ -281,6 +285,504 @@ class ReviewRoute extends PolymerElement {
         console.log(error)
       });
     } else {this.set('route.path', '/')}
+  }
+
+  _addressCountry(){
+    console.log(this.addressCountryCode.toUpperCase())
+    switch (this.addressCountryCode.toUpperCase()) {
+      case 'AFG':
+        this.addressCountry = "Afghanistan";
+        break;
+      case 'ALA':
+        this.addressCountry = "Åland Islands";
+        break;
+      case 'ALB':
+        this.addressCountry = "Albania";
+        break;
+      case 'DZA':
+        this.addressCountry = "Algeria";
+        break;
+      case 'AND':
+        this.addressCountry = "Andorra";
+        break;
+      case 'ATG':
+        this.addressCountry = "Antigua and Barbuda";
+        break;
+      case 'ARG':
+        this.addressCountry = "Argentina";
+        break;
+      case 'ARM':
+        this.addressCountry = "Armenia";
+        break;
+      case 'ABW':
+        this.addressCountry = "Aruba";
+        break;
+      case 'AUS':
+        this.addressCountry = "Australia";
+        break;
+      case 'AUT':
+        this.addressCountry = "Austria";
+        break;
+      case 'AZE':
+        this.addressCountry = "Azerbaijan";
+        break;
+      case 'BHR':
+        this.addressCountry = "Bahrain";
+        break;
+      case 'BRB':
+        this.addressCountry = "Barbados";
+        break;
+      case 'BLR':
+        this.addressCountry = "Belarus";
+        break;
+      case 'BEL':
+        this.addressCountry = "Belgium";
+        break;
+      case 'BLZ':
+        this.addressCountry = "Belize";
+        break;
+      case 'BEN':
+        this.addressCountry = "Benin";
+        break;
+      case 'BMU':
+        this.addressCountry = "Bermuda";
+        break;
+      case 'BTN':
+        this.addressCountry = "Bhutan";
+        break;
+      case 'BIH':
+        this.addressCountry = "Bosnia and Herzegovina";
+        break;
+      case 'BRA':
+        this.addressCountry = "Brazil";
+        break;
+      case 'BRN':
+        this.addressCountry = "Brunei Darussalam";
+        break;
+      case 'BGR':
+        this.addressCountry = "Bulgaria";
+        break;
+      case 'BFA':
+        this.addressCountry = "Burundi";
+        break;
+      case 'BDI':
+        this.addressCountry = "Antigua and Barbuda";
+        break;
+      case 'KHM':
+        this.addressCountry = "Cambodia";
+        break;
+      case 'CMR':
+        this.addressCountry = "Cameroon";
+        break;
+      case 'CAN':
+        this.addressCountry = "Canada";
+        break;
+      case 'CYM':
+        this.addressCountry = "Cayman Islands";
+        break;
+      case 'CAF':
+        this.addressCountry = "Central African Republic";
+        break;
+      case 'CHL':
+        this.addressCountry = "Chile";
+        break;
+      case 'CHN':
+        this.addressCountry = "China";
+        break;
+      case 'COL':
+        this.addressCountry = "Colombia";
+        break;
+      case 'COG':
+        this.addressCountry = "Congo";
+        break;
+      case 'COK':
+        this.addressCountry = "Cook Islands";
+        break;
+      case 'CRI':
+        this.addressCountry = "Costa Rica";
+        break;
+      case 'CIV':
+        this.addressCountry = "Croatia";
+        break;
+      case 'HRV':
+        this.addressCountry = "Bermuda";
+        break;
+      case 'CUB':
+        this.addressCountry = "Cuba";
+        break;
+      case 'CYP':
+        this.addressCountry = "Cyprus";
+        break;
+      case 'CZE':
+        this.addressCountry = "Czech Republic";
+        break;
+      case 'DNK':
+        this.addressCountry = "Denmark";
+        break;
+      case 'DJI':
+        this.addressCountry = "Djibouti";
+        break;
+      case 'DMA':
+        this.addressCountry = "Dominica";
+        break;
+      case 'DOM':
+        this.addressCountry = "Dominican Republic";
+        break;
+      case 'ECU':
+        this.addressCountry = "Ecuador";
+        break;
+      case 'EGY':
+        this.addressCountry = "Egypt";
+        break;
+      case 'SLV':
+        this.addressCountry = "El Salvador";
+        break;
+      case 'GNQ':
+        this.addressCountry = "Equatorial Guinea";
+        break;
+      case 'EST':
+        this.addressCountry = "Estonia";
+        break;
+      case 'ETH':
+        this.addressCountry = "Ethiopia";
+        break;
+      case 'FRO':
+        this.addressCountry = "Faroe Islands";
+        break;
+      case 'FJI':
+        this.addressCountry = "Fiji";
+        break;
+      case 'FIN':
+        this.addressCountry = "Finland";
+        break;
+      case 'FRA':
+        this.addressCountry = "France";
+        break;
+      case 'GAB':
+        this.addressCountry = "Gabon";
+        break;
+      case 'GEO':
+        this.addressCountry = "Georgia";
+        break;
+      case 'DEU':
+        this.addressCountry = "Germany";
+        break;
+      case 'GIB':
+        this.addressCountry = "Gibraltar";
+        break;
+      case 'GRC':
+        this.addressCountry = "Greece";
+        break;
+      case 'GRD':
+        this.addressCountry = "Grenada";
+        break;
+      case 'GTM':
+        this.addressCountry = "Guatemala";
+        break;
+      case 'GGY':
+        this.addressCountry = "Guernsey";
+        break;
+      case 'GIN':
+        this.addressCountry = "Guinea";
+        break;
+      case 'HND':
+        this.addressCountry = "Honduras";
+        break;
+      case 'HKG':
+        this.addressCountry = "Hong Kong";
+        break;
+      case 'HUN':
+        this.addressCountry = "Hungary";
+        break;
+      case 'ISL':
+        this.addressCountry = "Iceland";
+        break;
+      case 'IND':
+        this.addressCountry = "India";
+        break;
+      case 'IDN':
+        this.addressCountry = "Indonesia";
+        break;
+      case 'IRN':
+        this.addressCountry = "Iran, Islamic Republic of";
+        break;
+      case 'IRL':
+        this.addressCountry = "Ireland";
+        break;
+      case 'IMN':
+        this.addressCountry = "Isle of Man";
+        break;
+      case 'ISR':
+        this.addressCountry = "Israel";
+        break;
+      case 'ITA':
+        this.addressCountry = "Italy";
+        break;
+      case 'JAM':
+        this.addressCountry = "Jamaica";
+        break;
+      case 'JPN':
+        this.addressCountry = "Japan";
+        break;
+      case 'JEY':
+        this.addressCountry = "Jersey";
+        break;
+      case 'KAZ':
+        this.addressCountry = "Kazakhstan";
+        break;
+      case 'KEN':
+        this.addressCountry = "Kenya";
+        break;
+      case 'KOR':
+        this.addressCountry = "Korea, Republic of";
+        break;
+      case 'KWT':
+        this.addressCountry = "Kuwait";
+        break;
+      case 'KGZ':
+        this.addressCountry = "Kyrgyzstan";
+        break;
+      case 'LVA':
+        this.addressCountry = "Lebanon";
+        break;
+      case 'LBN':
+        this.addressCountry = "Antigua and Barbuda";
+        break;
+      case 'LSO':
+        this.addressCountry = "Lesotho";
+        break;
+      case 'LBY':
+        this.addressCountry = "Libya";
+        break;
+      case 'LIE':
+        this.addressCountry = "Liechtenstein";
+        break;
+      case 'LTU':
+        this.addressCountry = "Lithuania";
+        break;
+      case 'LUX':
+        this.addressCountry = "Luxembourg";
+        break;
+      case 'MWI':
+        this.addressCountry = "Malawi";
+        break;
+      case 'MYS':
+        this.addressCountry = "Malaysia";
+        break;
+      case 'MLI':
+        this.addressCountry = "Mali";
+        break;
+      case 'MLT':
+        this.addressCountry = "Malta";
+        break;
+      case 'MRT':
+        this.addressCountry = "Mauritania";
+        break;
+      case 'MEX':
+        this.addressCountry = "Mexico";
+        break;
+      case 'MDA':
+        this.addressCountry = "Moldova, Republic of";
+        break;
+      case 'MCO':
+        this.addressCountry = "Monaco";
+        break;
+      case 'MNE':
+        this.addressCountry = "Montenegro";
+        break;
+      case 'MSR':
+        this.addressCountry = "Montserrat";
+        break;
+      case 'MAR':
+        this.addressCountry = "Morocco";
+        break;
+      case 'NAM':
+        this.addressCountry = "Namibia";
+        break;
+      case 'NPL':
+        this.addressCountry = "Nepal";
+        break;
+      case 'NLD':
+        this.addressCountry = "Netherlands";
+        break;
+      case 'NZL':
+        this.addressCountry = "New Zealand";
+        break;
+      case 'NIC':
+        this.addressCountry = "Nicaragua";
+        break;
+      case 'NER':
+        this.addressCountry = "Niger";
+        break;
+      case 'NGA':
+        this.addressCountry = "Nigeria";
+        break;
+      case 'NFK':
+        this.addressCountry = "Norfolk Island";
+        break;
+      case 'NOR':
+        this.addressCountry = "Norway";
+        break;
+      case 'OMN':
+        this.addressCountry = "Oman";
+        break;
+      case 'PAK':
+        this.addressCountry = "Pakistan";
+        break;
+      case 'PSE':
+        this.addressCountry = "Palestinian Territory, Occupied";
+        break;
+      case 'PAN':
+        this.addressCountry = "Panama";
+        break;
+      case 'PRY':
+        this.addressCountry = "Paraguay";
+        break;
+      case 'PER':
+        this.addressCountry = "Peru";
+        break;
+      case 'PHL':
+        this.addressCountry = "Philippines";
+        break;
+      case 'POL':
+        this.addressCountry = "Poland";
+        break;
+      case 'PRT':
+        this.addressCountry = "Portugal";
+        break;
+      case 'PRI':
+        this.addressCountry = "Puerto Rico";
+        break;
+      case 'QAT':
+        this.addressCountry = "Qatar";
+        break;
+      case 'ROU':
+        this.addressCountry = "Romania";
+        break;
+      case 'RUS':
+        this.addressCountry = "Russian Federation";
+        break;
+      case 'KNA':
+        this.addressCountry = "Saint Kitts and Nevis";
+        break;
+      case 'LCA':
+        this.addressCountry = "Saint Lucia";
+        break;
+      case 'VCT':
+        this.addressCountry = "Saint Vincent and the Grenadines";
+        break;
+      case 'WSM':
+        this.addressCountry = "Samoa";
+        break;
+      case 'SAU':
+        this.addressCountry = "Saudi Arabia";
+        break;
+      case 'SRB':
+        this.addressCountry = "Serbia";
+        break;
+      case 'SGP':
+        this.addressCountry = "Singapore";
+        break;
+      case 'SVK':
+        this.addressCountry = "Slovakia";
+        break;
+      case 'SVN':
+        this.addressCountry = "Slovenia";
+        break;
+      case 'SOM':
+        this.addressCountry = "Somalia";
+        break;
+      case 'ZAF':
+        this.addressCountry = "South Africa";
+        break;
+      case 'ESP':
+        this.addressCountry = "Spain";
+        break;
+      case 'LKA':
+        this.addressCountry = "Sri Lanka";
+        break;
+      case 'SDN':
+        this.addressCountry = "Sudan";
+        break;
+      case 'SWE':
+        this.addressCountry = "Sweden";
+        break;
+      case 'CHE':
+        this.addressCountry = "Switzerland";
+        break;
+      case 'SYR':
+        this.addressCountry = "Syrian Arab Republic";
+        break;
+      case 'TWN':
+        this.addressCountry = "Taiwan, Province of China";
+        break;
+      case 'TJK':
+        this.addressCountry = "Tajikistan";
+        break;
+      case 'TZA':
+        this.addressCountry = "Tanzania, United Republic of";
+        break;
+      case 'THA':
+        this.addressCountry = "Thailand";
+        break;
+      case 'TGO':
+        this.addressCountry = "Togo";
+        break;
+      case 'TTO':
+        this.addressCountry = "Trinidad and Tobago";
+        break;
+      case 'TUN':
+        this.addressCountry = "Tunisia";
+        break;
+      case 'TUR':
+        this.addressCountry = "Turkey";
+        break;
+      case 'TKM':
+        this.addressCountry = "Turkmenistan";
+        break;
+      case 'TCA':
+        this.addressCountry = "Turks and Caicos Islands";
+        break;
+      case 'TUV':
+        this.addressCountry = "Tuvalu";
+        break;
+      case 'UGA':
+        this.addressCountry = "Uganda";
+        break;
+      case 'UKR':
+        this.addressCountry = "Ukraine";
+        break;
+      case 'ARE':
+        this.addressCountry = "United Arab Emirates";
+        break;
+      case 'GBR':
+        this.addressCountry = "United Kingdom";
+        break;
+      case 'USA':
+        this.addressCountry = "United States";
+        break;
+      case 'UZB':
+        this.addressCountry = "Uzbekistan";
+        break;
+      case 'VUT':
+        this.addressCountry = "Vanuatu";
+        break;
+      case 'VEN':
+        this.addressCountry = "Venezuela, Bolivarian Republic of";
+        break;
+      case 'VNM':
+        this.addressCountry = "Viet Nam";
+        break;
+      case 'VGB':
+        this.addressCountry = "Virgin Islands, British";
+        break;
+      case 'ZMB':
+        this.addressCountry = "Zambia";
+        break;
+      case 'ZWE':
+        this.addressCountry = "Zimbabwe";
+        break;
+    }
   }
 
 } window.customElements.define('review-route', ReviewRoute);

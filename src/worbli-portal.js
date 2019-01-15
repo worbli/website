@@ -125,9 +125,6 @@ class WorbliPortal extends PolymerElement {
       case 'team':
         import('./routes/team-route.js');
         break;
-      case 'roadmap':
-        import('./routes/roadmap-route.js');
-        break;
       case 'register':
         import('./routes/register-route.js');
         break;

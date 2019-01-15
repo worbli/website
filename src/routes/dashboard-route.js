@@ -57,7 +57,7 @@ class DasboardRoute extends PolymerElement {
 
   _routePageChanged(page) {
     if (!page) {
-      this.page = 'profile';
+      this.page = 'editpassword';
     } else if (['sharedrop', 'profile', 'account', 'review', 'status', 'editpassword'].indexOf(page) !== -1) {
       this.page = page;
     } else {

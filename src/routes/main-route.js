@@ -6,6 +6,7 @@ import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
 import '../components/side-bar/worbli-snapshot.js';
+import '../components/side-bar/worbli-partners.js';
 import '../components/worbli-subscribe.js';
 import '../components/worbli-title.js';
 import '../components/worbli-tile.js';
@@ -88,10 +89,10 @@ class MainRoute extends PolymerElement {
           </div>
         </div>
         <div class="side">
-          <worbli-snapshot api="/email/add"></worbli-snapshot>
+          <!-- <worbli-snapshot api="/email/add"></worbli-snapshot> -->
           <worbli-support url="https://worbli.zendesk.com"></worbli-support>
-          <worbli-whitepaper whitepaper="https://d1r0t58ow9lja0.cloudfront.net/worbli-whitepaper.pdf" shortpaper="https://d1r0t58ow9lja0.cloudfront.net/worbli-short-paper.pdf"></worbli-whitepaper>
           <worbli-telegram telegram="https://t.me/worblicommunity" medium="https://medium.com/@WORBLI"></worbli-telegram>
+          <worbli-partners></worbli-partners>
         </div>
       </div>
       <worbli-footer name="footer"></worbli-footer>
