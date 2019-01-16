@@ -3,7 +3,6 @@ import '@polymer/app-route/app-location.js';
 import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
-import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
 import '../components/side-bar/worbli-snapshot.js';
 import '../components/side-bar/worbli-partners.js';

@@ -2,7 +2,6 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
-import '../components/side-bar/worbli-whitepaper.js';
 import '../components/side-bar/worbli-support.js';
 import '../components/worbli-title.js';
 
@@ -273,7 +272,6 @@ class NetworkTermsRoute extends PolymerElement {
         </div>
         <div class="side">
           <worbli-support></worbli-support>
-          <worbli-whitepaper></worbli-whitepaper>
           <worbli-telegram></worbli-telegram>
         </div>
       </div>
