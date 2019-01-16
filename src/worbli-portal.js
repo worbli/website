@@ -52,7 +52,6 @@ class WorbliPortal extends PolymerElement {
         <about-route name="about"></about-route>
         <vision-route name="vision"></vision-route>
         <team-route name="team"></team-route>
-        <roadmap-route name="roadmap"></roadmap-route>
         <error-route name="error"></error-route>
         <register-route name="register"></register-route>
         <terms-route name="terms"></terms-route>
@@ -101,7 +100,7 @@ class WorbliPortal extends PolymerElement {
     }
     if (!page) {
       this.page = 'main';
-    } else if (['signin', 'join', 'main', 'network', 'about', 'vision', 'team', 'roadmap', 'register', 'terms', 'privacy', 'profservices', 'networkterms', 'developerterms', 'platformterms', 'menu', 'dashboard','visitor'].indexOf(page) !== -1) {
+    } else if (['signin', 'join', 'main', 'network', 'about', 'vision', 'team', 'register', 'terms', 'privacy', 'profservices', 'networkterms', 'developerterms', 'platformterms', 'menu', 'dashboard','visitor'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
