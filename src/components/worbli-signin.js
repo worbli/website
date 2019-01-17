@@ -183,6 +183,7 @@ _login(){
       if (onfido_status === 'default'){this.set('route.path', '/dashboard/profile')}
       if (onfido_status === 'started'){this.set('route.path', '/dashboard/review')}
       if (onfido_status === 'review'){this.set('route.path', '/dashboard/status')}
+      if (onfido_status === 'rejected'){this.set('route.path', '/dashboard/status')}
       if (onfido_status === 'approved'){this.set('route.path', '/dashboard/account')}
       if (onfido_status === 'named'){this.set('route.path', '/dashboard/sharedrop')}
       if (onfido_status === 'credited'){this.set('route.path', '/dashboard/account')}
