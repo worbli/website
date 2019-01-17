@@ -17,7 +17,7 @@ class WorbliBuy extends PolymerElement {
             border-radius: 4px;
             margin-bottom: 17px;
             color: white;
-            font-size: 21px;
+            font-size: 20px;
             display: block;
         }
         .btn-container {
@@ -32,7 +32,7 @@ class WorbliBuy extends PolymerElement {
         .yellow-button {
             background-color: #FFDB6A;
             border-radius: 3px;
-            width: 180px;
+            width: 140px;
             height: 25px;
             color: #0E0137;
             font-size: 13px;
