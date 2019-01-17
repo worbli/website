@@ -54,7 +54,7 @@ class WorbliBuy extends PolymerElement {
             <div class="btn-container">
                 <a href="https://chaince.com/trade/wbieos" target="_bkank"><div class="yellow-button">CHAINCE</div></a>
                 <p>or</p>
-                <a href="https://www.chainrift.com/?R=UEQAo" target="_bkank"><div class="yellow-button">CHAIN RIFT</div></a>
+                <a href="https://www.chainrift.com/?R=UEQAo" target="_bkank"><div class="yellow-button">CHAINRIFT</div></a>
             </div>
         </div>
     `;
