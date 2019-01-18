@@ -196,8 +196,12 @@ _validatePassword(){
 
 _save(data){
   const token = this.route.__queryParams.token;
+  const action = this.route.__queryParams.action;
   data.token = token;
-  const url = `${this.apiPath}/visitor/password/`;
+  let url = `${this.apiPath}/visitor/password/`;
+  if (action == 'reset')
+    url = `${this.apiPath}/visitor/resetpassword/`;
+
   fetch(url, {
     method: 'POST',
     body: JSON.stringify(data), 
