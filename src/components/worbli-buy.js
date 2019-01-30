@@ -41,6 +41,10 @@ class WorbliBuy extends PolymerElement {
             padding-top: 6px;
             margin-right: 12px;
         }
+        .yellow-button:hover {
+            background-color: #E9BF2D;
+            color: #000000;
+        }
         .h1-text {
             padding-top: 70px;
             margin-left: 17px;
