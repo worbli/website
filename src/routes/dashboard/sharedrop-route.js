@@ -6,6 +6,7 @@ import '../../components/side-bar/worbli-snapshot.js';
 import '@polymer/app-route/app-location.js';
 import '../../worbli-env.js';
 import '../../components/side-bar/worbli-dashnav.js';
+import '../../components/new-portal/worbli-history.js';
 
 class SharedropRoute extends PolymerElement {
   static get template() {
@@ -198,6 +199,9 @@ class SharedropRoute extends PolymerElement {
             <p class="code-label">Example using cleos:</p>
             <code>cleos push action worbliworbli reg '["{{eosAccountName}}", "{{securityCode}}"]' -p {{eosAccountName}}@active</code>
           </template>
+          <template is="dom-if" if="{{history}}">
+            <worbli-history history="[[history]]"></worbli-history>
+          </template>
         </div>
       </div>
 
@@ -265,6 +269,29 @@ class SharedropRoute extends PolymerElement {
         type: Text,
         value: 'Claim With Scatter',
         observer: '_tabChanged'
+      },
+      history: {
+        type: Object,
+        value: [
+          {
+              "accountName": "lipovanski1",
+              "dateTime": "1548385631",
+              "claimed": "1000",
+              "status": "pending",
+          },
+          {
+            "accountName": "lipovanski2",
+            "dateTime": "1548385631",
+            "claimed": "2000",
+            "status": "sucess",
+        },
+        {
+          "accountName": "lipovanski3",
+          "dateTime": "1548385631",
+          "claimed": "3000",
+          "status": "fail",
+      },
+      ]
       }
 
     };
@@ -306,14 +333,18 @@ class SharedropRoute extends PolymerElement {
         })
         .then((response) => {return response.json()})
         .then((response) => {
-          if(response && response.data === true){
+          if(response && response.data === true && response.newjwt){
             const newjwt = response.newjwt;
             localStorage.setItem("token", newjwt);
-            this.set('route.path', '/dashboard/account')
-            clearInterval(this.refreshIntervalId);
+          }
+          if(response && response.data === true && response.newjwt && response.history){
+            this.history = response.history;
           }
         })
-      }, this.interval)
+        .catch((err) => {
+          console.log("err")
+        })
+      }, 3000)
     }
   }
 
