@@ -77,7 +77,7 @@ class MainRoute extends PolymerElement {
         <div class="main">
           <div class="mobile-signup-buttons">
             <button class="btn-critical" on-click="_signIn">Sign In</button>
-            <button class="btn-critical" on-click="_joinNow">Join Now</button>
+            <!-- <button class="btn-critical" on-click="_joinNow">Join Now</button> -->
           </div>
           <worbli-buy></worbli-buy>
           <div class="tile-holder">

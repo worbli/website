@@ -102,7 +102,7 @@ class WorbliSignin extends PolymerElement {
       <small class="comment error">[[error]]</small>
       <button class="btn-critical" on-click="_reset">Send Email</button>
     </template>
-    <div class="center">New to Worbli? <span on-click="_join">Join WORBLI</span></div>
+    <!-- <div class="center">New to Worbli? <span on-click="_join">Join WORBLI</span></div> -->
     `;
   }
   static get properties() {

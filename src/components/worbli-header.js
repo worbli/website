@@ -131,7 +131,7 @@ class WorbliHeader extends PolymerElement {
       <template is="dom-if" if="{{!logedIn}}">
         <div class="navigation">
           <ul>
-            <li on-click="_join" class="join-btn">JOIN WORBLI</a></li>
+            <!-- <li on-click="_join" class="join-btn">JOIN WORBLI</a></li> -->
             <li on-click="_signIn" class="blue-bg">SIGN IN</a></li>
           </ul>
         </div>

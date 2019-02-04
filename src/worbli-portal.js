@@ -63,7 +63,7 @@ class WorbliPortal extends PolymerElement {
         <developerterms-route name="developerterms"></developerterms-route>
         <platformterms-route name="platformterms"></platformterms-route>
         <signin-route name="signin"></signin-route>
-        <join-route name="join"></join-route>
+        <!-- <join-route name="join"></join-route> -->
         <menu-route name="menu"></menu-route>
       </iron-pages>
     `;
