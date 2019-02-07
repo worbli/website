@@ -4,7 +4,6 @@ import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-support.js';
-import '../components/side-bar/worbli-snapshot.js';
 import '../components/side-bar/worbli-partners.js';
 import '../components/worbli-buy.js';
 import '../components/worbli-title.js';
@@ -88,7 +87,6 @@ class MainRoute extends PolymerElement {
           </div>
         </div>
         <div class="side">
-          <!-- <worbli-snapshot api="/email/add"></worbli-snapshot> -->
           <worbli-support url="https://worbli.zendesk.com"></worbli-support>
           <worbli-telegram telegram="https://t.me/worblicommunity" medium="https://medium.com/@WORBLI"></worbli-telegram>
           <worbli-partners></worbli-partners>

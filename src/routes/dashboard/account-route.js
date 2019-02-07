@@ -2,7 +2,6 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '@polymer/app-route/app-location.js';
 import '../../css/shared-styles.js';
 import '../../components/worbli-footer.js';
-import '../../components/side-bar/worbli-snapshot.js';
 import '../../components/side-bar/worbli-dashnav.js';
 import '../../worbli-env.js';
 
@@ -215,7 +214,6 @@ class AccountRoute extends PolymerElement {
             <p class="info">
               Your WORBLI blockchain account has been created. Account name <b>[[worbliAccountName]]</b></br></br>
               Check it out at <a href="https://worbli.bloks.io/account/[[worbliAccountName]]" target="_blank">worbli.bloks.io</a></br></br>
-              If you had an EOS account on September 7th, you can <a href="/dashboard/sharedrop">Claim your Sharedrop</a>
             </p>
           </template>
           <!-- END IF VIEW NAMED-->
@@ -225,7 +223,6 @@ class AccountRoute extends PolymerElement {
             <p class="info">
               Your WORBLI blockchain account has been created. Account name <b>[[worbliAccountName]]</b></br></br>
               Check it out at <a href="https://worbli.bloks.io/account/[[worbliAccountName]]" target="_blank">worbli.bloks.io</a></br></br>
-              Congratulations you have successfully claimed your sharedrop!
             </p>
           </template>
           <!-- END IF VIEW CREDITED-->

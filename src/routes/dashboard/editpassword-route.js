@@ -1,7 +1,6 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../../css/shared-styles.js';
 import '../../components/worbli-footer.js';
-import '../../components/side-bar/worbli-snapshot.js';
 import '../../components/side-bar/worbli-dashnav.js';
 import '@polymer/app-route/app-location.js';
 import '../../worbli-env.js';

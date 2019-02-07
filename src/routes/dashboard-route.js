@@ -30,8 +30,7 @@ class DasboardRoute extends PolymerElement {
         <editpassword-route name="editpassword"></editpassword-route>  
         <review-route name="review"></review-route>  
         <status-route name="status"></status-route> 
-        <account-route name="account"></account-route>   
-        <sharedrop-route name="sharedrop"></sharedrop-route>        
+        <account-route name="account"></account-route>        
       </iron-pages>
     `;
   }
@@ -58,7 +57,7 @@ class DasboardRoute extends PolymerElement {
   _routePageChanged(page) {
     if (!page) {
       this.page = 'editpassword';
-    } else if (['sharedrop', 'profile', 'account', 'review', 'status', 'editpassword'].indexOf(page) !== -1) {
+    } else if (['profile', 'account', 'review', 'status', 'editpassword'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -78,9 +77,6 @@ class DasboardRoute extends PolymerElement {
             break;
         case 'account':
             import('./dashboard/account-route.js');
-            break;
-        case 'sharedrop':
-            import('./dashboard/sharedrop-route.js');
             break;
         case 'editpassword':
             import('./dashboard/editpassword-route.js');
