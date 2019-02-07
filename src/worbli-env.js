@@ -9,7 +9,7 @@ class WorbliEnv extends PolymerElement {
         type: String,
         reflectToAttribute: true,
         notify: true,
-        value: 'http://api.localhost:9000/api/v2' 
+        value: 'http://api.localhost:9010/api/v2' 
       },
     };
   }

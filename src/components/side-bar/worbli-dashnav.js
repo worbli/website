@@ -61,7 +61,6 @@ class WorbliDashnav extends PolymerElement {
           <a href="/dashboard/review" class="link hidden"><div class="nav">Review</div></a>
           <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
           <a href="/dashboard/account" class="link hidden"><div class="nav">Account</div></a>
-          <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
           <a href="/dashboard/editpassword" class="link active"><div class="nav selected">Password</div></a>
         </template>
         <template is="dom-if" if="{{started}}">
@@ -69,7 +68,6 @@ class WorbliDashnav extends PolymerElement {
           <a href="/dashboard/review" class="link active"><div class="nav selected">Review</div></a>
           <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
           <a href="/dashboard/account" class="link hidden"><div class="nav">Account</div></a>
-          <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
           <a href="/dashboard/editpassword" class="link active"><div class="nav selected">Password</div></a>
         </template>
         <template is="dom-if" if="{{review}}">
@@ -77,7 +75,6 @@ class WorbliDashnav extends PolymerElement {
           <a href="/dashboard/review" class="link hidden"><div class="nav">Review</div></a>
           <a href="/dashboard/status" class="link active"><div class="nav selected">Status</div></a>
           <a href="/dashboard/account" class="link hidden"><div class="nav">Account</div></a>
-          <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
           <a href="/dashboard/editpassword" class="link active"><div class="nav selected">Password</div></a>
         </template>
         <template is="dom-if" if="{{approved}}">
@@ -85,7 +82,6 @@ class WorbliDashnav extends PolymerElement {
           <a href="/dashboard/review" class="link hidden"><div class="nav">Review</div></a>
           <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
           <a href="/dashboard/account" class="link active"><div class="nav selected">Account</div></a>
-          <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
           <a href="/dashboard/editpassword" class="link active"><div class="nav selected">Password</div></a>
         </template>
         <template is="dom-if" if="{{named}}">
@@ -93,7 +89,6 @@ class WorbliDashnav extends PolymerElement {
           <a href="/dashboard/review" class="link hidden"><div class="nav">Review</div></a>
           <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
           <a href="/dashboard/account" class="link active"><div class="nav selected">Account</div></a>
-          <a href="/dashboard/sharedrop" class="link active"><div class="nav selected">Sharedrop</div></a>
           <a href="/dashboard/editpassword" class="link active"><div class="nav selected">Password</div></a>
         </template>
         <template is="dom-if" if="{{credited}}">
@@ -101,7 +96,6 @@ class WorbliDashnav extends PolymerElement {
           <a href="/dashboard/review" class="link hidden"><div class="nav">Review</div></a>
           <a href="/dashboard/status" class="link hidden"><div class="nav">Status</div></a>
           <a href="/dashboard/account" class="link active"><div class="nav selected">Account</div></a>
-          <a href="/dashboard/sharedrop" class="link hidden"><div class="nav">Sharedrop</div></a>
           <a href="/dashboard/editpassword" class="link active"><div class="nav selected">Password</div></a>
         </template>
       </div>
@@ -225,7 +219,7 @@ _statusChanged(){
     this.approved = true;
     localStorage.setItem("loc", "approved");
   };
-  if(this.onfidoStatus === 'named'){ // the has claimed an acocunt = > Sharedrop
+  if(this.onfidoStatus === 'named'){ // the has claimed an acocunt 
     this.named = true;
     localStorage.setItem("loc", "named");
   };
@@ -243,24 +237,19 @@ _bounce(){
   if(status === 'default'   && page === 'review' )    { this._goHome() }
   if(status === 'default'   && page === 'status' )    { this._goHome() }
   if(status === 'default'   && page === 'account' )   { this._goHome() }
-  if(status === 'default'   && page === 'sharedrop' ) { this._goHome() }
   if(status === 'started'   && page === 'status' )    { this._goHome() }
   if(status === 'started'   && page === 'account' )   { this._goHome() }
-  if(status === 'started'   && page === 'sharedrop' ) { this._goHome() }
   if(status === 'review'    && page === 'profile' )   { this._goHome() }
   if(status === 'review'    && page === 'account' )   { this._goHome() }
-  if(status === 'review'    && page === 'sharedrop' ) { this._goHome() }
   if(status === 'approved'  && page === 'profile' )   { this._goHome() }
   if(status === 'approved'  && page === 'review' )    { this._goHome() }
   if(status === 'approved'  && page === 'status' )    { this._goHome() }
-  if(status === 'approved'  && page === 'sharedrop' ) { this._goHome() }
   if(status === 'named'     && page === 'profile' )   { this._goHome() }
   if(status === 'named'     && page === 'review' )    { this._goHome() }
   if(status === 'named'     && page === 'status' )    { this._goHome() }
   if(status === 'credited'  && page === 'profile' )   { this._goHome() }
   if(status === 'credited'  && page === 'review' )    { this._goHome() }
   if(status === 'credited'  && page === 'status' )    { this._goHome() }
-  if(status === 'credited'  && page === 'sharedrop' ) { this._goHome() }
 }
 
 _goHome(){

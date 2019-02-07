@@ -102,7 +102,7 @@ class WorbliSignin extends PolymerElement {
       <small class="comment error">[[error]]</small>
       <button class="btn-critical" on-click="_reset">Send Email</button>
     </template>
-    <!-- <div class="center">New to Worbli? <span on-click="_join">Join WORBLI</span></div> -->
+    <div class="center">New to Worbli? <span on-click="_join">Join WORBLI</span></div>
     `;
   }
   static get properties() {
@@ -185,7 +185,7 @@ _login(){
       if (onfido_status === 'review'){this.set('route.path', '/dashboard/status')}
       if (onfido_status === 'rejected'){this.set('route.path', '/dashboard/status')}
       if (onfido_status === 'approved'){this.set('route.path', '/dashboard/account')}
-      if (onfido_status === 'named'){this.set('route.path', '/dashboard/sharedrop')}
+      if (onfido_status === 'named'){this.set('route.path', '/dashboard/account')}
       if (onfido_status === 'credited'){this.set('route.path', '/dashboard/account')}
       this.dispatchEvent(new CustomEvent('hideOverlay',{bubbles: true, composed: true, detail: {action: 'hide'}}));
     } else {

@@ -131,7 +131,7 @@ class WorbliHeader extends PolymerElement {
       <template is="dom-if" if="{{!logedIn}}">
         <div class="navigation">
           <ul>
-            <!-- <li on-click="_join" class="join-btn">JOIN WORBLI</a></li> -->
+            <li on-click="_join" class="join-btn">JOIN WORBLI</a></li>
             <li on-click="_signIn" class="blue-bg">SIGN IN</a></li>
           </ul>
         </div>
@@ -182,7 +182,7 @@ _dashboard(){
   if(loc === 'review')    {this.set('route.path', `/dashboard/status`)};
   if(loc === 'rejected')    {this.set('route.path', `/dashboard/status`)};
   if(loc === 'approved')  {this.set('route.path', `/dashboard/account`)};
-  if(loc === 'named')     {this.set('route.path', `/dashboard/sharedrop`)};
+  if(loc === 'named')     {this.set('route.path', `/dashboard/account`)};
   if(loc === 'credited')  {this.set('route.path', `/dashboard/account`)}; 
 }
 
