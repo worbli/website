@@ -183,6 +183,11 @@ static get properties() {
   };
 }
 
+ready() {
+  super.ready();
+  this.set('route.path', `/`);
+}
+
 _reset(){
   if(this.resetJoin === true){
     setTimeout(() => {

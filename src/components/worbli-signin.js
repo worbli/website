@@ -130,6 +130,11 @@ class WorbliSignin extends PolymerElement {
     };
   }
 
+  ready() {
+    super.ready();
+    this.set('route.path', `/`);
+  }
+  
 _join(){
     this.join = true;
 }

@@ -1,6 +1,6 @@
 module.exports = {
     apps: [{
-      name: 'wprbli-www',
+      name: 'worbli-www',
       script: 'npm',
       args: 'start',
       watch: true,

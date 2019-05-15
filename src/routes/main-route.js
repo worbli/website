@@ -52,6 +52,9 @@ class MainRoute extends PolymerElement {
         .mobile-signup-buttons{
           display:none;
         }
+        .portal-link{
+          text-decoration: none;
+        }
 
 	    	@media only screen and (max-width: 600px){
           :host {
@@ -75,7 +78,7 @@ class MainRoute extends PolymerElement {
       <div class="split">
         <div class="main">
           <div class="mobile-signup-buttons">
-            <button class="btn-critical" on-click="_signIn">Sign In</button>
+            <a href="https://portal.worbli.io" class="portal-link"><button class="btn-critical">Portal</button></a>
             <!-- <button class="btn-critical" on-click="_joinNow">Join Now</button> -->
           </div>
           <worbli-buy></worbli-buy>

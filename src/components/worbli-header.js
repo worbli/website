@@ -79,6 +79,20 @@ class WorbliHeader extends PolymerElement {
         margin-right: 30px;
         cursor: pointer;
       }
+      .caret:before{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid green;
+        border-bottom: 10px solid transparent;
+        transform: rotate(45deg)
+      }
+      .caret {
+        position: relative;
+        top: 22px;
+      }
 
       @media only screen and (max-width: 600px) {
         .navigation{
@@ -117,7 +131,7 @@ class WorbliHeader extends PolymerElement {
     <div class="container-header">
       <div class="logo">
         <a href="/" tabindex="0">
-          <img src="https://d1r0t58ow9lja0.cloudfront.net/logo.svg" alt="Worbli Logo" height="30px" class="logoimg">      
+          <img src="./images/new-worbli.png" alt="Worbli Logo" height="30px" class="logoimg">      
         </a>
       </div>
       <div class="navigation">
@@ -131,19 +145,19 @@ class WorbliHeader extends PolymerElement {
       <template is="dom-if" if="{{!logedIn}}">
         <div class="navigation">
           <ul>
-            <li on-click="_join" class="join-btn">JOIN WORBLI</a></li>
-            <li on-click="_signIn" class="blue-bg">SIGN IN</a></li>
+            <a href="https://portal.worbli.io"><li class="join-btn">Portal <span class="caret"></span></a></li></a>
+            <!-- <li on-click="_signIn" class="blue-bg">SIGN IN</a></li> -->
           </ul>
         </div>
       </template>
-      <template is="dom-if" if="{{logedIn}}">
+      <!-- <template is="dom-if" if="{{logedIn}}">
           <div class="navigation">
             <ul>
               <li on-click="_signOut" class="join-btn">SIGN OUT</a></li>
               <li on-click="_dashboard" class="blue-bg">DASHBOARD</a></li>
             </ul>
         </div>
-      </template>
+      </template> -->
     </div>
   `;
 }
@@ -171,7 +185,7 @@ static get properties() {
 _routeChanged(){
   const token = localStorage.getItem("token");
   if(token){
-    this.logedIn = true;
+    this.set('route.path', `/`);
   } 
 }
 
@@ -197,11 +211,11 @@ _goProfile(){
 }
 
 _signIn() {
-  this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'signin'}}));
+  // this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'signin'}}));
 }
 
 _join() {
-  this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'join'}}));
+  // this.dispatchEvent(new CustomEvent('overlay',{bubbles: true, composed: true, detail: {action: 'join'}}));
 }
 
 _toggleMenu(){
