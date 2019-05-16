@@ -9,7 +9,7 @@ services:
     volumes:
       - ./:/home/node/app
     ports:
-      - '18080:8080'
+      - '80:8080'
     working_dir: /home/node/app
     command:
       sh -c "npm install &&
