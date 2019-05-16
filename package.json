@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": "worbli",
   "scripts": {
-    "start": "cd build && prpl-server --host 0.0.0.0 --https-redirect --root . --config polymer.json && cd ../",
+    "start": "cd build && prpl-server --host 0.0.0.0 --root . --config polymer.json && cd ../",
     "build": "polymer build",
     "lint": "polymer lint",
     "test": "polymer test",
