@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+
+  website:
+    image: keymetrics/pm2:latest-stretch
+    container_name: website
+    restart: always
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - '18080:8080'
+    working_dir: /home/node/app
+    command:
+      sh -c "npm install &&
+        if [ ! -L /usr/local/bin/polymer ]; then
+          /bin/ln -s $PWD/node_modules/polymer-cli/bin/polymer.js /usr/local/bin/polymer;
+          /bin/ln -s $PWD/node_modules/prpl-server/bin/prpl-server /usr/local/bin/prpl-server;
+        fi &&
+        npm run-script build &&
+        pm2-docker start ecosystem.config.js"
