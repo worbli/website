@@ -78,7 +78,7 @@ class MainRoute extends PolymerElement {
       <div class="split">
         <div class="main">
           <div class="mobile-signup-buttons">
-            <a href="https://portal.worbli.io" class="portal-link"><button class="btn-critical">Portal</button></a>
+            <a href="https://portal.worbli.io" target="_blank" class="portal-link"><button class="btn-critical">Portal</button></a>
             <!-- <button class="btn-critical" on-click="_joinNow">Join Now</button> -->
           </div>
           <worbli-buy></worbli-buy>
