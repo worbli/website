@@ -101,7 +101,7 @@ class VisionRoute extends PolymerElement {
               <p>EOSIO users and community members have created an environment that demands world-leading technology.</b>
               <div class="img-holder"><img src="./images/vision/tamper-proof-transactions.svg" width="50px" class="icons"></div>
               <b>Tamper-proof Transactions</b>
-              <p>The ledger is immutable and transactions can’t be altered, the blockchain and eliminates the need for middlemen.</p> 
+              <p>The ledger is immutable and transactions can’t be altered, eliminating the need for middlemen.</p> 
               <div class="img-holder"><img src="./images/vision/account-recovery.svg" width="50px" class="icons"></div>
               <b>Account recovery</b> 
               <p>Customer accounts can be recovered even when a customer loses thier private keys.</p>
