@@ -1,7 +1,6 @@
 {
   "entrypoint": "index.html",
   "shell": "src/worbli-portal.js",
-  "autoBasePath": true,
   "sources": [
     "images/**/*"
   ],
@@ -30,8 +29,7 @@
         "minify": true
       },
       "bundle": true,
-      "addServiceWorker": true,
-      "basePath":true
+      "addServiceWorker": true
     },
     {
       "name": "es6-bundled",
@@ -49,8 +47,7 @@
         "minify": true
       },
       "bundle": true,
-      "addServiceWorker": true,
-      "basePath":true
+      "addServiceWorker": true
     },
     {
       "name": "es5-bundled",
@@ -66,8 +63,7 @@
         "minify": true
       },
       "bundle": true,
-      "addServiceWorker": true,
-      "basePath":true
+      "addServiceWorker": true
     }
   ],
   "moduleResolution": "node",
