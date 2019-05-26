@@ -1,0 +1,45 @@
+version: 0.1
+phases:
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+      - echo updating portal URLs in worbli-header.js and main-route.js ...
+      - sed -i "s/portal.worbli.io/$PORTAL_HOST/g" src/components/worbli-header.js
+      - sed -i "s/portal.worbli.io/$PORTAL_HOST/g" src/routes/main-route.js
+      # - cp src/admin-env-example.js src/admin-env.js 
+      # - sed -i "s/<API_HOST>/$API_HOST/g" src/admin-env.js
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+  post_build:
+    commands:
+      # copy the contents of /build/es6-bundled to S3
+      - >
+        aws s3 cp 
+        --cache-control="max-age=0, no-cache, no-store, must-revalidate"
+        --recursive ./build/es6-bundled s3://$DEPLOY_BUCKET/ 
+      # set the cache-control headers for service-worker.js to prevent
+      # browser caching
+      - >
+        aws s3 cp  
+        --cache-control="max-age=0, no-cache, no-store, must-revalidate" 
+        ./build/es6-bundled/service-worker.js s3://$DEPLOY_BUCKET/
+
+      # set the cache-control headers for index.html to prevent
+      # browser caching
+      - >
+        aws s3 cp  
+        --cache-control="max-age=0, no-cache, no-store, must-revalidate" 
+        ./build/es6-bundled/index.html s3://$DEPLOY_BUCKET/
+
+      # invalidate the CloudFront cache for index.html and service-worker.js
+      # to force CloudFront to update its edge locations with the new versions
+      # - >
+      #  aws cloudfront create-invalidation --distribution-id $DISTRIBUTION
+      #  --paths /index.html /service-worker.js
+artifacts:
+  files:
+    - '**/*'
+  base-directory: build
