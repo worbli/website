@@ -230,11 +230,6 @@ class BlockEndpoints extends PolymerElement {
         "apiEndpoint": "https://endpoint-1.worbli.io",
         "history": false
       }, {
-        "name": "EOS Germany",
-        "p2pEndpoint": "p2p.mainnet.worbli.eosgermany.online:22222",
-        "apiEndpoint": "",
-        "history": false
-      }, {
         "name": "EOS Nairobi",
         "p2pEndpoint": "http://worbli-mainnet.eosnairobi.io:9276",
         "apiEndpoint": "http://worbli-mainnet.eosnairobi.io:9298",
