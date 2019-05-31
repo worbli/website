@@ -3,6 +3,7 @@ import '../css/shared-styles.js';
 import '../components/worbli-footer.js';
 import '../components/worbli-rpc.js';
 import '../components/network-monitor/block-info.js';
+import '../components/network-monitor/block-endpoints.js';
 import '../components/network-monitor/block-producers.js';
 import '../components/worbli-title.js';
 
@@ -48,6 +49,7 @@ class NetworkRoute extends PolymerElement {
         </div>
         <div class="side">
           <block-info class="side" jsonrpc="[[jsonrpc]]" producer="{{producer}}" interval="500"></block-info>
+          <block-endpoints class="side"></block-endpoints>
         </div>
       </div>
       <worbli-footer name="footer"></worbli-footer>
