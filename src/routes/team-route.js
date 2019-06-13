@@ -114,7 +114,7 @@ class TeamRoute extends PolymerElement {
               <worbli-profile name="fuzzy" title="Strategic Advisor" linkedin="" profile="Fuzzy is the cofounder of Bitshares, Whaleshare and Beyond Bitcoin. He is also one of the OGs of EOS. Fuzzy is a blockchain visionary, with a passion to bring blockchain mainstream leveraging the art of incentivisation."></worbli-profile>
               <worbli-profile name="david-packham" title="Strategic Advisor & BP" linkedin="davidpackham" profile="David Packham has over 20 years experience in banking, asset management, and FinTech, working for Credit Suisse and Goldman Sachs. He's the co-founder of EOS42, a top 10 Block Producer on EOSIO mainnet. David has an MSc from City University in London, a Hyperledger Developer and Blockchain Strategy qualification from the University of Oxford. He is also the co-founder of Chintai, a token leasing delegation market dApp for WORBLI and EOSIO."></worbli-profile>
               <worbli-profile name="valentin-ivanov" title="Software Developer" linkedin="" profile="Profile"></worbli-profile>            
-              <!-- <worbli-profile name="matt-haynes" title="title" linkedin="matthew-haynes-93a9797b" profile="Profile"></worbli-profile> -->
+              <worbli-profile name="matt-haynes" title="Operations Manager" linkedin="matthew-haynes-93a9797b" profile="Profile"></worbli-profile>
               <worbli-profile name="bernard-gumbs" title="Director Of Finance And Accounting" linkedin="bernard-gumbs-4b640611" profile="Director Of Finance And Accounting"></worbli-profile>        
             </div>
         </div>
