@@ -57,7 +57,7 @@ class WorbliBuy extends PolymerElement {
         <div class="outer-container">
             <div class="h1-text">Where can I buy <strong>WORBLI</strong> tokens?</div>
             <div class="btn-container">
-                <a href="https://chaince.com/registrations/new?in_token=89a7a25f" target="_blank"><div class="yellow-button">CHAINCE</div></a>
+                <a href="https://hoo.com/" target="_blank"><div class="yellow-button">HOO</div></a>
                 <a href="https://www.chainrift.com/?R=UEQAo" target="_blank"><div class="yellow-button">CHAINRIFT</div></a>
             </div>
         </div>
