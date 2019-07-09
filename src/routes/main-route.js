@@ -6,6 +6,7 @@ import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-support.js';
 import '../components/side-bar/worbli-partners.js';
 import '../components/worbli-buy.js';
+import '../components/worbli-demo.js';
 import '../components/worbli-title.js';
 import '../components/worbli-tile.js';
 class MainRoute extends PolymerElement {
@@ -82,6 +83,7 @@ class MainRoute extends PolymerElement {
             <!-- <button class="btn-critical" on-click="_joinNow">Join Now</button> -->
           </div>
           <worbli-buy></worbli-buy>
+          <worbli-demo></worbli-demo>
           <div class="tile-holder">
             <worbli-tile title="WORBLI Financial District" subtitle="Learn about the next generation of financial services..." image="./images/home-page/top-left.jpg" link="/about/"></worbli-tile>
             <worbli-tile title="WORBLI Developer Resources" subtitle="Check out which BP produced the last block..." image="./images/home-page/top-right.jpg" link="/network/"></worbli-tile>

@@ -1,6 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '../css/shared-styles.js';
-class WorbliBuy extends PolymerElement {
+class WorbliDemo extends PolymerElement {
   static get template() {
     return html`
       <style include="shared-styles">
@@ -9,7 +9,7 @@ class WorbliBuy extends PolymerElement {
             max-width: 860px;
         }
         .outer-container {
-            background-image: url("./images/buy-background.png");
+            background-image: url("./images/demo-background.png");
             background-position: center; 
             background-repeat: no-repeat;
             background-size: cover;
@@ -30,36 +30,41 @@ class WorbliBuy extends PolymerElement {
             font-size: 14px;
         }
         .yellow-button {
-            background-color: #FFDB6A;
+            background-color: #0047D7;
             border-radius: 3px;
             width: 110px;
             height: 25px;
-            color: #0E0137;
+            color: #FFF;
             font-size: 13px;
             font-weight: 600;
             text-align: center;
             padding-top: 6px;
             margin-right: 12px;
-            line-height: 23px;
         }
         .yellow-button:hover {
-            background-color: #E9BF2D;
-            color: #000000;
+            background-color: #0047D7;
+            color: #FFF;
         }
         .h1-text {
-            padding-top: 70px;
+            padding-top: 0px;
             margin-left: 17px;
             display: block;
+            font-weight: 600;
+            font-size: 15px;
         }
         a {
             text-decoration: none;
         }
+        .titlebox {
+            font-size: 30px;
+            padding-top: 37px;
+        }
         </style>
         <div class="outer-container">
-            <div class="h1-text">Where can I buy <strong>WORBLI</strong> tokens?</div>
+            <div class="h1-text titlebox"><strong>Inter Blockchain</strong></div>
+            <div class="h1-text">Demo-day July 18th</div>
             <div class="btn-container">
-                <a href="https://hoo.com/trade/wbi-eos" target="_blank"><div class="yellow-button">HOO</div></a>
-                <a href="https://www.chainrift.com/trading?coinpair=WBI/EOS&" target="_blank"><div class="yellow-button">CHAINRIFT</div></a>
+                <a href="https://worbli.io/demo/" target="_blank"><div class="yellow-button">Learn More</div></a>
             </div>
         </div>
     `;
@@ -74,4 +79,4 @@ class WorbliBuy extends PolymerElement {
     };
   }
 
-} window.customElements.define('worbli-buy', WorbliBuy);
+} window.customElements.define('worbli-demo', WorbliDemo);
