@@ -4,7 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-partners.js';
 import '../components/side-bar/worbli-telegram.js';
 import '../components/worbli-title.js';
-class DemoRoute extends PolymerElement {
+class UnsubscribeRoute extends PolymerElement {
   static get template() {
     return html`
       <style include="shared-styles">
@@ -107,4 +107,4 @@ class DemoRoute extends PolymerElement {
       <worbli-footer name="footer"></worbli-footer>
     `;
   }
-} window.customElements.define('demo-route', DemoRoute);
+} window.customElements.define('unsubscribe-route', UnsubscribeRoute);
