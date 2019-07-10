@@ -106,8 +106,8 @@ class DemoRoute extends PolymerElement {
             <li>Optional Membership Directory System</li>
         </ul>
         <br>
-        <b>Register for reminders about the event</b></br>
-   
+        <template is="dom-if" if="{{!complete}}">
+            <b>Register for reminders about the event<b/><br/>
             Name:<br>
             <input type="text" name="name" value="{{formName::input}}">
             <br>
@@ -115,7 +115,10 @@ class DemoRoute extends PolymerElement {
             <input type="text" name="email" value="{{formEmail::input}}">
             <br>
             <input type="submit" value="Register" class="formbutton" on-click="_post">
-  
+        </template>
+        <template is="dom-if" if="{{complete}}">
+          <b>Thank you!<b/><br/>
+        </template>
           <div class="error">[[error]]</div>
        </div>
         <div class="side">
@@ -165,6 +168,7 @@ class DemoRoute extends PolymerElement {
               this.complete = true;
             } else if (response && response.data === false && response.error) {
               this.error = response.error.replace(/['"]+/g, '');
+              this.complete = false;
             }
           });
     } else {

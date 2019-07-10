@@ -4,6 +4,7 @@ import '../components/worbli-footer.js';
 import '../components/side-bar/worbli-partners.js';
 import '../components/side-bar/worbli-telegram.js';
 import '../components/worbli-title.js';
+import '@polymer/app-route/app-location.js';
 class UnsubscribeRoute extends PolymerElement {
   static get template() {
     return html`
@@ -94,10 +95,16 @@ class UnsubscribeRoute extends PolymerElement {
 
         }
       </style>
-      <worbli-title title="Unsubscribed"></worbli-title>
+      <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
+      <worbli-title title="Unsubscribe"></worbli-title>
       <div class="split">
         <div class="main">
-          <b>You have unsubscibed from the Demo Day promo for the Crypto-Fiat Gateway</b></br></br>
+          <template is="dom-if" if="{{complete}}">
+            <b>You have unsubscibed from the Demo Day promo for the Crypto-Fiat Gateway<b/><br/><br/>
+          </template>
+          <template is="dom-if" if="{{error}}">
+            <b>[[error]]<b/><br/><br/>
+          </template>
        </div>
         <div class="side">
           <worbli-partners></worbli-partners>
@@ -106,5 +113,42 @@ class UnsubscribeRoute extends PolymerElement {
       </div>
       <worbli-footer name="footer"></worbli-footer>
     `;
+  }
+
+  static get properties() {
+    return {
+      route: {
+        type: Object,
+        observer: '_routeChanged',
+      },
+      complete: {
+        type: Boolean,
+        value: false,
+      },
+    };
+  }
+
+  _routeChanged() {
+    this.error = '';
+    const token = this.route.__queryParams.token;
+    const url = `https://portal-api.worbli.io/api/v3/unsubscribe/${token}`;
+    fetch(url, {
+      method: 'GET',
+      headers: {'Content-Type': 'application/json'},
+    })
+        .then((response) => {
+          return response.json();
+        })
+        .then((response) => {
+          if (response && response.data === true) {
+            this.complete = true;
+          } else if (response && response.data === false && response.error) {
+            this.error = response.error.replace(/['"]+/g, '');
+            this.complete = false;
+          } 
+        })
+        .catch((error) => {
+          resolve(false);
+        });
   }
 } window.customElements.define('unsubscribe-route', UnsubscribeRoute);

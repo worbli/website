@@ -58,6 +58,7 @@ class WorbliPortal extends PolymerElement {
         <privacy-route name="privacy"></privacy-route>
         <dashboard-route name="dashboard"></dashboard-route>
         <demo-route name="demo"></demo-route>
+        <unsubscribe-route name="unsubscribe"></unsubscribe-route>
         <visitor-route name="visitor"></visitor-route>
         <profservices-route name="profservices"></profservices-route>
         <networkterms-route name="networkterms"></networkterms-route>
