@@ -57,8 +57,8 @@ class WorbliBuy extends PolymerElement {
         <div class="outer-container">
             <div class="h1-text">Where can I buy <strong>WORBLI</strong> tokens?</div>
             <div class="btn-container">
-                <a href="https://hoo.com/" target="_blank"><div class="yellow-button">HOO</div></a>
-                <a href="https://www.chainrift.com/?R=UEQAo" target="_blank"><div class="yellow-button">CHAINRIFT</div></a>
+                <a href="https://hoo.com/trade/wbi-eos" target="_blank"><div class="yellow-button">HOO</div></a>
+                <a href="https://www.chainrift.com/trading?coinpair=WBI/EOS&" target="_blank"><div class="yellow-button">CHAINRIFT</div></a>
             </div>
         </div>
     `;
