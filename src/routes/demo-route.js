@@ -98,12 +98,11 @@ class DemoRoute extends PolymerElement {
       <div class="split">
         <div class="main">
           <b>Demo Day promo for the Crypto-Fiat Gateway</b></br></br>
-          <p>Some people think it’s like Sasquatch, the Holy Grail, EL Dorado (the city of gold not the car) extra-terrestrial life or the Loch Ness Monster  - elusive - maybe even mythological. What are we talking about? True IBC -  inter-blockchain communication.  There a lot of people who are working on this problem and many are promising a solution. So far most of the solutions are only on paper or very limited in what they can do. We are excited to share with you that our strategic partner Transledger, is bringing a truly extensive IBC with a Crypto-Fiat gateway to life. <p></br>
-          <p>What does that mean? It means that from your WORBLI or EOS account you can transfer in AND out Bitcoin, Ethereum or any of the other major coins or tokens. At the Application (or dApp) layer, you will be able to easily turn those tokens into fiat. On July 18th the Transledger team and the WORBLI team will put on a demo-day so that you can see this incredible tool in action and we’d love for you to join us. We will be demonstrating 3 products…<p></br>
+          <p>Like the Sasquatch, Blockchain IBC has been very elusive, however, on July 18th at 11:00 AM CST, Transledger and WORBLI will be doing a demo of 4 awesome IBC products…<p></br>
         <ul>
             <li>The Crypto-Fiat Gateway Testnet: Demonstrating a digitized fiat purchase</li>
             <li>Peer to Peer Exchange: Direct connection and embedded in the dashboard with a demo of trade, allowing funding with redemption</li>
-            <li>The Wallet: Transfer tokens easily peer to peer similar to PayPal Account Management (full key storage solution)</li>
+            <li>The Wallet: Transfer tokens easily peer to peer similar to PayPal AND a full key storage solution.</li>
             <li>Optional Membership Directory System</li>
         </ul>
         <br>
