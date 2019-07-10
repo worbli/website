@@ -57,6 +57,8 @@ class WorbliPortal extends PolymerElement {
         <terms-route name="terms"></terms-route>
         <privacy-route name="privacy"></privacy-route>
         <dashboard-route name="dashboard"></dashboard-route>
+        <demo-route name="demo"></demo-route>
+        <unsubscribe-route name="unsubscribe"></unsubscribe-route>
         <visitor-route name="visitor"></visitor-route>
         <profservices-route name="profservices"></profservices-route>
         <networkterms-route name="networkterms"></networkterms-route>
@@ -100,7 +102,7 @@ class WorbliPortal extends PolymerElement {
     }
     if (!page) {
       this.page = 'main';
-    } else if (['signin', 'join', 'main', 'network', 'about', 'vision', 'team', 'register', 'terms', 'privacy', 'profservices', 'networkterms', 'developerterms', 'platformterms', 'menu', 'dashboard','visitor'].indexOf(page) !== -1) {
+    } else if (['signin', 'join', 'main', 'network', 'about', 'vision', 'team', 'register', 'terms', 'privacy', 'profservices', 'networkterms', 'developerterms', 'platformterms', 'menu', 'dashboard', 'visitor', 'demo', 'unsubscribe'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -114,6 +116,12 @@ class WorbliPortal extends PolymerElement {
         break;
       case 'network':
         import('./routes/network-route.js');
+        break;
+      case 'unsubscribe':
+        import('./routes/unsubscribe-route.js');
+        break;
+      case 'demo':
+        import('./routes/demo-route.js');
         break;
       case 'about':
         import('./routes/about-route.js');

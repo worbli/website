@@ -47,7 +47,7 @@ class WorbliPartners extends PolymerElement {
           <a href="http://webprofits.com.au/" target="_blank"><div class="bp"></div></a>
           <a href="http://www.trybe.one" target="_blank"><div class="bp"></div></a>
           <a href="http://eosdetroit.io/" target="_blank"><div class="bp"></div></a>
-          <a href="http://www.eosgermany.one" target="_blank"><div class="bp"></div></a>
+          <a href="http://www.0rigin.one" target="_blank"><div class="bp"></div></a>
           <a href="http://genereos.io/" target="_blank"><div class="bp"></div></a>
           <a href="https://www.chintai.io/" target="_blank"><div class="bp"></div></a>
         </div>
