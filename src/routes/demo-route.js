@@ -107,15 +107,16 @@ class DemoRoute extends PolymerElement {
         </ul>
         <br>
         <b>Register for reminders about the event</b></br>
-        <form>
+   
             Name:<br>
-            <input type="text" name="firstname">
+            <input type="text" name="name" value="{{formName::input}}">
             <br>
             Email:<br>
-            <input type="text" name="lastname">
+            <input type="text" name="email" value="{{formEmail::input}}">
             <br>
-            <input type="submit" value="Register" class="formbutton">
-        </form> 
+            <input type="submit" value="Register" class="formbutton" on-click="_post">
+  
+          <div class="error">[[error]]</div>
        </div>
         <div class="side">
           <worbli-partners></worbli-partners>
@@ -125,4 +126,56 @@ class DemoRoute extends PolymerElement {
       <worbli-footer name="footer"></worbli-footer>
     `;
   }
+
+  static get properties() {
+    return {
+      formName: {
+        type: String,
+      },
+      formEmail: {
+        type: String,
+      },
+      error: {
+        type: String,
+      },
+      complete: {
+        type: Boolean,
+        value: false,
+      },
+    };
+  }
+
+  _post() { 
+    this.error = '';
+    const name = this.formName;
+    const email = this.formEmail;
+    if (this._validateEmail(email)) {
+      const url = `https://portal-api.worbli.io/api/v3/subscribe`;
+      const data = {name, email};
+      fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {'Content-Type': 'application/json'},
+      })
+          .then((response) => {
+            return response.json();
+          })
+          .then((response) => {
+            if (response &&response.data === true) {
+              this.complete = true;
+            } else if (response && response.data === false && response.error) {
+              this.error = response.error.replace(/['"]+/g, '');
+            }
+          });
+    } else {
+      this.error = 'Invalid Email'
+    }
+
+}
+
+_validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
 } window.customElements.define('demo-route', DemoRoute);
