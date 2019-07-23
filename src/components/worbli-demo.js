@@ -62,9 +62,9 @@ class WorbliDemo extends PolymerElement {
         </style>
         <div class="outer-container">
             <div class="h1-text titlebox"><strong>Inter Blockchain</strong></div>
-            <div class="h1-text">Demo-day July 18th</div>
+            <div class="h1-text">Demo-day Video Replay</div>
             <div class="btn-container">
-                <a href="https://worbli.io/demo/" target="_blank"><div class="yellow-button">Learn More</div></a>
+                <a href="https://www.crowdcast.io/e/transledgerdemoday" target="_blank"><div class="yellow-button">Watch Now</div></a>
             </div>
         </div>
     `;
