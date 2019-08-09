@@ -34,6 +34,11 @@ phases:
         --cache-control="max-age=0, no-cache, no-store, must-revalidate" 
         ./build/es6-bundled/index.html s3://$DEPLOY_BUCKET/
 
+      - >
+        aws s3 cp  
+        --cache-control="max-age=0, no-cache, no-store, must-revalidate" 
+        ./WorbliWhitePaper.pdf s3://$DEPLOY_BUCKET/
+
       # invalidate the CloudFront cache for index.html and service-worker.js
       # to force CloudFront to update its edge locations with the new versions
       # - >
