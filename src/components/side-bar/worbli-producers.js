@@ -34,7 +34,7 @@ class WorbliProducers extends PolymerElement {
       <div class="container">
         <div class="title">Block Producers</div>
           <div class="bps">
-            <a href="https://www.dunenode.com/" target="_blank"><div class="bp topline"><img width="45px" src="./images/bp-logos/blue/dune.png"></div></a>
+            <!-- <a href="https://www.dunenode.com/" target="_blank"><div class="bp topline"><img width="45px" src="./images/bp-logos/blue/dune.png"></div></a>
             <a href="https://eoscostarica.io/" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-costa-rica.png"></div></a>
             <a href="https://eosdetroit.io" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-detroit.png"></div></a>
             <a href="https://eosdublin.com" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-dublin.png"></div></a>
@@ -46,10 +46,10 @@ class WorbliProducers extends PolymerElement {
             <a href="http://eosgravity.com/" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/gravity-pool.png"></div></a>
             <a href="https://hkeos.com" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/hkeos.png"></div></a>
             <a href="https://www.infinitybloc.io" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/infinity-bloc.png"></div></a>
-            <a href="https://octagonlabs.org/" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/octagon-labs.png"></div></a>
+            <a href="https://octagonlabs.org/" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/octagon-labs.png"></div></a> -->
 
 
-            <!-- <a href="https://eosblocksmith.io/" target="_blank"><div class="bp topline"><img width="45px" src="./images/bp-logos/blue/eos-blocksmith.png"></div></a>
+            <a href="https://eosblocksmith.io/" target="_blank"><div class="bp topline"><img width="45px" src="./images/bp-logos/blue/eos-blocksmith.png"></div></a>
             <a href="https://www.eoscafeblock.com/" target="_blank"><div class="bp topline"><img width="45px" src="./images/bp-logos/blue/eos-cafe-block.png"></div></a>
             <a href="https://eoscannon.io" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-cannon.png"></div></a>
             <a href="https://eosdac.io" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-dac.png"></div></a>
@@ -60,7 +60,7 @@ class WorbliProducers extends PolymerElement {
             <a href="https://eostitan.com/" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-titan.png"></div></a>
             <a href="http://eostribe.io" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-tribe.png"></div></a>
             <a href="https://www.genereos.io" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/genereos.png"></div></a>
-            <a href="https://www.chainrift.com/" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/chain-rift.png"></div></a> -->
+            <a href="https://www.chainrift.com/" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/chain-rift.png"></div></a>
             
           </div>
         </div>
