@@ -145,29 +145,9 @@ class BlockEndpoints extends PolymerElement {
         "apiEndpoint": "https://api.worbli.eosrio.io",
         "history": true
       }, {
-        "name": "EOS Detroit",
-        "p2pEndpoint": "p2p.worbli.eosdetroit.io:1337",
-        "apiEndpoint": "https://api.worbli.eosdetroit.io",
-        "history": true
-      }, {
-        "name": "EOS Metal",
-        "p2pEndpoint": "worbliapi3.eosmetal.io:39877",
-        "apiEndpoint": "https://worbliapi.eosmetal.io",
-        "history": false
-      }, {
         "name": "EOS Blocksmith",
         "p2pEndpoint": "peer.worbli-mainnet.eosblocksmith.io:9876",
         "apiEndpoint": "https://worbli-mainnet.eosblocksmith.io",
-        "history": false
-      }, {
-        "name": "EOSIO.SG",
-        "p2pEndpoint": "",
-        "apiEndpoint": "https://worbli.eosio.sg",
-        "history": false
-      }, {
-        "name": "EOS New York",
-        "p2pEndpoint": "",
-        "apiEndpoint": "https://api.worbli.eosnewyork.io",
         "history": false
       }, {
         "name": "EOS Tribe",
@@ -195,11 +175,6 @@ class BlockEndpoints extends PolymerElement {
         "apiEndpoint": "https://api.worbli-mainnet.eoscalgary.io",
         "history": true
       }, {
-        "name": "Dune",
-        "p2pEndpoint": "",
-        "apiEndpoint": "https://wbiapi.dunenode.com",
-        "history": true
-      }, {
         "name": "GenerEOS",
         "p2pEndpoint": "p2p.worbli.genereos.io:9876",
         "apiEndpoint": "https://worbli.genereos.io/",
@@ -209,21 +184,6 @@ class BlockEndpoints extends PolymerElement {
         "p2pEndpoint": "http://p2p.worblisweden.org",
         "apiEndpoint": "https://api.worblisweden.org",
         "history": true
-      }, {
-        "name": "Infinitybloc",
-        "p2pEndpoint": "72.14.183.114:9876",
-        "apiEndpoint": "https://api.worbli.infinitybloc.io",
-        "history": false
-      }, {
-        "name": "Beyond Bitcoin",
-        "p2pEndpoint": "http://207.180.220.202:9876",
-        "apiEndpoint": "https://worbli.beyondbitcoin.io/",
-        "history": true
-      }, {
-        "name": "HKEOS",
-        "p2pEndpoint": "http://worbli-p2p.hkeos.com",
-        "apiEndpoint": "http://worbli-api.hkeos.com",
-        "history": false
       }, {
         "name": "Worbli",
         "p2pEndpoint": "p2p-endpoint-1.worbli.io:9876",
@@ -235,25 +195,10 @@ class BlockEndpoints extends PolymerElement {
         "apiEndpoint": "http://worbli-mainnet.eosnairobi.io:9298",
         "history": true
       }, {
-        "name": "EOS Nation",
-        "p2pEndpoint": "",
-        "apiEndpoint": "https://worbli.eosn.io",
-        "history": false
-      }, {
         "name": "calEOS",
         "p2pEndpoint": "http://testnet.worbli.caleos.io:9878",
         "apiEndpoint": "https://worbli.caleos.io",
         "history": true
-      }, {
-        "name": "EOSYS",
-        "p2pEndpoint": "http://rpc0.worbli-mainnet.eosys.io:9876",
-        "apiEndpoint": "http://rpc0.worbli-mainnet.eosys.io:8888",
-        "history": false
-      }, {
-        "name": "Tokenika",
-        "p2pEndpoint": "",
-        "apiEndpoint": "https://worbli.tokenika.io",
-        "history": false
       }];
       console.log(this.data);
     };
