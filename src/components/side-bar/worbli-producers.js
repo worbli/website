@@ -55,7 +55,7 @@ class WorbliProducers extends PolymerElement {
             <a href="https://eosdac.io" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-dac.png"></div></a>
             <a href="https://www.eosnairobi.io/" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-nairobi.png"></div></a>
             <a href="https://eosrio.io" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-rio.png"></div></a>
-            <a href="http://eos.vote/EOS_Singapore_pc_eng.html" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-sg.png"></div></a>
+            <!-- <a href="http://eos.vote/EOS_Singapore_pc_eng.html" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-sg.png"></div></a> -->
             <a href="https://eosphere.io" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-sphere.png"></div></a>
             <a href="https://eostitan.com/" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-titan.png"></div></a>
             <a href="http://eostribe.io" target="_blank"><div class="bp"><img width="45px" src="./images/bp-logos/blue/eos-tribe.png"></div></a>
