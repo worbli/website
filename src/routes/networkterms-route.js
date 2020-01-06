@@ -102,7 +102,7 @@ class NetworkTermsRoute extends PolymerElement {
           	<ol>
 				<li><strong>THE NETWORK AND THE FOUNDATION</strong>
 				<ol>
-					<li>The WORBLI foundation was established as a not-for-profit company limited by guarantee (the "Foundation") to act as a centralised forum of governance over the WORBLI distributed ledger network (the "Network").  The Foundation will not have any proprietary rights over the Network; its role is limited to ensuring the key purposes of the Network are maintained and complied with.</li>
+					<li>The Foundation was established as a not-for-profit company limited by guarantee to act as a centralised forum of governance over the WORBLI distributed ledger network (the "Network").  The Foundation will not have any proprietary rights over the Network; its role is limited to ensuring the key purposes of the Network are maintained and complied with.</li>
 					<li>The Network operates as a platform for you ("You" or "Your") and other users and other interested parties (each, a "User" and collectively, "Users") to interact with, use and develop distributed software applications ("dApps") and hold, transfer and make use of the Network tokens ("Tokens").</li>
 					<li>If You are accessing and/or using the Network on behalf of Your employer or as a consultant or agent of a third party (collectively "Your Company"), You represent and warrant that You have the authority to act on behalf of and bind Your Company to these Network terms and conditions (the "Network Terms"), and every reference to You or Your in these Network Terms shall also include Your Company.</li>
 				</ol></li>
@@ -280,7 +280,8 @@ class NetworkTermsRoute extends PolymerElement {
 				</ol></li>
 				<li><strong>DISPUTE RESOLUTION; GOVERNING LAW</strong>
 				<ol>
-					<li>Any litigation or other dispute resolution between You and WORBLI arising out of or relating to the Network Terms, the Network, or Your relationship with WORBLI will take place in the Court of Singapore, and You and WORBLI hereby consent to the personal jurisdiction of and exclusive venue in the courts within that jurisdiction with respect any such dispute resolution.</li>
+					<li>Any litigation or other dispute resolution between You and WORBLI and/or You and another User arising out of or relating to the Network Terms, the Network, or Your relationship with WORBLI will be resolved in accordance with the WORBLI Arbitration Rules. You and WORBLI hereby consent to the personal jurisdiction of the arbitrator appointed pursuant to the WORBLI Arbitration Rules with respect to any such dispute resolution.</li>
+					<li>You acknowledge and agree that once a notice has been served on You pursuant to the WORBLI Arbitration Rules or at any time thereafter, Your WORBLI Account may be suspended with immediate effect and You may be prohibited from taking any actions in respect of Your Tokens until such time as the dispute is resolved in accordance with the WORBLI Arbitration Rules.  You acknowledge that such account suspension is reasonable and necessary to ensure the proper and fair administration of the dispute resolution including the award for any claim made as part of the arbitration.</li>
 					<li>The Network Terms will be governed by and construed in accordance with the laws of Singapore without giving effect to any principles of conflicts of laws.</li>
 					<li>You also agree to comply with all laws from the country in which You reside that are applicable to the transmission of data on the Internet, including, but, not limited to laws governing the use of encryption and laws governing the transmission of data across international boundaries, into prohibited countries, and containing personally identifiable information.</li>
 				</ol></li>
