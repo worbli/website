@@ -5,7 +5,7 @@ import '../components/side-bar/worbli-telegram.js';
 import '../components/side-bar/worbli-support.js';
 import '../components/worbli-title.js';
 
-class ArbitrationTermsRoute extends PolymerElement {
+class ArbitrationRulesRoute extends PolymerElement {
   static get template() {
     return html`
       <style include="shared-styles">
@@ -239,4 +239,4 @@ class ArbitrationTermsRoute extends PolymerElement {
       <worbli-footer name="footer"></worbli-footer>
     `;
   }
-} window.customElements.define('arbitrationterms-route', ArbitrationTermsRoute);
+} window.customElements.define('arbitrationrules-route', ArbitrationRulesRoute);
