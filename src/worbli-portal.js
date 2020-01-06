@@ -64,6 +64,7 @@ class WorbliPortal extends PolymerElement {
         <networkterms-route name="networkterms"></networkterms-route>
         <developerterms-route name="developerterms"></developerterms-route>
         <platformterms-route name="platformterms"></platformterms-route>
+        <arbitrationrules-route name="arbitrationrules"></arbitrationrules-route>
         <signin-route name="signin"></signin-route>
         <join-route name="join"></join-route>
         <menu-route name="menu"></menu-route>
@@ -102,7 +103,7 @@ class WorbliPortal extends PolymerElement {
     }
     if (!page) {
       this.page = 'main';
-    } else if (['signin', 'join', 'main', 'network', 'about', 'vision', 'team', 'register', 'terms', 'privacy', 'profservices', 'networkterms', 'developerterms', 'platformterms', 'menu', 'dashboard', 'visitor', 'demo', 'unsubscribe'].indexOf(page) !== -1) {
+    } else if (['signin', 'join', 'main', 'network', 'about', 'vision', 'team', 'register', 'terms', 'privacy', 'profservices', 'networkterms', 'developerterms', 'arbitrationrules', 'platformterms', 'menu', 'dashboard', 'visitor', 'demo', 'unsubscribe'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'error';
@@ -149,6 +150,9 @@ class WorbliPortal extends PolymerElement {
         break;
       case 'developerterms':
         import('./routes/developerterms-route.js');
+        break;
+      case 'arbitrationrules':
+        import('./routes/arbitrationrules-route.js');
         break;
       case 'platformterms':
         import('./routes/platformterms-route.js');
