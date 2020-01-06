@@ -105,7 +105,7 @@ class PrivacyRoute extends PolymerElement {
 						<ol>
 							<li><strong>Introduction</strong>
 							<ol>
-								<li>This privacy notice ("Privacy Notice") applies to all personal information process activities undertaken by World Blockchain Initiative, LLC or any other entity that directly or indirectly controls, is controlled by, or is under common control with World Blockchain Initiative, LLC (“WORBLI”, "we", "us").</li>
+								<li>This privacy notice ("Privacy Notice") applies to all personal information process activities undertaken by WORBLI Foundation Limited, a public company limited by guarantee holding Singapore Accounting and Corporate Regulatory Authority ("ACRA") Registration Number 201912379W with registered office at 491B River Valley Road, Valley Point, Singapore (“WORBLI”, "we", "us").</li>
 								<li>WORBLI is a data controller for personal information that we process in connection with the WORBLI network, WORBLI website at https://www.worbli.io, issuance of WORBLI Tokens and/or any services we provide from time to time that necessitates the collection of personal information.</li>
 								<li>This policy sets out how we collect, use and store your personal data as well as explaining your rights in respect of the personal data we hold about you.</li>
 								<li>Please contact us at support@worbli.io should you require more information on our privacy policy.</li>
