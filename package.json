@@ -27,7 +27,7 @@
     "prpl-server": "^1.4.0"
   },
   "devDependencies": {
-    "polymer-cli": "^1.8.0",
+    "polymer-cli": "^1.9.11",
     "wct-browser-legacy": "^1.0.2"
   },
   "engines": {
